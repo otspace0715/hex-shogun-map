@@ -1,3 +1,11 @@
+# OSが勝手に作る不要なファイル
+.DS_Store
+Thumbs.db
+
+# 将来的に使う可能性のあるパッケージ関連
+dist/
+build/
+
 # Logs
 logs
 *.log
