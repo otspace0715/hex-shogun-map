@@ -1,0 +1,113 @@
+{
+  "province": "隠岐",
+  "cells": [
+    {
+      "hex_id": "2_2",
+      "lat": 36.115327,
+      "lng": 133.051216,
+      "attr": {
+        "elevation_m": 465,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_1",
+      "lat": 36.085016,
+      "lng": 133.103716,
+      "attr": {
+        "elevation_m": 719,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_4",
+      "lat": 36.266881,
+      "lng": 133.208716,
+      "attr": {
+        "elevation_m": 635,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_3",
+      "lat": 36.175949,
+      "lng": 133.261216,
+      "attr": {
+        "elevation_m": 738,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_4",
+      "lat": 36.23657,
+      "lng": 133.261216,
+      "attr": {
+        "elevation_m": 783,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_5",
+      "lat": 36.297192,
+      "lng": 133.261216,
+      "attr": {
+        "elevation_m": 684,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_3",
+      "lat": 36.206259,
+      "lng": 133.313716,
+      "attr": {
+        "elevation_m": 665,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_4",
+      "lat": 36.266881,
+      "lng": 133.313716,
+      "attr": {
+        "elevation_m": 644,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_4",
+      "lat": 36.23657,
+      "lng": 133.366216,
+      "attr": {
+        "elevation_m": 579,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    }
+  ]
+}

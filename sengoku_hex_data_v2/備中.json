@@ -1,0 +1,965 @@
+{
+  "province": "備中",
+  "cells": [
+    {
+      "hex_id": "1_7",
+      "lat": 34.895056,
+      "lng": 133.319645,
+      "attr": {
+        "elevation_m": 334,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "1_8",
+      "lat": 34.955678,
+      "lng": 133.319645,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "1_9",
+      "lat": 35.0163,
+      "lng": 133.319645,
+      "attr": {
+        "elevation_m": 92,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true
+      }
+    },
+    {
+      "hex_id": "1_10",
+      "lat": 35.076922,
+      "lng": 133.319645,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_5",
+      "lat": 34.743502,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 368,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_7",
+      "lat": 34.864745,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 383,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_8",
+      "lat": 34.925367,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 302,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_9",
+      "lat": 34.985989,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 64,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_10",
+      "lat": 35.046611,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 235,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_11",
+      "lat": 35.107232,
+      "lng": 133.372145,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_2",
+      "lat": 34.591947,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 348,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_3",
+      "lat": 34.652569,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 439,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_4",
+      "lat": 34.713191,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 353,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_5",
+      "lat": 34.773813,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 701,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_6",
+      "lat": 34.834434,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 726,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_7",
+      "lat": 34.895056,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 425,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_8",
+      "lat": 34.955678,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 443,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_9",
+      "lat": 35.0163,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 399,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_10",
+      "lat": 35.076922,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "3_11",
+      "lat": 35.137543,
+      "lng": 133.424645,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_1",
+      "lat": 34.501015,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 30,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_2",
+      "lat": 34.561636,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 377,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_3",
+      "lat": 34.622258,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 438,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_4",
+      "lat": 34.68288,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 715,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_5",
+      "lat": 34.743502,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 548,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_6",
+      "lat": 34.804124,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 800,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_7",
+      "lat": 34.864745,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 566,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_8",
+      "lat": 34.925367,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 509,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_9",
+      "lat": 34.985989,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 518,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_10",
+      "lat": 35.046611,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 366,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_11",
+      "lat": 35.107232,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 91,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "4_12",
+      "lat": 35.167854,
+      "lng": 133.477145,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_1",
+      "lat": 34.531326,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 299,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_2",
+      "lat": 34.591947,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 166,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_3",
+      "lat": 34.652569,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 513,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_4",
+      "lat": 34.713191,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 878,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_5",
+      "lat": 34.773813,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 693,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_6",
+      "lat": 34.834434,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 976,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_7",
+      "lat": 34.895056,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 717,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_8",
+      "lat": 34.955678,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 435,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_9",
+      "lat": 35.0163,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 180,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_10",
+      "lat": 35.076922,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 142,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "5_11",
+      "lat": 35.137543,
+      "lng": 133.529645,
+      "attr": {
+        "elevation_m": 184,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_1",
+      "lat": 34.501015,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_2",
+      "lat": 34.561636,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 363,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_3",
+      "lat": 34.622258,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 297,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_4",
+      "lat": 34.68288,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 569,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_5",
+      "lat": 34.743502,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 759,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_6",
+      "lat": 34.804124,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 870,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_7",
+      "lat": 34.864745,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 889,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_8",
+      "lat": 34.925367,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 807,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_9",
+      "lat": 34.985989,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 462,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "6_10",
+      "lat": 35.046611,
+      "lng": 133.582145,
+      "attr": {
+        "elevation_m": 204,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_1",
+      "lat": 34.531326,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 260,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_2",
+      "lat": 34.591947,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 325,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_3",
+      "lat": 34.652569,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 435,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_4",
+      "lat": 34.713191,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 641,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_5",
+      "lat": 34.773813,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 882,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_6",
+      "lat": 34.834434,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 824,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_7",
+      "lat": 34.895056,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 626,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "7_8",
+      "lat": 34.955678,
+      "lng": 133.634645,
+      "attr": {
+        "elevation_m": 446,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_2",
+      "lat": 34.561636,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 318,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_3",
+      "lat": 34.622258,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 176,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_4",
+      "lat": 34.68288,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 458,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_5",
+      "lat": 34.743502,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 550,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_6",
+      "lat": 34.804124,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 644,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_7",
+      "lat": 34.864745,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 577,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_8",
+      "lat": 34.925367,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 646,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "8_9",
+      "lat": 34.985989,
+      "lng": 133.687145,
+      "attr": {
+        "elevation_m": 334,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "9_2",
+      "lat": 34.591947,
+      "lng": 133.739645,
+      "attr": {
+        "elevation_m": 200,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "9_3",
+      "lat": 34.652569,
+      "lng": 133.739645,
+      "attr": {
+        "elevation_m": 450,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "9_4",
+      "lat": 34.713191,
+      "lng": 133.739645,
+      "attr": {
+        "elevation_m": 428,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "9_5",
+      "lat": 34.773813,
+      "lng": 133.739645,
+      "attr": {
+        "elevation_m": 521,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "9_6",
+      "lat": 34.834434,
+      "lng": 133.739645,
+      "attr": {
+        "elevation_m": 622,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "10_3",
+      "lat": 34.622258,
+      "lng": 133.792145,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "10_4",
+      "lat": 34.68288,
+      "lng": 133.792145,
+      "attr": {
+        "elevation_m": 122,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "10_5",
+      "lat": 34.743502,
+      "lng": 133.792145,
+      "attr": {
+        "elevation_m": 242,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "10_6",
+      "lat": 34.804124,
+      "lng": 133.792145,
+      "attr": {
+        "elevation_m": 441,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "11_3",
+      "lat": 34.652569,
+      "lng": 133.844645,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "11_5",
+      "lat": 34.773813,
+      "lng": 133.844645,
+      "attr": {
+        "elevation_m": 109,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false
+      }
+    }
+  ]
+}

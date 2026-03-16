@@ -1,0 +1,41 @@
+{
+  "province": "壱岐",
+  "cells": [
+    {
+      "hex_id": "1_1",
+      "lat": 33.794879,
+      "lng": 129.680258,
+      "attr": {
+        "elevation_m": 843,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_1",
+      "lat": 33.764568,
+      "lng": 129.732758,
+      "attr": {
+        "elevation_m": 1097,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false
+      }
+    },
+    {
+      "hex_id": "2_2",
+      "lat": 33.82519,
+      "lng": 129.732758,
+      "attr": {
+        "elevation_m": 730,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false
+      }
+    }
+  ]
+}
