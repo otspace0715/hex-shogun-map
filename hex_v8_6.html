@@ -287,6 +287,18 @@ function updateSeaRoutes() {
         seaIslands.push({ c, n: island.name + '（' + islands.province + '）' });
       });
     });
+    // 島嶼航路も追加
+    (seaData.island_routes || []).forEach(route => {
+      const fromPort = portMap[route.from_port];
+      if (fromPort) {
+        seaRoutes.push({
+          route,
+          fromPort,
+          toPort: { col: route.to_col, row: route.to_row,
+                    province: islands.province, name: route.name }
+        });
+      }
+    });
   }
 }
 
@@ -313,9 +325,18 @@ function updateSpecial() {
   if (!specialData) return;
   const activeNames = Object.keys(active).filter(n => active[n]);
   specialData.territories.forEach(t => {
-    const triggered = t.trigger_condition === 'any'
-      ? t.trigger_provinces.some(p => activeNames.includes(p))
-      : t.trigger_provinces.every(p => activeNames.includes(p));
+    let triggered = false;
+    if (t.trigger_condition === 'all') {
+      // 全国が表示されている時のみ
+      triggered = t.trigger_provinces.every(p => activeNames.includes(p));
+    } else if (t.trigger_condition === 'any2') {
+      // 2国以上が表示されている時
+      const cnt = t.trigger_provinces.filter(p => activeNames.includes(p)).length;
+      triggered = cnt >= 2;
+    } else {
+      // 'any': 1国以上（デフォルト）
+      triggered = t.trigger_provinces.some(p => activeNames.includes(p));
+    }
     if (triggered) {
       t.cells.forEach(c => specialCells.push({ c, n: t.name }));
     }
@@ -367,12 +388,20 @@ function toColRow(lat, lng) {
 function colRowToXY(col, row) {
   const S3 = Math.sqrt(3);
   const o  = col & 1;
-  // cy は Flat/Pointy 共通
-  const cy = -(R * S3 * row + R * S3 / 2 * o);
   if (mode === 'pointy') {
-    return { cx: R * S3 * col, cy }; // Pointy: x オフセットなし
+    // Pointy-top odd-q:
+    //   列間 = R*√3, 同列行間 = R*2, 奇数列オフセット = R
+    return {
+      cx: R * S3 * col,
+      cy: -(R * 2 * row + R * o)
+    };
   } else {
-    return { cx: R * 1.5 * col, cy }; // Flat
+    // Flat-top odd-q:
+    //   列間 = R*1.5, 同列行間 = R*√3, 奇数列オフセット = R*√3/2
+    return {
+      cx: R * 1.5 * col,
+      cy: -(R * S3 * row + R * S3 / 2 * o)
+    };
   }
 }
 
