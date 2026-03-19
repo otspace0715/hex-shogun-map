@@ -1,0 +1,858 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "水域セルデータ（海・湖・河川）",
+    "terrain_types": {
+      "3": "河川（領地化可・水害リスクあり）",
+      "6": "湖（領地化可）",
+      "7": "海域（船のみ・占領不可）"
+    },
+    "notes": {
+      "flood_risk": "水害リスクありの河川セルは毎シーズン確率で被害発生",
+      "sea": "海域セルは港から隣接する形で配置。海路の中継点",
+      "lake": "富士五湖を除く湖は室町時代の物流に重要な役割"
+    }
+  },
+  "sea_cells": [
+    {
+      "hex_id": "sea_izu_sag_192",
+      "col": 192,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.08,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_193",
+      "col": 193,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.1325,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_194",
+      "col": 194,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.185,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_195",
+      "col": 195,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.2375,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_196",
+      "col": 196,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.29,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_197",
+      "col": 197,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.3425,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_198",
+      "col": 198,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.395,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_199",
+      "col": 199,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.4475,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_200",
+      "col": 200,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.5,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_sag_201",
+      "col": 201,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.5525,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_s_188",
+      "col": 188,
+      "row": 76,
+      "lat": 34.607272,
+      "lng": 138.87,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "伊豆沖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_s_189",
+      "col": 189,
+      "row": 76,
+      "lat": 34.607272,
+      "lng": 138.9225,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "伊豆沖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_s_190",
+      "col": 190,
+      "row": 76,
+      "lat": 34.607272,
+      "lng": 138.975,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "伊豆沖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_izu_s_191",
+      "col": 191,
+      "row": 76,
+      "lat": 34.607272,
+      "lng": 139.0275,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "伊豆沖",
+        "flood_risk": false
+      }
+    }
+  ],
+  "lake_cells": [
+    {
+      "hex_id": "lake_kawaguchi",
+      "col": 186,
+      "row": 91,
+      "lat": 35.516602,
+      "lng": 138.765,
+      "attr": {
+        "elevation_m": 831,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "河口湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_yamanaka",
+      "col": 188,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 138.87,
+      "attr": {
+        "elevation_m": 981,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "山中湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_sai",
+      "col": 185,
+      "row": 91,
+      "lat": 35.516602,
+      "lng": 138.7125,
+      "attr": {
+        "elevation_m": 900,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "西湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_shoji",
+      "col": 183,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 138.6075,
+      "attr": {
+        "elevation_m": 900,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "精進湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_motosu",
+      "col": 182,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 138.555,
+      "attr": {
+        "elevation_m": 900,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "本栖湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_0_0",
+      "col": 135,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 136.0875,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖中央",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_0_1",
+      "col": 135,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 136.0875,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖南",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_0_-1",
+      "col": 135,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 136.0875,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖北",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_-1_0",
+      "col": 134,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 136.035,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖西",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_1_0",
+      "col": 136,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 136.14,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖東",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_biwa_0_2",
+      "col": 135,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 136.0875,
+      "attr": {
+        "elevation_m": 86,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "琵琶湖南端",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_shinji_0_0",
+      "col": 76,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 132.99,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "宍道湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_shinji_1_0",
+      "col": 77,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 133.0425,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "宍道湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_shinji_-1_0",
+      "col": 75,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 132.9375,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "宍道湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_jusan",
+      "col": 216,
+      "row": 183,
+      "lat": 41.093826,
+      "lng": 140.34,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "十三湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_hamana_0_0",
+      "col": 163,
+      "row": 78,
+      "lat": 34.728516,
+      "lng": 137.5575,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "浜名湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_hamana_0_-1",
+      "col": 163,
+      "row": 77,
+      "lat": 34.667894,
+      "lng": 137.5575,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "浜名湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_hamana_1_0",
+      "col": 164,
+      "row": 78,
+      "lat": 34.728516,
+      "lng": 137.61,
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "浜名湖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "lake_fose",
+      "col": 152,
+      "row": 112,
+      "lat": 36.789664,
+      "lng": 136.98,
+      "attr": {
+        "elevation_m": 3,
+        "terrain_type": 6,
+        "passable": true,
+        "cost": 1.5,
+        "is_river": false,
+        "capturable": true,
+        "special": true,
+        "special_type": "lake",
+        "label": "布勢湖（現在は干拓）",
+        "flood_risk": false
+      }
+    }
+  ],
+  "river_cells": [
+    {
+      "hex_id": "river_yodo_0_0",
+      "col": 122,
+      "row": 77,
+      "lat": 34.667894,
+      "lng": 135.405,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "淀川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_yodo_0_1",
+      "col": 122,
+      "row": 78,
+      "lat": 34.728516,
+      "lng": 135.405,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "淀川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_yodo_0_-1",
+      "col": 122,
+      "row": 76,
+      "lat": 34.607272,
+      "lng": 135.405,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "淀川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_yodo_-1_0",
+      "col": 121,
+      "row": 77,
+      "lat": 34.667894,
+      "lng": 135.3525,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "淀川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_yodo_1_0",
+      "col": 123,
+      "row": 77,
+      "lat": 34.667894,
+      "lng": 135.4575,
+      "attr": {
+        "elevation_m": 2,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "淀川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_toyo_0_0",
+      "col": 160,
+      "row": 79,
+      "lat": 34.789138,
+      "lng": 137.4,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "豊川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_toyo_0_1",
+      "col": 160,
+      "row": 80,
+      "lat": 34.84976,
+      "lng": 137.4,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "豊川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_kuma_0_0",
+      "col": 34,
+      "row": 40,
+      "lat": 32.42488,
+      "lng": 130.785,
+      "attr": {
+        "elevation_m": 10,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "球磨川（相良氏）",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_kuma_1_0",
+      "col": 35,
+      "row": 40,
+      "lat": 32.42488,
+      "lng": 130.8375,
+      "attr": {
+        "elevation_m": 10,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "球磨川（相良氏）",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_gakko",
+      "col": 207,
+      "row": 149,
+      "lat": 39.032678,
+      "lng": 139.8675,
+      "attr": {
+        "elevation_m": 5,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 2.5,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "月光川",
+        "flood_risk": true
+      }
+    },
+    {
+      "hex_id": "river_nachi",
+      "col": 132,
+      "row": 60,
+      "lat": 33.63732,
+      "lng": 135.93,
+      "attr": {
+        "elevation_m": 15,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 2.5,
+        "is_river": true,
+        "capturable": true,
+        "special": true,
+        "special_type": "river",
+        "label": "那智川",
+        "flood_risk": false
+      }
+    }
+  ]
+}
