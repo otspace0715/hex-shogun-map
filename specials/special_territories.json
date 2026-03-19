@@ -136,10 +136,10 @@
           "attr": {
             "elevation_m": 831,
             "terrain_type": 6,
-            "passable": false,
-            "cost": 9.9,
+            "passable": true,
+            "cost": 2.0,
             "is_river": false,
-            "capturable": false,
+            "capturable": true,
             "special": true,
             "special_type": "lake",
             "label": "河口湖"
@@ -154,10 +154,10 @@
           "attr": {
             "elevation_m": 981,
             "terrain_type": 6,
-            "passable": false,
-            "cost": 9.9,
+            "passable": true,
+            "cost": 2.0,
             "is_river": false,
-            "capturable": false,
+            "capturable": true,
             "special": true,
             "special_type": "lake",
             "label": "山中湖"
@@ -172,10 +172,10 @@
           "attr": {
             "elevation_m": 900,
             "terrain_type": 6,
-            "passable": false,
-            "cost": 9.9,
+            "passable": true,
+            "cost": 2.0,
             "is_river": false,
-            "capturable": false,
+            "capturable": true,
             "special": true,
             "special_type": "lake",
             "label": "西湖"
@@ -190,10 +190,10 @@
           "attr": {
             "elevation_m": 900,
             "terrain_type": 6,
-            "passable": false,
-            "cost": 9.9,
+            "passable": true,
+            "cost": 2.0,
             "is_river": false,
-            "capturable": false,
+            "capturable": true,
             "special": true,
             "special_type": "lake",
             "label": "精進湖"
@@ -208,10 +208,10 @@
           "attr": {
             "elevation_m": 900,
             "terrain_type": 6,
-            "passable": false,
-            "cost": 9.9,
+            "passable": true,
+            "cost": 2.0,
             "is_river": false,
-            "capturable": false,
+            "capturable": true,
             "special": true,
             "special_type": "lake",
             "label": "本栖湖"
