@@ -617,6 +617,8 @@ function draw(t) {
     const sy = cy * vp.sc + vp.oy;
     return sx > -margin && sx < _W+margin && sy > -margin && sy < _H+margin;
   }
+  // specialKeys を draw() 開始時に定義（水域・gap両方で使用）
+  const specialKeys = new Set(specialCells.map(({c}) => c.col+','+c.row));
 
 
   // ── 水域セル（海域・湖・河川）──
@@ -737,7 +739,7 @@ function draw(t) {
 
   // ── 歯抜け補完（国境地帯）──
   // specialCellsと重複するcol/rowはspecialが上書きするのでgapはスキップ
-  const specialKeys = new Set(specialCells.map(({c}) => c.col+','+c.row));
+  // specialKeys はdraw()冒頭で定義済み
   gapCells.forEach(({c,n,adj}) => {
     if (specialKeys.has(c.col+','+c.row)) return;
     const {cx,cy}=colRowToXY(c.col,c.row);
