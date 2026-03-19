@@ -930,7 +930,6 @@ wrap.addEventListener('mousemove',e=>{
   const isSpec   = h.c.attr && h.c.attr.special && !h.isGap;
   const isIsland = h.isIsland;
   const isGap    = h.isGap;
-  const isGap    = h.isGap;
   tip.innerHTML=
     `<b>${isGap?'国境地帯 <span style="color:#c080c0">⚠侵入不可</span>':(h.n+(isSpec?' <span style="color:#d4a843">⚠特殊領土</span>':isIsland?' <span style="color:#4dc8c8">🏝️島嶼</span>':''  ))}</b><br>`+
     (isSpec?`<span style="color:#d4a843">${h.c.attr.label||''}</span><br>`:`${h.c.hex_id}<br>`)+
