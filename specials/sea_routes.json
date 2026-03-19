@@ -279,5 +279,67 @@
         "historical": "火山島。流刑地。"
       }
     ]
-  }
+  },
+  "island_routes": [
+    {
+      "route_id": "IZU_OSHIMA",
+      "name": "伊豆〜大島",
+      "from_port": "IZU_S",
+      "to_port": "ISLAND_OSHIMA",
+      "to_col": 197,
+      "to_row": 78,
+      "distance_km": 44,
+      "cost": 3.0,
+      "historical": "伊豆大島。流刑地としても有名。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "is_island_route": true,
+      "waypoints": []
+    },
+    {
+      "route_id": "IZU_NIIJIMA",
+      "name": "伊豆〜新島",
+      "from_port": "IZU_S",
+      "to_port": "ISLAND_NIIJIMA",
+      "to_col": 196,
+      "to_row": 72,
+      "distance_km": 51,
+      "cost": 4.0,
+      "historical": "流人の島。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "is_island_route": true,
+      "waypoints": []
+    },
+    {
+      "route_id": "IZU_KOZUSHIMA",
+      "name": "伊豆〜神津島",
+      "from_port": "IZU_S",
+      "to_port": "ISLAND_KOZUSHIMA",
+      "to_col": 191,
+      "to_row": 69,
+      "distance_km": 56,
+      "cost": 4.0,
+      "historical": "伊豆諸島最南の有人島（戦国期）。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "is_island_route": true,
+      "waypoints": []
+    },
+    {
+      "route_id": "IZU_MIYAKEJIMA",
+      "name": "伊豆〜三宅島",
+      "from_port": "IZU_S",
+      "to_port": "ISLAND_MIYAKEJIMA",
+      "to_col": 201,
+      "to_row": 67,
+      "distance_km": 92,
+      "cost": 5.0,
+      "historical": "火山島。流刑地。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "is_island_route": true,
+      "waypoints": []
+    }
+  ]
 }
