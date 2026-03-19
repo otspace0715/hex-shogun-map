@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "海路定義データ - 海を越えた令制国間の接続",
+    "rules": {
+      "requirement": "ship",
+      "note": "海路移動には船舶技術（ship）が必要。水軍を持つ国のみ使用可能。",
+      "cost_base": 3.0,
+      "cost_note": "移動コスト = base + 距離係数。嵐イベント時は通行不可。"
+    }
+  },
+  "ports": [
+    {
+      "port_id": "IZU_N",
+      "col": 191,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.0275,
+      "province": "伊豆",
+      "name": "伊豆北端港（相模湾口）",
+      "note": "5_9セル付近"
+    },
+    {
+      "port_id": "IZU_S",
+      "col": 188,
+      "row": 77,
+      "lat": 34.667894,
+      "lng": 138.87,
+      "province": "伊豆",
+      "name": "伊豆南端港（下田）",
+      "note": "2_1セル付近"
+    },
+    {
+      "port_id": "IZU_NW",
+      "col": 190,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.975,
+      "province": "伊豆",
+      "name": "伊豆北西港（沼津方面）",
+      "note": "4_9セル付近"
+    },
+    {
+      "port_id": "AWA_P",
+      "col": 207,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.8675,
+      "province": "安房",
+      "name": "安房 館山港",
+      "note": "房総半島南端"
+    },
+    {
+      "port_id": "SAG_P",
+      "col": 202,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.605,
+      "province": "相模",
+      "name": "相模 三崎港",
+      "note": "三浦半島南端"
+    },
+    {
+      "port_id": "SUR_P",
+      "col": 181,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.5025,
+      "province": "駿河",
+      "name": "駿河 清水港",
+      "note": "清水・江尻"
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "IZU_AWA",
+      "name": "伊豆〜安房航路",
+      "from_port": "IZU_S",
+      "to_port": "AWA_P",
+      "distance_km": 97,
+      "cost": 5.0,
+      "historical": "源頼朝が1180年に石橋山の敗戦後に渡った航路。北条水軍の重要航路。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "waypoints": [
+        {
+          "col": 193,
+          "row": 80,
+          "name": "初島沖"
+        },
+        {
+          "col": 199,
+          "row": 81,
+          "name": "相模灘中央"
+        }
+      ]
+    },
+    {
+      "route_id": "IZU_SAG",
+      "name": "伊豆〜相模（三浦）航路",
+      "from_port": "IZU_N",
+      "to_port": "SAG_P",
+      "distance_km": 53,
+      "cost": 3.5,
+      "historical": "北条氏と三浦氏の往来。相模灘横断ルート。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "waypoints": [
+        {
+          "col": 196,
+          "row": 85,
+          "name": "相模灘"
+        }
+      ]
+    },
+    {
+      "route_id": "IZU_SUR",
+      "name": "伊豆〜駿河（清水）航路",
+      "from_port": "IZU_NW",
+      "to_port": "SUR_P",
+      "distance_km": 45,
+      "cost": 3.0,
+      "historical": "駿河湾の物資輸送路。伊豆と駿河は経済的に一体。",
+      "condition": "ship_level >= 1",
+      "bidirectional": true,
+      "waypoints": [
+        {
+          "col": 186,
+          "row": 84,
+          "name": "駿河湾中央"
+        }
+      ]
+    }
+  ],
+  "island_territories": {
+    "province": "伊豆",
+    "note": "伊豆諸島は令制国上、伊豆国の飛び地。海路でのみ到達可能。",
+    "islands": [
+      {
+        "id": "oshima",
+        "name": "大島",
+        "cells": [
+          {
+            "hex_id": "oshima_1",
+            "col": 197,
+            "row": 78,
+            "lat": 34.728516,
+            "lng": 139.3425,
+            "attr": {
+              "elevation_m": 758,
+              "terrain_type": 2,
+              "passable": false,
+              "cost": 2.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "大島中央"
+          },
+          {
+            "hex_id": "oshima_2",
+            "col": 197,
+            "row": 77,
+            "lat": 34.667894,
+            "lng": 139.3425,
+            "attr": {
+              "elevation_m": 300,
+              "terrain_type": 1,
+              "passable": true,
+              "cost": 2.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "大島南"
+          },
+          {
+            "hex_id": "oshima_3",
+            "col": 196,
+            "row": 78,
+            "lat": 34.728516,
+            "lng": 139.29,
+            "attr": {
+              "elevation_m": 50,
+              "terrain_type": 0,
+              "passable": true,
+              "cost": 1.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "大島西浜"
+          }
+        ],
+        "access_from": "IZU_S",
+        "distance_km": 44,
+        "cost": 3.0,
+        "historical": "伊豆大島。流刑地としても有名。"
+      },
+      {
+        "id": "niijima",
+        "name": "新島",
+        "cells": [
+          {
+            "hex_id": "niijima_1",
+            "col": 196,
+            "row": 72,
+            "lat": 34.364784,
+            "lng": 139.29,
+            "attr": {
+              "elevation_m": 432,
+              "terrain_type": 1,
+              "passable": true,
+              "cost": 2.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "新島"
+          }
+        ],
+        "access_from": "IZU_S",
+        "distance_km": 51,
+        "cost": 4.0,
+        "historical": "流人の島。"
+      },
+      {
+        "id": "kozushima",
+        "name": "神津島",
+        "cells": [
+          {
+            "hex_id": "kozushima_1",
+            "col": 191,
+            "row": 69,
+            "lat": 34.182918,
+            "lng": 139.0275,
+            "attr": {
+              "elevation_m": 572,
+              "terrain_type": 2,
+              "passable": false,
+              "cost": 2.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "神津島"
+          }
+        ],
+        "access_from": "IZU_S",
+        "distance_km": 56,
+        "cost": 4.0,
+        "historical": "伊豆諸島最南の有人島（戦国期）。"
+      },
+      {
+        "id": "miyakejima",
+        "name": "三宅島",
+        "cells": [
+          {
+            "hex_id": "miyake_1",
+            "col": 201,
+            "row": 67,
+            "lat": 34.061674,
+            "lng": 139.5525,
+            "attr": {
+              "elevation_m": 775,
+              "terrain_type": 2,
+              "passable": false,
+              "cost": 2.0,
+              "is_river": false,
+              "capturable": true,
+              "special": false
+            },
+            "name": "三宅島"
+          }
+        ],
+        "access_from": "IZU_S",
+        "distance_km": 92,
+        "cost": 5.0,
+        "historical": "火山島。流刑地。"
+      }
+    ]
+  }
+}
