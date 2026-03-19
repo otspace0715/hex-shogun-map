@@ -22,7 +22,7 @@
         "駿河",
         "相模"
       ],
-      "trigger_condition": "any",
+      "trigger_condition": "any2",
       "cells": [
         {
           "hex_id": "fuji_1",
@@ -114,7 +114,8 @@
             "label": "富士山西"
           }
         }
-      ]
+      ],
+      "trigger_note": "甲斐・駿河・相模のうち2国以上が表示時"
     },
     {
       "id": "fuji_lakes",
@@ -216,7 +217,8 @@
             "label": "本栖湖"
           }
         }
-      ]
+      ],
+      "trigger_note": "甲斐または駿河が表示時"
     },
     {
       "id": "hakone",
@@ -226,7 +228,7 @@
         "相模",
         "駿河"
       ],
-      "trigger_condition": "any",
+      "trigger_condition": "all",
       "cells": [
         {
           "hex_id": "hakone_lake",
@@ -282,7 +284,8 @@
             "label": "箱根山"
           }
         }
-      ]
+      ],
+      "trigger_note": "相模と駿河の両方が表示時"
     }
   ]
 }
