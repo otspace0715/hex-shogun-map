@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>hex-shogun-map v7</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#e6d5b8; font-family:monospace;
+       display:flex; flex-direction:column; align-items:center; overflow:hidden; height:100dvh; }
+header { width:100%; padding:8px 12px; background:#161b22;
+         border-bottom:1px solid #8b6914; display:flex; flex-wrap:wrap; gap:5px; align-items:center; flex-shrink:0; }
+h1 { font-size:.85rem; color:#d4a843; width:100%; }
+.btn { background:#1c2128; border:1px solid #4a5568; color:#aab;
+       padding:5px 11px; border-radius:3px; cursor:pointer; font-size:.75rem; white-space:nowrap; }
+.btn.active { background:#8b6914; border-color:#d4a843; color:#000; font-weight:bold; }
+.btn.pv { border-color:#2a5a8a; color:#7ab8f5; }
+.btn.pv.on { background:#1a3a5c; border-color:#4a90d9; }
+.btn.pv.ok { background:#1a3a2a; border-color:#4a9d6a; color:#7af5aa; }
+#status { font-size:.7rem; color:#7ab8f5; padding:3px 8px; flex-shrink:0;
+          width:100%; text-align:center; background:#0d1a0d; }
+#cvwrap { flex:1; width:100%; position:relative; overflow:hidden; touch-action:none; }
+canvas { position:absolute; top:0; left:0; width:100%; height:100%; }
+#tip { position:fixed; background:rgba(5,15,5,.97); border:1px solid #d4a843;
+       color:#e6d5b8; padding:7px 10px; border-radius:4px; font-size:.72rem;
+       pointer-events:none; display:none; line-height:1.9; z-index:200; max-width:200px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⬡ hex-shogun-map v7　ピンチ/ドラッグ対応</h1>
+  <button class="btn active" id="m-pt" onclick="setMode('pointy')">▲ Pointy</button>
+  <button class="btn"        id="m-fl" onclick="setMode('flat')">⬡ Flat</button>
+  <button class="btn pv" id="p-izu" onclick="toggle('伊豆')">伊豆</button>
+  <button class="btn pv" id="p-sag" onclick="toggle('相模')">相模</button>
+  <button class="btn pv" id="p-sur" onclick="toggle('駿河')">駿河</button>
+  <button class="btn pv" id="p-mus" onclick="toggle('武蔵')">武蔵</button>
+  <button class="btn pv" id="p-kai" onclick="toggle('甲斐')">甲斐</button>
+  <button class="btn" onclick="resetView()">⊙</button>
+</header>
+<div id="status">国を選んでください</div>
+<div id="cvwrap"><canvas id="cv"></canvas></div>
+<div id="tip"></div>
+
+<script>
+'use strict';
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  設定
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const API_BASE = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
+const LAT_STEP = 0.030311;
+const LNG_STEP = 0.0525;
+
+// 全国共通の原点（日本全土で最小のlat/lng）
+// これを固定することで他国を追加してもずれない
+const ORIGIN_LAT = 30.0;  // 九州南端より南
+const ORIGIN_LNG = 129.0; // 対馬より西
+
+const PROV_IDS = {
+  '伊豆':'izu','相模':'sag','駿河':'sur','武蔵':'mus','甲斐':'kai'
+};
+const PROV_COLOR = {
+  '伊豆': [80,160,100], '相模': [80,120,180],
+  '駿河': [160,120,60], '武蔵': [180,100,80], '甲斐': [140,80,160]
+};
+const TERRAIN_COLOR = {
+  0:[61,107,74], 1:[90,74,50], 2:[42,42,58], 3:[30,74,122], 4:[26,48,96]
+};
+const TERRAIN_NAME = {0:'平地',1:'丘陵',2:'山岳(不可)',3:'河川',4:'海岸'};
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  状態
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let mode    = 'pointy';
+let R       = 22;       // 六角形外接円半径(px)
+let rawData = {};       // name → [{hex_id,lat,lng,attr,col,row}, ...]
+let active  = {};       // name → bool
+let selId   = null;
+let cache   = [];       // 描画キャッシュ
+
+// ビューポート（パン＋ズーム）
+let vp = { ox:0, oy:0, sc:1 };
+
+const cv     = document.getElementById('cv');
+const ctx    = cv.getContext('2d');
+const tip    = document.getElementById('tip');
+const stEl   = document.getElementById('status');
+const DPR    = window.devicePixelRatio || 1;
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  Canvas 初期化
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function resizeCanvas() {
+  const wrap = document.getElementById('cvwrap');
+  cv.width   = wrap.clientWidth  * DPR;
+  cv.height  = wrap.clientHeight * DPR;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  lat/lng → 全国共通 col/row
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function latLngToColRow(lat, lng) {
+  const col = Math.round((lng - ORIGIN_LNG) / LNG_STEP);
+  const row = Math.round((lat - ORIGIN_LAT) / LAT_STEP);
+  return { col, row };
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  col/row → 正六角形ピクセル座標
+//  【完全な正六角形グリッド公式】
+//  Pointy-top odd-q:
+//    cx = R*√3 * col  + R*√3/2*(col%2==1)  ← 奇数列は右にずれない
+//       = R*√3 * (col + 0 )  ← colは水平インデックス
+//    cy = R*√3 * row + R*√3/2*(col%2)
+//  ※ R=外接円半径（頂点から中心の距離）
+//  ※ 正六角形の辺の長さ = R
+//  ※ 内接円半径（辺の中点から中心）= R*√3/2
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function colRowToXY(col, row) {
+  const S3 = Math.sqrt(3);
+  if (mode === 'pointy') {
+    const cx = R * S3 * col + R * S3 / 2 * (col & 1);
+    const cy = R * S3 * row + R * S3 / 2 * (col & 1);
+    return { cx, cy };
+  } else {
+    const cx = R * 1.5 * col;
+    const cy = R * S3  * row + R * S3 / 2 * (col & 1);
+    return { cx, cy };
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  正六角形6頂点（外接円半径R、完全な正六角形）
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function hexPts(cx, cy) {
+  const pts = [];
+  for (let i = 0; i < 6; i++) {
+    const a = mode === 'flat'
+      ? Math.PI / 3 * i
+      : Math.PI / 3 * i + Math.PI / 6;
+    pts.push({ x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) });
+  }
+  return pts;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  データ取得
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function toggle(name) {
+  const btn = document.getElementById('p-' + PROV_IDS[name]);
+
+  // 既にロード済みならON/OFF切り替え
+  if (rawData[name]) {
+    active[name] = !active[name];
+    btn.classList.toggle('on', active[name]);
+    updateStatus();
+    draw();
+    return;
+  }
+
+  // 未取得 → 取得
+  btn.textContent = name + '…';
+  stEl.textContent = `📡 ${name} を取得中...`;
+  try {
+    const r = await fetch(API_BASE + encodeURIComponent(name) + '.json');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    // 全国共通col/rowに変換
+    rawData[name] = d.cells.map(c => ({
+      ...c,
+      ...latLngToColRow(c.lat, c.lng)
+    }));
+    active[name] = true;
+    btn.classList.add('ok', 'on');
+    btn.textContent = name + ' ✓';
+    fitView();
+    updateStatus();
+  } catch(e) {
+    stEl.textContent = `❌ ${name}: ${e.message}`;
+    btn.textContent = name;
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  全アクティブセル
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function allActive() {
+  const res = [];
+  Object.keys(active).forEach(n => {
+    if (active[n]) rawData[n].forEach(c => res.push({ c, n }));
+  });
+  return res;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  フィットビュー（全セルが画面に収まるよう）
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function fitView() {
+  const cells = allActive();
+  if (!cells.length) return;
+
+  // 全セルのピクセル座標範囲を求める
+  let minX=Infinity, maxX=-Infinity, minY=Infinity, maxY=-Infinity;
+  cells.forEach(({c}) => {
+    const { cx, cy } = colRowToXY(c.col, c.row);
+    minX=Math.min(minX,cx-R); maxX=Math.max(maxX,cx+R);
+    minY=Math.min(minY,cy-R); maxY=Math.max(maxY,cy+R);
+  });
+
+  const W = cv.width/DPR, H = cv.height/DPR;
+  const pad = 30;
+  const scX = (W - pad*2) / (maxX - minX);
+  const scY = (H - pad*2) / (maxY - minY);
+  const sc  = Math.min(scX, scY, 3);
+
+  vp.sc = sc;
+  vp.ox = (W - (maxX+minX)*sc) / 2;
+  vp.oy = (H - (maxY+minY)*sc) / 2;
+  draw();
+}
+
+function resetView() { fitView(); }
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  描画
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let blinkT = 0;
+function draw(t) {
+  if (t !== undefined) blinkT = t;
+  const W = cv.width, H = cv.height;
+
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = '#0a1a0a';
+  ctx.fillRect(0,0,W,H);
+
+  const cells = allActive();
+  if (!cells.length) return;
+
+  ctx.save();
+  ctx.scale(DPR, DPR);
+  ctx.translate(vp.ox, vp.oy);
+  ctx.scale(vp.sc, vp.sc);
+
+  cache = [];
+  const multi = Object.values(active).filter(Boolean).length > 1;
+
+  // ── 塗り ──
+  cells.forEach(({c, n}) => {
+    const { cx, cy } = colRowToXY(c.col, c.row);
+    const pts = hexPts(cx, cy);
+    const isSel = selId === n+':'+c.hex_id;
+
+    // ベース地形色
+    const tc = TERRAIN_COLOR[c.attr.terrain_type] || TERRAIN_COLOR[1];
+    let [r,g,b] = tc;
+
+    // 複数国時は国ごとの色合い
+    if (multi && PROV_COLOR[n]) {
+      const pc = PROV_COLOR[n];
+      r = Math.round(r*0.6 + pc[0]*0.4);
+      g = Math.round(g*0.6 + pc[1]*0.4);
+      b = Math.round(b*0.6 + pc[2]*0.4);
+    }
+
+    // 標高による明度
+    const ev = Math.min(c.attr.elevation_m/1200,1);
+    r = Math.min(255, Math.round(r*(1+ev*0.3)));
+    g = Math.min(255, Math.round(g*(1+ev*0.3)));
+    b = Math.min(255, Math.round(b*(1+ev*0.3)));
+
+    ctx.beginPath();
+    pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));
+    ctx.closePath();
+    ctx.fillStyle = isSel ? '#1a4a2a' : `rgb(${r},${g},${b})`;
+    ctx.fill();
+
+    cache.push({ c, n, cx, cy, pts });
+  });
+
+  // ── 境界線 ──
+  cells.forEach(({c, n}) => {
+    const h = cache.find(x=>x.c===c);
+    if (!h) return;
+    const isSel = selId === n+':'+c.hex_id;
+    if (isSel) return; // 選択セルは後で描く
+    ctx.beginPath();
+    h.pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(0,0,0,0.55)';
+    ctx.lineWidth = 0.7 / vp.sc;
+    ctx.stroke();
+  });
+
+  // ── 選択セル ──
+  if (selId) {
+    const sh = cache.find(h=>selId===h.n+':'+h.c.hex_id);
+    if (sh) {
+      const blink = 0.5 + 0.5 * Math.sin(blinkT * 0.006);
+
+      // 選択枠
+      ctx.beginPath();
+      sh.pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));
+      ctx.closePath();
+      ctx.strokeStyle = `rgba(255,220,0,${0.7+blink*0.3})`;
+      ctx.lineWidth = 2.5 / vp.sc;
+      ctx.stroke();
+
+      // 辺の点滅（点線）
+      ctx.setLineDash([3/vp.sc, 3/vp.sc]);
+      sh.pts.forEach((p,i) => {
+        const p2 = sh.pts[(i+1)%6];
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = `rgba(255,220,0,${0.3+blink*0.5})`;
+        ctx.lineWidth = 1.5 / vp.sc;
+        ctx.stroke();
+      });
+      ctx.setLineDash([]);
+
+      // 頂点
+      sh.pts.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,3/vp.sc,0,Math.PI*2);
+        ctx.fillStyle = '#ffe040';
+        ctx.fill();
+      });
+
+      // 隣接セルの共有辺を緑でハイライト
+      const nbrs = getNeighbors(sh.c.col, sh.c.row);
+      let shared = 0;
+      nbrs.forEach(([nc,nr]) => {
+        const nh = cache.find(h=>h.c.col===nc&&h.c.row===nr);
+        if (!nh) return;
+        const TOL = R * 0.08;
+        sh.pts.forEach((sp,si)=>{
+          const sp2=sh.pts[(si+1)%6];
+          nh.pts.forEach((np,ni)=>{
+            const np2=nh.pts[(ni+1)%6];
+            const m=(dist(sp,np)<TOL&&dist(sp2,np2)<TOL)||(dist(sp,np2)<TOL&&dist(sp2,np)<TOL);
+            if(m){
+              shared++;
+              ctx.beginPath();
+              ctx.moveTo(sp.x,sp.y); ctx.lineTo(sp2.x,sp2.y);
+              ctx.strokeStyle=`rgba(80,255,80,${0.6+blink*0.4})`;
+              ctx.lineWidth=3.5/vp.sc; ctx.stroke();
+            }
+          });
+        });
+      });
+
+      // 辺番号ラベル
+      if (R * vp.sc > 20) {
+        sh.pts.forEach((p,i)=>{
+          const p2=sh.pts[(i+1)%6];
+          const mx=(p.x+p2.x)/2, my=(p.y+p2.y)/2;
+          const dx=mx-sh.cx, dy=my-sh.cy;
+          const len=Math.hypot(dx,dy)||1;
+          const lx=mx+dx/len*R*0.45, ly=my+dy/len*R*0.45;
+          ctx.font=`${Math.max(8,R*0.35)}px monospace`;
+          ctx.textAlign='center'; ctx.textBaseline='middle';
+          ctx.fillStyle='rgba(255,220,0,.85)';
+          ctx.fillText('辺'+i, lx, ly);
+        });
+      }
+
+      // ステータス更新
+      stEl.textContent =
+        `${sh.n} ${sh.c.hex_id}  col=${sh.c.col} row=${sh.c.row}  ` +
+        `${TERRAIN_NAME[sh.c.attr.terrain_type]}  cost=${sh.c.attr.cost}  ` +
+        `共有辺: ${shared}本 (正六角形=最大3)`;
+    }
+  }
+
+  // 国名ラベル
+  if (multi) {
+    Object.keys(active).forEach(name=>{
+      if(!active[name]) return;
+      const nc=rawData[name];
+      const mcol=nc.reduce((s,c)=>s+c.col,0)/nc.length;
+      const mrow=nc.reduce((s,c)=>s+c.row,0)/nc.length;
+      const {cx,cy}=colRowToXY(Math.round(mcol),Math.round(mrow));
+      ctx.font=`bold ${Math.max(10,R*0.8)}px serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.strokeStyle='rgba(0,0,0,.8)'; ctx.lineWidth=2/vp.sc; ctx.strokeText(name,cx,cy);
+      ctx.fillStyle='#ffe06e'; ctx.fillText(name,cx,cy);
+    });
+  }
+
+  ctx.restore();
+}
+
+function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y);}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  正六角形グリッドの隣接セル
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function getNeighbors(col, row) {
+  if (mode === 'pointy') {
+    const o = col & 1;
+    return [
+      [col,   row-1],
+      [col,   row+1],
+      [col-1, row-1+o],
+      [col-1, row+o],
+      [col+1, row-1+o],
+      [col+1, row+o],
+    ];
+  } else {
+    const o = col & 1;
+    return [
+      [col-1, row-1+o],
+      [col-1, row+o],
+      [col,   row-1],
+      [col,   row+1],
+      [col+1, row-1+o],
+      [col+1, row+o],
+    ];
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  ヒットテスト
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function hexAt(clientX, clientY) {
+  const rect = cv.getBoundingClientRect();
+  const px = ((clientX-rect.left)/rect.width  * cv.width/DPR - vp.ox) / vp.sc;
+  const py = ((clientY-rect.top) /rect.height * cv.height/DPR - vp.oy) / vp.sc;
+  for (const h of cache) {
+    let inside=false;
+    const ps=h.pts;
+    for(let i=0,j=5;i<6;j=i++){
+      const xi=ps[i].x,yi=ps[i].y,xj=ps[j].x,yj=ps[j].y;
+      if((yi>py)!==(yj>py)&&px<(xj-xi)*(py-yi)/(yj-yi)+xi)inside=!inside;
+    }
+    if(inside)return h;
+  }
+  return null;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  タッチ操作（ドラッグ＋ピンチズーム）
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const wrap = document.getElementById('cvwrap');
+let touches = {};
+let lastDist = 0;
+let dragStart = null;
+let didDrag = false;
+
+wrap.addEventListener('touchstart', e=>{
+  e.preventDefault();
+  [...e.changedTouches].forEach(t=>touches[t.identifier]={x:t.clientX,y:t.clientY});
+  if(e.touches.length===1){
+    dragStart={ox:vp.ox,oy:vp.oy,x:e.touches[0].clientX,y:e.touches[0].clientY};
+    didDrag=false;
+  }
+},{passive:false});
+
+wrap.addEventListener('touchmove', e=>{
+  e.preventDefault();
+  if(e.touches.length===1){
+    // パン
+    const t=e.touches[0];
+    if(dragStart){
+      const dx=t.clientX-dragStart.x, dy=t.clientY-dragStart.y;
+      if(Math.hypot(dx,dy)>4) didDrag=true;
+      vp.ox=dragStart.ox+dx;
+      vp.oy=dragStart.oy+dy;
+      draw();
+    }
+  } else if(e.touches.length>=2){
+    // ピンチズーム
+    const t0=e.touches[0], t1=e.touches[1];
+    const d=Math.hypot(t0.clientX-t1.clientX, t0.clientY-t1.clientY);
+    if(lastDist>0){
+      const f=d/lastDist;
+      const rect=cv.getBoundingClientRect();
+      const cx=((t0.clientX+t1.clientX)/2-rect.left)/rect.width  * cv.width/DPR;
+      const cy=((t0.clientY+t1.clientY)/2-rect.top) /rect.height * cv.height/DPR;
+      const newSc=Math.max(0.2,Math.min(12,vp.sc*f));
+      vp.ox=cx-(cx-vp.ox)*(newSc/vp.sc);
+      vp.oy=cy-(cy-vp.oy)*(newSc/vp.sc);
+      vp.sc=newSc;
+      draw();
+    }
+    lastDist=d;
+    [...e.changedTouches].forEach(t=>touches[t.identifier]={x:t.clientX,y:t.clientY});
+  }
+},{passive:false});
+
+wrap.addEventListener('touchend', e=>{
+  // タップ判定（ドラッグしていない場合）
+  if(!didDrag && e.changedTouches.length===1 && e.touches.length===0){
+    const t=e.changedTouches[0];
+    const h=hexAt(t.clientX,t.clientY);
+    if(h){
+      selId = selId===h.n+':'+h.c.hex_id ? null : h.n+':'+h.c.hex_id;
+    } else {
+      selId=null;
+      updateStatus();
+    }
+  }
+  [...e.changedTouches].forEach(t=>delete touches[t.identifier]);
+  if(e.touches.length<2) lastDist=0;
+  if(e.touches.length===0) dragStart=null;
+},{passive:false});
+
+// マウス操作
+let md=false, mx=0, my=0, mdStart={ox:0,oy:0};
+wrap.addEventListener('mousedown',e=>{md=true;mx=e.clientX;my=e.clientY;mdStart={ox:vp.ox,oy:vp.oy};didDrag=false;});
+window.addEventListener('mousemove',e=>{
+  if(!md)return;
+  if(Math.hypot(e.clientX-mx,e.clientY-my)>4)didDrag=true;
+  vp.ox=mdStart.ox+(e.clientX-mx); vp.oy=mdStart.oy+(e.clientY-my); draw();
+});
+window.addEventListener('mouseup',e=>{
+  if(!didDrag){
+    const h=hexAt(e.clientX,e.clientY);
+    if(h) selId=selId===h.n+':'+h.c.hex_id?null:h.n+':'+h.c.hex_id;
+    else selId=null;
+  }
+  md=false;
+});
+wrap.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const f=e.deltaY<0?1.15:1/1.15;
+  const rect=cv.getBoundingClientRect();
+  const cx=e.clientX-rect.left, cy=e.clientY-rect.top;
+  vp.ox=cx-(cx-vp.ox)*f; vp.oy=cy-(cy-vp.oy)*f;
+  vp.sc=Math.max(0.2,Math.min(12,vp.sc*f));
+  draw();
+},{passive:false});
+wrap.addEventListener('mousemove',e=>{
+  const h=hexAt(e.clientX,e.clientY);
+  if(!h){tip.style.display='none';return;}
+  tip.style.display='block';
+  tip.style.left=(e.clientX+12)+'px';
+  tip.style.top=(e.clientY-8)+'px';
+  tip.innerHTML=
+    `<b>${h.n} ${h.c.hex_id}</b><br>`+
+    `${TERRAIN_NAME[h.c.attr.terrain_type]}<br>`+
+    `標高 ${h.c.attr.elevation_m}m<br>`+
+    `コスト <b style="color:${h.c.attr.cost>5?'#f87171':h.c.attr.cost>1.5?'#fbbf24':'#6ee7b7'}">${h.c.attr.cost}</b><br>`+
+    `col=${h.c.col} row=${h.c.row}`;
+});
+wrap.addEventListener('mouseleave',()=>tip.style.display='none');
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  ステータス更新
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function updateStatus(){
+  const names=Object.keys(active).filter(n=>active[n]);
+  const total=names.reduce((s,n)=>s+rawData[n].length,0);
+  stEl.textContent=names.length
+    ?`✓ ${names.join('+')}  ${total}セル  ${mode==='pointy'?'▲Pointy':'⬡Flat'}`
+    :'国を選んでください';
+}
+
+function setMode(m){
+  mode=m;
+  document.getElementById('m-pt').classList.toggle('active',m==='pointy');
+  document.getElementById('m-fl').classList.toggle('active',m==='flat');
+  if(allActive().length){fitView();updateStatus();}
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  アニメーションループ
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function animate(t){
+  if(selId) draw(t);
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize',()=>{resizeCanvas();fitView();});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  起動
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+resizeCanvas();
+requestAnimationFrame(animate);
+toggle('伊豆');
+</script>
+</body>
+</html>
