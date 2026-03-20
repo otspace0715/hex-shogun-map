@@ -87,7 +87,9 @@ function resetWorld() {
   if (gpsActive) stopGPS();
   // i18nをリセット
   I18N = { ...I18N_DEFAULT };
-  // HTMLボタンから再初期化
+  // PIDS/PCOLをクリアしてからHTMLボタンを再読み込み
+  Object.keys(PIDS).forEach(k => delete PIDS[k]);
+  Object.keys(PCOL).forEach(k => delete PCOL[k]);
   initFromHTML();
   resizeCV();
   // 最初の省を自動ロード
@@ -161,14 +163,16 @@ function initFromHTML() {
   document.querySelectorAll('[data-prov]').forEach(btn => {
     const name = btn.dataset.prov;
     const id   = btn.dataset.id || name.slice(0, 3);
-    // data-color="r,g,b" または省略時はグレー
     const col  = btn.dataset.color
       ? btn.dataset.color.split(',').map(Number)
       : [120, 120, 80];
     PIDS[name] = id;
     PCOL[name] = col;
     btn.id = 'p-' + id;
-    btn.addEventListener('click', () => tog(name));
+    // cloneで既存リスナーをクリアしてから再登録（二重登録防止）
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    newBtn.addEventListener('click', () => tog(name));
   });
 }
 
@@ -400,7 +404,12 @@ function centerOnColRow(col,row){
 }
 
 // ── UI ──
-function resizeCV(){const w=document.getElementById('cvwrap');cv.width=w.clientWidth*DPR;cv.height=w.clientHeight*DPR;}
+function resizeCV(){
+  const w=document.getElementById('cvwrap');
+  const cw=w.clientWidth||window.innerWidth;
+  const ch=w.clientHeight||(window.innerHeight-80);
+  cv.width=cw*DPR; cv.height=ch*DPR;
+}
 function allActive(){const r=[];Object.keys(active).forEach(n=>{if(active[n]&&data[n])data[n].forEach(c=>r.push({c,n}));});return r;}
 function updateSt(){
   const ns=Object.keys(active).filter(n=>active[n]),tot=ns.reduce((s,n)=>s+(data[n]?data[n].length:0),0);
@@ -586,9 +595,13 @@ function draw(t){
 
   // ⑩ 港マーカー
   if(overlayData){
-    const portMap2={};(overlayData.routes?.nodes||[]).forEach(p=>portMap2[p.port_id]=p);
+    // portMap2: nodes は id フィールドをキーにする
+    const portMap2={};(overlayData.routes?.nodes||[]).forEach(p=>portMap2[p.id]=p);
     const visPortIds=new Set();
-    seaRoutes.forEach(({route,fromPort,toPort})=>{visPortIds.add(conn.from_node||conn.from_port);if(!route.is_island_route)visPortIds.add(route.to_port);});
+    seaRoutes.forEach(({route,fromPort,toPort})=>{
+      if(fromPort?.id) visPortIds.add(fromPort.id);
+      if(!route.is_island_route && toPort?.id) visPortIds.add(toPort.id);
+    });
     visPortIds.forEach(pid=>{
       const port=portMap2[pid];if(!port)return;
       const cellKey=port.col+','+port.row;
