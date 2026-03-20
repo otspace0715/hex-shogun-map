@@ -65,7 +65,8 @@ const I18N_DEFAULT = {
 let I18N = { ...I18N_DEFAULT };
 
 function t(key, ...args) {
-  let s = I18N[key] || key;
+  // i18n lookup - I18N_DEFAULT guarantees this never throws
+  let s = (I18N && I18N[key]) || (I18N_DEFAULT && I18N_DEFAULT[key]) || key;
   args.forEach((a, i) => { s = s.replace('{' + i + '}', a); });
   return s;
 }
@@ -87,7 +88,7 @@ let mode = 'pointy', sel = null, cache = [], bT = 0;
 const vp = { ox:0, oy:0, sc:1 };
 let overlayData=null;
 // overlay から派生する描画用配列
-let specialCells=[], seaRoutes=[], seaIslands=[], seaRouteCells=[];
+let specialCells=[], seaRoutes=[], seaIslands=[], seaRouteCells=[], portCellSet=new Set();
 let waterCells=[], autoCells=[], castleCells=[];
 let gapCells=[];
 let gpsMarker=null, gpsWatchId=null, gpsActive=false, spawnMode=false;
@@ -287,15 +288,21 @@ function updateSeaRoutes(){
     for(let i=1;i<steps;i++){const t=i/steps;cells.push({col:Math.round(p1.col+(p2.col-p1.col)*t),row:Math.round(p1.row+(p2.row-p1.row)*t)});}
     return cells;
   }
+  // 港セルのキャッシュを更新（draw()で毎フレーム計算しないよう）
+  portCellSet=new Set((routes.nodes||[]).map(n=>n.col+','+n.row));
   seaRoutes.forEach(({route,fromPort,toPort})=>{
     const isIsl=!!route.is_island_route;
-    // ウェイポイント経由で区間補間（伊豆等の陸地を迂回）
     const wps=route.waypoints||[];
     const pts=[fromPort,...wps,toPort];
     for(let seg=0;seg<pts.length-1;seg++){
+      // 各区間の始点も含める（港セルからルートが繋がるよう）
+      const p=pts[seg];
+      seaRouteCells.push({col:p.col,row:p.row,routeName:route.name,from:fromPort.province,to:toPort.province,isIslandRoute:isIsl});
       interp(pts[seg],pts[seg+1]).forEach(({col,row})=>
         seaRouteCells.push({col,row,routeName:route.name,from:fromPort.province,to:toPort.province,isIslandRoute:isIsl}));
     }
+    // 終点(toPort)も追加
+    seaRouteCells.push({col:toPort.col,row:toPort.row,routeName:route.name,from:fromPort.province,to:toPort.province,isIslandRoute:isIsl});
   });
 }
 
@@ -554,8 +561,9 @@ function draw(t){
     const drawn=new Set();
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute})=>{
       const key=col+','+row;
-      // 実際の領地セルは通過しない（gap・水域は通過可能）
-      if(landSet.has(key))return;
+      // 港セルは陸地内でも描画（港は陸地に接している）
+      const _isPort=portCellSet.has(key);
+      if(landSet.has(key)&&!_isPort)return;
       if(drawn.has(key))return;drawn.add(key);
       const{cx,cy}=colRowToXY(col,row);if(!inView(cx,cy))return;
       const pts=hexPts(cx,cy);
@@ -655,7 +663,10 @@ function draw(t){
   }
   ctx.restore();
 }
-function anim(t){draw(t);requestAnimationFrame(anim);}
+function anim(ts){
+  try { draw(ts); } catch(e) { console.error('draw error:',e); }
+  requestAnimationFrame(anim);
+}
 
 // ── ヒットテスト ──
 function hexAt(ex,ey){
