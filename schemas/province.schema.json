@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/schemas/province.schema.json",
+  "title": "Province Cell Data",
+  "description": "省/地域/王国のセルデータファイル。sengoku_hex_data_v2/{name}.json 等に適用される。",
+  "type": "object",
+  "required": ["meta", "cells"],
+
+  "properties": {
+
+    "meta": {
+      "description": "ファイルのメタ情報",
+      "type": "object",
+      "required": ["province", "cell_count"],
+      "properties": {
+        "province":    { "type": "string", "description": "省名（world.jsonのprovinces[].nameと一致）" },
+        "cell_count":  { "type": "integer", "exclusiveMinimum": 0 },
+        "version":     { "type": "string" },
+        "source":      { "type": "string", "description": "データの出典（例: GeoJSON国土数値情報）" },
+        "generated_at":{ "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": true
+    },
+
+    "cells": {
+      "description": "ヘックスセルの配列",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/Cell" }
+    }
+  },
+
+  "$defs": {
+
+    "Cell": {
+      "description": "1つのヘックスセル",
+      "type": "object",
+      "required": ["hex_id", "col", "row", "lat", "lng", "attr"],
+      "properties": {
+        "hex_id": {
+          "type": "string",
+          "description": "セルの一意ID。省略名_{col}_{row} 形式推奨。",
+          "examples": ["izu_190_85", "castle_nirayama"]
+        },
+        "col": { "type": "integer", "description": "グリッド列番号" },
+        "row": { "type": "integer", "description": "グリッド行番号" },
+        "lat": { "type": "number",  "description": "緯度（座標原点からのオフセット込み）" },
+        "lng": { "type": "number",  "description": "経度（座標原点からのオフセット込み）" },
+        "attr": { "$ref": "#/$defs/CellAttr" }
+      },
+      "additionalProperties": false
+    },
+
+    "CellAttr": {
+      "description": "セルの属性情報",
+      "type": "object",
+      "required": ["elevation_m", "terrain_type", "passable", "cost", "capturable"],
+      "properties": {
+        "elevation_m":  { "type": "number",  "minimum": 0, "description": "標高（メートル）" },
+        "terrain_type": {
+          "type": "integer", "minimum": 0, "maximum": 99,
+          "description": "地形タイプ番号。world.jsonのterrain_typesキーと対応。"
+        },
+        "passable":     { "type": "boolean", "description": "通過可能か" },
+        "cost":         { "type": "number",  "exclusiveMinimum": 0, "description": "移動コスト（1.0=平地基準）" },
+        "is_river":     { "type": "boolean", "description": "河川セルか" },
+        "flood_risk":   { "type": "boolean", "description": "水害リスクあり" },
+        "capturable":   { "type": "boolean", "description": "領地化可能か" },
+        "special":      { "type": "boolean", "description": "特殊セルフラグ" },
+        "special_type": {
+          "type": "string",
+          "enum": ["sea", "border_gap", "castle", "world_tree", "volcano", "lake_special"],
+          "description": "特殊タイプ識別子"
+        },
+        "label":        { "type": "string",  "description": "表示ラベル（特殊セル用）" },
+        "castle_data":  { "$ref": "#/$defs/CastleData" }
+      },
+      "additionalProperties": false
+    },
+
+    "CastleData": {
+      "description": "城郭/施設のメタデータ（terrain_type=8のセル用）",
+      "type": "object",
+      "required": ["name", "province"],
+      "properties": {
+        "name":       { "type": "string", "description": "城郭名" },
+        "province":   { "type": "string", "description": "所属省（world.jsonのprovinces[].nameと一致）" },
+        "built_year": { "type": "string", "description": "築城時期（例: '1493', '15世紀'）" },
+        "lord":       { "type": "string", "description": "築城者/当時の領主" },
+        "note":       { "type": "string", "description": "備考" },
+        "lat_orig":   { "type": "number", "description": "元の緯度（グリッド丸め前）" },
+        "lng_orig":   { "type": "number", "description": "元の経度（グリッド丸め前）" }
+      },
+      "additionalProperties": false
+    }
+
+  },
+
+  "additionalProperties": false
+}
