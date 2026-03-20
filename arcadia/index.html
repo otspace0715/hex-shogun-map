@@ -3,43 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>⬡ アルカディア大陸</title>
-  <link rel="stylesheet" href="css/map.css">
+  <title>🏰 アルカディア大陸</title>
+  <link rel="stylesheet" href="../css/map.css">
   <style>
-    body    { background: #0a0818; }
-    #header { background: rgba(10,8,24,0.95); border-bottom-color: rgba(100,60,180,0.4); }
-    #ver    { color: #a070ff; }
-    .btn    { background: rgba(20,10,50,0.8); border-color: rgba(100,60,200,0.5); color: #c0a0ff; }
-    .btn.active,.btn.on { background: rgba(60,20,140,0.9); border-color: rgba(150,100,255,0.8); }
-    .btn.ok { border-color: rgba(100,200,100,0.7); }
-    #status { background: rgba(10,8,24,0.95); color: #9060df; border-bottom-color: rgba(60,20,100,0.4); }
-    #cvwrap { background: #0a0818; }
+    :root {
+      --bg:               #0a0818;
+      --header-bg:        rgba(10,8,24,0.95);
+      --border:           rgba(100,60,180,0.4);
+      --accent:           #a070ff;
+      --status-color:     #9060df;
+      --btn-bg:           rgba(20,10,50,0.8);
+      --btn-border:       rgba(100,60,200,0.5);
+      --btn-color:        #c0a0ff;
+      --btn-active-bg:    rgba(60,20,140,0.9);
+      --btn-active-border:rgba(150,100,255,0.8);
+    }
   </style>
 </head>
 <body>
   <div id="header">
-    <span id="ver">⬡ アルカディア大陸</span>
+    <a href="../" id="ver" style="text-decoration:none">🏰 アルカディア大陸</a>
     <button class="btn active" id="m-pt">▲ Pointy</button>
     <button class="btn"        id="m-fl">○ Flat</button>
-    <!-- 王国ボタン: data-prov + data-id で定義 -->
-    <button class="btn prov-btn" data-prov="黄金王国アウロス" data-id="aur" data-color="200,160,40" data-autoload="true">黄金王国</button>
-    <button class="btn prov-btn" data-prov="銀月王国シルヴァ" data-id="sil" data-color="150,180,200">銀月王国</button>
-    <button class="btn prov-btn" data-prov="炎帝国イグニス" data-id="ign" data-color="200,80,40">炎帝国</button>
+
+    <!-- 王国ボタン -->
+    <button class="btn prov-btn" data-prov="黄金王国アウロス"   data-id="aur" data-color="200,160,40"  data-autoload="true">黄金王国</button>
+    <button class="btn prov-btn" data-prov="銀月王国シルヴァ"   data-id="sil" data-color="150,180,200">銀月王国</button>
+    <button class="btn prov-btn" data-prov="炎帝国イグニス"     data-id="ign" data-color="200,80,40">炎帝国</button>
     <button class="btn prov-btn" data-prov="翠森共和国ヴェルデ" data-id="ver" data-color="60,160,80">翠森共和国</button>
-    <button class="btn prov-btn" data-prov="深海神聖マレア" data-id="mar" data-color="40,100,180">深海神聖</button>
-    <button class="btn prov-btn" data-prov="暗黒領主ウンブラ" data-id="umb" data-color="80,40,120">暗黒領主</button>
+    <button class="btn prov-btn" data-prov="深海神聖マレア"     data-id="mar" data-color="40,100,180">深海神聖</button>
+    <button class="btn prov-btn" data-prov="暗黒領主ウンブラ"   data-id="umb" data-color="80,40,120">暗黒領主</button>
+
     <button class="btn" id="btn-fit">⊙</button>
-    <!-- GPS不要（架空世界のため） -->
+    <!-- GPS不要（架空世界）-->
   </div>
   <div id="status">王国を選んでください</div>
   <div id="cvwrap"><canvas id="cv"></canvas></div>
   <div id="tooltip" style="display:none"></div>
 
   <script>
-    // ← このURLを変えるだけで世界が切り替わる
     window.WORLD_OVERRIDE_URL =
-      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/world_arcadia.json';
+      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/world/world_arcadia.json';
   </script>
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
