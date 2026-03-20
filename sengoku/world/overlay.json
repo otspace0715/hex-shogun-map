@@ -7232,7 +7232,16 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 194,
+            "row": 79
+          },
+          {
+            "col": 200,
+            "row": 80
+          }
+        ]
       },
       {
         "id": "IZU_SAG",
@@ -7245,7 +7254,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 194,
+            "row": 84
+          }
+        ]
       },
       {
         "id": "IZU_SUR",
@@ -7258,7 +7272,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 186,
+            "row": 83
+          }
+        ]
       },
       {
         "id": "SAG_MUS",
