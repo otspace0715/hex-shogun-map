@@ -432,7 +432,12 @@ async function tog(name){
   }
   btn.textContent=name+'…';stEl.textContent=`📡 ${name} ${t('ui.loading')}`;
   try{
-    const r=await fetch(API+encodeURIComponent(name)+'.json');
+    // まず新パスで試みる、404の場合は旧パスにフォールバック
+    let r=await fetch(API+encodeURIComponent(name)+'.json');
+    if(!r.ok && r.status===404) {
+      const fallbackAPI='https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
+      r=await fetch(fallbackAPI+encodeURIComponent(name)+'.json');
+    }
     if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json();
     data[name]=d.cells.map(c=>({...c,...toColRow(c.lat,c.lng)}));
@@ -716,7 +721,7 @@ wrap.addEventListener('touchmove',e=>{
 
 wrap.addEventListener('touchend',e=>{
   if(!dd&&e.changedTouches.length===1&&e.touches.length===0){
-    const t=e.changedTouches[0],h=hexAt(t.clientX,t.clientY);
+    const touch=e.changedTouches[0],h=hexAt(touch.clientX,touch.clientY);
     if(h&&setManualSpawn(h))return;
     sel=h?(sel===h.n+':'+h.c.hex_id?null:h.n+':'+h.c.hex_id):null;
     if(!sel)stEl.textContent=t('ui.tap_cell');
