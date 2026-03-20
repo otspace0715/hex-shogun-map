@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>⬡ hex-shogun-map</title>
+  <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+  <div id="header">
+    <span id="ver">⬡ hex-shogun-map</span>
+    <button class="btn active" id="m-pt">▲ Pointy</button>
+    <button class="btn"        id="m-fl">○ Flat</button>
+    <button class="btn" id="p-p1">伊豆</button>
+    <button class="btn" id="p-p2">相模</button>
+    <button class="btn" id="p-p3">駿河</button>
+    <button class="btn" id="p-p4">武蔵</button>
+    <button class="btn" id="p-p5">甲斐</button>
+    <button class="btn" id="btn-fit">⊙</button>
+    <button class="btn" id="btn-gps">📍 GPS</button>
+    <button class="btn" id="btn-spawn">🏠 スポーン地点</button>
+  </div>
+  <div id="status">国を選んでください</div>
+  <div id="cvwrap"><canvas id="cv"></canvas></div>
+  <div id="tooltip" style="display:none"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
