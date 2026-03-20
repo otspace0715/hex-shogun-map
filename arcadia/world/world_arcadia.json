@@ -233,9 +233,13 @@
     "cell.unknown_lake": "Spirit Lake",
     "cell.unknown_river": "Sacred River",
     "cell.unknown_border": "Frontier",
-    "cell.unknown_auto": "Deep Sea"
+    "cell.unknown_auto": "Deep Sea",
+    "unit.km": "リーグ",
+    "unit_scale.km": 0.1,
+    "cell.castle_named": "${lord}の要塞・${name}"
   },
   "flags": {
-    "auto_sea": false
+    "auto_sea": false,
+    "show_coords": true
   }
 }
