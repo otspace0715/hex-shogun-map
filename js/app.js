@@ -289,7 +289,13 @@ function updateSeaRoutes(){
   }
   seaRoutes.forEach(({route,fromPort,toPort})=>{
     const isIsl=!!route.is_island_route;
-    interp(fromPort,toPort).forEach(({col,row})=>seaRouteCells.push({col,row,routeName:route.name,from:fromPort.province,to:toPort.province,isIslandRoute:isIsl}));
+    // ウェイポイント経由で区間補間（伊豆等の陸地を迂回）
+    const wps=route.waypoints||[];
+    const pts=[fromPort,...wps,toPort];
+    for(let seg=0;seg<pts.length-1;seg++){
+      interp(pts[seg],pts[seg+1]).forEach(({col,row})=>
+        seaRouteCells.push({col,row,routeName:route.name,from:fromPort.province,to:toPort.province,isIslandRoute:isIsl}));
+    }
   });
 }
 
@@ -542,11 +548,13 @@ function draw(t){
 
   // ⑨ 海路セル
   {
-    const landSet=new Set([...allActive().map(({c})=>c.col+','+c.row),...gapCells.map(({c})=>c.col+','+c.row),...specialCells.map(({c})=>c.col+','+c.row)]);
+    // 海路はgapセルも通過できる（国境地帯の海峡・湾を海路が通るため）
+    const landSet=new Set([...allActive().map(({c})=>c.col+','+c.row),...specialCells.map(({c})=>c.col+','+c.row)]);
     const drawn=new Set();
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute})=>{
       const key=col+','+row;
-      if(!isIslandRoute&&landSet.has(key))return;
+      // 実際の領地セル（allActive）は通過しない。gapは通過可能
+      if(landSet.has(key))return;
       if(drawn.has(key))return;drawn.add(key);
       const{cx,cy}=colRowToXY(col,row);if(!inView(cx,cy))return;
       const pts=hexPts(cx,cy);
@@ -663,6 +671,7 @@ function hexAt(ex,ey){
 
 // ── イベント ──
 const wrap=document.getElementById('cvwrap');
+if(!wrap){console.error('cvwrap not found - check HTML');}
 let dd=false,ts=null,ld=0,mdd=false,mx0=0,my0=0;
 
 wrap.addEventListener('touchstart',e=>{
