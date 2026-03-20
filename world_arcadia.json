@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/schemas/world.schema.json",
   "meta": {
     "world_id": "arcadia_continent",
     "name": "アルカディア大陸",
