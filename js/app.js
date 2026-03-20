@@ -334,11 +334,13 @@ function detectGaps(){
       const adj=new Set();
       _n(nc,nr).forEach(([ac,ar])=>{const p=occ.get(ac+','+ar);if(p&&p!=='__special__')adj.add(p);});
       if(adj.size>=2){
-        gapCells.push({c:mkCell(nc,nr,9,t('cell.unknown_border')),n:t('cell.unknown_border'),adj:[...adj].sort(),isGap:true});
+        const _border=typeof t==='function'?t('cell.unknown_border'):'Border';
+        gapCells.push({c:mkCell(nc,nr,9,_border),n:_border,adj:[...adj].sort(),isGap:true});
       }else if(adj.size===1){
         let coastal=false;
         _n(nc,nr).forEach(([ac,ar])=>{const p=occ.get(ac+','+ar);if(p&&p!=='__special__'){const cell=(data[p]||[]).find(c=>c.col===ac&&c.row===ar);if(cell&&cell.attr.terrain_type===4)coastal=true;}});
-        if(coastal)autoCells.push({c:mkCell(nc,nr,7,t('cell.unknown_sea')),n:t('cell.unknown_sea'),isAuto:true,adj:[...adj]});
+        const _sea=typeof t==='function'?t('cell.unknown_sea'):'Sea';
+        if(coastal)autoCells.push({c:mkCell(nc,nr,7,_sea),n:_sea,isAuto:true,adj:[...adj]});
       }
     });
   });
@@ -406,7 +408,9 @@ function resizeCV(){
 function allActive(){const r=[];Object.keys(active).forEach(n=>{if(active[n]&&data[n])data[n].forEach(c=>r.push({c,n}));});return r;}
 function updateSt(){
   const ns=Object.keys(active).filter(n=>active[n]),tot=ns.reduce((s,n)=>s+(data[n]?data[n].length:0),0);
-  stEl.textContent=ns.length?`✓ ${ns.join('+')} ${tot} ${t('ui.cells')} ${mode==='pointy'?'▲Pointy':'○Flat'}`:t('ui.select_region');
+  const _cells=typeof t==='function'?t('ui.cells'):'cells';
+  const _sel=typeof t==='function'?t('ui.select_region'):'Select region';
+  stEl.textContent=ns.length?`✓ ${ns.join('+')} ${tot} ${_cells} ${mode==='pointy'?'▲Pointy':'○Flat'}`:_sel;
 }
 function fit(){
   const cells=allActive();if(!cells.length)return;
