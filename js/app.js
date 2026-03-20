@@ -705,9 +705,10 @@ function draw(ts) {
     const islandCellSet = new Set(seaIslands.map(({c})=>c.col+','+c.row));
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute}) => {
       const key = col+','+row;
-      const _isPort = portCellSet.has(key);
-      if (landSet.has(key) && !_isPort) return;
-      if (islandCellSet.has(key)) return;  // 島嶼セルは除外
+      // 港セルは⑩港マーカーで、島嶼セルは⑧で描画するので⑨では描かない
+      if (portCellSet.has(key)) return;
+      if (islandCellSet.has(key)) return;
+      if (landSet.has(key)) return;
       if (drawn.has(key)) return; drawn.add(key);
       const {cx,cy}=colRowToXY(col,row); if (!inView(cx,cy)) return;
       const pts=hexPts(cx,cy);
