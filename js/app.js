@@ -210,18 +210,18 @@ function updateSpecial(){
   specialCells=[];
   if(!overlayData)return;
   const an=Object.keys(active).filter(n=>active[n]);
-  (overlayData.special_cells||[]).forEach(t=>{
-    const tc=t.trigger_condition||'any', tp=t.trigger_provinces||[];
+  (overlayData.special_cells||[]).forEach(territory=>{
+    const tc=territory.trigger_condition||'any', tp=territory.trigger_provinces||[];
     const ok=tc==='all'?tp.every(p=>an.includes(p)):tc==='any2'?tp.filter(p=>an.includes(p)).length>=2:tp.some(p=>an.includes(p));
-    if(ok)t.cells.forEach(cell=>{
+    if(ok)territory.cells.forEach(cell=>{
       specialCells.push({c:{
         hex_id: cell.hex_id||('sp_'+cell.col+'_'+cell.row),
         col:cell.col, row:cell.row, lat:cell.lat||0, lng:cell.lng||0,
         attr:{terrain_type:cell.terrain_type, elevation_m:0,
               passable:true, cost:cell.cost||2, is_river:false,
               capturable:cell.capturable!==false, special:true,
-              special_type:'special', label:cell.label||t.label}
-      }, n:t.label});
+              special_type:'special', label:cell.label||territory.label}
+      }, n:territory.label});
     });
   });
 }
