@@ -1,0 +1,12 @@
+/* css/map.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a1a0a; color: #c8d8c0; font-family: monospace; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+#header { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 6px; background: #111; }
+#ver { color: #4a8; font-weight: bold; align-self: center; margin-right: 4px; }
+.btn { background: #1a2a1a; border: 1px solid #3a5a3a; color: #c8d8c0; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+.btn.active,.btn.on { background: #2a6a2a; border-color: #6a9a6a; color: #fff; }
+.btn.ok { border-color: #4a9a4a; }
+#status { background: #111; color: #7acc7a; font-size: 11px; padding: 2px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid #2a3a2a; }
+#cvwrap { flex: 1; overflow: hidden; touch-action: none; }
+canvas { display: block; width: 100%; height: 100%; }
+#tooltip { position: fixed; background: rgba(10,20,10,.92); border: 1px solid #4a8a4a; color: #c8d8c0; font-size: 11px; padding: 6px 8px; border-radius: 4px; pointer-events: none; z-index: 100; max-width: 220px; line-height: 1.5; }
