@@ -407,19 +407,7 @@ async function tog(name){
   }
   btn.textContent=name+'…';stEl.textContent=`📡 ${name} ${t('ui.loading')}`;
   try{
-    // APIから取得。404の場合は旧パスにフォールバック
-    let r=await fetch(API+encodeURIComponent(name)+'.json');
-    if(!r.ok && r.status===404) {
-      // 旧パスでリトライ（sengoku/arcadiaどちらにも対応）
-      const fallbackPaths = [
-        'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/',
-        'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia_data/',
-      ];
-      for (const fb of fallbackPaths) {
-        r = await fetch(fb+encodeURIComponent(name)+'.json');
-        if (r.ok) break;
-      }
-    }
+    const r=await fetch(API+encodeURIComponent(name)+'.json');
     if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json();
     data[name]=d.cells.map(c=>({...c,...toColRow(c.lat,c.lng)}));
