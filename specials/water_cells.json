@@ -2916,6 +2916,3247 @@
         "label": "相模灘",
         "flood_risk": false
       }
+    },
+    {
+      "hex_id": "sea_suruga_181_81",
+      "col": 181,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.5025,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_181_82",
+      "col": 181,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.5025,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_181_83",
+      "col": 181,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.5025,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_181_84",
+      "col": 181,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.5025,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_181_85",
+      "col": 181,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.5025,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_182_81",
+      "col": 182,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.555,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_182_82",
+      "col": 182,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.555,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_182_83",
+      "col": 182,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.555,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_182_84",
+      "col": 182,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.555,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_182_85",
+      "col": 182,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.555,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_183_81",
+      "col": 183,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.6075,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_183_82",
+      "col": 183,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.6075,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_183_83",
+      "col": 183,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.6075,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_183_84",
+      "col": 183,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.6075,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_183_85",
+      "col": 183,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.6075,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_184_81",
+      "col": 184,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.66,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_184_82",
+      "col": 184,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.66,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_184_83",
+      "col": 184,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.66,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_184_84",
+      "col": 184,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.66,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_184_85",
+      "col": 184,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.66,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_185_81",
+      "col": 185,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.7125,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_185_82",
+      "col": 185,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.7125,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_185_83",
+      "col": 185,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.7125,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_185_84",
+      "col": 185,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.7125,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_185_85",
+      "col": 185,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.7125,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_186_81",
+      "col": 186,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.765,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_186_82",
+      "col": 186,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.765,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_186_83",
+      "col": 186,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.765,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_186_84",
+      "col": 186,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.765,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_186_85",
+      "col": 186,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.765,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_187_81",
+      "col": 187,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.8175,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_187_82",
+      "col": 187,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.8175,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_187_83",
+      "col": 187,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.8175,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_187_84",
+      "col": 187,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.8175,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_187_85",
+      "col": 187,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.8175,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_188_81",
+      "col": 188,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.87,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_188_82",
+      "col": 188,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.87,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_188_83",
+      "col": 188,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.87,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_188_84",
+      "col": 188,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.87,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_188_85",
+      "col": 188,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.87,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_189_81",
+      "col": 189,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.9225,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_189_82",
+      "col": 189,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.9225,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_189_83",
+      "col": 189,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.9225,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_189_84",
+      "col": 189,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.9225,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_189_85",
+      "col": 189,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.9225,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_190_81",
+      "col": 190,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 138.975,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_190_82",
+      "col": 190,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 138.975,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_190_83",
+      "col": 190,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.975,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_190_84",
+      "col": 190,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 138.975,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_190_85",
+      "col": 190,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 138.975,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_191_81",
+      "col": 191,
+      "row": 81,
+      "lat": 34.910382,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_191_82",
+      "col": 191,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_191_83",
+      "col": 191,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_191_84",
+      "col": 191,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_suruga_191_85",
+      "col": 191,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "駿河",
+        "伊豆",
+        "遠江"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "駿河湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_191_86",
+      "col": 191,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.0275,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_192_82",
+      "col": 192,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.08,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_192_83",
+      "col": 192,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.08,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_192_84",
+      "col": 192,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.08,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_192_85",
+      "col": 192,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.08,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_192_86",
+      "col": 192,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.08,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_193_82",
+      "col": 193,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.1325,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_193_83",
+      "col": 193,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.1325,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_193_84",
+      "col": 193,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.1325,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_193_85",
+      "col": 193,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.1325,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_193_86",
+      "col": 193,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.1325,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_194_86",
+      "col": 194,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.185,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_195_86",
+      "col": 195,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.2375,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_196_86",
+      "col": 196,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.29,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_197_86",
+      "col": 197,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.3425,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_198_82",
+      "col": 198,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.395,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_198_86",
+      "col": 198,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.395,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_199_82",
+      "col": 199,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.4475,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_199_86",
+      "col": 199,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.4475,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_200_82",
+      "col": 200,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.5,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_200_86",
+      "col": 200,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.5,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_201_82",
+      "col": 201,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_201_86",
+      "col": 201,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_202_82",
+      "col": 202,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_202_86",
+      "col": 202,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_203_82",
+      "col": 203,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_203_86",
+      "col": 203,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_204_82",
+      "col": 204,
+      "row": 82,
+      "lat": 34.971004,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_sagami2_204_86",
+      "col": 204,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "伊豆",
+        "相模"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "相模灘",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_201_87",
+      "col": 201,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_201_88",
+      "col": 201,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_201_89",
+      "col": 201,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_201_90",
+      "col": 201,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.5525,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_202_87",
+      "col": 202,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_202_88",
+      "col": 202,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_202_89",
+      "col": 202,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_202_90",
+      "col": 202,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.605,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_203_87",
+      "col": 203,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_203_88",
+      "col": 203,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_203_89",
+      "col": 203,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_203_90",
+      "col": 203,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.6575,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_87",
+      "col": 204,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_88",
+      "col": 204,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_89",
+      "col": 204,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_90",
+      "col": 204,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_86",
+      "col": 205,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_87",
+      "col": 205,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_88",
+      "col": 205,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_89",
+      "col": 205,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_90",
+      "col": 205,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_85",
+      "col": 206,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_86",
+      "col": 206,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_87",
+      "col": 206,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_88",
+      "col": 206,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_89",
+      "col": 206,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_90",
+      "col": 206,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_85",
+      "col": 207,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_86",
+      "col": 207,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_87",
+      "col": 207,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_88",
+      "col": 207,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_89",
+      "col": 207,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_90",
+      "col": 207,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_85",
+      "col": 208,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_86",
+      "col": 208,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_87",
+      "col": 208,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_88",
+      "col": 208,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_89",
+      "col": 208,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_90",
+      "col": 208,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_85",
+      "col": 209,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_86",
+      "col": 209,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_87",
+      "col": 209,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_88",
+      "col": 209,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_89",
+      "col": 209,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_90",
+      "col": 209,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
     }
   ],
   "lake_cells": [
