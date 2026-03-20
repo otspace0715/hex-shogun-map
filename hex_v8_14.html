@@ -30,7 +30,7 @@ canvas  { position:absolute; top:0; left:0; width:100%; height:100%; }
 </head>
 <body>
 <header>
-  <h1>⬡ hex-shogun-map v8.14　海路・海域・カリング修正</h1>
+  <h1>⬡ hex-shogun-map v8.14b　gap領地化・海域拡張</h1>
   <button class="btn active" id="m-pt" onclick="setMode('pointy')">▲ Pointy</button>
   <button class="btn"        id="m-fl" onclick="setMode('flat')">⬡ Flat</button>
   <button class="btn pv" id="p-izu" onclick="tog('伊豆')">伊豆</button>
@@ -304,18 +304,20 @@ function detectGaps() {
     return [[col,row-1],[col,row+1],[col-1,row-1+o],[col-1,row+o],[col+1,row-1+o],[col+1,row+o]];
   };
 
-  function makeCell(nc, nr, terrType, label, capturable) {
+  function makeCell(nc, nr, terrType, label, capturable, cost) {
+    const isSea = terrType === 7;
     return {
       col: nc, row: nr,
       lat: Math.round((_O_LAT + nr*_LAT2)*1e6)/1e6,
       lng: Math.round((_O_LNG + nc*_LNGS)*1e6)/1e6,
-      hex_id: (terrType===7?'sea_':'gap_')+nc+'_'+nr,
+      hex_id: (isSea?'sea_':'gap_')+nc+'_'+nr,
       attr: {
         elevation_m: 0, terrain_type: terrType,
-        passable: false, cost: 9.9,
-        is_river: false, capturable: capturable||false,
+        passable: !isSea,
+        cost: isSea ? 9.9 : (cost || 1.5),
+        is_river: false, capturable: isSea ? false : (capturable !== false),
         special: true,
-        special_type: terrType===7?'sea':'border_gap',
+        special_type: isSea ? 'sea' : 'border_gap',
         label: label
       }
     };
@@ -340,8 +342,20 @@ function detectGaps() {
         // ══ 2国以上が隣接する空白 = 国境地帯（陸地）══
         // 海域判定は行わない。2国間の空白は必ず陸上の国境。
         // 視覚的な海域は water_cells.json の定義データで担う。
+        // 隣接セルの平均コストを計算して国境地帯のコストを設定
+        let avgCost = 1.0;
+        let costSum = 0, costN = 0;
+        _nbr(nc, nr).forEach(([ac, ar]) => {
+          const prov = occupied.get(ac+','+ar);
+          if (prov && prov !== '__special__') {
+            const cell = (data[prov]||[]).find(c=>c.col===ac&&c.row===ar);
+            if (cell) { costSum += cell.attr.cost||1; costN++; }
+          }
+        });
+        if (costN > 0) avgCost = Math.round(costSum / costN * 10) / 10;
+
         gapCells.push({
-          c: makeCell(nc, nr, 9, '国境地帯', false), // type9=国境地帯(新規)
+          c: makeCell(nc, nr, 9, '国境地帯', true, avgCost),
           n: '国境',
           adj: [...adjProvs].sort(), isGap: true
         });
@@ -971,7 +985,8 @@ function draw(t) {
   {
     const landSet = new Set();
     allActive().forEach(({c}) => landSet.add(c.col+','+c.row));
-    [...gapCells, ...specialCells, ...waterCells].forEach(({c}) =>
+    // gapとspecialは陸地扱い。waterCellsは海なので海路セルと重複OK
+    [...gapCells, ...specialCells].forEach(({c}) =>
       landSet.add(c.col+','+c.row));
 
     // 海路セルを重複なく描画
@@ -1362,7 +1377,7 @@ wrap.addEventListener('mousemove',e=>{
   const isIsland = h.isIsland;
   const isGap    = h.isGap;
   tip.innerHTML=
-    `<b>${isGap?'国境地帯 <span style="color:#c080c0">⚠侵入不可</span>':isPort?'⚓ 港 <span style="color:#50a0dc">→航路あり</span>':isCastle?('🏯 '+h.c.attr.label+' <span style="color:#dcc050">城郭</span>'):isWater?(wtype==="sea"?"🌊 海域":wtype==="river"?("〜 河川"+(h.c&&h.c.attr&&h.c.attr.flood_risk?' <span style="color:#ffa040">⚠水害リスク</span>':'')):"🏞️ 湖"):(h.n+(isSpec?' <span style="color:#d4a843">⚠特殊領土</span>':isIsland?' <span style="color:#4dc8c8">🏝️島嶼</span>':''))}</b><br>`+
+    `<b>${isGap?'国境地帯 <span style="color:#c0c040">⚔</span>':isPort?'⚓ 港 <span style="color:#50a0dc">→航路あり</span>':isCastle?('🏯 '+h.c.attr.label+' <span style="color:#dcc050">城郭</span>'):isWater?(wtype==="sea"?"🌊 海域":wtype==="river"?("〜 河川"+(h.c&&h.c.attr&&h.c.attr.flood_risk?' <span style="color:#ffa040">⚠水害リスク</span>':'')):"🏞️ 湖"):(h.n+(isSpec?' <span style="color:#d4a843">⚠特殊領土</span>':isIsland?' <span style="color:#4dc8c8">🏝️島嶼</span>':''))}</b><br>`+
     (isSpec?`<span style="color:#d4a843">${h.c.attr.label||''}</span><br>`:`${h.c.hex_id}<br>`)+
     (isCastle && h.c.attr.castle_data ? `築城: ${h.c.attr.castle_data.built_year}<br>領主: ${h.c.attr.castle_data.lord}<br>` : `${TN[h.c.attr.terrain_type]||'?'}<br>`)+
     `標高 ${h.c.attr.elevation_m}m<br>`+
