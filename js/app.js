@@ -19,13 +19,32 @@
 const WORLD_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/world.json';
 let WORLD = null;
 
-// world.json がロードされるまでのフォールバック値（日本）
+// 起動時フォールバック値（world.jsonロード前でも動く）
 let O_LAT = 30.0, O_LNG = 129.0, LAT_S = 0.030311, LAT2 = 0.060622, LNG_S = 0.0525;
-let API = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
-let TC = {0:[61,107,74],1:[90,74,50],2:[42,42,58],3:[30,74,122],4:[26,48,96],5:[180,80,40],6:[40,80,160],7:[20,60,120],8:[160,120,40],9:[50,50,55]};
-let TN = {0:'平地',1:'丘陵',2:'山岳(不可)',3:'河川',4:'海岸',5:'火山(不可)',6:'湖(不可)',7:'海域(不可)',8:'城郭',9:'国境地帯'};
+let API   = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
+let TC    = {0:[61,107,74],1:[90,74,50],2:[42,42,58],3:[30,74,122],4:[26,48,96],5:[180,80,40],6:[40,80,160],7:[20,60,120],8:[160,120,40],9:[50,50,55]};
+let TN    = {0:'平地',1:'丘陵',2:'山岳(不可)',3:'河川',4:'海岸',5:'火山(不可)',6:'湖(不可)',7:'海域(不可)',8:'城郭',9:'国境地帯'};
+
+// PIDS/PCOLをHTMLボタンから初期化（world.jsonを待たずに動く）
 let PIDS = {};
 let PCOL = {};
+
+function initFromHTML() {
+  // index.html の data-prov ボタンから国情報を読み取る
+  const DEFAULT_COLORS = {
+    '伊豆':[60,140,70],'相模':[80,100,160],'駿河':[160,100,60],
+    '武蔵':[160,80,60],'甲斐':[140,80,160],'安房':[80,160,120],
+    '上総':[160,140,60],'下総':[100,120,160],'常陸':[120,100,60]
+  };
+  document.querySelectorAll('button[data-prov]').forEach(btn => {
+    const name = btn.dataset.prov;
+    const id   = btn.dataset.id || name.slice(0,3);
+    PIDS[name] = id;
+    PCOL[name] = DEFAULT_COLORS[name] || [120,120,80];
+    btn.id = 'p-' + id;
+    btn.addEventListener('click', () => tog(name));
+  });
+}
 
 async function loadWorld() {
   try {
@@ -76,37 +95,33 @@ async function loadWorld() {
 }
 
 function buildProvinceButtons() {
+  // world.jsonのcolors/idsを既存ボタンに適用
+  // ボタン自体は index.html に既に存在するのでここでは生成しない
   const header = document.getElementById('header');
-  // 既存の省ボタンを削除
-  header.querySelectorAll('.prov-btn').forEach(b => b.remove());
-  // world.jsonの順序でボタン生成
+  const existing = new Set(
+    [...header.querySelectorAll('.prov-btn')].map(b => b.dataset.prov)
+  );
+  // world.jsonにあってHTMLにないボタンだけ追加
   const btnFit = document.getElementById('btn-fit');
-  WORLD.provinces.forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'btn prov-btn';
-    btn.id = 'p-' + p.id;
-    btn.textContent = p.name;
-    btn.addEventListener('click', () => tog(p.name));
-    header.insertBefore(btn, btnFit);
-  });
+  if (btnFit) {
+    WORLD.provinces.forEach(p => {
+      if (!existing.has(p.name)) {
+        const btn = document.createElement('button');
+        btn.className = 'btn prov-btn';
+        btn.dataset.prov = p.name;
+        btn.dataset.id   = p.id;
+        btn.id = 'p-' + p.id;
+        btn.textContent = p.name;
+        btn.addEventListener('click', () => tog(p.name));
+        header.insertBefore(btn, btnFit);
+      }
+    });
+  }
 }
 
 function buildProvinceButtonsFallback() {
-  // world.json なしの場合: HTMLのボタンをそのまま使用
-  const fallback = [
-    {id:'izu',name:'伊豆',color:[60,140,70]},
-    {id:'sag',name:'相模',color:[80,100,160]},
-    {id:'sur',name:'駿河',color:[160,100,60]},
-    {id:'mus',name:'武蔵',color:[160,80,60]},
-    {id:'kai',name:'甲斐',color:[140,80,160]},
-    {id:'awa',name:'安房',color:[80,160,120]},
-    {id:'kaz',name:'上総',color:[160,140,60]}
-  ];
-  fallback.forEach(p => { PIDS[p.name] = p.id; PCOL[p.name] = p.color; });
-  document.querySelectorAll('.prov-btn').forEach(btn => {
-    const name = btn.textContent;
-    if (PIDS[name]) btn.addEventListener('click', () => tog(name));
-  });
+  // world.json なしの場合: initFromHTML() で設定済みなので何もしない
+  console.log('world.json未取得: HTMLボタン設定を使用');
 }
 
 'use strict';
@@ -783,7 +798,7 @@ function draw(t) {
   allActive().forEach(({c,n}) => activeMap.set(c.col+','+c.row, {c,n}));
   // 画面表示範囲（カリング用）DPR考慮
   const _W = cv.width/DPR, _H = cv.height/DPR;
-  const margin = R * 4; // ズームアップ時に消えないよう余白を広めに
+  const margin = R * 8; // ズームアップ時に消えないよう余白を広めに
   function inView(cx, cy) {
     const sx = cx * vp.sc + vp.ox;
     const sy = cy * vp.sc + vp.oy;
@@ -1199,10 +1214,13 @@ function draw(t) {
     visiblePortIds.forEach(pid => {
       const port = portMap2[pid];
       if (!port) return;
-      // 実在セルと照合
+      // 実在セルと照合（±1セルまで許容）
       const cellKey = port.col+','+port.row;
       const cellData = activeMap.get(cellKey);
-      if (!cellData && !pid.startsWith('ISLAND_')) return; // 実在しない港はスキップ
+      // 実在しない場合は隣接セルも確認
+      const nbrs2 = [[0,0],[0,1],[0,-1],[1,0],[-1,0]];
+      const nearCell = cellData || nbrs2.some(([dc,dr]) => activeMap.has((port.col+dc)+','+(port.row+dr)));
+      if (!nearCell && !pid.startsWith('ISLAND_')) return;
 
       const {cx,cy} = colRowToXY(port.col, port.row);
 
@@ -1461,16 +1479,14 @@ function anim(t){draw(t);requestAnimationFrame(anim);}
 
 window.addEventListener('resize',()=>{resizeCV();if(allActive().length)fit();});
 
+initFromHTML(); // HTMLボタンから即時初期化
 resizeCV();
 requestAnimationFrame(anim);
-// world.jsonをロードしてからUIを構築
-loadWorld().then(() => {
-  // world.jsonに最初にロードする省が定義されていれば自動ロード
-  const firstProvince = WORLD && WORLD.provinces.length > 0
-    ? WORLD.provinces[0].name
-    : '伊豆'; // フォールバック
-  tog(firstProvince);
-});
+// world.jsonを非同期ロード（追加設定）
+// world.jsonを非同期でロード（完了を待たずに初期ロード開始）
+const firstProvince = Object.keys(PIDS)[0] || '伊豆';
+tog(firstProvince); // initFromHTMLで設定済みのPIDSを使用
+loadWorld(); // world.jsonの追加設定は非同期で適用
 
 // ── ボタンイベント ──
 document.getElementById('m-pt').addEventListener('click', () => { mode='pointy'; document.getElementById('m-pt').classList.add('active'); document.getElementById('m-fl').classList.remove('active'); if(allActive().length){fit();updateSt();} });
