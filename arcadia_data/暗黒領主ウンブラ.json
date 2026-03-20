@@ -1,0 +1,408 @@
+{
+  "cells": [
+    {
+      "hex_id": "暗黒領_20_18",
+      "col": 20,
+      "row": 18,
+      "lat": 31.091196,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 185,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_19_18",
+      "col": 19,
+      "row": 18,
+      "lat": 31.091196,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 21,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_17",
+      "col": 21,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 175,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_19",
+      "col": 20,
+      "row": 19,
+      "lat": 31.151818,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 121,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_16",
+      "col": 21,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 365,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_19",
+      "col": 21,
+      "row": 19,
+      "lat": 31.151818,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 36,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_19_17",
+      "col": 19,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 99,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_17",
+      "col": 20,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 173,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_18",
+      "col": 21,
+      "row": 18,
+      "lat": 31.091196,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 70,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_20",
+      "col": 21,
+      "row": 20,
+      "lat": 31.21244,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 289,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_18_17",
+      "col": 18,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 242,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_17_16",
+      "col": 17,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 775,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_16_17",
+      "col": 16,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 702,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_21",
+      "col": 21,
+      "row": 21,
+      "lat": 31.273062,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 449,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_20",
+      "col": 20,
+      "row": 20,
+      "lat": 31.21244,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 189,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_21_15",
+      "col": 21,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 221,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_22_15",
+      "col": 22,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 332,
+        "terrain_type": 4,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_16_18",
+      "col": 16,
+      "row": 18,
+      "lat": 31.091196,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 619,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_17_15",
+      "col": 17,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 552,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_22_19",
+      "col": 22,
+      "row": 19,
+      "lat": 31.151818,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 255,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_22",
+      "col": 20,
+      "row": 22,
+      "lat": 31.333684,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 456,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_23",
+      "col": 20,
+      "row": 23,
+      "lat": 31.394306,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 794,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_20_16",
+      "col": 20,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 174,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_19_21",
+      "col": 19,
+      "row": 21,
+      "lat": 31.273062,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 379,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "暗黒領_23_19",
+      "col": 23,
+      "row": 19,
+      "lat": 31.151818,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 130,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    }
+  ],
+  "meta": {
+    "province": "暗黒領主ウンブラ",
+    "cell_count": 25
+  }
+}

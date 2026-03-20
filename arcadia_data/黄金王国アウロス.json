@@ -1,0 +1,728 @@
+{
+  "cells": [
+    {
+      "hex_id": "黄金王_20_10",
+      "col": 20,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 80,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_20_9",
+      "col": 20,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 17,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_21_8",
+      "col": 21,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 160,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_19_10",
+      "col": 19,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 96,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_18_11",
+      "col": 18,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 21,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_17_10",
+      "col": 17,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 285,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_21_9",
+      "col": 21,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 35,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_18_12",
+      "col": 18,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 181,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_22_10",
+      "col": 22,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 173,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_22_8",
+      "col": 22,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 90,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_23_8",
+      "col": 23,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 429,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_22_11",
+      "col": 22,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 159,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_23_11",
+      "col": 23,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 156,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_16_10",
+      "col": 16,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 339,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_24_12",
+      "col": 24,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 157,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_23_9",
+      "col": 23,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 359,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_23_7",
+      "col": 23,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 371,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_15_9",
+      "col": 15,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 514,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_15_8",
+      "col": 15,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 745,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_14_8",
+      "col": 14,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 633,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_16_9",
+      "col": 16,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 364,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_21_10",
+      "col": 21,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 68,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_21_7",
+      "col": 21,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 269,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_14_7",
+      "col": 14,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 784,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_18_10",
+      "col": 18,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 120,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_19_8",
+      "col": 19,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 96,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_14_10",
+      "col": 14,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 673,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_13_10",
+      "col": 13,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 215,
+        "terrain_type": 4,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_24_9",
+      "col": 24,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 130,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_15_10",
+      "col": 15,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 769,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_22_9",
+      "col": 22,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 148,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_19_11",
+      "col": 19,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 30,
+        "terrain_type": 8,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_19_12",
+      "col": 19,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 155,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_15_11",
+      "col": 15,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 735,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_25_11",
+      "col": 25,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 507,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_17_9",
+      "col": 17,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 359,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_24_7",
+      "col": 24,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 756,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_22_7",
+      "col": 22,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 154,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_26_12",
+      "col": 26,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 470,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_14_9",
+      "col": 14,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 541,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_25_9",
+      "col": 25,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 277,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_24_8",
+      "col": 24,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 286,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_20_7",
+      "col": 20,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 308,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_19_9",
+      "col": 19,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 95,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "黄金王_17_11",
+      "col": 17,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 213,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    }
+  ],
+  "meta": {
+    "province": "黄金王国アウロス",
+    "cell_count": 45
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "cells": [
+    {
+      "hex_id": "銀月王_15_5",
+      "col": 15,
+      "row": 5,
+      "lat": 30.30311,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 112,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_6",
+      "col": 14,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 147,
+        "terrain_type": 8,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_5",
+      "col": 14,
+      "row": 5,
+      "lat": 30.30311,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 121,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_5",
+      "col": 16,
+      "row": 5,
+      "lat": 30.30311,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 191,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_17_4",
+      "col": 17,
+      "row": 4,
+      "lat": 30.242488,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 169,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_13_6",
+      "col": 13,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 85,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_17_3",
+      "col": 17,
+      "row": 3,
+      "lat": 30.181866,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 307,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_18_4",
+      "col": 18,
+      "row": 4,
+      "lat": 30.242488,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 326,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_18_5",
+      "col": 18,
+      "row": 5,
+      "lat": 30.30311,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 424,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_4",
+      "col": 14,
+      "row": 4,
+      "lat": 30.242488,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 21,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_17_2",
+      "col": 17,
+      "row": 2,
+      "lat": 30.121244,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 224,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_2",
+      "col": 16,
+      "row": 2,
+      "lat": 30.121244,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 125,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_18_2",
+      "col": 18,
+      "row": 2,
+      "lat": 30.121244,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 772,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_13_4",
+      "col": 13,
+      "row": 4,
+      "lat": 30.242488,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 131,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_1",
+      "col": 16,
+      "row": 1,
+      "lat": 30.060622,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 325,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_0",
+      "col": 15,
+      "row": 0,
+      "lat": 30.0,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 341,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_7",
+      "col": 14,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 94,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_12_5",
+      "col": 12,
+      "row": 5,
+      "lat": 30.30311,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 399,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_2",
+      "col": 15,
+      "row": 2,
+      "lat": 30.121244,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 314,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_0",
+      "col": 14,
+      "row": 0,
+      "lat": 30.0,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 598,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_17_0",
+      "col": 17,
+      "row": 0,
+      "lat": 30.0,
+      "lng": 100.8925,
+      "attr": {
+        "elevation_m": 227,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_13_3",
+      "col": 13,
+      "row": 3,
+      "lat": 30.181866,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 208,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_3",
+      "col": 15,
+      "row": 3,
+      "lat": 30.181866,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 130,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_6",
+      "col": 15,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 73,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_12_6",
+      "col": 12,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 211,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_12_4",
+      "col": 12,
+      "row": 4,
+      "lat": 30.242488,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 113,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_1",
+      "col": 15,
+      "row": 1,
+      "lat": 30.060622,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 495,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_11_6",
+      "col": 11,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 289,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_12_7",
+      "col": 12,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 285,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_10_6",
+      "col": 10,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 676,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_0",
+      "col": 16,
+      "row": 0,
+      "lat": 30.0,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 449,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_8",
+      "col": 14,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 208,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_10_7",
+      "col": 10,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 287,
+        "terrain_type": 4,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_10_8",
+      "col": 10,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 658,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_15_7",
+      "col": 15,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.7875,
+      "attr": {
+        "elevation_m": 104,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_8",
+      "col": 16,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 256,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_16_3",
+      "col": 16,
+      "row": 3,
+      "lat": 30.181866,
+      "lng": 100.84,
+      "attr": {
+        "elevation_m": 186,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "銀月王_14_9",
+      "col": 14,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.735,
+      "attr": {
+        "elevation_m": 368,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    }
+  ],
+  "meta": {
+    "province": "銀月王国シルヴァ",
+    "cell_count": 38
+  }
+}

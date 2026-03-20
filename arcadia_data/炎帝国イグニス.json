@@ -1,0 +1,680 @@
+{
+  "cells": [
+    {
+      "hex_id": "炎帝国_25_15",
+      "col": 25,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 13,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_25_14",
+      "col": 25,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 42,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_24_14",
+      "col": 24,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 57,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_24_13",
+      "col": 24,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 171,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_24_16",
+      "col": 24,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 116,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_23_14",
+      "col": 23,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 160,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_24_17",
+      "col": 24,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.26,
+      "attr": {
+        "elevation_m": 179,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_16",
+      "col": 26,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 186,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_23_15",
+      "col": 23,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 126,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_25_13",
+      "col": 25,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 175,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_22_15",
+      "col": 22,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 391,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_23_16",
+      "col": 23,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 136,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_15",
+      "col": 26,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 182,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_25_12",
+      "col": 25,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 433,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_14",
+      "col": 26,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 114,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_21_15",
+      "col": 21,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 305,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_27_16",
+      "col": 27,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.4175,
+      "attr": {
+        "elevation_m": 113,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_12",
+      "col": 26,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 487,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_27_15",
+      "col": 27,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.4175,
+      "attr": {
+        "elevation_m": 188,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_17",
+      "col": 26,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 151,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_27_17",
+      "col": 27,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.4175,
+      "attr": {
+        "elevation_m": 355,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_25_17",
+      "col": 25,
+      "row": 17,
+      "lat": 31.030574,
+      "lng": 101.3125,
+      "attr": {
+        "elevation_m": 47,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_21_14",
+      "col": 21,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 359,
+        "terrain_type": 3,
+        "passable": true,
+        "cost": 3.0,
+        "is_river": true,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_20_14",
+      "col": 20,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 751,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_19_13",
+      "col": 19,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 393,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_11",
+      "col": 26,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 461,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_27_10",
+      "col": 27,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.4175,
+      "attr": {
+        "elevation_m": 539,
+        "terrain_type": 4,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_26_13",
+      "col": 26,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.365,
+      "attr": {
+        "elevation_m": 177,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_22_14",
+      "col": 22,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 445,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_23_12",
+      "col": 23,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.2075,
+      "attr": {
+        "elevation_m": 450,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_18_13",
+      "col": 18,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.945,
+      "attr": {
+        "elevation_m": 506,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_21_13",
+      "col": 21,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.1025,
+      "attr": {
+        "elevation_m": 450,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_20_13",
+      "col": 20,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 446,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_28_11",
+      "col": 28,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.47,
+      "attr": {
+        "elevation_m": 209,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_20_12",
+      "col": 20,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 634,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_22_13",
+      "col": 22,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 295,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_19_12",
+      "col": 19,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.9975,
+      "attr": {
+        "elevation_m": 779,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_28_16",
+      "col": 28,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.47,
+      "attr": {
+        "elevation_m": 417,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_22_12",
+      "col": 22,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 101.155,
+      "attr": {
+        "elevation_m": 286,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_20_16",
+      "col": 20,
+      "row": 16,
+      "lat": 30.969952,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 752,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_28_18",
+      "col": 28,
+      "row": 18,
+      "lat": 31.091196,
+      "lng": 101.47,
+      "attr": {
+        "elevation_m": 273,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "炎帝国_20_11",
+      "col": 20,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 101.05,
+      "attr": {
+        "elevation_m": 604,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    }
+  ],
+  "meta": {
+    "province": "炎帝国イグニス",
+    "cell_count": 42
+  }
+}

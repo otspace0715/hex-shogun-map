@@ -1,0 +1,568 @@
+{
+  "cells": [
+    {
+      "hex_id": "翠森共_10_12",
+      "col": 10,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 105,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_9_11",
+      "col": 9,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.4725,
+      "attr": {
+        "elevation_m": 128,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_10_11",
+      "col": 10,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 136,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_10_10",
+      "col": 10,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 200,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_10_9",
+      "col": 10,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 350,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_10",
+      "col": 11,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 70,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_9_10",
+      "col": 9,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.4725,
+      "attr": {
+        "elevation_m": 41,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_12_10",
+      "col": 12,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 164,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_9_9",
+      "col": 9,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.4725,
+      "attr": {
+        "elevation_m": 175,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_8_12",
+      "col": 8,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.42,
+      "attr": {
+        "elevation_m": 16,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_9",
+      "col": 11,
+      "row": 9,
+      "lat": 30.545598,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 164,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_8_13",
+      "col": 8,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.42,
+      "attr": {
+        "elevation_m": 141,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_7_13",
+      "col": 7,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.3675,
+      "attr": {
+        "elevation_m": 429,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_7_12",
+      "col": 7,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.3675,
+      "attr": {
+        "elevation_m": 327,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_8_11",
+      "col": 8,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.42,
+      "attr": {
+        "elevation_m": 172,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_6_14",
+      "col": 6,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 100.315,
+      "attr": {
+        "elevation_m": 301,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_7_11",
+      "col": 7,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.3675,
+      "attr": {
+        "elevation_m": 332,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_5_13",
+      "col": 5,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.2625,
+      "attr": {
+        "elevation_m": 356,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_9_13",
+      "col": 9,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.4725,
+      "attr": {
+        "elevation_m": 199,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_8_14",
+      "col": 8,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 100.42,
+      "attr": {
+        "elevation_m": 440,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_11",
+      "col": 11,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 64,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_8",
+      "col": 11,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 787,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_12_11",
+      "col": 12,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 89,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_12",
+      "col": 11,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 172,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_6_13",
+      "col": 6,
+      "row": 13,
+      "lat": 30.788086,
+      "lng": 100.315,
+      "attr": {
+        "elevation_m": 519,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_13_11",
+      "col": 13,
+      "row": 11,
+      "lat": 30.666842,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 445,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_10_14",
+      "col": 10,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 79,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_7_14",
+      "col": 7,
+      "row": 14,
+      "lat": 30.848708,
+      "lng": 100.3675,
+      "attr": {
+        "elevation_m": 403,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_12_12",
+      "col": 12,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 62,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_10_8",
+      "col": 10,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.525,
+      "attr": {
+        "elevation_m": 482,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_9_8",
+      "col": 9,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.4725,
+      "attr": {
+        "elevation_m": 243,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_12_8",
+      "col": 12,
+      "row": 8,
+      "lat": 30.484976,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 627,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_12_7",
+      "col": 12,
+      "row": 7,
+      "lat": 30.424354,
+      "lng": 100.63,
+      "attr": {
+        "elevation_m": 570,
+        "terrain_type": 2,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_11_6",
+      "col": 11,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.5775,
+      "attr": {
+        "elevation_m": 517,
+        "terrain_type": 0,
+        "passable": true,
+        "cost": 1.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    },
+    {
+      "hex_id": "翠森共_13_6",
+      "col": 13,
+      "row": 6,
+      "lat": 30.363732,
+      "lng": 100.6825,
+      "attr": {
+        "elevation_m": 743,
+        "terrain_type": 1,
+        "passable": true,
+        "cost": 2.0,
+        "is_river": false,
+        "capturable": true,
+        "special": false
+      }
+    }
+  ],
+  "meta": {
+    "province": "翠森共和国ヴェルデ",
+    "cell_count": 35
+  }
+}
