@@ -234,5 +234,8 @@
     "cell.unknown_river": "Sacred River",
     "cell.unknown_border": "Frontier",
     "cell.unknown_auto": "Deep Sea"
+  },
+  "flags": {
+    "auto_sea": false
   }
 }
