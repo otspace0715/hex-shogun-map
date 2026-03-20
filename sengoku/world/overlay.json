@@ -3,7 +3,7 @@
   "meta": {
     "world_id": "sengoku_japan",
     "version": "1.0.0",
-    "description": "戦国時代オンライン オーバーレイデータ（城郭・特殊領土・水域・海路）"
+    "description": "戦国時代オンライン オーバーレイデータ（城郭・特殊領土・海路）"
   },
   "landmarks": [
     {
@@ -1084,66 +1084,27 @@
       "id": "fuji",
       "label": "富士山",
       "trigger_condition": "any2",
-      "trigger_provinces": [
-        "甲斐",
-        "駿河",
-        "相模"
-      ],
+      "trigger_provinces": ["甲斐", "駿河", "相模"],
       "cells": [
         {
-          "col": 185,
-          "row": 88,
-          "lat": 35.334736,
-          "lng": 138.7125,
-          "hex_id": "fuji_1",
-          "terrain_type": 5,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "富士山頂"
+          "col": 185, "row": 88, "lat": 35.334736, "lng": 138.7125,
+          "hex_id": "fuji_1", "terrain_type": 5, "capturable": false, "cost": 9.9, "label": "富士山頂"
         },
         {
-          "col": 185,
-          "row": 87,
-          "lat": 35.274114,
-          "lng": 138.7125,
-          "hex_id": "fuji_2",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "富士山南西"
+          "col": 185, "row": 87, "lat": 35.274114, "lng": 138.7125,
+          "hex_id": "fuji_2", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "富士山南西"
         },
         {
-          "col": 185,
-          "row": 89,
-          "lat": 35.395358,
-          "lng": 138.7125,
-          "hex_id": "fuji_3",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "富士山北西"
+          "col": 185, "row": 89, "lat": 35.395358, "lng": 138.7125,
+          "hex_id": "fuji_3", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "富士山北西"
         },
         {
-          "col": 186,
-          "row": 88,
-          "lat": 35.334736,
-          "lng": 138.765,
-          "hex_id": "fuji_4",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "富士山東"
+          "col": 186, "row": 88, "lat": 35.334736, "lng": 138.765,
+          "hex_id": "fuji_4", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "富士山東"
         },
         {
-          "col": 184,
-          "row": 88,
-          "lat": 35.334736,
-          "lng": 138.66,
-          "hex_id": "fuji_5",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "富士山西"
+          "col": 184, "row": 88, "lat": 35.334736, "lng": 138.66,
+          "hex_id": "fuji_5", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "富士山西"
         }
       ]
     },
@@ -1151,65 +1112,27 @@
       "id": "fuji_lakes",
       "label": "富士五湖",
       "trigger_condition": "any",
-      "trigger_provinces": [
-        "甲斐",
-        "駿河"
-      ],
+      "trigger_provinces": ["甲斐", "駿河"],
       "cells": [
         {
-          "col": 186,
-          "row": 91,
-          "lat": 35.516602,
-          "lng": 138.765,
-          "hex_id": "lake_kawaguchi",
-          "terrain_type": 6,
-          "capturable": true,
-          "cost": 2.0,
-          "label": "河口湖"
+          "col": 186, "row": 91, "lat": 35.516602, "lng": 138.765,
+          "hex_id": "lake_kawaguchi", "terrain_type": 6, "capturable": true, "cost": 2.0, "label": "河口湖"
         },
         {
-          "col": 188,
-          "row": 89,
-          "lat": 35.395358,
-          "lng": 138.87,
-          "hex_id": "lake_yamanaka",
-          "terrain_type": 6,
-          "capturable": true,
-          "cost": 2.0,
-          "label": "山中湖"
+          "col": 188, "row": 89, "lat": 35.395358, "lng": 138.87,
+          "hex_id": "lake_yamanaka", "terrain_type": 6, "capturable": true, "cost": 2.0, "label": "山中湖"
         },
         {
-          "col": 185,
-          "row": 91,
-          "lat": 35.516602,
-          "lng": 138.7125,
-          "hex_id": "lake_sai",
-          "terrain_type": 6,
-          "capturable": true,
-          "cost": 2.0,
-          "label": "西湖"
+          "col": 185, "row": 91, "lat": 35.516602, "lng": 138.7125,
+          "hex_id": "lake_sai", "terrain_type": 6, "capturable": true, "cost": 2.0, "label": "西湖"
         },
         {
-          "col": 183,
-          "row": 90,
-          "lat": 35.45598,
-          "lng": 138.6075,
-          "hex_id": "lake_shoji",
-          "terrain_type": 6,
-          "capturable": true,
-          "cost": 2.0,
-          "label": "精進湖"
+          "col": 183, "row": 90, "lat": 35.45598, "lng": 138.6075,
+          "hex_id": "lake_shoji", "terrain_type": 6, "capturable": true, "cost": 2.0, "label": "精進湖"
         },
         {
-          "col": 183,
-          "row": 90,
-          "lat": 35.45598,
-          "lng": 138.6075,
-          "hex_id": "lake_motosu",
-          "terrain_type": 6,
-          "capturable": true,
-          "cost": 2.0,
-          "label": "本栖湖"
+          "col": 183, "row": 90, "lat": 35.45598, "lng": 138.6075,
+          "hex_id": "lake_motosu", "terrain_type": 6, "capturable": true, "cost": 2.0, "label": "本栖湖"
         }
       ]
     },
@@ -1217,5740 +1140,29 @@
       "id": "hakone",
       "label": "箱根",
       "trigger_condition": "all",
-      "trigger_provinces": [
-        "相模",
-        "駿河"
-      ],
+      "trigger_provinces": ["相模", "駿河"],
       "cells": [
         {
-          "col": 191,
-          "row": 86,
-          "lat": 35.213492,
-          "lng": 139.0275,
-          "hex_id": "hakone_lake",
-          "terrain_type": 6,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "芦ノ湖"
+          "col": 191, "row": 86, "lat": 35.213492, "lng": 139.0275,
+          "hex_id": "hakone_lake", "terrain_type": 6, "capturable": false, "cost": 9.9, "label": "芦ノ湖"
         },
         {
-          "col": 190,
-          "row": 86,
-          "lat": 35.213492,
-          "lng": 138.975,
-          "hex_id": "hakone_pass",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "箱根峠"
+          "col": 190, "row": 86, "lat": 35.213492, "lng": 138.975,
+          "hex_id": "hakone_pass", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "箱根峠"
         },
         {
-          "col": 193,
-          "row": 86,
-          "lat": 35.213492,
-          "lng": 139.1325,
-          "hex_id": "hakone_peak",
-          "terrain_type": 2,
-          "capturable": false,
-          "cost": 9.9,
-          "label": "箱根山"
+          "col": 193, "row": 86, "lat": 35.213492, "lng": 139.1325,
+          "hex_id": "hakone_peak", "terrain_type": 2, "capturable": false, "cost": 9.9, "label": "箱根山"
         }
       ]
-    }
-  ],
-  "water_cells": [
-    {
-      "id": "sea_izu_sag_194",
-      "col": 194,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_195",
-      "col": 195,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_196",
-      "col": 196,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_197",
-      "col": 197,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.3425,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_198",
-      "col": 198,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.395,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_199",
-      "col": 199,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.4475,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_200",
-      "col": 200,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.5,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sag_201",
-      "col": 201,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.5525,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_188",
-      "col": 188,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_189",
-      "col": 189,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_190",
-      "col": 190,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_191",
-      "col": 191,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.0275,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_0_0",
-      "col": 26,
-      "row": 59,
-      "lat": 33.576698,
-      "lng": 130.365,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_1_0",
-      "col": 27,
-      "row": 59,
-      "lat": 33.576698,
-      "lng": 130.4175,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_-1_0",
-      "col": 25,
-      "row": 59,
-      "lat": 33.576698,
-      "lng": 130.3125,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_0_1",
-      "col": 26,
-      "row": 60,
-      "lat": 33.63732,
-      "lng": 130.365,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_0_-1",
-      "col": 26,
-      "row": 58,
-      "lat": 33.516076,
-      "lng": 130.365,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_hakata_1_1",
-      "col": 27,
-      "row": 60,
-      "lat": 33.63732,
-      "lng": 130.4175,
-      "water_type": "sea",
-      "label": "博多湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "筑前",
-        "肥前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_117_75",
-      "col": 117,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.1425,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_117_76",
-      "col": 117,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.1425,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_117_77",
-      "col": 117,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.1425,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_118_75",
-      "col": 118,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.195,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_118_76",
-      "col": 118,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.195,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_118_77",
-      "col": 118,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.195,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_119_75",
-      "col": 119,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.2475,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_119_76",
-      "col": 119,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.2475,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_119_77",
-      "col": 119,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.2475,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_120_75",
-      "col": 120,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.3,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_120_76",
-      "col": 120,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.3,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_120_77",
-      "col": 120,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.3,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_121_75",
-      "col": 121,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.3525,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_121_76",
-      "col": 121,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.3525,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_121_77",
-      "col": 121,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.3525,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_122_75",
-      "col": 122,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.405,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_122_76",
-      "col": 122,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.405,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_122_77",
-      "col": 122,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.405,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_123_75",
-      "col": 123,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.4575,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_123_76",
-      "col": 123,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.4575,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_123_77",
-      "col": 123,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.4575,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_124_75",
-      "col": 124,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 135.51,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_124_76",
-      "col": 124,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.51,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_osaka_124_77",
-      "col": 124,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.51,
-      "water_type": "sea",
-      "label": "大阪湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "摂津",
-        "和泉"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_0_0",
-      "col": 135,
-      "row": 93,
-      "lat": 35.637846,
-      "lng": 136.0875,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_-1_0",
-      "col": 134,
-      "row": 93,
-      "lat": 35.637846,
-      "lng": 136.035,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_0_1",
-      "col": 135,
-      "row": 94,
-      "lat": 35.698468,
-      "lng": 136.0875,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_-1_1",
-      "col": 134,
-      "row": 94,
-      "lat": 35.698468,
-      "lng": 136.035,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_0_-1",
-      "col": 135,
-      "row": 92,
-      "lat": 35.577224,
-      "lng": 136.0875,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tsuruga_-1_-1",
-      "col": 134,
-      "row": 92,
-      "lat": 35.577224,
-      "lng": 136.035,
-      "water_type": "sea",
-      "label": "敦賀湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "越前",
-        "若狭",
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_143_75",
-      "col": 143,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.5075,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_143_76",
-      "col": 143,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.5075,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_143_77",
-      "col": 143,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.5075,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_143_78",
-      "col": 143,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.5075,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_143_79",
-      "col": 143,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.5075,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_144_75",
-      "col": 144,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.56,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_144_76",
-      "col": 144,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.56,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_144_77",
-      "col": 144,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.56,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_144_78",
-      "col": 144,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.56,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_144_79",
-      "col": 144,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.56,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_145_75",
-      "col": 145,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.6125,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_145_76",
-      "col": 145,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.6125,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_145_77",
-      "col": 145,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.6125,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_145_78",
-      "col": 145,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.6125,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_145_79",
-      "col": 145,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.6125,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_146_75",
-      "col": 146,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.665,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_146_76",
-      "col": 146,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.665,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_146_77",
-      "col": 146,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.665,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_146_78",
-      "col": 146,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.665,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_146_79",
-      "col": 146,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.665,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_147_75",
-      "col": 147,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.7175,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_147_76",
-      "col": 147,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.7175,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_147_77",
-      "col": 147,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.7175,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_147_78",
-      "col": 147,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.7175,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_147_79",
-      "col": 147,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.7175,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_148_75",
-      "col": 148,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 136.77,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_148_76",
-      "col": 148,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 136.77,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_148_77",
-      "col": 148,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 136.77,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_148_78",
-      "col": 148,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 136.77,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_ise_148_79",
-      "col": 148,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 136.77,
-      "water_type": "sea",
-      "label": "伊勢湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "三河",
-        "尾張",
-        "志摩",
-        "伊勢"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tomo_0_0",
-      "col": 83,
-      "row": 72,
-      "lat": 34.364784,
-      "lng": 133.3575,
-      "water_type": "sea",
-      "label": "鞆の浦海域",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "備後",
-        "安芸"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tomo_0_1",
-      "col": 83,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 133.3575,
-      "water_type": "sea",
-      "label": "鞆の浦海域",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "備後",
-        "安芸"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tomo_1_0",
-      "col": 84,
-      "row": 72,
-      "lat": 34.364784,
-      "lng": 133.41,
-      "water_type": "sea",
-      "label": "鞆の浦海域",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "備後",
-        "安芸"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tomo_-1_0",
-      "col": 82,
-      "row": 72,
-      "lat": 34.364784,
-      "lng": 133.305,
-      "water_type": "sea",
-      "label": "鞆の浦海域",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "備後",
-        "安芸"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_37",
-      "col": 37,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 130.9425,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_38",
-      "col": 38,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 130.995,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_39",
-      "col": 39,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 131.0475,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_40",
-      "col": 40,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 131.1,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_41",
-      "col": 41,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 131.1525,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_kanmon_42",
-      "col": 42,
-      "row": 65,
-      "lat": 33.94043,
-      "lng": 131.205,
-      "water_type": "sea",
-      "label": "関門海峡",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "長門",
-        "筑前"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_194_83",
-      "col": 194,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_194_84",
-      "col": 194,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_195_83",
-      "col": 195,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_195_84",
-      "col": 195,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_196_83",
-      "col": 196,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_196_84",
-      "col": 196,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_197_83",
-      "col": 197,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.3425,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_197_84",
-      "col": 197,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.3425,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_198_83",
-      "col": 198,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.395,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_198_84",
-      "col": 198,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.395,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_199_83",
-      "col": 199,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.4475,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_199_84",
-      "col": 199,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.4475,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_200_83",
-      "col": 200,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.5,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_200_84",
-      "col": 200,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.5,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_201_83",
-      "col": 201,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.5525,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_201_84",
-      "col": 201,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.5525,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_202_83",
-      "col": 202,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.605,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_202_84",
-      "col": 202,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.605,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_202_85",
-      "col": 202,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.605,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_203_83",
-      "col": 203,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.6575,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_203_84",
-      "col": 203,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.6575,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_203_85",
-      "col": 203,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.6575,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_204_83",
-      "col": 204,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_204_84",
-      "col": 204,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_204_85",
-      "col": 204,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_205_83",
-      "col": 205,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_205_84",
-      "col": 205,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_205_85",
-      "col": 205,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "相模湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_s_194_82",
-      "col": 194,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_s_195_82",
-      "col": 195,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_s_196_82",
-      "col": 196,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami_s_197_82",
-      "col": 197,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.3425,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_181_81",
-      "col": 181,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_181_82",
-      "col": 181,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_181_83",
-      "col": 181,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_181_84",
-      "col": 181,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_181_85",
-      "col": 181,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_182_81",
-      "col": 182,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_182_82",
-      "col": 182,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_182_83",
-      "col": 182,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_182_84",
-      "col": 182,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_182_85",
-      "col": 182,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_183_81",
-      "col": 183,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_183_82",
-      "col": 183,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_183_83",
-      "col": 183,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_183_84",
-      "col": 183,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_183_85",
-      "col": 183,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_184_81",
-      "col": 184,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_184_82",
-      "col": 184,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_184_83",
-      "col": 184,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_184_84",
-      "col": 184,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_184_85",
-      "col": 184,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_185_81",
-      "col": 185,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_185_82",
-      "col": 185,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_185_83",
-      "col": 185,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_185_84",
-      "col": 185,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_185_85",
-      "col": 185,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_186_81",
-      "col": 186,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_186_82",
-      "col": 186,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_186_83",
-      "col": 186,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_186_84",
-      "col": 186,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga_186_85",
-      "col": 186,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_194_86",
-      "col": 194,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_195_86",
-      "col": 195,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_196_86",
-      "col": 196,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_197_86",
-      "col": 197,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.3425,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_198_82",
-      "col": 198,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.395,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_198_86",
-      "col": 198,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.395,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_199_82",
-      "col": 199,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.4475,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_199_86",
-      "col": 199,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.4475,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_200_82",
-      "col": 200,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.5,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_200_86",
-      "col": 200,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.5,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_201_82",
-      "col": 201,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.5525,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_201_86",
-      "col": 201,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.5525,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_202_82",
-      "col": 202,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.605,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_202_86",
-      "col": 202,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.605,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_203_82",
-      "col": 203,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.6575,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_203_86",
-      "col": 203,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.6575,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_204_82",
-      "col": 204,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_sagami2_204_86",
-      "col": 204,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "相模",
-        "伊豆",
-        "安房"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_81",
-      "col": 178,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_82",
-      "col": 178,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_83",
-      "col": 178,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_84",
-      "col": 178,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_85",
-      "col": 178,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_178_86",
-      "col": 178,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.345,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_81",
-      "col": 179,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_82",
-      "col": 179,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_83",
-      "col": 179,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_84",
-      "col": 179,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_85",
-      "col": 179,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_179_86",
-      "col": 179,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.3975,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_81",
-      "col": 180,
-      "row": 81,
-      "lat": 34.910382,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_82",
-      "col": 180,
-      "row": 82,
-      "lat": 34.971004,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_83",
-      "col": 180,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_84",
-      "col": 180,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_85",
-      "col": 180,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_180_86",
-      "col": 180,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.45,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_181_86",
-      "col": 181,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.5025,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_182_86",
-      "col": 182,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.555,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_183_86",
-      "col": 183,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.6075,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_suruga2_184_86",
-      "col": 184,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 138.66,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "駿河",
-        "伊豆",
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_185_74",
-      "col": 185,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_185_75",
-      "col": 185,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_185_76",
-      "col": 185,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.7125,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_186_74",
-      "col": 186,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_186_75",
-      "col": 186,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_186_76",
-      "col": 186,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.765,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_187_74",
-      "col": 187,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_187_75",
-      "col": 187,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_187_76",
-      "col": 187,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_188_74",
-      "col": 188,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_188_75",
-      "col": 188,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_189_74",
-      "col": 189,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_189_75",
-      "col": 189,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_190_74",
-      "col": 190,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_190_75",
-      "col": 190,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_191_74",
-      "col": 191,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.0275,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_191_75",
-      "col": 191,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.0275,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_192_74",
-      "col": 192,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.08,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_192_75",
-      "col": 192,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.08,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_192_76",
-      "col": 192,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.08,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_193_74",
-      "col": 193,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.1325,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_193_75",
-      "col": 193,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.1325,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_193_76",
-      "col": 193,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.1325,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_194_74",
-      "col": 194,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_194_75",
-      "col": 194,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_194_76",
-      "col": 194,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_195_74",
-      "col": 195,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_195_75",
-      "col": 195,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_195_76",
-      "col": 195,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.2375,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_196_74",
-      "col": 196,
-      "row": 74,
-      "lat": 34.486028,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_196_75",
-      "col": 196,
-      "row": 75,
-      "lat": 34.54665,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izuoki_196_76",
-      "col": 196,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 139.29,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_204_87",
-      "col": 204,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_204_88",
-      "col": 204,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.71,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_205_86",
-      "col": 205,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_205_87",
-      "col": 205,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_205_88",
-      "col": 205,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.7625,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_83",
-      "col": 206,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_84",
-      "col": 206,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_85",
-      "col": 206,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_86",
-      "col": 206,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_87",
-      "col": 206,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_206_88",
-      "col": 206,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.815,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_83",
-      "col": 207,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_84",
-      "col": 207,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_85",
-      "col": 207,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_86",
-      "col": 207,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_87",
-      "col": 207,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_207_88",
-      "col": 207,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.8675,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_83",
-      "col": 208,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_84",
-      "col": 208,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_85",
-      "col": 208,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_86",
-      "col": 208,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_87",
-      "col": 208,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_208_88",
-      "col": 208,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.92,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_83",
-      "col": 209,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_84",
-      "col": 209,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_85",
-      "col": 209,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_86",
-      "col": 209,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_87",
-      "col": 209,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_88",
-      "col": 209,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_89",
-      "col": 209,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_90",
-      "col": 209,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_209_91",
-      "col": 209,
-      "row": 91,
-      "lat": 35.516602,
-      "lng": 139.9725,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_83",
-      "col": 210,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_84",
-      "col": 210,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_85",
-      "col": 210,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_86",
-      "col": 210,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_87",
-      "col": 210,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_88",
-      "col": 210,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_89",
-      "col": 210,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_90",
-      "col": 210,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_210_91",
-      "col": 210,
-      "row": 91,
-      "lat": 35.516602,
-      "lng": 140.025,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_83",
-      "col": 211,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_84",
-      "col": 211,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_85",
-      "col": 211,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_86",
-      "col": 211,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_87",
-      "col": 211,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_88",
-      "col": 211,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_89",
-      "col": 211,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_90",
-      "col": 211,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_tokyo_211_91",
-      "col": 211,
-      "row": 91,
-      "lat": 35.516602,
-      "lng": 140.0775,
-      "water_type": "sea",
-      "label": "東京湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "lake_kawaguchi",
-      "col": 186,
-      "row": 91,
-      "lat": 35.516602,
-      "lng": 138.765,
-      "water_type": "lake",
-      "label": "河口湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "甲斐",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_yamanaka",
-      "col": 188,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 138.87,
-      "water_type": "lake",
-      "label": "山中湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "甲斐",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_sai",
-      "col": 185,
-      "row": 91,
-      "lat": 35.516602,
-      "lng": 138.7125,
-      "water_type": "lake",
-      "label": "西湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "甲斐"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_shoji",
-      "col": 183,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 138.6075,
-      "water_type": "lake",
-      "label": "精進湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "甲斐"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_motosu",
-      "col": 182,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 138.555,
-      "water_type": "lake",
-      "label": "本栖湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "甲斐",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_0_0",
-      "col": 135,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 136.0875,
-      "water_type": "lake",
-      "label": "琵琶湖中央",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_0_1",
-      "col": 135,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 136.0875,
-      "water_type": "lake",
-      "label": "琵琶湖南",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_0_-1",
-      "col": 135,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 136.0875,
-      "water_type": "lake",
-      "label": "琵琶湖北",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_-1_0",
-      "col": 134,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 136.035,
-      "water_type": "lake",
-      "label": "琵琶湖西",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_1_0",
-      "col": 136,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 136.14,
-      "water_type": "lake",
-      "label": "琵琶湖東",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_biwa_0_2",
-      "col": 135,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 136.0875,
-      "water_type": "lake",
-      "label": "琵琶湖南端",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "近江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_shinji_0_0",
-      "col": 76,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 132.99,
-      "water_type": "lake",
-      "label": "宍道湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "出雲"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_shinji_1_0",
-      "col": 77,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 133.0425,
-      "water_type": "lake",
-      "label": "宍道湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "出雲"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_shinji_-1_0",
-      "col": 75,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 132.9375,
-      "water_type": "lake",
-      "label": "宍道湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "出雲"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_jusan",
-      "col": 216,
-      "row": 183,
-      "lat": 41.093826,
-      "lng": 140.34,
-      "water_type": "lake",
-      "label": "十三湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "陸奥"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_hamana_0_0",
-      "col": 163,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 137.5575,
-      "water_type": "lake",
-      "label": "浜名湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_hamana_0_-1",
-      "col": 163,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 137.5575,
-      "water_type": "lake",
-      "label": "浜名湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_hamana_1_0",
-      "col": 164,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 137.61,
-      "water_type": "lake",
-      "label": "浜名湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "遠江"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "lake_fose",
-      "col": 152,
-      "row": 112,
-      "lat": 36.789664,
-      "lng": 136.98,
-      "water_type": "lake",
-      "label": "布勢湖（現在は干拓）",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "越中"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "river_yodo_0_0",
-      "col": 122,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.405,
-      "water_type": "river",
-      "label": "淀川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "摂津",
-        "山城"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_yodo_0_1",
-      "col": 122,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 135.405,
-      "water_type": "river",
-      "label": "淀川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "摂津",
-        "山城"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_yodo_0_-1",
-      "col": 122,
-      "row": 76,
-      "lat": 34.607272,
-      "lng": 135.405,
-      "water_type": "river",
-      "label": "淀川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "摂津",
-        "山城"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_yodo_-1_0",
-      "col": 121,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.3525,
-      "water_type": "river",
-      "label": "淀川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "摂津",
-        "山城"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_yodo_1_0",
-      "col": 123,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 135.4575,
-      "water_type": "river",
-      "label": "淀川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "摂津",
-        "山城"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_toyo_0_0",
-      "col": 160,
-      "row": 79,
-      "lat": 34.789138,
-      "lng": 137.4,
-      "water_type": "river",
-      "label": "豊川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "三河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_toyo_0_1",
-      "col": 160,
-      "row": 80,
-      "lat": 34.84976,
-      "lng": 137.4,
-      "water_type": "river",
-      "label": "豊川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "三河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_kuma_0_0",
-      "col": 34,
-      "row": 40,
-      "lat": 32.42488,
-      "lng": 130.785,
-      "water_type": "river",
-      "label": "球磨川（相良氏）",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "肥後"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_kuma_1_0",
-      "col": 35,
-      "row": 40,
-      "lat": 32.42488,
-      "lng": 130.8375,
-      "water_type": "river",
-      "label": "球磨川（相良氏）",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "肥後"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_gakko",
-      "col": 207,
-      "row": 149,
-      "lat": 39.032678,
-      "lng": 139.8675,
-      "water_type": "river",
-      "label": "月光川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "出羽"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": true,
-      "capturable": true
-    },
-    {
-      "id": "river_nachi",
-      "col": 132,
-      "row": 60,
-      "lat": 33.63732,
-      "lng": 135.93,
-      "water_type": "river",
-      "label": "那智川",
-      "terrain_type": 3,
-      "trigger_provinces": [
-        "紀伊"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "sea_izu_s_w",
-      "col": 188,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "駿河湾口",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_ne",
-      "col": 190,
-      "row": 77,
-      "lat": 34.667894,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_n",
-      "col": 189,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "伊豆沖南",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_nw2",
-      "col": 188,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "駿河湾口",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_s_ne2",
-      "col": 190,
-      "row": 78,
-      "lat": 34.728516,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_188",
-      "col": 188,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_189",
-      "col": 189,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_190",
-      "col": 190,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 138.975,
-      "water_type": "sea",
-      "label": "伊豆沖",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_191",
-      "col": 191,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 139.0275,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_192",
-      "col": 192,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 139.08,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_193",
-      "col": 193,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 139.1325,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_row73_194",
-      "col": 194,
-      "row": 73,
-      "lat": 34.425406,
-      "lng": 139.185,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_n_e",
-      "col": 192,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.08,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_n_e2",
-      "col": 193,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.1325,
-      "water_type": "sea",
-      "label": "相模灘",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "相模"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_nw_w",
-      "col": 188,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_nw_w2",
-      "col": 187,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_nw_s1",
-      "col": 188,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_nw_s2",
-      "col": 187,
-      "row": 84,
-      "lat": 35.092248,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "駿河湾",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "lake_ashino",
-      "col": 191,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.0275,
-      "water_type": "lake",
-      "label": "芦ノ湖",
-      "terrain_type": 6,
-      "trigger_provinces": [
-        "相模",
-        "駿河",
-        "伊豆"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": true
-    },
-    {
-      "id": "sea_izu_sur_189_83",
-      "col": 189,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.9225,
-      "water_type": "sea",
-      "label": "駿河湾口",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sur_188_83",
-      "col": 188,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.87,
-      "water_type": "sea",
-      "label": "駿河湾口",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
-    },
-    {
-      "id": "sea_izu_sur_187_83",
-      "col": 187,
-      "row": 83,
-      "lat": 35.031626,
-      "lng": 138.8175,
-      "water_type": "sea",
-      "label": "駿河湾口",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "伊豆",
-        "駿河"
-      ],
-      "trigger_condition": "any",
-      "flood_risk": false,
-      "capturable": false
     }
   ],
   "routes": {
     "nodes": [
       {
         "id": "IZU_S",
-        "col": 189,
-        "row": 77,
-        "lat": 34.6612,
-        "lng": 138.9438,
+        "col": 189, "row": 77,
+        "lat": 34.6612, "lng": 138.9438,
         "province": "伊豆",
         "label": "下田港",
         "type": "harbor",
@@ -6958,10 +1170,8 @@
       },
       {
         "id": "IZU_N",
-        "col": 194,
-        "row": 85,
-        "lat": 35.15287,
-        "lng": 139.185,
+        "col": 194, "row": 85,
+        "lat": 35.15287, "lng": 139.185,
         "province": "伊豆",
         "label": "伊豆北端港",
         "type": "harbor",
@@ -6969,10 +1179,8 @@
       },
       {
         "id": "IZU_NW",
-        "col": 188,
-        "row": 83,
-        "lat": 35.031626,
-        "lng": 138.87,
+        "col": 188, "row": 83,
+        "lat": 35.031626, "lng": 138.87,
         "province": "伊豆",
         "label": "沼津港",
         "type": "harbor",
@@ -6980,10 +1188,8 @@
       },
       {
         "id": "SAG_P",
-        "col": 202,
-        "row": 85,
-        "lat": 35.1529,
-        "lng": 139.605,
+        "col": 202, "row": 85,
+        "lat": 35.1529, "lng": 139.605,
         "province": "相模",
         "label": "三崎港",
         "type": "harbor",
@@ -6991,10 +1197,8 @@
       },
       {
         "id": "SUR_P",
-        "col": 181,
-        "row": 83,
-        "lat": 35.0316,
-        "lng": 138.5025,
+        "col": 181, "row": 83,
+        "lat": 35.0316, "lng": 138.5025,
         "province": "駿河",
         "label": "清水港",
         "type": "harbor",
@@ -7002,10 +1206,8 @@
       },
       {
         "id": "AWA_P",
-        "col": 207,
-        "row": 82,
-        "lat": 34.971,
-        "lng": 139.8675,
+        "col": 207, "row": 82,
+        "lat": 34.971, "lng": 139.8675,
         "province": "安房",
         "label": "館山港",
         "type": "harbor",
@@ -7013,10 +1215,8 @@
       },
       {
         "id": "MUS_P",
-        "col": 205,
-        "row": 93,
-        "lat": 35.65,
-        "lng": 139.78,
+        "col": 205, "row": 93,
+        "lat": 35.65, "lng": 139.78,
         "province": "武蔵",
         "label": "江戸湊",
         "type": "harbor",
@@ -7024,10 +1224,8 @@
       },
       {
         "id": "KAZ_P",
-        "col": 208,
-        "row": 89,
-        "lat": 35.37,
-        "lng": 139.92,
+        "col": 208, "row": 89,
+        "lat": 35.37, "lng": 139.92,
         "province": "上総",
         "label": "木更津港",
         "type": "harbor",
@@ -7035,10 +1233,8 @@
       },
       {
         "id": "SIM_P",
-        "col": 226,
-        "row": 95,
-        "lat": 35.735,
-        "lng": 140.855,
+        "col": 226, "row": 95,
+        "lat": 35.735, "lng": 140.855,
         "province": "下総",
         "label": "銚子港",
         "type": "harbor",
@@ -7046,10 +1242,8 @@
       },
       {
         "id": "HIT_P",
-        "col": 221,
-        "row": 104,
-        "lat": 36.331,
-        "lng": 140.577,
+        "col": 221, "row": 104,
+        "lat": 36.331, "lng": 140.577,
         "province": "常陸",
         "label": "那珂湊",
         "type": "harbor",
@@ -7057,10 +1251,8 @@
       },
       {
         "id": "ENS_P",
-        "col": 171,
-        "row": 78,
-        "lat": 34.71,
-        "lng": 137.98,
+        "col": 171, "row": 78,
+        "lat": 34.71, "lng": 137.98,
         "province": "遠江",
         "label": "見付港",
         "type": "harbor",
@@ -7068,10 +1260,8 @@
       },
       {
         "id": "MKW_P",
-        "col": 160,
-        "row": 79,
-        "lat": 34.77,
-        "lng": 137.39,
+        "col": 160, "row": 79,
+        "lat": 34.77, "lng": 137.39,
         "province": "三河",
         "label": "吉田港",
         "type": "harbor",
@@ -7079,10 +1269,8 @@
       },
       {
         "id": "OWR_P",
-        "col": 151,
-        "row": 85,
-        "lat": 35.13,
-        "lng": 136.91,
+        "col": 151, "row": 85,
+        "lat": 35.13, "lng": 136.91,
         "province": "尾張",
         "label": "熱田港",
         "type": "harbor",
@@ -7090,10 +1278,8 @@
       },
       {
         "id": "ECH_P",
-        "col": 153,
-        "row": 112,
-        "lat": 36.79,
-        "lng": 137.05,
+        "col": 153, "row": 112,
+        "lat": 36.79, "lng": 137.05,
         "province": "越中",
         "label": "伏木港",
         "type": "harbor",
@@ -7101,10 +1287,8 @@
       },
       {
         "id": "EGO_P",
-        "col": 182,
-        "row": 122,
-        "lat": 37.37,
-        "lng": 138.56,
+        "col": 182, "row": 122,
+        "lat": 37.37, "lng": 138.56,
         "province": "越後",
         "label": "柏崎港",
         "type": "harbor",
@@ -7112,10 +1296,8 @@
       },
       {
         "id": "KGA_P",
-        "col": 145,
-        "row": 108,
-        "lat": 36.54,
-        "lng": 136.63,
+        "col": 145, "row": 108,
+        "lat": 36.54, "lng": 136.63,
         "province": "加賀",
         "label": "宮腰港",
         "type": "harbor",
@@ -7123,32 +1305,26 @@
       },
       {
         "id": "NOH_P",
-        "col": 152,
-        "row": 116,
-        "lat": 37.05,
-        "lng": 136.96,
+        "col": 152, "row": 116,
+        "lat": 37.05, "lng": 136.96,
         "province": "能登",
         "label": "七尾港",
         "type": "harbor",
-        "note": "七尾城の外港。能登国の中心港。画像に記載"
+        "note": "七尾城の外港。能登国の中心港"
       },
       {
         "id": "ECZ_P",
-        "col": 136,
-        "row": 103,
-        "lat": 36.22,
-        "lng": 136.15,
+        "col": 136, "row": 103,
+        "lat": 36.22, "lng": 136.15,
         "province": "越前",
         "label": "三国湊",
         "type": "harbor",
-        "note": "北ノ庄（福井）の外港。画像に記載"
+        "note": "北ノ庄（福井）の外港"
       },
       {
         "id": "WAK_P",
-        "col": 129,
-        "row": 91,
-        "lat": 35.49,
-        "lng": 135.75,
+        "col": 129, "row": 91,
+        "lat": 35.49, "lng": 135.75,
         "province": "若狭",
         "label": "小浜港",
         "type": "harbor",
@@ -7156,10 +1332,8 @@
       },
       {
         "id": "TAN_P",
-        "col": 118,
-        "row": 91,
-        "lat": 35.53,
-        "lng": 135.2,
+        "col": 118, "row": 91,
+        "lat": 35.53, "lng": 135.2,
         "province": "丹後",
         "label": "宮津港",
         "type": "harbor",
@@ -7167,21 +1341,17 @@
       },
       {
         "id": "INA_P",
-        "col": 100,
-        "row": 91,
-        "lat": 35.49,
-        "lng": 134.24,
+        "col": 100, "row": 91,
+        "lat": 35.49, "lng": 134.24,
         "province": "因幡",
         "label": "鳥取港",
         "type": "harbor",
-        "note": "山陰東部の港。画像に鳥取記載"
+        "note": "山陰東部の港"
       },
       {
         "id": "HOK_P",
-        "col": 82,
-        "row": 90,
-        "lat": 35.43,
-        "lng": 133.33,
+        "col": 82, "row": 90,
+        "lat": 35.43, "lng": 133.33,
         "province": "伯耆",
         "label": "米子港",
         "type": "harbor",
@@ -7189,10 +1359,8 @@
       },
       {
         "id": "IZM_P",
-        "col": 70,
-        "row": 92,
-        "lat": 35.56,
-        "lng": 132.7,
+        "col": 70, "row": 92,
+        "lat": 35.56, "lng": 132.7,
         "province": "出雲",
         "label": "十六島港",
         "type": "harbor",
@@ -7200,10 +1368,8 @@
       },
       {
         "id": "IWM_P",
-        "col": 59,
-        "row": 84,
-        "lat": 35.08,
-        "lng": 132.08,
+        "col": 59, "row": 84,
+        "lat": 35.08, "lng": 132.08,
         "province": "石見",
         "label": "温泉津港",
         "type": "harbor",
@@ -7211,10 +1377,8 @@
       },
       {
         "id": "NAG_P",
-        "col": 37,
-        "row": 65,
-        "lat": 33.95,
-        "lng": 130.95,
+        "col": 37, "row": 65,
+        "lat": 33.95, "lng": 130.95,
         "province": "長門",
         "label": "赤間関港",
         "type": "harbor",
@@ -7222,10 +1386,8 @@
       },
       {
         "id": "HAR_P",
-        "col": 118,
-        "row": 77,
-        "lat": 34.67,
-        "lng": 135.18,
+        "col": 118, "row": 77,
+        "lat": 34.67, "lng": 135.18,
         "province": "播磨",
         "label": "兵庫港",
         "type": "harbor",
@@ -7233,10 +1395,8 @@
       },
       {
         "id": "BIS_P",
-        "col": 98,
-        "row": 76,
-        "lat": 34.6,
-        "lng": 134.15,
+        "col": 98, "row": 76,
+        "lat": 34.6, "lng": 134.15,
         "province": "備前",
         "label": "牛窓港",
         "type": "harbor",
@@ -7244,10 +1404,8 @@
       },
       {
         "id": "BIC_P",
-        "col": 91,
-        "row": 74,
-        "lat": 34.48,
-        "lng": 133.78,
+        "col": 91, "row": 74,
+        "lat": 34.48, "lng": 133.78,
         "province": "備中",
         "label": "下津井港",
         "type": "harbor",
@@ -7255,32 +1413,26 @@
       },
       {
         "id": "BIG_P",
-        "col": 81,
-        "row": 72,
-        "lat": 34.38,
-        "lng": 133.23,
+        "col": 81, "row": 72,
+        "lat": 34.38, "lng": 133.23,
         "province": "備後",
         "label": "鞆港",
         "type": "harbor",
-        "note": "鞆の浦。瀬戸内最大の避難港。画像に記載"
+        "note": "鞆の浦。瀬戸内最大の避難港"
       },
       {
         "id": "AKI_P",
-        "col": 80,
-        "row": 73,
-        "lat": 34.41,
-        "lng": 133.2,
+        "col": 80, "row": 73,
+        "lat": 34.41, "lng": 133.2,
         "province": "安芸",
         "label": "尾道港",
         "type": "harbor",
-        "note": "毛利水軍の本拠。画像に尾道記載"
+        "note": "毛利水軍の本拠"
       },
       {
         "id": "SUO_P",
-        "col": 47,
-        "row": 69,
-        "lat": 34.16,
-        "lng": 131.47,
+        "col": 47, "row": 69,
+        "lat": 34.16, "lng": 131.47,
         "province": "周防",
         "label": "山口湊",
         "type": "harbor",
@@ -7288,10 +1440,8 @@
       },
       {
         "id": "AWA4_P",
-        "col": 105,
-        "row": 69,
-        "lat": 34.16,
-        "lng": 134.53,
+        "col": 105, "row": 69,
+        "lat": 34.16, "lng": 134.53,
         "province": "阿波",
         "label": "撫養港",
         "type": "harbor",
@@ -7299,21 +1449,17 @@
       },
       {
         "id": "SAK_P",
-        "col": 92,
-        "row": 71,
-        "lat": 34.32,
-        "lng": 133.85,
+        "col": 92, "row": 71,
+        "lat": 34.32, "lng": 133.85,
         "province": "讃岐",
         "label": "坂出港",
         "type": "harbor",
-        "note": "塩の産地。天領だった"
+        "note": "塩の産地"
       },
       {
         "id": "IYO_P",
-        "col": 76,
-        "row": 67,
-        "lat": 34.06,
-        "lng": 133.0,
+        "col": 76, "row": 67,
+        "lat": 34.06, "lng": 133.0,
         "province": "伊予",
         "label": "今治港",
         "type": "harbor",
@@ -7321,10 +1467,8 @@
       },
       {
         "id": "KOC_P",
-        "col": 87,
-        "row": 58,
-        "lat": 33.5,
-        "lng": 133.57,
+        "col": 87, "row": 58,
+        "lat": 33.5, "lng": 133.57,
         "province": "土佐",
         "label": "浦戸港",
         "type": "harbor",
@@ -7332,10 +1476,8 @@
       },
       {
         "id": "CHI_P",
-        "col": 27,
-        "row": 59,
-        "lat": 33.6,
-        "lng": 130.41,
+        "col": 27, "row": 59,
+        "lat": 33.6, "lng": 130.41,
         "province": "筑前",
         "label": "博多港",
         "type": "harbor",
@@ -7343,10 +1485,8 @@
       },
       {
         "id": "CHG_P",
-        "col": 26,
-        "row": 52,
-        "lat": 33.16,
-        "lng": 130.36,
+        "col": 26, "row": 52,
+        "lat": 33.16, "lng": 130.36,
         "province": "筑後",
         "label": "柳川港",
         "type": "harbor",
@@ -7354,10 +1494,8 @@
       },
       {
         "id": "HIG_P",
-        "col": 19,
-        "row": 57,
-        "lat": 33.45,
-        "lng": 129.98,
+        "col": 19, "row": 57,
+        "lat": 33.45, "lng": 129.98,
         "province": "肥前",
         "label": "唐津港",
         "type": "harbor",
@@ -7365,43 +1503,35 @@
       },
       {
         "id": "HIG2_P",
-        "col": 30,
-        "row": 41,
-        "lat": 32.5,
-        "lng": 130.6,
+        "col": 30, "row": 41,
+        "lat": 32.5, "lng": 130.6,
         "province": "肥後",
         "label": "八代港",
         "type": "harbor",
-        "note": "球磨川河口。画像に八代記載"
+        "note": "球磨川河口"
       },
       {
         "id": "BUN_P",
-        "col": 50,
-        "row": 53,
-        "lat": 33.23,
-        "lng": 131.61,
+        "col": 50, "row": 53,
+        "lat": 33.23, "lng": 131.61,
         "province": "豊後",
         "label": "府内港",
         "type": "harbor",
-        "note": "大友宗麟の本拠。南蛮貿易の拠点。画像に府内記載"
+        "note": "大友宗麟の本拠。南蛮貿易の拠点"
       },
       {
         "id": "SAT_P",
-        "col": 27,
-        "row": 21,
-        "lat": 31.29,
-        "lng": 130.41,
+        "col": 27, "row": 21,
+        "lat": 31.29, "lng": 130.41,
         "province": "薩摩",
         "label": "坊津港",
         "type": "harbor",
-        "note": "日本三津の一。中継貿易港。画像に坊津記載"
+        "note": "日本三津の一。中継貿易港"
       },
       {
         "id": "OSM_P",
-        "col": 30,
-        "row": 26,
-        "lat": 31.59,
-        "lng": 130.56,
+        "col": 30, "row": 26,
+        "lat": 31.59, "lng": 130.56,
         "province": "大隅",
         "label": "鹿児島港",
         "type": "harbor",
@@ -7409,21 +1539,17 @@
       },
       {
         "id": "MUT_P",
-        "col": 219,
-        "row": 181,
-        "lat": 40.97,
-        "lng": 140.48,
+        "col": 219, "row": 181,
+        "lat": 40.97, "lng": 140.48,
         "province": "陸奥",
         "label": "十三湊",
         "type": "harbor",
-        "note": "安東氏の本拠。北方交易の要。画像に記載"
+        "note": "安東氏の本拠。北方交易の要"
       },
       {
         "id": "MUT2_P",
-        "col": 234,
-        "row": 139,
-        "lat": 38.43,
-        "lng": 141.3,
+        "col": 234, "row": 139,
+        "lat": 38.43, "lng": 141.3,
         "province": "陸奥",
         "label": "石巻港",
         "type": "harbor",
@@ -7431,32 +1557,26 @@
       },
       {
         "id": "DEW_P",
-        "col": 206,
-        "row": 147,
-        "lat": 38.91,
-        "lng": 139.84,
+        "col": 206, "row": 147,
+        "lat": 38.91, "lng": 139.84,
         "province": "出羽",
         "label": "酒田港",
         "type": "harbor",
-        "note": "最上川河口。北前船の主要港。画像に酒田記載"
+        "note": "最上川河口。北前船の主要港"
       },
       {
         "id": "DEW2_P",
-        "col": 212,
-        "row": 160,
-        "lat": 39.72,
-        "lng": 140.11,
+        "col": 212, "row": 160,
+        "lat": 39.72, "lng": 140.11,
         "province": "出羽",
         "label": "秋田港",
         "type": "harbor",
-        "note": "檜山安東氏の支配。画像に秋田記載"
+        "note": "檜山安東氏の支配"
       },
       {
         "id": "HAK_BAY",
-        "col": 26,
-        "row": 59,
-        "lat": 33.6,
-        "lng": 130.367,
+        "col": 26, "row": 59,
+        "lat": 33.6, "lng": 130.367,
         "province": "筑前",
         "label": "博多湾",
         "type": "bay",
@@ -7464,10 +1584,8 @@
       },
       {
         "id": "HYO_TSU",
-        "col": 117,
-        "row": 77,
-        "lat": 34.667,
-        "lng": 135.167,
+        "col": 117, "row": 77,
+        "lat": 34.667, "lng": 135.167,
         "province": "摂津",
         "label": "兵庫津",
         "type": "harbor",
@@ -7475,21 +1593,17 @@
       },
       {
         "id": "SAKAI_P",
-        "col": 123,
-        "row": 75,
-        "lat": 34.567,
-        "lng": 135.467,
+        "col": 123, "row": 75,
+        "lat": 34.567, "lng": 135.467,
         "province": "和泉",
         "label": "堺港",
         "type": "harbor",
-        "note": "自治都市。兵庫と並ぶ貿易港。鉄砲伝来後の工業都市"
+        "note": "自治都市。兵庫と並ぶ貿易港"
       },
       {
         "id": "YODO_P",
-        "col": 122,
-        "row": 76,
-        "lat": 34.633,
-        "lng": 135.417,
+        "col": 122, "row": 76,
+        "lat": 34.633, "lng": 135.417,
         "province": "摂津",
         "label": "淀川河口",
         "type": "river_mouth",
@@ -7497,32 +1611,26 @@
       },
       {
         "id": "TSR_BAY",
-        "col": 135,
-        "row": 93,
-        "lat": 35.65,
-        "lng": 136.067,
+        "col": 135, "row": 93,
+        "lat": 35.65, "lng": 136.067,
         "province": "越前",
         "label": "敦賀湾",
         "type": "bay",
-        "note": "日本海→琵琶湖→京都の物流ルート。日本海側の京都玄関"
+        "note": "日本海→琵琶湖→京都の物流ルート"
       },
       {
         "id": "ANO_TSU",
-        "col": 143,
-        "row": 78,
-        "lat": 34.717,
-        "lng": 136.5,
+        "col": 143, "row": 78,
+        "lat": 34.717, "lng": 136.5,
         "province": "伊勢",
         "label": "安濃津",
         "type": "harbor",
-        "note": "日本三津の一。伊勢神宮参詣の港。東海道の拠点"
+        "note": "日本三津の一。伊勢神宮参詣の港"
       },
       {
         "id": "TOMO_P",
-        "col": 83,
-        "row": 72,
-        "lat": 34.383,
-        "lng": 133.367,
+        "col": 83, "row": 72,
+        "lat": 34.383, "lng": 133.367,
         "province": "備後",
         "label": "鞆の浦",
         "type": "harbor",
@@ -7530,62 +1638,50 @@
       },
       {
         "id": "SHIM_P",
-        "col": 37,
-        "row": 65,
-        "lat": 33.95,
-        "lng": 130.933,
+        "col": 37, "row": 65,
+        "lat": 33.95, "lng": 130.933,
         "province": "長門",
         "label": "赤間関",
         "type": "strait",
-        "note": "関門海峡の拠点。長門探題。大内氏の支配"
+        "note": "関門海峡の拠点。大内氏の支配"
       },
       {
         "id": "KAMA_P",
-        "col": 201,
-        "row": 87,
-        "lat": 35.3,
-        "lng": 139.533,
+        "col": 201, "row": 87,
+        "lat": 35.3, "lng": 139.533,
         "province": "相模",
         "label": "由比ヶ浜",
         "type": "harbor",
-        "note": "鎌倉の外港。前代からの継続。北条氏縁の地"
+        "note": "鎌倉の外港。北条氏縁の地"
       },
       {
         "id": "ISLAND_IZU_OSHIMA",
-        "col": 197,
-        "row": 78,
-        "lat": 34.728516,
-        "lng": 139.3425,
+        "col": 197, "row": 78,
+        "lat": 34.728516, "lng": 139.3425,
         "province": "伊豆",
         "label": "大島",
         "type": "island"
       },
       {
         "id": "ISLAND_IZU_NIIJIMA",
-        "col": 196,
-        "row": 72,
-        "lat": 34.364784,
-        "lng": 139.29,
+        "col": 196, "row": 72,
+        "lat": 34.364784, "lng": 139.29,
         "province": "伊豆",
         "label": "新島",
         "type": "island"
       },
       {
         "id": "ISLAND_IZU_KOZUSHIMA",
-        "col": 191,
-        "row": 69,
-        "lat": 34.182918,
-        "lng": 139.0275,
+        "col": 191, "row": 69,
+        "lat": 34.182918, "lng": 139.0275,
         "province": "伊豆",
         "label": "神津島",
         "type": "island"
       },
       {
         "id": "ISLAND_IZU_MIYAKEJIMA",
-        "col": 201,
-        "row": 67,
-        "lat": 34.061674,
-        "lng": 139.5525,
+        "col": 201, "row": 67,
+        "lat": 34.061674, "lng": 139.5525,
         "province": "伊豆",
         "label": "三宅島",
         "type": "island"
@@ -7594,963 +1690,483 @@
     "connections": [
       {
         "id": "IZU_AWA",
-        "from_node": "IZU_S",
-        "to_node": "AWA_P",
-        "label": "伊豆〜安房",
-        "distance_km": 97,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "IZU_S", "to_node": "AWA_P",
+        "label": "伊豆〜安房", "distance_km": 97, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 189,
-            "row": 75
-          },
-          {
-            "col": 194,
-            "row": 76
-          }
-        ]
+        "waypoints": [{"col": 189, "row": 75}, {"col": 194, "row": 76}]
       },
       {
         "id": "IZU_SAG",
-        "from_node": "IZU_N",
-        "to_node": "SAG_P",
-        "label": "伊豆〜相模",
-        "distance_km": 53,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "IZU_N", "to_node": "SAG_P",
+        "label": "伊豆〜相模", "distance_km": 53, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "IZU_SUR",
-        "from_node": "IZU_NW",
-        "to_node": "SUR_P",
-        "label": "伊豆〜駿河",
-        "distance_km": 45,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "IZU_NW", "to_node": "SUR_P",
+        "label": "伊豆〜駿河", "distance_km": 45, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SAG_MUS",
-        "from_node": "SAG_P",
-        "to_node": "MUS_P",
-        "label": "相模〜武蔵",
-        "distance_km": 70,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SAG_P", "to_node": "MUS_P",
+        "label": "相模〜武蔵", "distance_km": 70, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "AWA_MUS",
-        "from_node": "AWA_P",
-        "to_node": "MUS_P",
-        "label": "安房〜武蔵",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "AWA_P", "to_node": "MUS_P",
+        "label": "安房〜武蔵", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "AWA_KAZ",
-        "from_node": "AWA_P",
-        "to_node": "KAZ_P",
-        "label": "安房〜上総",
-        "distance_km": 40,
-        "cost": 2.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "AWA_P", "to_node": "KAZ_P",
+        "label": "安房〜上総", "distance_km": 40, "cost": 2.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "MUS_KAZ",
-        "from_node": "MUS_P",
-        "to_node": "KAZ_P",
-        "label": "武蔵〜上総",
-        "distance_km": 50,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "MUS_P", "to_node": "KAZ_P",
+        "label": "武蔵〜上総", "distance_km": 50, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "KAZ_SIM",
-        "from_node": "KAZ_P",
-        "to_node": "SIM_P",
-        "label": "上総〜下総",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "KAZ_P", "to_node": "SIM_P",
+        "label": "上総〜下総", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SIM_HIT",
-        "from_node": "SIM_P",
-        "to_node": "HIT_P",
-        "label": "下総〜常陸",
-        "distance_km": 70,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SIM_P", "to_node": "HIT_P",
+        "label": "下総〜常陸", "distance_km": 70, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SUR_ENS",
-        "from_node": "SUR_P",
-        "to_node": "ENS_P",
-        "label": "駿河〜遠江",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SUR_P", "to_node": "ENS_P",
+        "label": "駿河〜遠江", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "ENS_MKW",
-        "from_node": "ENS_P",
-        "to_node": "MKW_P",
-        "label": "遠江〜三河",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "ENS_P", "to_node": "MKW_P",
+        "label": "遠江〜三河", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "MKW_OWR",
-        "from_node": "MKW_P",
-        "to_node": "OWR_P",
-        "label": "三河〜尾張",
-        "distance_km": 50,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "MKW_P", "to_node": "OWR_P",
+        "label": "三河〜尾張", "distance_km": 50, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "WAK_KGA",
-        "from_node": "WAK_P",
-        "to_node": "KGA_P",
-        "label": "若狭〜加賀",
-        "distance_km": 100,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "WAK_P", "to_node": "KGA_P",
+        "label": "若狭〜加賀", "distance_km": 100, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "KGA_ECH",
-        "from_node": "KGA_P",
-        "to_node": "ECH_P",
-        "label": "加賀〜越中",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "KGA_P", "to_node": "ECH_P",
+        "label": "加賀〜越中", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "ECH_EGO",
-        "from_node": "ECH_P",
-        "to_node": "EGO_P",
-        "label": "越中〜越後",
-        "distance_km": 120,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "ECH_P", "to_node": "EGO_P",
+        "label": "越中〜越後", "distance_km": 120, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "EGO_DEW",
-        "from_node": "EGO_P",
-        "to_node": "DEW_P",
-        "label": "越後〜出羽",
-        "distance_km": 180,
-        "cost": 7.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "EGO_P", "to_node": "DEW_P",
+        "label": "越後〜出羽", "distance_km": 180, "cost": 7.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "DEW_DEW2",
-        "from_node": "DEW_P",
-        "to_node": "DEW2_P",
-        "label": "酒田〜秋田",
-        "distance_km": 100,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "DEW_P", "to_node": "DEW2_P",
+        "label": "酒田〜秋田", "distance_km": 100, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "DEW2_MUT",
-        "from_node": "DEW2_P",
-        "to_node": "MUT_P",
-        "label": "秋田〜十三湊",
-        "distance_km": 150,
-        "cost": 6.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "DEW2_P", "to_node": "MUT_P",
+        "label": "秋田〜十三湊", "distance_km": 150, "cost": 6.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "ECZ_WAK",
-        "from_node": "ECZ_P",
-        "to_node": "WAK_P",
-        "label": "越前〜若狭",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "ECZ_P", "to_node": "WAK_P",
+        "label": "越前〜若狭", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "NOH_ECZ",
-        "from_node": "NOH_P",
-        "to_node": "ECZ_P",
-        "label": "能登〜越前",
-        "distance_km": 120,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "NOH_P", "to_node": "ECZ_P",
+        "label": "能登〜越前", "distance_km": 120, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "KGA_NOH",
-        "from_node": "KGA_P",
-        "to_node": "NOH_P",
-        "label": "加賀〜能登",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "KGA_P", "to_node": "NOH_P",
+        "label": "加賀〜能登", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "TAN_WAK",
-        "from_node": "TAN_P",
-        "to_node": "WAK_P",
-        "label": "丹後〜若狭",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "TAN_P", "to_node": "WAK_P",
+        "label": "丹後〜若狭", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "INA_HOK",
-        "from_node": "INA_P",
-        "to_node": "HOK_P",
-        "label": "因幡〜伯耆",
-        "distance_km": 100,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "INA_P", "to_node": "HOK_P",
+        "label": "因幡〜伯耆", "distance_km": 100, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HOK_IZM",
-        "from_node": "HOK_P",
-        "to_node": "IZM_P",
-        "label": "伯耆〜出雲",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HOK_P", "to_node": "IZM_P",
+        "label": "伯耆〜出雲", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "IZM_IWM",
-        "from_node": "IZM_P",
-        "to_node": "IWM_P",
-        "label": "出雲〜石見",
-        "distance_km": 100,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "IZM_P", "to_node": "IWM_P",
+        "label": "出雲〜石見", "distance_km": 100, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "IWM_NAG",
-        "from_node": "IWM_P",
-        "to_node": "NAG_P",
-        "label": "石見〜長門",
-        "distance_km": 130,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "IWM_P", "to_node": "NAG_P",
+        "label": "石見〜長門", "distance_km": 130, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HAR_BIS",
-        "from_node": "HAR_P",
-        "to_node": "BIS_P",
-        "label": "播磨〜備前",
-        "distance_km": 70,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "HAR_P", "to_node": "BIS_P",
+        "label": "播磨〜備前", "distance_km": 70, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 116,
-            "row": 76
-          }
-        ]
+        "waypoints": [{"col": 116, "row": 76}]
       },
       {
         "id": "BIS_BIC",
-        "from_node": "BIS_P",
-        "to_node": "BIC_P",
-        "label": "備前〜備中",
-        "distance_km": 50,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "BIS_P", "to_node": "BIC_P",
+        "label": "備前〜備中", "distance_km": 50, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "BIC_BIG",
-        "from_node": "BIC_P",
-        "to_node": "BIG_P",
-        "label": "備中〜備後",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "BIC_P", "to_node": "BIG_P",
+        "label": "備中〜備後", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 86,
-            "row": 73
-          },
-          {
-            "col": 82,
-            "row": 73
-          }
-        ]
+        "waypoints": [{"col": 86, "row": 73}, {"col": 82, "row": 73}]
       },
       {
         "id": "BIG_AKI",
-        "from_node": "BIG_P",
-        "to_node": "AKI_P",
-        "label": "備後〜安芸",
-        "distance_km": 20,
-        "cost": 2.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "BIG_P", "to_node": "AKI_P",
+        "label": "備後〜安芸", "distance_km": 20, "cost": 2.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "AKI_SUO",
-        "from_node": "AKI_P",
-        "to_node": "SUO_P",
-        "label": "安芸〜周防",
-        "distance_km": 100,
-        "cost": 5.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "AKI_P", "to_node": "SUO_P",
+        "label": "安芸〜周防", "distance_km": 100, "cost": 5.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SUO_NAG",
-        "from_node": "SUO_P",
-        "to_node": "NAG_P",
-        "label": "周防〜長門",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SUO_P", "to_node": "NAG_P",
+        "label": "周防〜長門", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HAR_AWA4",
-        "from_node": "HAR_P",
-        "to_node": "AWA4_P",
-        "label": "播磨〜阿波",
-        "distance_km": 80,
-        "cost": 4.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HAR_P", "to_node": "AWA4_P",
+        "label": "播磨〜阿波", "distance_km": 80, "cost": 4.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "AWA4_SAK",
-        "from_node": "AWA4_P",
-        "to_node": "SAK_P",
-        "label": "阿波〜讃岐",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "AWA4_P", "to_node": "SAK_P",
+        "label": "阿波〜讃岐", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SAK_IYO",
-        "from_node": "SAK_P",
-        "to_node": "IYO_P",
-        "label": "讃岐〜伊予",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SAK_P", "to_node": "IYO_P",
+        "label": "讃岐〜伊予", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "IYO_KOC",
-        "from_node": "IYO_P",
-        "to_node": "KOC_P",
-        "label": "伊予〜土佐",
-        "distance_km": 130,
-        "cost": 6.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "IYO_P", "to_node": "KOC_P",
+        "label": "伊予〜土佐", "distance_km": 130, "cost": 6.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "BIG_IYO",
-        "from_node": "BIG_P",
-        "to_node": "IYO_P",
-        "label": "備後〜伊予",
-        "distance_km": 50,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "BIG_P", "to_node": "IYO_P",
+        "label": "備後〜伊予", "distance_km": 50, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "NAG_CHI",
-        "from_node": "NAG_P",
-        "to_node": "CHI_P",
-        "label": "長門〜筑前",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "NAG_P", "to_node": "CHI_P",
+        "label": "長門〜筑前", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "CHI_HIG",
-        "from_node": "CHI_P",
-        "to_node": "HIG_P",
-        "label": "筑前〜肥前",
-        "distance_km": 70,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "CHI_P", "to_node": "HIG_P",
+        "label": "筑前〜肥前", "distance_km": 70, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 25,
-            "row": 58
-          }
-        ]
+        "waypoints": [{"col": 25, "row": 58}]
       },
       {
         "id": "HIG_SAT",
-        "from_node": "HIG_P",
-        "to_node": "SAT_P",
-        "label": "肥前〜薩摩",
-        "distance_km": 220,
-        "cost": 8.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HIG_P", "to_node": "SAT_P",
+        "label": "肥前〜薩摩", "distance_km": 220, "cost": 8.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "CHG_HIG2",
-        "from_node": "CHG_P",
-        "to_node": "HIG2_P",
-        "label": "筑後〜肥後",
-        "distance_km": 80,
-        "cost": 4.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "CHG_P", "to_node": "HIG2_P",
+        "label": "筑後〜肥後", "distance_km": 80, "cost": 4.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HIG2_SAT",
-        "from_node": "HIG2_P",
-        "to_node": "SAT_P",
-        "label": "肥後〜薩摩",
-        "distance_km": 130,
-        "cost": 6.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HIG2_P", "to_node": "SAT_P",
+        "label": "肥後〜薩摩", "distance_km": 130, "cost": 6.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SAT_OSM",
-        "from_node": "SAT_P",
-        "to_node": "OSM_P",
-        "label": "薩摩〜大隅",
-        "distance_km": 60,
-        "cost": 3.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SAT_P", "to_node": "OSM_P",
+        "label": "薩摩〜大隅", "distance_km": 60, "cost": 3.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "CHI_BUN",
-        "from_node": "CHI_P",
-        "to_node": "BUN_P",
-        "label": "筑前〜豊後",
-        "distance_km": 120,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "CHI_P", "to_node": "BUN_P",
+        "label": "筑前〜豊後", "distance_km": 120, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "BUN_IYO",
-        "from_node": "BUN_P",
-        "to_node": "IYO_P",
-        "label": "豊後〜伊予",
-        "distance_km": 80,
-        "cost": 4.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "BUN_P", "to_node": "IYO_P",
+        "label": "豊後〜伊予", "distance_km": 80, "cost": 4.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SAT_RYU",
-        "from_node": "SAT_P",
-        "to_node": "OSM_P",
-        "label": "薩摩〜琉球方面",
-        "distance_km": 400,
-        "cost": 12.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "春〜秋",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SAT_P", "to_node": "OSM_P",
+        "label": "薩摩〜琉球方面", "distance_km": 400, "cost": 12.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "春〜秋",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "CHI_CHN",
-        "from_node": "CHI_P",
-        "to_node": "HIG_P",
-        "label": "博多〜明（中国）",
-        "distance_km": 800,
-        "cost": 15.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "春",
+        "from_node": "CHI_P", "to_node": "HIG_P",
+        "label": "博多〜明（中国）", "distance_km": 800, "cost": 15.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "春",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 25,
-            "row": 58
-          }
-        ]
+        "waypoints": [{"col": 25, "row": 58}]
       },
       {
         "id": "MUT_EZO",
-        "from_node": "MUT_P",
-        "to_node": "MUT2_P",
-        "label": "十三湊〜蝦夷地",
-        "distance_km": 300,
-        "cost": 10.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "夏",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "MUT_P", "to_node": "MUT2_P",
+        "label": "十三湊〜蝦夷地", "distance_km": 300, "cost": 10.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "夏",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HAK_HYO",
-        "from_node": "CHI_P",
-        "to_node": "HYO_TSU",
-        "label": "博多〜兵庫",
-        "distance_km": 430,
-        "cost": 12.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "CHI_P", "to_node": "HYO_TSU",
+        "label": "博多〜兵庫", "distance_km": 430, "cost": 12.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HYO_SAKAI",
-        "from_node": "HYO_TSU",
-        "to_node": "SAKAI_P",
-        "label": "兵庫〜堺",
-        "distance_km": 25,
-        "cost": 2.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "HYO_TSU", "to_node": "SAKAI_P",
+        "label": "兵庫〜堺", "distance_km": 25, "cost": 2.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 119,
-            "row": 76
-          }
-        ]
+        "waypoints": [{"col": 119, "row": 76}]
       },
       {
         "id": "SAKAI_ANO",
-        "from_node": "SAKAI_P",
-        "to_node": "ANO_TSU",
-        "label": "堺〜安濃津",
-        "distance_km": 120,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SAKAI_P", "to_node": "ANO_TSU",
+        "label": "堺〜安濃津", "distance_km": 120, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "TSR_KGA",
-        "from_node": "TSR_BAY",
-        "to_node": "KGA_P",
-        "label": "敦賀〜加賀",
-        "distance_km": 80,
-        "cost": 4.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "TSR_BAY", "to_node": "KGA_P",
+        "label": "敦賀〜加賀", "distance_km": 80, "cost": 4.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "TSR_WAK",
-        "from_node": "TSR_BAY",
-        "to_node": "WAK_P",
-        "label": "敦賀〜若狭",
-        "distance_km": 30,
-        "cost": 2.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "TSR_BAY", "to_node": "WAK_P",
+        "label": "敦賀〜若狭", "distance_km": 30, "cost": 2.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "BIG_TOMO",
-        "from_node": "BIG_P",
-        "to_node": "TOMO_P",
-        "label": "備後〜鞆",
-        "distance_km": 10,
-        "cost": 1.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "BIG_P", "to_node": "TOMO_P",
+        "label": "備後〜鞆", "distance_km": 10, "cost": 1.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "TOMO_AKI",
-        "from_node": "TOMO_P",
-        "to_node": "AKI_P",
-        "label": "鞆〜安芸",
-        "distance_km": 20,
-        "cost": 2.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "TOMO_P", "to_node": "AKI_P",
+        "label": "鞆〜安芸", "distance_km": 20, "cost": 2.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "SHIM_NAG",
-        "from_node": "SHIM_P",
-        "to_node": "NAG_P",
-        "label": "赤間関〜長門",
-        "distance_km": 5,
-        "cost": 1.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "SHIM_P", "to_node": "NAG_P",
+        "label": "赤間関〜長門", "distance_km": 5, "cost": 1.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "KAMA_MUS",
-        "from_node": "KAMA_P",
-        "to_node": "MUS_P",
-        "label": "由比ヶ浜〜武蔵",
-        "distance_km": 40,
-        "cost": 3.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "KAMA_P", "to_node": "MUS_P",
+        "label": "由比ヶ浜〜武蔵", "distance_km": 40, "cost": 3.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "KAMA_SAG",
-        "from_node": "KAMA_P",
-        "to_node": "SAG_P",
-        "label": "由比ヶ浜〜三崎",
-        "distance_km": 25,
-        "cost": 2.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "KAMA_P", "to_node": "SAG_P",
+        "label": "由比ヶ浜〜三崎", "distance_km": 25, "cost": 2.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HYO_BIS",
-        "from_node": "HYO_TSU",
-        "to_node": "BIS_P",
-        "label": "兵庫〜備前",
-        "distance_km": 160,
-        "cost": 7.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HYO_TSU", "to_node": "BIS_P",
+        "label": "兵庫〜備前", "distance_km": 160, "cost": 7.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "ANO_MKW",
-        "from_node": "ANO_TSU",
-        "to_node": "MKW_P",
-        "label": "安濃津〜三河",
-        "distance_km": 80,
-        "cost": 4.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "ANO_TSU", "to_node": "MKW_P",
+        "label": "安濃津〜三河", "distance_km": 80, "cost": 4.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "HAK_BUN2",
-        "from_node": "HAK_BAY",
-        "to_node": "BUN_P",
-        "label": "博多〜豊後",
-        "distance_km": 120,
-        "cost": 5.5,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
+        "from_node": "HAK_BAY", "to_node": "BUN_P",
+        "label": "博多〜豊後", "distance_km": 120, "cost": 5.5,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 27,
-            "row": 58
-          }
-        ]
+        "waypoints": [{"col": 27, "row": 58}]
       },
       {
         "id": "HAK_CHI",
-        "from_node": "HAK_BAY",
-        "to_node": "CHI_P",
-        "label": "博多湾〜博多",
-        "distance_km": 5,
-        "cost": 1.0,
-        "bidirectional": true,
-        "condition": "ship_level >= 1",
-        "season": "通年",
-        "is_island_route": false,
-        "waypoints": []
+        "from_node": "HAK_BAY", "to_node": "CHI_P",
+        "label": "博多湾〜博多", "distance_km": 5, "cost": 1.0,
+        "bidirectional": true, "condition": "ship_level >= 1", "season": "通年",
+        "is_island_route": false, "waypoints": []
       },
       {
         "id": "IZU_OSHIMA",
-        "from_node": "IZU_S",
-        "to_node": "ISLAND_IZU_OSHIMA",
-        "label": "伊豆〜大島",
-        "distance_km": 44,
-        "cost": 3.0,
-        "bidirectional": false,
-        "condition": "",
-        "season": "通年",
+        "from_node": "IZU_S", "to_node": "ISLAND_IZU_OSHIMA",
+        "label": "伊豆〜大島", "distance_km": 44, "cost": 3.0,
+        "bidirectional": false, "condition": "", "season": "通年",
         "is_island_route": true,
-        "waypoints": [
-          {
-            "col": 189,
-            "row": 75
-          },
-          {
-            "col": 193,
-            "row": 76
-          }
-        ]
+        "waypoints": [{"col": 189, "row": 75}, {"col": 193, "row": 76}]
       },
       {
         "id": "IZU_NIIJIMA",
-        "from_node": "IZU_S",
-        "to_node": "ISLAND_IZU_NIIJIMA",
-        "label": "伊豆〜新島",
-        "distance_km": 51,
-        "cost": 4.0,
-        "bidirectional": false,
-        "condition": "",
-        "season": "通年",
+        "from_node": "IZU_S", "to_node": "ISLAND_IZU_NIIJIMA",
+        "label": "伊豆〜新島", "distance_km": 51, "cost": 4.0,
+        "bidirectional": false, "condition": "", "season": "通年",
         "is_island_route": true,
         "waypoints": [
-          {
-            "col": 189,
-            "row": 75
-          },
-          {
-            "col": 193,
-            "row": 75
-          },
-          {
-            "col": 194,
-            "row": 73
-          }
+          {"col": 189, "row": 75}, {"col": 193, "row": 75}, {"col": 194, "row": 73}
         ]
       },
       {
         "id": "IZU_KOZUSHIMA",
-        "from_node": "IZU_S",
-        "to_node": "ISLAND_IZU_KOZUSHIMA",
-        "label": "伊豆〜神津島",
-        "distance_km": 56,
-        "cost": 4.0,
-        "bidirectional": false,
-        "condition": "",
-        "season": "通年",
+        "from_node": "IZU_S", "to_node": "ISLAND_IZU_KOZUSHIMA",
+        "label": "伊豆〜神津島", "distance_km": 56, "cost": 4.0,
+        "bidirectional": false, "condition": "", "season": "通年",
         "is_island_route": true,
         "waypoints": [
-          {
-            "col": 189,
-            "row": 75
-          },
-          {
-            "col": 192,
-            "row": 74
-          },
-          {
-            "col": 191,
-            "row": 71
-          }
+          {"col": 189, "row": 75}, {"col": 192, "row": 74}, {"col": 191, "row": 71}
         ]
       },
       {
         "id": "IZU_MIYAKEJIMA",
-        "from_node": "IZU_S",
-        "to_node": "ISLAND_IZU_MIYAKEJIMA",
-        "label": "伊豆〜三宅島",
-        "distance_km": 92,
-        "cost": 5.0,
-        "bidirectional": false,
-        "condition": "",
-        "season": "通年",
+        "from_node": "IZU_S", "to_node": "ISLAND_IZU_MIYAKEJIMA",
+        "label": "伊豆〜三宅島", "distance_km": 92, "cost": 5.0,
+        "bidirectional": false, "condition": "", "season": "通年",
         "is_island_route": true,
         "waypoints": [
-          {
-            "col": 189,
-            "row": 75
-          },
-          {
-            "col": 193,
-            "row": 73
-          },
-          {
-            "col": 197,
-            "row": 70
-          },
-          {
-            "col": 198,
-            "row": 70
-          },
-          {
-            "col": 199,
-            "row": 69
-          },
-          {
-            "col": 200,
-            "row": 69
-          }
+          {"col": 189, "row": 75}, {"col": 193, "row": 73},
+          {"col": 197, "row": 70}, {"col": 198, "row": 70},
+          {"col": 199, "row": 69}, {"col": 200, "row": 69}
         ]
       }
     ],
@@ -8564,25 +2180,17 @@
             "name": "大島",
             "cells": [
               {
-                "col": 197,
-                "row": 78,
-                "lat": 34.728516,
-                "lng": 139.3425,
+                "col": 197, "row": 78,
+                "lat": 34.728516, "lng": 139.3425,
                 "hex_id": "oshima_1",
                 "attr": {
-                  "elevation_m": 758,
-                  "terrain_type": 2,
-                  "passable": false,
-                  "cost": 9.9,
-                  "is_river": false,
-                  "capturable": true,
-                  "special": false
+                  "elevation_m": 758, "terrain_type": 2, "passable": false,
+                  "cost": 9.9, "is_river": false, "capturable": true, "special": false
                 }
               }
             ],
             "access_from": "IZU_S",
-            "distance_km": 44,
-            "cost": 3.0,
+            "distance_km": 44, "cost": 3.0,
             "historical": "流刑地。漁業・農業集落"
           },
           {
@@ -8590,25 +2198,17 @@
             "name": "新島",
             "cells": [
               {
-                "col": 196,
-                "row": 72,
-                "lat": 34.364784,
-                "lng": 139.29,
+                "col": 196, "row": 72,
+                "lat": 34.364784, "lng": 139.29,
                 "hex_id": "niijima_1",
                 "attr": {
-                  "elevation_m": 432,
-                  "terrain_type": 1,
-                  "passable": true,
-                  "cost": 2.0,
-                  "is_river": false,
-                  "capturable": true,
-                  "special": false
+                  "elevation_m": 432, "terrain_type": 1, "passable": true,
+                  "cost": 2.0, "is_river": false, "capturable": true, "special": false
                 }
               }
             ],
             "access_from": "IZU_S",
-            "distance_km": 51,
-            "cost": 4.0,
+            "distance_km": 51, "cost": 4.0,
             "historical": "流人の島"
           },
           {
@@ -8616,25 +2216,17 @@
             "name": "神津島",
             "cells": [
               {
-                "col": 191,
-                "row": 69,
-                "lat": 34.182918,
-                "lng": 139.0275,
+                "col": 191, "row": 69,
+                "lat": 34.182918, "lng": 139.0275,
                 "hex_id": "kozushima_1",
                 "attr": {
-                  "elevation_m": 572,
-                  "terrain_type": 2,
-                  "passable": false,
-                  "cost": 9.9,
-                  "is_river": false,
-                  "capturable": true,
-                  "special": false
+                  "elevation_m": 572, "terrain_type": 2, "passable": false,
+                  "cost": 9.9, "is_river": false, "capturable": true, "special": false
                 }
               }
             ],
             "access_from": "IZU_S",
-            "distance_km": 56,
-            "cost": 4.0,
+            "distance_km": 56, "cost": 4.0,
             "historical": "伊豆諸島南部の有人島"
           },
           {
@@ -8642,25 +2234,17 @@
             "name": "三宅島",
             "cells": [
               {
-                "col": 201,
-                "row": 67,
-                "lat": 34.061674,
-                "lng": 139.5525,
+                "col": 201, "row": 67,
+                "lat": 34.061674, "lng": 139.5525,
                 "hex_id": "miyake_1",
                 "attr": {
-                  "elevation_m": 775,
-                  "terrain_type": 2,
-                  "passable": false,
-                  "cost": 9.9,
-                  "is_river": false,
-                  "capturable": true,
-                  "special": false
+                  "elevation_m": 775, "terrain_type": 2, "passable": false,
+                  "cost": 9.9, "is_river": false, "capturable": true, "special": false
                 }
               }
             ],
             "access_from": "IZU_S",
-            "distance_km": 92,
-            "cost": 5.0,
+            "distance_km": 92, "cost": 5.0,
             "historical": "火山島。流刑地"
           }
         ]
