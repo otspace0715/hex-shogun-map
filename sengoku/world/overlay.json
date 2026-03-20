@@ -6890,6 +6890,57 @@
       "trigger_condition": "any",
       "flood_risk": false,
       "capturable": true
+    },
+    {
+      "id": "sea_izu_sur_189_83",
+      "col": 189,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.9225,
+      "water_type": "sea",
+      "label": "駿河湾口",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "伊豆",
+        "駿河"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": false
+    },
+    {
+      "id": "sea_izu_sur_188_83",
+      "col": 188,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.87,
+      "water_type": "sea",
+      "label": "駿河湾口",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "伊豆",
+        "駿河"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": false
+    },
+    {
+      "id": "sea_izu_sur_187_83",
+      "col": 187,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 138.8175,
+      "water_type": "sea",
+      "label": "駿河湾口",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "伊豆",
+        "駿河"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": false
     }
   ],
   "routes": {
@@ -6919,13 +6970,13 @@
       {
         "id": "IZU_NW",
         "col": 188,
-        "row": 84,
-        "lat": 35.092248,
+        "row": 83,
+        "lat": 35.031626,
         "lng": 138.87,
         "province": "伊豆",
         "label": "沼津港",
         "type": "harbor",
-        "note": "沼津港。伊豆西岸・駿河湾。IZU_SUR航路の起点。"
+        "note": "沼津港。伊豆西岸・駿河湾口。"
       },
       {
         "id": "SAG_P",
