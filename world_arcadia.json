@@ -201,5 +201,40 @@
       ],
       "region": "魔境"
     }
-  ]
+  ],
+  "i18n": {
+    "ui.select_region": "Choose a Kingdom",
+    "ui.tap_cell": "Tap a cell",
+    "ui.loading": "Loading…",
+    "ui.error": "Error",
+    "ui.cells": "cells",
+    "ui.gps_searching": "📡 Locating…",
+    "ui.gps_failed": "Location failed",
+    "ui.gps_outside": "Outside the continent",
+    "ui.gps_stop": "📡 Stop",
+    "ui.gps_start": "📍 Locate",
+    "ui.spawn_tap": "🏰 Choose spawn point",
+    "ui.spawn_cancel": "✕ Cancel",
+    "ui.spawn_set": "🏰 Set Base",
+    "ui.normal_mode": "Normal mode",
+    "ui.shared_edges": "shared edges",
+    "ui.cost": "move cost",
+    "ui.built": "founded",
+    "ui.lord": "ruler",
+    "cell.border": "⚔ Frontier",
+    "cell.port": "⚓ Harbor",
+    "cell.castle": "🏯 Fortress",
+    "cell.sea": "🌊 Deep Sea",
+    "cell.river": "〜 Sacred River",
+    "cell.flood": "⚠ Flood risk",
+    "cell.lake": "✨ Spirit Lake",
+    "cell.sea_route": "⛵ Sea Lane",
+    "cell.special": "⭐ Sacred Site",
+    "cell.island": "🏝️ Isle",
+    "cell.unknown_sea": "Deep Sea",
+    "cell.unknown_lake": "Spirit Lake",
+    "cell.unknown_river": "Sacred River",
+    "cell.unknown_border": "Frontier",
+    "cell.unknown_auto": "Deep Sea"
+  }
 }
