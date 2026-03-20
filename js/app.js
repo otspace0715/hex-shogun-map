@@ -512,7 +512,7 @@ const LNG_S = 0.0525;         // 列間の経度ピッチ
 const O_LAT = 30.0;           // 全国共通原点（緯度）
 const O_LNG = 129.0;          // 全国共通原点（経度）
 
-const PIDS = {'伊豆':'izu','相模':'sag','駿河':'sur','武蔵':'mus','甲斐':'kai'};
+const PIDS = {'伊豆':'izu','相模':'sag','駿河':'sur','武蔵':'mus','甲斐':'kai','安房':'awa','上総':'kaz'};
 const PCOL = {
   '伊豆':[80,160,100],'相模':[80,120,180],
   '駿河':[160,130,60],'武蔵':[180,100,80],'甲斐':[140,80,160]
@@ -790,10 +790,12 @@ function draw(t) {
   });
 
   // ── 水域セル（海域・湖・河川）──
+  // activeなセルと重複する水域セルはスキップ（陸地を海で上書きしない）
+  const activeColRows = new Set(allActive().map(({c}) => c.col+','+c.row));
   waterCells.forEach(({c, n, wtype}) => {
+    if (activeColRows.has(c.col+','+c.row)) return; // 陸地優先
     const {cx,cy} = colRowToXY(c.col, c.row);
     if (!inView(cx,cy)) return;
-    // specialKeys と重複する場合はspecialが上書きするのでスキップ
     if (specialKeys.has(c.col+','+c.row)) return;
     const pts = hexPts(cx, cy);
 
@@ -850,8 +852,9 @@ function draw(t) {
   const gapKeySet = new Set(gapCells.map(({c}) => c.col+','+c.row));
   const autoKeys  = new Set(autoCells.map(({c}) => c.col+','+c.row));
   autoCells.forEach(({c, n}) => {
+    if (activeColRows.has(c.col+','+c.row)) return; // 陸地優先
     if (specialKeys.has(c.col+','+c.row)) return;
-    if (gapKeySet.has(c.col+','+c.row)) return;   // gapと重複しない
+    if (gapKeySet.has(c.col+','+c.row)) return;
     if (waterCells.some(w => w.c.col===c.col && w.c.row===c.row)) return;
     const {cx,cy} = colRowToXY(c.col, c.row);
     if (!inView(cx,cy)) return;
