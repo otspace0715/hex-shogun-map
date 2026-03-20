@@ -7899,7 +7899,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 116,
+            "row": 76
+          }
+        ]
       },
       {
         "id": "BIS_BIC",
@@ -7925,7 +7930,16 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 86,
+            "row": 73
+          },
+          {
+            "col": 82,
+            "row": 73
+          }
+        ]
       },
       {
         "id": "BIG_AKI",
@@ -8055,7 +8069,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 25,
+            "row": 58
+          }
+        ]
       },
       {
         "id": "HIG_SAT",
@@ -8159,7 +8178,12 @@
         "condition": "ship_level >= 1",
         "season": "春",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 25,
+            "row": 58
+          }
+        ]
       },
       {
         "id": "MUT_EZO",
@@ -8198,7 +8222,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 119,
+            "row": 76
+          }
+        ]
       },
       {
         "id": "SAKAI_ANO",
@@ -8341,7 +8370,12 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": []
+        "waypoints": [
+          {
+            "col": 27,
+            "row": 58
+          }
+        ]
       },
       {
         "id": "HAK_CHI",
