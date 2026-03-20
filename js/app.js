@@ -416,7 +416,8 @@ async function tog(name){
     const r=await fetch(API+encodeURIComponent(name)+'.json');
     if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json();
-    data[name]=d.cells.map(c=>({...c,...toColRow(c.lat,c.lng)}));
+    // col/rowが既に存在する場合はそのまま使用（異世界データ等）
+    data[name]=d.cells.map(c=>c.col!=null&&c.row!=null?c:{...c,...toColRow(c.lat,c.lng)});
     active[name]=true;btn.classList.add('ok','on');btn.textContent=name+' ✓';
     await loadOverlay();
     updateSpecial();updateSeaRoutes();updateWater();updateCastles();detectGaps();
@@ -551,10 +552,15 @@ function draw(t){
     // 海路はgapセルも通過できる（国境地帯の海峡・湾を海路が通るため）
     const landSet=new Set([...allActive().map(({c})=>c.col+','+c.row),...specialCells.map(({c})=>c.col+','+c.row)]);
     const drawn=new Set();
+    // 港セル（nodeMap のcol/row）は landSet に含まれていても描画する
+    const portCells=new Set((overlayData?.routes?.nodes||[]).map(n=>n.col+','+n.row));
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute})=>{
       const key=col+','+row;
-      // 実際の領地セル（allActive）は通過しない。gapは通過可能
-      if(landSet.has(key))return;
+      // 港セル自身は陸地チェックをスキップ（港は陸地に接している）
+      // ウェイポイントセルも陸地チェックから除外
+      const isWaypoint=(overlayData?.routes?.connections||[]).some(c=>
+        (c.waypoints||[]).some(w=>w.col===col&&w.row===row));
+      if(landSet.has(key)&&!portCells.has(key)&&!isWaypoint)return;
       if(drawn.has(key))return;drawn.add(key);
       const{cx,cy}=colRowToXY(col,row);if(!inView(cx,cy))return;
       const pts=hexPts(cx,cy);
@@ -735,8 +741,9 @@ window.addEventListener('resize',()=>{resizeCV();if(allActive().length)fit();});
 initFromHTML();
 resizeCV();
 requestAnimationFrame(anim);
-// data-autoload="true" のボタンを自動ロード、なければ最初のボタン
-const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
-const _first    = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
-if (_first) tog(_first);
-loadWorld(); // world.jsonを非同期で適用（i18n・追加province等）
+// world.jsonを先にロードしてから最初の省をロード
+loadWorld().then(()=>{
+  const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
+  const _first    = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
+  if (_first) tog(_first);
+});
