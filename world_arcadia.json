@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "world_id": "arcadia_continent",
+    "name": "アルカディア大陸",
+    "description": "魔法と剣の異世界。5つの王国が覇権を争う。",
+    "version": "1.0.0"
+  },
+  "coordinate": {
+    "origin_lat": 30.0,
+    "origin_lng": 100.0,
+    "lat_step": 0.030311,
+    "lng_step": 0.0525,
+    "note": "架空座標。リアル地球とは無関係。"
+  },
+  "api": {
+    "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia_data/",
+    "specials": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/special_territories.json",
+    "sea_routes": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/sea_routes.json",
+    "water_cells": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/water_cells.json",
+    "castles": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/castles.json"
+  },
+  "terrain_types": {
+    "0": {
+      "name": "草原",
+      "color": [
+        70,
+        130,
+        60
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.0
+    },
+    "1": {
+      "name": "丘陵地",
+      "color": [
+        100,
+        85,
+        55
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "2": {
+      "name": "禁足の山",
+      "color": [
+        55,
+        45,
+        70
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9
+    },
+    "3": {
+      "name": "聖なる川",
+      "color": [
+        40,
+        90,
+        150
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 3.0,
+      "flood_risk": true
+    },
+    "4": {
+      "name": "海岸",
+      "color": [
+        30,
+        60,
+        110
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.0
+    },
+    "5": {
+      "name": "魔の火山",
+      "color": [
+        200,
+        60,
+        20
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9
+    },
+    "6": {
+      "name": "精霊の湖",
+      "color": [
+        50,
+        100,
+        180
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "7": {
+      "name": "深海域",
+      "color": [
+        15,
+        40,
+        90
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9,
+      "ship_only": true
+    },
+    "8": {
+      "name": "要塞都市",
+      "color": [
+        180,
+        140,
+        30
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "9": {
+      "name": "辺境地帯",
+      "color": [
+        60,
+        58,
+        65
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.5
+    }
+  },
+  "provinces": [
+    {
+      "id": "aur",
+      "name": "黄金王国アウロス",
+      "color": [
+        200,
+        160,
+        40
+      ],
+      "region": "中央大陸"
+    },
+    {
+      "id": "sil",
+      "name": "銀月王国シルヴァ",
+      "color": [
+        150,
+        180,
+        200
+      ],
+      "region": "北方"
+    },
+    {
+      "id": "ign",
+      "name": "炎帝国イグニス",
+      "color": [
+        200,
+        80,
+        40
+      ],
+      "region": "南方"
+    },
+    {
+      "id": "ver",
+      "name": "翠森共和国ヴェルデ",
+      "color": [
+        60,
+        160,
+        80
+      ],
+      "region": "西方"
+    },
+    {
+      "id": "mar",
+      "name": "深海神聖マレア",
+      "color": [
+        40,
+        100,
+        180
+      ],
+      "region": "東方"
+    },
+    {
+      "id": "umb",
+      "name": "暗黒領主ウンブラ",
+      "color": [
+        80,
+        40,
+        120
+      ],
+      "region": "魔境"
+    }
+  ]
+}
