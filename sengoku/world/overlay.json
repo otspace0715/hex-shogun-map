@@ -6889,10 +6889,10 @@
       },
       {
         "id": "IZU_N",
-        "col": 191,
+        "col": 194,
         "row": 85,
-        "lat": 35.1529,
-        "lng": 139.0275,
+        "lat": 35.15287,
+        "lng": 139.185,
         "province": "伊豆",
         "label": "伊豆北端港",
         "type": "harbor",
@@ -6900,10 +6900,10 @@
       },
       {
         "id": "IZU_NW",
-        "col": 190,
-        "row": 85,
-        "lat": 35.1529,
-        "lng": 138.975,
+        "col": 184,
+        "row": 83,
+        "lat": 35.031626,
+        "lng": 138.66,
         "province": "伊豆",
         "label": "沼津港",
         "type": "harbor",
@@ -7536,12 +7536,12 @@
         "is_island_route": false,
         "waypoints": [
           {
-            "col": 194,
+            "col": 189,
             "row": 76
           },
           {
-            "col": 200,
-            "row": 79
+            "col": 194,
+            "row": 76
           }
         ]
       },
@@ -7556,12 +7556,7 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 194,
-            "row": 76
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "IZU_SUR",
@@ -7574,12 +7569,7 @@
         "condition": "ship_level >= 1",
         "season": "通年",
         "is_island_route": false,
-        "waypoints": [
-          {
-            "col": 186,
-            "row": 76
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "SAG_MUS",
@@ -8361,12 +8351,12 @@
         "is_island_route": true,
         "waypoints": [
           {
-            "col": 194,
+            "col": 189,
             "row": 76
           },
           {
-            "col": 194,
-            "row": 78
+            "col": 193,
+            "row": 76
           }
         ]
       },
@@ -8383,12 +8373,16 @@
         "is_island_route": true,
         "waypoints": [
           {
-            "col": 194,
+            "col": 189,
             "row": 76
           },
           {
+            "col": 193,
+            "row": 75
+          },
+          {
             "col": 194,
-            "row": 74
+            "row": 73
           }
         ]
       },
@@ -8405,12 +8399,16 @@
         "is_island_route": true,
         "waypoints": [
           {
-            "col": 194,
+            "col": 189,
             "row": 76
           },
           {
             "col": 192,
-            "row": 72
+            "row": 74
+          },
+          {
+            "col": 191,
+            "row": 71
           }
         ]
       },
@@ -8427,15 +8425,15 @@
         "is_island_route": true,
         "waypoints": [
           {
-            "col": 194,
+            "col": 189,
             "row": 76
           },
           {
-            "col": 196,
+            "col": 193,
             "row": 73
           },
           {
-            "col": 198,
+            "col": 197,
             "row": 70
           }
         ]
