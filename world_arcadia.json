@@ -10,7 +10,14 @@
     "origin_lng": 100.0,
     "lat_step": 0.030311,
     "lng_step": 0.0525,
-    "note": "架空座標。リアル地球とは無関係。"
+    "note": "架空世界。lat/lngは名目上の値。col/rowが実質的な座標。",
+    "coordinate_system": "grid",
+    "cell_size_km": 50,
+    "world_size": {
+      "width_cells": 60,
+      "height_cells": 40,
+      "description": "60×40のヘックスグリッド世界"
+    }
   },
   "api": {
     "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia_data/",
