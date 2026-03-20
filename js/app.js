@@ -124,7 +124,6 @@ function buildProvinceButtonsFallback() {
   console.log('world.json未取得: HTMLボタン設定を使用');
 }
 
-'use strict';
 
 // ═══════════════════════════════════════
 // SECTION: SEA ROUTES
@@ -1488,14 +1487,23 @@ const firstProvince = Object.keys(PIDS)[0] || '伊豆';
 tog(firstProvince); // initFromHTMLで設定済みのPIDSを使用
 loadWorld(); // world.jsonの追加設定は非同期で適用
 
-// ── ボタンイベント ──
-document.getElementById('m-pt').addEventListener('click', () => { mode='pointy'; document.getElementById('m-pt').classList.add('active'); document.getElementById('m-fl').classList.remove('active'); if(allActive().length){fit();updateSt();} });
-document.getElementById('m-fl').addEventListener('click', () => { mode='flat';   document.getElementById('m-fl').classList.add('active'); document.getElementById('m-pt').classList.remove('active'); if(allActive().length){fit();updateSt();} });
-document.getElementById('p-izu').addEventListener('click', () => tog('伊豆'));
-document.getElementById('p-sag').addEventListener('click', () => tog('相模'));
-document.getElementById('p-sur').addEventListener('click', () => tog('駿河'));
-document.getElementById('p-mus').addEventListener('click', () => tog('武蔵'));
-document.getElementById('p-kai').addEventListener('click', () => tog('甲斐'));
+// ── 固定ボタンイベント（mode切替・fit・GPS）──
+// 省ボタンは initFromHTML() で data-prov 属性から動的設定済み
+document.getElementById('m-pt').addEventListener('click', () => {
+  mode = 'pointy';
+  document.getElementById('m-pt').classList.add('active');
+  document.getElementById('m-fl').classList.remove('active');
+  if (allActive().length) { fit(); updateSt(); }
+});
+document.getElementById('m-fl').addEventListener('click', () => {
+  mode = 'flat';
+  document.getElementById('m-fl').classList.add('active');
+  document.getElementById('m-pt').classList.remove('active');
+  if (allActive().length) { fit(); updateSt(); }
+});
 document.getElementById('btn-fit').addEventListener('click', fit);
-document.getElementById('btn-gps').addEventListener('click', toggleGPS);
-document.getElementById('btn-spawn').addEventListener('click', toggleSpawnMode);
+// GPS・スポーンボタンは存在する場合のみ設定
+const _gpsBtn   = document.getElementById('btn-gps');
+const _spawnBtn = document.getElementById('btn-spawn');
+if (_gpsBtn)   _gpsBtn.addEventListener('click', toggleGPS);
+if (_spawnBtn) _spawnBtn.addEventListener('click', toggleSpawnMode);
