@@ -6633,6 +6633,46 @@
         "province": "駿河",
         "label": "駿河 清水港",
         "type": "harbor"
+      },
+      {
+        "id": "ISLAND_IZU_OSHIMA",
+        "col": 197,
+        "row": 78,
+        "lat": 34.728516,
+        "lng": 139.3425,
+        "province": "伊豆",
+        "label": "大島",
+        "type": "island"
+      },
+      {
+        "id": "ISLAND_IZU_NIIJIMA",
+        "col": 196,
+        "row": 72,
+        "lat": 34.364784,
+        "lng": 139.29,
+        "province": "伊豆",
+        "label": "新島",
+        "type": "island"
+      },
+      {
+        "id": "ISLAND_IZU_KOZUSHIMA",
+        "col": 191,
+        "row": 69,
+        "lat": 34.182918,
+        "lng": 139.0275,
+        "province": "伊豆",
+        "label": "神津島",
+        "type": "island"
+      },
+      {
+        "id": "ISLAND_IZU_MIYAKEJIMA",
+        "col": 201,
+        "row": 67,
+        "lat": 34.061674,
+        "lng": 139.5525,
+        "province": "伊豆",
+        "label": "三宅島",
+        "type": "island"
       }
     ],
     "connections": [
