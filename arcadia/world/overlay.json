@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/schemas/overlay.schema.json",
+  "meta": {
+    "world_id": "arcadia_continent",
+    "version": "1.0.0",
+    "description": "アルカディア大陸 オーバーレイデータ"
+  },
+  "landmarks": [
+    {
+      "id": "fortress_aur",
+      "col": 20,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.05,
+      "terrain_type": 8,
+      "province": "黄金王国アウロス",
+      "label": "黄金の城塞",
+      "category": "fortress",
+      "built_year": "古代",
+      "lord": "アウロス王家",
+      "note": "黄金王国の本拠地"
+    },
+    {
+      "id": "fortress_ign",
+      "col": 25,
+      "row": 15,
+      "lat": 30.90933,
+      "lng": 101.3125,
+      "terrain_type": 8,
+      "province": "炎帝国イグニス",
+      "label": "炎の要塞",
+      "category": "fortress",
+      "built_year": "火炎暦200年",
+      "lord": "炎帝イグニス",
+      "note": "火山の麓に建てられた要塞"
+    }
+  ],
+  "special_cells": [
+    {
+      "id": "world_tree",
+      "label": "世界樹の根",
+      "trigger_condition": "any2",
+      "trigger_provinces": [
+        "翠森共和国ヴェルデ",
+        "黄金王国アウロス"
+      ],
+      "cells": [
+        {
+          "col": 15,
+          "row": 10,
+          "lat": 30.60622,
+          "lng": 100.7875,
+          "hex_id": "world_tree_1",
+          "terrain_type": 6,
+          "capturable": true,
+          "cost": 2.0,
+          "label": "世界樹"
+        }
+      ]
+    },
+    {
+      "id": "dark_fortress",
+      "label": "魔王の暗黒城",
+      "trigger_condition": "any",
+      "trigger_provinces": [
+        "暗黒領主ウンブラ"
+      ],
+      "cells": [
+        {
+          "col": 20,
+          "row": 18,
+          "lat": 31.091196,
+          "lng": 101.05,
+          "hex_id": "dark_fortress_1",
+          "terrain_type": 8,
+          "capturable": true,
+          "cost": 3.0,
+          "label": "暗黒城"
+        }
+      ]
+    }
+  ],
+  "water_cells": [
+    {
+      "id": "deep_sea_east",
+      "col": 32,
+      "row": 10,
+      "lat": 30.60622,
+      "lng": 101.68,
+      "water_type": "sea",
+      "label": "深淵の海",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "深海神聖マレア"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": false
+    },
+    {
+      "id": "spirit_lake",
+      "col": 12,
+      "row": 12,
+      "lat": 30.727464,
+      "lng": 100.63,
+      "water_type": "lake",
+      "label": "精霊の湖",
+      "terrain_type": 6,
+      "trigger_provinces": [
+        "翠森共和国ヴェルデ"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": true
+    }
+  ],
+  "routes": {
+    "nodes": [
+      {
+        "id": "AUR_P",
+        "col": 23,
+        "row": 11,
+        "lat": 30.666842,
+        "lng": 101.2075,
+        "province": "黄金王国アウロス",
+        "label": "黄金港",
+        "type": "harbor"
+      },
+      {
+        "id": "MAR_P",
+        "col": 29,
+        "row": 9,
+        "lat": 30.545598,
+        "lng": 101.5225,
+        "province": "深海神聖マレア",
+        "label": "深淵の港",
+        "type": "harbor"
+      }
+    ],
+    "connections": [
+      {
+        "id": "AUR_MAR",
+        "from_node": "AUR_P",
+        "to_node": "MAR_P",
+        "label": "黄金〜深淵航路",
+        "distance_km": 350,
+        "cost": 8.0,
+        "bidirectional": true,
+        "condition": "ship_level >= 1",
+        "season": "通年",
+        "is_island_route": false,
+        "waypoints": []
+      }
+    ],
+    "island_groups": []
+  }
+}

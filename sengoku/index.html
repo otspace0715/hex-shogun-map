@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>⬡ hex-shogun-map</title>
+  <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+  <div id="header">
+    <span id="ver">⬡ hex-shogun-map</span>
+    <button class="btn active" id="m-pt">▲ Pointy</button>
+    <button class="btn"        id="m-fl">○ Flat</button>
+    <button class="btn prov-btn" data-prov="伊豆" data-id="izu" data-color="60,140,70" data-autoload="true">伊豆</button>
+    <button class="btn prov-btn" data-prov="相模" data-id="sag" data-color="80,100,160">相模</button>
+    <button class="btn prov-btn" data-prov="駿河" data-id="sur" data-color="160,100,60">駿河</button>
+    <button class="btn prov-btn" data-prov="武蔵" data-id="mus" data-color="160,80,60">武蔵</button>
+    <button class="btn prov-btn" data-prov="甲斐" data-id="kai" data-color="140,80,160">甲斐</button>
+    <button class="btn prov-btn" data-prov="安房" data-id="awa" data-color="80,160,120">安房</button>
+    <button class="btn prov-btn" data-prov="上総" data-id="kaz" data-color="160,140,60">上総</button>
+    <button class="btn" id="btn-fit">⊙</button>
+    <button class="btn" id="btn-gps">📍 GPS</button>
+    <button class="btn" id="btn-spawn">🏠 スポーン地点</button>
+  </div>
+  <div id="status">国を選んでください</div>
+  <div id="cvwrap"><canvas id="cv"></canvas></div>
+  <div id="tooltip" style="display:none"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
