@@ -29,7 +29,11 @@ let PCOL = {};
 
 async function loadWorld() {
   try {
-    const r = await fetch(WORLD_URL);
+    // window.WORLD_OVERRIDE_URL があればそちらを優先（異世界切り替え用）
+    const url = (typeof window !== 'undefined' && window.WORLD_OVERRIDE_URL)
+      ? window.WORLD_OVERRIDE_URL
+      : WORLD_URL;
+    const r = await fetch(url);
     if (!r.ok) return;
     WORLD = await r.json();
 
