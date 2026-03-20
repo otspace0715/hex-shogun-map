@@ -401,9 +401,8 @@ function updateSeaRoutes() {
         seaRouteCells.push({ col, row, routeName:route.name,
           from:fromPort.province, to:toPort.province, isIslandRoute:isIsl }));
     }
-    // 終点
-    seaRouteCells.push({ col:toPort.col, row:toPort.row, routeName:route.name,
-      from:fromPort.province, to:toPort.province, isIslandRoute:isIsl });
+    // 終点は港マーカー(⑩)または島嶼(⑧)として描画されるので
+    // seaRouteCells には追加しない（重複描画防止）
   });
 }
 
@@ -702,10 +701,13 @@ function draw(ts) {
   {
     const landSet = new Set([...allActive().map(({c})=>c.col+','+c.row), ...specialCells.map(({c})=>c.col+','+c.row)]);
     const drawn = new Set();
+    // 島嶼セルのキーセット（⛵が🏝️に重ならないよう除外）
+    const islandCellSet = new Set(seaIslands.map(({c})=>c.col+','+c.row));
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute}) => {
       const key = col+','+row;
       const _isPort = portCellSet.has(key);
       if (landSet.has(key) && !_isPort) return;
+      if (islandCellSet.has(key)) return;  // 島嶼セルは除外
       if (drawn.has(key)) return; drawn.add(key);
       const {cx,cy}=colRowToXY(col,row); if (!inView(cx,cy)) return;
       const pts=hexPts(cx,cy);
