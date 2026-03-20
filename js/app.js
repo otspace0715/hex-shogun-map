@@ -253,18 +253,25 @@ function neighbors(col, row) {
 function D(a, b) { return Math.hypot(a.x-b.x, a.y-b.y); }
 
 // ── オーバーレイ読み込み（overlay.json + overlay_water.json を並行フェッチ）──
+// overlay_water.json が存在しない場合は overlay.json の water_cells をそのまま使用
 async function loadOverlay() {
   if (overlayData) return;
   try {
     const [r1, r2] = await Promise.all([
       fetch(OVERLAY_URL),
-      fetch(OVERLAY_WATER_URL),
+      fetch(OVERLAY_WATER_URL).catch(() => null),
     ]);
     if (!r1.ok) { console.warn('overlay.json fetch failed:', r1.status); return; }
-    if (!r2.ok) { console.warn('overlay_water.json fetch failed:', r2.status); return; }
-    const [base, water] = await Promise.all([r1.json(), r2.json()]);
-    // water_cells を overlay_water.json から取得してマージ
-    overlayData = { ...base, water_cells: water.water_cells ?? [] };
+    const base = await r1.json();
+    // overlay_water.json が取得できた場合のみ water_cells を上書き
+    if (r2 && r2.ok) {
+      const water = await r2.json();
+      overlayData = { ...base, water_cells: water.water_cells ?? base.water_cells ?? [] };
+    } else {
+      // overlay_water.json がない場合は overlay.json の water_cells をそのまま使用
+      if (r2) console.warn('overlay_water.json fetch failed:', r2.status);
+      overlayData = base;
+    }
   } catch(e) { console.warn('overlay load failed:', e); }
 }
 
