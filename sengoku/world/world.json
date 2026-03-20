@@ -857,5 +857,8 @@
     "cell.unknown_river": "河川",
     "cell.unknown_border": "国境地帯",
     "cell.unknown_auto": "海域"
+  },
+  "flags": {
+    "auto_sea": true
   }
 }
