@@ -409,6 +409,27 @@ function updateSeaRoutes() {
     }
   });
 
+  // 島嶼: 伊豆がアクティブな時のみ
+  const islands = seaData.island_territories;
+  if (islands && activeNames.includes(islands.province)) {
+    islands.islands.forEach(island => {
+      island.cells.forEach(c => {
+        seaIslands.push({ c, n: island.name + '（' + islands.province + '）' });
+      });
+    });
+    // 島嶼航路も追加
+    (seaData.island_routes || []).forEach(route => {
+      const fromPort = portMap[route.from_port];
+      if (fromPort) {
+        seaRoutes.push({
+          route,
+          fromPort,
+          toPort: { col: route.to_col, row: route.to_row,
+                    province: islands.province, name: route.name }
+        });
+      }
+    });
+
   // 海路セルを生成（fromPort〜toPort間を補間）
   function interpolateCells(p1, p2) {
     // col/row空間で線形補間してセルリストを生成
@@ -440,27 +461,6 @@ function updateSeaRoutes() {
       });
     });
   });
-
-  // 島嶼: 伊豆がアクティブな時のみ
-  const islands = seaData.island_territories;
-  if (islands && activeNames.includes(islands.province)) {
-    islands.islands.forEach(island => {
-      island.cells.forEach(c => {
-        seaIslands.push({ c, n: island.name + '（' + islands.province + '）' });
-      });
-    });
-    // 島嶼航路も追加
-    (seaData.island_routes || []).forEach(route => {
-      const fromPort = portMap[route.from_port];
-      if (fromPort) {
-        seaRoutes.push({
-          route,
-          fromPort,
-          toPort: { col: route.to_col, row: route.to_row,
-                    province: islands.province, name: route.name }
-        });
-      }
-    });
   }
 }
 
