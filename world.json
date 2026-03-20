@@ -15,10 +15,7 @@
   },
   "api": {
     "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/",
-    "specials": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/special_territories.json",
-    "sea_routes": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/sea_routes.json",
-    "water_cells": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/water_cells.json",
-    "castles": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/castles.json"
+    "overlay": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/overlay.json"
   },
   "terrain_types": {
     "0": {
