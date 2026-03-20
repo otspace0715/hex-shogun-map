@@ -4160,1176 +4160,6 @@
       }
     },
     {
-      "hex_id": "sea_tokyo_201_87",
-      "col": 201,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.5525,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_201_88",
-      "col": 201,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.5525,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_201_89",
-      "col": 201,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.5525,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_201_90",
-      "col": 201,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.5525,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_202_87",
-      "col": 202,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.605,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_202_88",
-      "col": 202,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.605,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_202_89",
-      "col": 202,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.605,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_202_90",
-      "col": 202,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.605,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_203_87",
-      "col": 203,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.6575,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_203_88",
-      "col": 203,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.6575,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_203_89",
-      "col": 203,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.6575,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_203_90",
-      "col": 203,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.6575,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_204_87",
-      "col": 204,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.71,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_204_88",
-      "col": 204,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.71,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_204_89",
-      "col": 204,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.71,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_204_90",
-      "col": 204,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.71,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_205_86",
-      "col": 205,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.7625,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_205_87",
-      "col": 205,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.7625,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_205_88",
-      "col": 205,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.7625,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_205_89",
-      "col": 205,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.7625,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_205_90",
-      "col": 205,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.7625,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_85",
-      "col": 206,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_86",
-      "col": 206,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_87",
-      "col": 206,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_88",
-      "col": 206,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_89",
-      "col": 206,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_206_90",
-      "col": 206,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.815,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_85",
-      "col": 207,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_86",
-      "col": 207,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_87",
-      "col": 207,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_88",
-      "col": 207,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_89",
-      "col": 207,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_207_90",
-      "col": 207,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.8675,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_85",
-      "col": 208,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_86",
-      "col": 208,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_87",
-      "col": 208,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_88",
-      "col": 208,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_89",
-      "col": 208,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_208_90",
-      "col": 208,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.92,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_85",
-      "col": 209,
-      "row": 85,
-      "lat": 35.15287,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_86",
-      "col": 209,
-      "row": 86,
-      "lat": 35.213492,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_87",
-      "col": 209,
-      "row": 87,
-      "lat": 35.274114,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_88",
-      "col": 209,
-      "row": 88,
-      "lat": 35.334736,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_89",
-      "col": 209,
-      "row": 89,
-      "lat": 35.395358,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
-      "hex_id": "sea_tokyo_209_90",
-      "col": 209,
-      "row": 90,
-      "lat": 35.45598,
-      "lng": 139.9725,
-      "trigger_provinces": [
-        "武蔵",
-        "相模",
-        "安房",
-        "上総"
-      ],
-      "trigger_condition": "any",
-      "attr": {
-        "elevation_m": 0,
-        "terrain_type": 7,
-        "passable": false,
-        "cost": 9.9,
-        "is_river": false,
-        "capturable": false,
-        "special": true,
-        "special_type": "sea",
-        "label": "東京湾",
-        "flood_risk": false
-      }
-    },
-    {
       "hex_id": "sea_suruga2_178_81",
       "col": 178,
       "row": 81,
@@ -6612,6 +5442,1306 @@
         "special": true,
         "special_type": "sea",
         "label": "伊豆沖",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_87",
+      "col": 204,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_204_88",
+      "col": 204,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.71,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_86",
+      "col": 205,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_87",
+      "col": 205,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_205_88",
+      "col": 205,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.7625,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_83",
+      "col": 206,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_84",
+      "col": 206,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_85",
+      "col": 206,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_86",
+      "col": 206,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_87",
+      "col": 206,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_206_88",
+      "col": 206,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.815,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_83",
+      "col": 207,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_84",
+      "col": 207,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_85",
+      "col": 207,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_86",
+      "col": 207,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_87",
+      "col": 207,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_207_88",
+      "col": 207,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.8675,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_83",
+      "col": 208,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_84",
+      "col": 208,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_85",
+      "col": 208,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_86",
+      "col": 208,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_87",
+      "col": 208,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_208_88",
+      "col": 208,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.92,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_83",
+      "col": 209,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_84",
+      "col": 209,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_85",
+      "col": 209,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_86",
+      "col": 209,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_87",
+      "col": 209,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_88",
+      "col": 209,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_89",
+      "col": 209,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_90",
+      "col": 209,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_209_91",
+      "col": 209,
+      "row": 91,
+      "lat": 35.516602,
+      "lng": 139.9725,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_83",
+      "col": 210,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_84",
+      "col": 210,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_85",
+      "col": 210,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_86",
+      "col": 210,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_87",
+      "col": 210,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_88",
+      "col": 210,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_89",
+      "col": 210,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_90",
+      "col": 210,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_210_91",
+      "col": 210,
+      "row": 91,
+      "lat": 35.516602,
+      "lng": 140.025,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_83",
+      "col": 211,
+      "row": 83,
+      "lat": 35.031626,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_84",
+      "col": 211,
+      "row": 84,
+      "lat": 35.092248,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_85",
+      "col": 211,
+      "row": 85,
+      "lat": 35.15287,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_86",
+      "col": 211,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_87",
+      "col": 211,
+      "row": 87,
+      "lat": 35.274114,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_88",
+      "col": 211,
+      "row": 88,
+      "lat": 35.334736,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_89",
+      "col": 211,
+      "row": 89,
+      "lat": 35.395358,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_90",
+      "col": 211,
+      "row": 90,
+      "lat": 35.45598,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
+        "flood_risk": false
+      }
+    },
+    {
+      "hex_id": "sea_tokyo_211_91",
+      "col": 211,
+      "row": 91,
+      "lat": 35.516602,
+      "lng": 140.0775,
+      "trigger_provinces": [
+        "武蔵",
+        "相模",
+        "安房",
+        "上総"
+      ],
+      "trigger_condition": "any",
+      "attr": {
+        "elevation_m": 0,
+        "terrain_type": 7,
+        "passable": false,
+        "cost": 9.9,
+        "is_river": false,
+        "capturable": false,
+        "special": true,
+        "special_type": "sea",
+        "label": "東京湾",
         "flood_risk": false
       }
     }
