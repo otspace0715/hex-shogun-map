@@ -6872,6 +6872,24 @@
       "trigger_condition": "any",
       "flood_risk": false,
       "capturable": false
+    },
+    {
+      "id": "lake_ashino",
+      "col": 191,
+      "row": 86,
+      "lat": 35.213492,
+      "lng": 139.0275,
+      "water_type": "lake",
+      "label": "芦ノ湖",
+      "terrain_type": 6,
+      "trigger_provinces": [
+        "相模",
+        "駿河",
+        "伊豆"
+      ],
+      "trigger_condition": "any",
+      "flood_risk": false,
+      "capturable": true
     }
   ],
   "routes": {
@@ -7537,7 +7555,7 @@
         "waypoints": [
           {
             "col": 189,
-            "row": 76
+            "row": 75
           },
           {
             "col": 194,
@@ -8352,7 +8370,7 @@
         "waypoints": [
           {
             "col": 189,
-            "row": 76
+            "row": 75
           },
           {
             "col": 193,
@@ -8374,7 +8392,7 @@
         "waypoints": [
           {
             "col": 189,
-            "row": 76
+            "row": 75
           },
           {
             "col": 193,
@@ -8400,7 +8418,7 @@
         "waypoints": [
           {
             "col": 189,
-            "row": 76
+            "row": 75
           },
           {
             "col": 192,
@@ -8426,7 +8444,7 @@
         "waypoints": [
           {
             "col": 189,
-            "row": 76
+            "row": 75
           },
           {
             "col": 193,
@@ -8435,6 +8453,14 @@
           {
             "col": 197,
             "row": 70
+          },
+          {
+            "col": 198,
+            "row": 70
+          },
+          {
+            "col": 200,
+            "row": 69
           }
         ]
       }
