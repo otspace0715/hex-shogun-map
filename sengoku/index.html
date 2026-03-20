@@ -3,21 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>⬡ hex-shogun-map</title>
-  <link rel="stylesheet" href="css/map.css">
+  <title>⛩️ 戦国時代オンライン</title>
+  <link rel="stylesheet" href="../css/map.css">
 </head>
 <body>
   <div id="header">
-    <span id="ver">⬡ hex-shogun-map</span>
+    <a href="../" id="ver" style="text-decoration:none">⛩️ 戦国時代オンライン</a>
     <button class="btn active" id="m-pt">▲ Pointy</button>
     <button class="btn"        id="m-fl">○ Flat</button>
-    <button class="btn prov-btn" data-prov="伊豆" data-id="izu" data-color="60,140,70" data-autoload="true">伊豆</button>
-    <button class="btn prov-btn" data-prov="相模" data-id="sag" data-color="80,100,160">相模</button>
-    <button class="btn prov-btn" data-prov="駿河" data-id="sur" data-color="160,100,60">駿河</button>
-    <button class="btn prov-btn" data-prov="武蔵" data-id="mus" data-color="160,80,60">武蔵</button>
-    <button class="btn prov-btn" data-prov="甲斐" data-id="kai" data-color="140,80,160">甲斐</button>
-    <button class="btn prov-btn" data-prov="安房" data-id="awa" data-color="80,160,120">安房</button>
-    <button class="btn prov-btn" data-prov="上総" data-id="kaz" data-color="160,140,60">上総</button>
+
+    <!-- 令制国ボタン: data-prov / data-id / data-color / data-autoload -->
+    <button class="btn prov-btn" data-prov="伊豆"   data-id="izu" data-color="60,140,70"  data-autoload="true">伊豆</button>
+    <button class="btn prov-btn" data-prov="相模"   data-id="sag" data-color="80,100,160">相模</button>
+    <button class="btn prov-btn" data-prov="駿河"   data-id="sur" data-color="160,100,60">駿河</button>
+    <button class="btn prov-btn" data-prov="遠江"   data-id="tot" data-color="160,120,80">遠江</button>
+    <button class="btn prov-btn" data-prov="三河"   data-id="mik" data-color="120,160,80">三河</button>
+    <button class="btn prov-btn" data-prov="尾張"   data-id="owa" data-color="80,120,160">尾張</button>
+    <button class="btn prov-btn" data-prov="武蔵"   data-id="mus" data-color="160,80,60">武蔵</button>
+    <button class="btn prov-btn" data-prov="安房"   data-id="awa" data-color="80,160,120">安房</button>
+    <button class="btn prov-btn" data-prov="上総"   data-id="kaz" data-color="160,140,60">上総</button>
+    <button class="btn prov-btn" data-prov="下総"   data-id="sim" data-color="100,120,160">下総</button>
+    <button class="btn prov-btn" data-prov="常陸"   data-id="hit" data-color="120,100,60">常陸</button>
+    <button class="btn prov-btn" data-prov="甲斐"   data-id="kai" data-color="140,80,160">甲斐</button>
+    <button class="btn prov-btn" data-prov="信濃"   data-id="shi2" data-color="100,80,140">信濃</button>
+    <button class="btn prov-btn" data-prov="上野"   data-id="kou" data-color="140,100,80">上野</button>
+    <button class="btn prov-btn" data-prov="下野"   data-id="shi" data-color="80,140,100">下野</button>
+    <button class="btn prov-btn" data-prov="陸奥"   data-id="mut" data-color="80,100,120">陸奥</button>
+    <button class="btn prov-btn" data-prov="出羽"   data-id="dew" data-color="120,100,100">出羽</button>
+    <button class="btn prov-btn" data-prov="蝦夷"   data-id="ezo" data-color="80,130,160">蝦夷</button>
+    <button class="btn prov-btn" data-prov="近江"   data-id="omi" data-color="60,160,140">近江</button>
+    <button class="btn prov-btn" data-prov="美濃"   data-id="mno" data-color="140,60,100">美濃</button>
+    <button class="btn prov-btn" data-prov="飛騨"   data-id="hid" data-color="100,140,60">飛騨</button>
+    <button class="btn prov-btn" data-prov="越前"   data-id="ech" data-color="60,80,160">越前</button>
+    <button class="btn prov-btn" data-prov="越中"   data-id="ech2" data-color="120,60,140">越中</button>
+    <button class="btn prov-btn" data-prov="越後"   data-id="ech3" data-color="60,140,100">越後</button>
+    <button class="btn prov-btn" data-prov="加賀"   data-id="kag" data-color="160,60,80">加賀</button>
+    <button class="btn prov-btn" data-prov="能登"   data-id="not" data-color="80,160,60">能登</button>
+    <button class="btn prov-btn" data-prov="若狭"   data-id="wak" data-color="140,120,60">若狭</button>
+    <button class="btn prov-btn" data-prov="佐渡"   data-id="sad" data-color="160,160,80">佐渡</button>
+    <button class="btn prov-btn" data-prov="丹波"   data-id="tan" data-color="60,120,80">丹波</button>
+    <button class="btn prov-btn" data-prov="丹後"   data-id="tan2" data-color="120,80,60">丹後</button>
+    <button class="btn prov-btn" data-prov="但馬"   data-id="taj" data-color="80,60,140">但馬</button>
+    <button class="btn prov-btn" data-prov="因幡"   data-id="ina" data-color="140,160,60">因幡</button>
+    <button class="btn prov-btn" data-prov="伯耆"   data-id="hok" data-color="60,100,140">伯耆</button>
+    <button class="btn prov-btn" data-prov="出雲"   data-id="izm" data-color="160,140,100">出雲</button>
+    <button class="btn prov-btn" data-prov="石見"   data-id="iws" data-color="100,60,120">石見</button>
+    <button class="btn prov-btn" data-prov="隠岐"   data-id="oki" data-color="80,140,140">隠岐</button>
+    <button class="btn prov-btn" data-prov="播磨"   data-id="har" data-color="160,80,100">播磨</button>
+    <button class="btn prov-btn" data-prov="美作"   data-id="mas" data-color="140,80,140">美作</button>
+    <button class="btn prov-btn" data-prov="備前"   data-id="bis" data-color="100,160,80">備前</button>
+    <button class="btn prov-btn" data-prov="備中"   data-id="bic" data-color="80,100,60">備中</button>
+    <button class="btn prov-btn" data-prov="備後"   data-id="big" data-color="60,80,100">備後</button>
+    <button class="btn prov-btn" data-prov="安芸"   data-id="aki" data-color="140,80,60">安芸</button>
+    <button class="btn prov-btn" data-prov="周防"   data-id="suo" data-color="60,140,80">周防</button>
+    <button class="btn prov-btn" data-prov="長門"   data-id="nag" data-color="120,160,100">長門</button>
+    <button class="btn prov-btn" data-prov="大和"   data-id="yam" data-color="120,160,120">大和</button>
+    <button class="btn prov-btn" data-prov="山城"   data-id="yam2" data-color="140,120,100">山城</button>
+    <button class="btn prov-btn" data-prov="摂津"   data-id="set" data-color="100,140,120">摂津</button>
+    <button class="btn prov-btn" data-prov="河内"   data-id="kaw" data-color="120,100,160">河内</button>
+    <button class="btn prov-btn" data-prov="和泉"   data-id="izm2" data-color="140,160,100">和泉</button>
+    <button class="btn prov-btn" data-prov="紀伊"   data-id="kii" data-color="120,100,80">紀伊</button>
+    <button class="btn prov-btn" data-prov="淡路"   data-id="awa5" data-color="100,100,140">淡路</button>
+    <button class="btn prov-btn" data-prov="伊賀"   data-id="iga" data-color="100,160,100">伊賀</button>
+    <button class="btn prov-btn" data-prov="伊勢"   data-id="ise" data-color="160,140,80">伊勢</button>
+    <button class="btn prov-btn" data-prov="志摩"   data-id="sim2" data-color="80,120,100">志摩</button>
+    <button class="btn prov-btn" data-prov="阿波"   data-id="awa4" data-color="100,140,160">阿波</button>
+    <button class="btn prov-btn" data-prov="讃岐"   data-id="sak" data-color="160,100,140">讃岐</button>
+    <button class="btn prov-btn" data-prov="伊予"   data-id="iyo" data-color="140,160,80">伊予</button>
+    <button class="btn prov-btn" data-prov="土佐"   data-id="koc" data-color="80,140,160">土佐</button>
+    <button class="btn prov-btn" data-prov="筑前"   data-id="chi" data-color="160,120,100">筑前</button>
+    <button class="btn prov-btn" data-prov="筑後"   data-id="chi2" data-color="100,120,140">筑後</button>
+    <button class="btn prov-btn" data-prov="豊前"   data-id="bun" data-color="140,100,120">豊前</button>
+    <button class="btn prov-btn" data-prov="豊後"   data-id="bun2" data-color="120,140,100">豊後</button>
+    <button class="btn prov-btn" data-prov="肥前"   data-id="hig" data-color="100,80,160">肥前</button>
+    <button class="btn prov-btn" data-prov="肥後"   data-id="hig2" data-color="160,100,80">肥後</button>
+    <button class="btn prov-btn" data-prov="日向"   data-id="hyu" data-color="100,120,80">日向</button>
+    <button class="btn prov-btn" data-prov="大隅"   data-id="osm" data-color="120,80,100">大隅</button>
+    <button class="btn prov-btn" data-prov="薩摩"   data-id="sat" data-color="80,160,100">薩摩</button>
+    <button class="btn prov-btn" data-prov="壱岐"   data-id="iki" data-color="80,160,160">壱岐</button>
+    <button class="btn prov-btn" data-prov="対馬"   data-id="tsu" data-color="160,80,160">対馬</button>
+
     <button class="btn" id="btn-fit">⊙</button>
     <button class="btn" id="btn-gps">📍 GPS</button>
     <button class="btn" id="btn-spawn">🏠 スポーン地点</button>
@@ -26,6 +91,10 @@
   <div id="cvwrap"><canvas id="cv"></canvas></div>
   <div id="tooltip" style="display:none"></div>
 
-  <script src="js/app.js"></script>
+  <script>
+    window.WORLD_OVERRIDE_URL =
+      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
+  </script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
