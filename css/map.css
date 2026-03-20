@@ -1,87 +1,67 @@
-/* css/map.css - hex-shogun-map スタイル */
+/* css/map.css */
+:root {
+  --bg:              #060c1e;
+  --header-bg:       rgba(6,12,30,0.95);
+  --border:          rgba(40,80,140,0.4);
+  --accent:          #4a9adf;
+  --status-color:    #5aacdf;
+  --btn-bg:          rgba(10,20,50,0.8);
+  --btn-border:      rgba(40,80,160,0.5);
+  --btn-color:       #a8c8e8;
+  --btn-active-bg:   rgba(20,60,140,0.9);
+  --btn-active-border: rgba(80,140,220,0.8);
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
-  background: #060c1e;   /* 深い紺：海の色 */
-  color: #c8d8e8;
-  font-family: monospace;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  background: var(--bg);
+  color: #c8d8e8; font-family: monospace;
+  height: 100dvh; display: flex;
+  flex-direction: column; overflow: hidden;
 }
-
 #header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  display: flex; flex-wrap: wrap; gap: 4px;
   padding: 4px 6px;
-  background: rgba(6,12,30,0.95);
-  border-bottom: 1px solid rgba(40,80,140,0.4);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
 }
-
 #ver {
-  color: #4a9adf;
-  font-weight: bold;
-  align-self: center;
-  margin-right: 4px;
-  font-size: 12px;
+  color: var(--accent); font-weight: bold;
+  align-self: center; margin-right: 4px; font-size: 12px;
 }
-
 .btn {
-  background: rgba(10,20,50,0.8);
-  border: 1px solid rgba(40,80,160,0.5);
-  color: #a8c8e8;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: background 0.15s;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--btn-color);
+  padding: 4px 8px; border-radius: 4px;
+  cursor: pointer; font-size: 12px; transition: background 0.15s;
 }
-
 .btn:active { opacity: 0.7; }
 .btn.active, .btn.on {
-  background: rgba(20,60,140,0.9);
-  border-color: rgba(80,140,220,0.8);
+  background: var(--btn-active-bg);
+  border-color: var(--btn-active-border);
   color: #fff;
 }
 .btn.ok { border-color: rgba(60,160,100,0.7); }
-
 #status {
-  background: rgba(6,12,30,0.95);
-  color: #5aacdf;
-  font-size: 11px;
-  padding: 2px 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-bottom: 1px solid rgba(20,40,100,0.4);
+  background: var(--header-bg);
+  color: var(--status-color);
+  font-size: 11px; padding: 2px 8px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-bottom: 1px solid var(--border);
 }
-
 #cvwrap {
-  flex: 1;
-  overflow: hidden;
-  touch-action: none;
-  background: #060c1e;   /* キャンバス背景も紺 */
+  flex: 1; overflow: hidden; touch-action: none;
+  background: var(--bg);
 }
-
-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
+canvas { display: block; width: 100%; height: 100%; }
 #tooltip {
   position: fixed;
   background: rgba(4,8,24,0.95);
   border: 1px solid rgba(40,100,200,0.6);
-  color: #b8d4f0;
-  font-size: 11px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: 100;
-  max-width: 240px;
-  line-height: 1.6;
+  color: #b8d4f0; font-size: 11px;
+  padding: 6px 8px; border-radius: 4px;
+  pointer-events: none; z-index: 100;
+  max-width: 240px; line-height: 1.6;
   backdrop-filter: blur(4px);
 }
