@@ -73,32 +73,6 @@ function t(key, ...args) {
 function applyI18N(i18nObj) {
   if (i18nObj) Object.assign(I18N, i18nObj);
 }
-// ── ワールドリセット（ワールド選択画面から呼ばれる）──
-function resetWorld() {
-  // 全データをクリア
-  Object.keys(data).forEach(k => delete data[k]);
-  Object.keys(active).forEach(k => delete active[k]);
-  overlayData = null;
-  specialCells=[]; seaRoutes=[]; seaIslands=[]; seaRouteCells=[];
-  waterCells=[]; autoCells=[]; castleCells=[]; gapCells=[];
-  cache=[]; sel=null;
-  vp.ox=0; vp.oy=0; vp.sc=1;
-  // GPS停止
-  if (gpsActive) stopGPS();
-  // i18nをリセット
-  I18N = { ...I18N_DEFAULT };
-  // PIDS/PCOLをクリアしてからHTMLボタンを再読み込み
-  Object.keys(PIDS).forEach(k => delete PIDS[k]);
-  Object.keys(PCOL).forEach(k => delete PCOL[k]);
-  initFromHTML();
-  resizeCV();
-  // 最初の省を自動ロード
-  const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
-  const _first = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
-  if (_first) tog(_first);
-  // world.jsonを非同期ロード
-  loadWorld();
-}
 
 
 // ── DOM ──
@@ -760,4 +734,4 @@ requestAnimationFrame(anim);
 const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
 const _first    = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
 if (_first) tog(_first);
-loadWorld();
+loadWorld(); // world.jsonを非同期で適用（i18n・追加province等）
