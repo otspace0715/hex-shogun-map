@@ -1,12 +1,87 @@
-/* css/map.css */
+/* css/map.css - hex-shogun-map スタイル */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0a1a0a; color: #c8d8c0; font-family: monospace; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
-#header { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 6px; background: #111; }
-#ver { color: #4a8; font-weight: bold; align-self: center; margin-right: 4px; }
-.btn { background: #1a2a1a; border: 1px solid #3a5a3a; color: #c8d8c0; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
-.btn.active,.btn.on { background: #2a6a2a; border-color: #6a9a6a; color: #fff; }
-.btn.ok { border-color: #4a9a4a; }
-#status { background: #111; color: #7acc7a; font-size: 11px; padding: 2px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid #2a3a2a; }
-#cvwrap { flex: 1; overflow: hidden; touch-action: none; }
-canvas { display: block; width: 100%; height: 100%; }
-#tooltip { position: fixed; background: rgba(10,20,10,.92); border: 1px solid #4a8a4a; color: #c8d8c0; font-size: 11px; padding: 6px 8px; border-radius: 4px; pointer-events: none; z-index: 100; max-width: 220px; line-height: 1.5; }
+
+body {
+  background: #060c1e;   /* 深い紺：海の色 */
+  color: #c8d8e8;
+  font-family: monospace;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px 6px;
+  background: rgba(6,12,30,0.95);
+  border-bottom: 1px solid rgba(40,80,140,0.4);
+}
+
+#ver {
+  color: #4a9adf;
+  font-weight: bold;
+  align-self: center;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.btn {
+  background: rgba(10,20,50,0.8);
+  border: 1px solid rgba(40,80,160,0.5);
+  color: #a8c8e8;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.btn:active { opacity: 0.7; }
+.btn.active, .btn.on {
+  background: rgba(20,60,140,0.9);
+  border-color: rgba(80,140,220,0.8);
+  color: #fff;
+}
+.btn.ok { border-color: rgba(60,160,100,0.7); }
+
+#status {
+  background: rgba(6,12,30,0.95);
+  color: #5aacdf;
+  font-size: 11px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgba(20,40,100,0.4);
+}
+
+#cvwrap {
+  flex: 1;
+  overflow: hidden;
+  touch-action: none;
+  background: #060c1e;   /* キャンバス背景も紺 */
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#tooltip {
+  position: fixed;
+  background: rgba(4,8,24,0.95);
+  border: 1px solid rgba(40,100,200,0.6);
+  color: #b8d4f0;
+  font-size: 11px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 100;
+  max-width: 240px;
+  line-height: 1.6;
+  backdrop-filter: blur(4px);
+}
