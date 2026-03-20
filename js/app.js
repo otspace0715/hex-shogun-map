@@ -25,9 +25,10 @@ function updateCoord(c) {
 }
 
 // ── 世界設定（world.jsonで上書き）──
-let API         = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/data/';
-let OVERLAY_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay.json';
-const WORLD_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
+let API               = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/data/';
+let OVERLAY_URL       = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay.json';
+let OVERLAY_WATER_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay_water.json';
+const WORLD_URL       = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
 
 // ── 世界フラグ（world.jsonで上書き）──
 // auto_sea: true → 陸地隣接の空白セルを自動海域として描画（現実世界用）
@@ -151,8 +152,9 @@ async function loadWorld() {
     }
 
     // API
-    if (w.api?.province_base) API         = w.api.province_base;
-    if (w.api?.overlay)       OVERLAY_URL = w.api.overlay;
+    if (w.api?.province_base) API               = w.api.province_base;
+    if (w.api?.overlay)       OVERLAY_URL       = w.api.overlay;
+    if (w.api?.overlay_water) OVERLAY_WATER_URL = w.api.overlay_water;
 
     // 世界フラグ（修正3）
     if (w.flags != null) WORLD_FLAGS = { auto_sea: true, ...w.flags };
@@ -250,13 +252,19 @@ function neighbors(col, row) {
 }
 function D(a, b) { return Math.hypot(a.x-b.x, a.y-b.y); }
 
-// ── オーバーレイ読み込み ──
+// ── オーバーレイ読み込み（overlay.json + overlay_water.json を並行フェッチ）──
 async function loadOverlay() {
   if (overlayData) return;
   try {
-    const r = await fetch(OVERLAY_URL);
-    if (!r.ok) return;
-    overlayData = await r.json();
+    const [r1, r2] = await Promise.all([
+      fetch(OVERLAY_URL),
+      fetch(OVERLAY_WATER_URL),
+    ]);
+    if (!r1.ok) { console.warn('overlay.json fetch failed:', r1.status); return; }
+    if (!r2.ok) { console.warn('overlay_water.json fetch failed:', r2.status); return; }
+    const [base, water] = await Promise.all([r1.json(), r2.json()]);
+    // water_cells を overlay_water.json から取得してマージ
+    overlayData = { ...base, water_cells: water.water_cells ?? [] };
   } catch(e) { console.warn('overlay load failed:', e); }
 }
 
