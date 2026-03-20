@@ -5,104 +5,849 @@
     "description": "室町・戦国時代の日本。68令制国が舞台。",
     "version": "1.0.0"
   },
-
   "coordinate": {
     "origin_lat": 30.0,
     "origin_lng": 129.0,
-    "lat_step":   0.030311,
-    "lng_step":   0.0525,
+    "lat_step": 0.030311,
+    "lng_step": 0.0525,
     "note": "全セルのcol/rowはこの原点とピッチから計算される"
   },
-
   "api": {
     "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/",
-    "specials":      "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/special_territories.json",
-    "sea_routes":    "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/sea_routes.json",
-    "water_cells":   "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/water_cells.json",
-    "castles":       "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/castles.json"
+    "specials": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/special_territories.json",
+    "sea_routes": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/sea_routes.json",
+    "water_cells": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/water_cells.json",
+    "castles": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/castles.json"
   },
-
   "terrain_types": {
-    "0": {"name": "平地",       "color": [61,107,74],  "passable": true,  "capturable": true,  "cost": 1.0},
-    "1": {"name": "丘陵",       "color": [90,74,50],   "passable": true,  "capturable": true,  "cost": 2.0},
-    "2": {"name": "山岳",       "color": [42,42,58],   "passable": false, "capturable": false, "cost": 9.9},
-    "3": {"name": "河川",       "color": [30,74,122],  "passable": true,  "capturable": true,  "cost": 3.0, "flood_risk": true},
-    "4": {"name": "海岸",       "color": [26,48,96],   "passable": true,  "capturable": true,  "cost": 1.0},
-    "5": {"name": "火山",       "color": [180,80,40],  "passable": false, "capturable": false, "cost": 9.9},
-    "6": {"name": "湖",         "color": [40,80,160],  "passable": true,  "capturable": true,  "cost": 2.0},
-    "7": {"name": "海域",       "color": [20,60,120],  "passable": false, "capturable": false, "cost": 9.9, "ship_only": true},
-    "8": {"name": "城郭",       "color": [160,120,40], "passable": true,  "capturable": true,  "cost": 2.0},
-    "9": {"name": "国境地帯",   "color": [50,50,55],   "passable": true,  "capturable": true,  "cost": 1.5}
+    "0": {
+      "name": "平地",
+      "color": [
+        61,
+        107,
+        74
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.0
+    },
+    "1": {
+      "name": "丘陵",
+      "color": [
+        90,
+        74,
+        50
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "2": {
+      "name": "山岳",
+      "color": [
+        42,
+        42,
+        58
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9
+    },
+    "3": {
+      "name": "河川",
+      "color": [
+        30,
+        74,
+        122
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 3.0,
+      "flood_risk": true
+    },
+    "4": {
+      "name": "海岸",
+      "color": [
+        26,
+        48,
+        96
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.0
+    },
+    "5": {
+      "name": "火山",
+      "color": [
+        180,
+        80,
+        40
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9
+    },
+    "6": {
+      "name": "湖",
+      "color": [
+        40,
+        80,
+        160
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "7": {
+      "name": "海域",
+      "color": [
+        20,
+        60,
+        120
+      ],
+      "passable": false,
+      "capturable": false,
+      "cost": 9.9,
+      "ship_only": true
+    },
+    "8": {
+      "name": "城郭",
+      "color": [
+        160,
+        120,
+        40
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 2.0
+    },
+    "9": {
+      "name": "国境地帯",
+      "color": [
+        50,
+        50,
+        55
+      ],
+      "passable": true,
+      "capturable": true,
+      "cost": 1.5
+    }
   },
-
   "provinces": [
-    {"id": "izu", "name": "伊豆", "color": [60,140,70],   "region": "東海道"},
-    {"id": "sag", "name": "相模", "color": [80,100,160],  "region": "東海道"},
-    {"id": "sur", "name": "駿河", "color": [160,100,60],  "region": "東海道"},
-    {"id": "mus", "name": "武蔵", "color": [160,80,60],   "region": "東海道"},
-    {"id": "kai", "name": "甲斐", "color": [140,80,160],  "region": "東山道"},
-    {"id": "awa", "name": "安房", "color": [80,160,120],  "region": "東海道"},
-    {"id": "kaz", "name": "上総", "color": [160,140,60],  "region": "東海道"},
-    {"id": "sim", "name": "下総", "color": [100,120,160], "region": "東海道"},
-    {"id": "hit", "name": "常陸", "color": [120,100,60],  "region": "東海道"},
-    {"id": "shi", "name": "下野", "color": [80,140,100],  "region": "東山道"},
-    {"id": "kou", "name": "上野", "color": [140,100,80],  "region": "東山道"},
-    {"id": "shi2","name": "信濃", "color": [100,80,140],  "region": "東山道"},
-    {"id": "tot", "name": "遠江", "color": [160,120,80],  "region": "東海道"},
-    {"id": "mik", "name": "三河", "color": [120,160,80],  "region": "東海道"},
-    {"id": "owa", "name": "尾張", "color": [80,120,160],  "region": "東海道"},
-    {"id": "omi", "name": "近江", "color": [60,160,140],  "region": "東山道"},
-    {"id": "mno", "name": "美濃", "color": [140,60,100],  "region": "東山道"},
-    {"id": "hid", "name": "飛騨", "color": [100,140,60],  "region": "東山道"},
-    {"id": "ech", "name": "越前", "color": [60,80,160],   "region": "北陸道"},
-    {"id": "ech2","name": "越中", "color": [120,60,140],  "region": "北陸道"},
-    {"id": "ech3","name": "越後", "color": [60,140,100],  "region": "北陸道"},
-    {"id": "kag", "name": "加賀", "color": [160,60,80],   "region": "北陸道"},
-    {"id": "not", "name": "能登", "color": [80,160,60],   "region": "北陸道"},
-    {"id": "wak", "name": "若狭", "color": [140,120,60],  "region": "北陸道"},
-    {"id": "tan", "name": "丹波", "color": [60,120,80],   "region": "山陰道"},
-    {"id": "tan2","name": "丹後", "color": [120,80,60],   "region": "山陰道"},
-    {"id": "taj", "name": "但馬", "color": [80,60,140],   "region": "山陰道"},
-    {"id": "ina", "name": "因幡", "color": [140,160,60],  "region": "山陰道"},
-    {"id": "hok", "name": "伯耆", "color": [60,100,140],  "region": "山陰道"},
-    {"id": "izm", "name": "出雲", "color": [160,140,100], "region": "山陰道"},
-    {"id": "iws", "name": "石見", "color": [100,60,120],  "region": "山陰道"},
-    {"id": "nag", "name": "長門", "color": [120,160,100], "region": "山陰道"},
-    {"id": "har", "name": "播磨", "color": [160,80,100],  "region": "山陽道"},
-    {"id": "bis", "name": "備前", "color": [100,160,80],  "region": "山陽道"},
-    {"id": "bic", "name": "備中", "color": [80,100,60],   "region": "山陽道"},
-    {"id": "big", "name": "備後", "color": [60,80,100],   "region": "山陽道"},
-    {"id": "aki", "name": "安芸", "color": [140,80,60],   "region": "山陽道"},
-    {"id": "suo", "name": "周防", "color": [60,140,80],   "region": "山陽道"},
-    {"id": "awa4","name": "阿波", "color": [100,140,160], "region": "南海道"},
-    {"id": "sak", "name": "讃岐", "color": [160,100,140], "region": "南海道"},
-    {"id": "iyo", "name": "伊予", "color": [140,160,80],  "region": "南海道"},
-    {"id": "koc", "name": "土佐", "color": [80,140,160],  "region": "南海道"},
-    {"id": "kii", "name": "紀伊", "color": [120,100,80],  "region": "南海道"},
-    {"id": "chi", "name": "筑前", "color": [160,120,100], "region": "西海道"},
-    {"id": "chi2","name": "筑後", "color": [100,120,140], "region": "西海道"},
-    {"id": "bun", "name": "豊前", "color": [140,100,120], "region": "西海道"},
-    {"id": "bun2","name": "豊後", "color": [120,140,100], "region": "西海道"},
-    {"id": "hig", "name": "肥前", "color": [100,80,160],  "region": "西海道"},
-    {"id": "hig2","name": "肥後", "color": [160,100,80],  "region": "西海道"},
-    {"id": "sat", "name": "薩摩", "color": [80,160,100],  "region": "西海道"},
-    {"id": "osm", "name": "大隅", "color": [120,80,100],  "region": "西海道"},
-    {"id": "hyu", "name": "日向", "color": [100,120,80],  "region": "西海道"},
-    {"id": "mut", "name": "陸奥", "color": [80,100,120],  "region": "東山道"},
-    {"id": "dew", "name": "出羽", "color": [120,100,100], "region": "東山道"},
-    {"id": "sad", "name": "佐渡", "color": [160,160,80],  "region": "北陸道"},
-    {"id": "iki", "name": "壱岐", "color": [80,160,160],  "region": "西海道"},
-    {"id": "tsu", "name": "対馬", "color": [160,80,160],  "region": "西海道"},
-    {"id": "iga", "name": "伊賀", "color": [100,160,100], "region": "東海道"},
-    {"id": "ise", "name": "伊勢", "color": [160,140,80],  "region": "東海道"},
-    {"id": "sim2","name": "志摩", "color": [80,120,100],  "region": "東海道"},
-    {"id": "yam", "name": "大和", "color": [120,160,120], "region": "五畿内"},
-    {"id": "yam2","name": "山城", "color": [140,120,100], "region": "五畿内"},
-    {"id": "set", "name": "摂津", "color": [100,140,120], "region": "五畿内"},
-    {"id": "kaw", "name": "河内", "color": [120,100,160], "region": "五畿内"},
-    {"id": "izm2","name": "和泉", "color": [140,160,100], "region": "五畿内"},
-    {"id": "awa5","name": "淡路", "color": [100,100,140], "region": "南海道"},
-    {"id": "mas", "name": "美作", "color": [140,80,140],  "region": "山陽道"},
-    {"id": "oki", "name": "隠岐", "color": [80,140,140],  "region": "山陰道"}
-  ]
+    {
+      "id": "izu",
+      "name": "伊豆",
+      "color": [
+        60,
+        140,
+        70
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "sag",
+      "name": "相模",
+      "color": [
+        80,
+        100,
+        160
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "sur",
+      "name": "駿河",
+      "color": [
+        160,
+        100,
+        60
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "mus",
+      "name": "武蔵",
+      "color": [
+        160,
+        80,
+        60
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "kai",
+      "name": "甲斐",
+      "color": [
+        140,
+        80,
+        160
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "awa",
+      "name": "安房",
+      "color": [
+        80,
+        160,
+        120
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "kaz",
+      "name": "上総",
+      "color": [
+        160,
+        140,
+        60
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "sim",
+      "name": "下総",
+      "color": [
+        100,
+        120,
+        160
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "hit",
+      "name": "常陸",
+      "color": [
+        120,
+        100,
+        60
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "shi",
+      "name": "下野",
+      "color": [
+        80,
+        140,
+        100
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "kou",
+      "name": "上野",
+      "color": [
+        140,
+        100,
+        80
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "shi2",
+      "name": "信濃",
+      "color": [
+        100,
+        80,
+        140
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "tot",
+      "name": "遠江",
+      "color": [
+        160,
+        120,
+        80
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "mik",
+      "name": "三河",
+      "color": [
+        120,
+        160,
+        80
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "owa",
+      "name": "尾張",
+      "color": [
+        80,
+        120,
+        160
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "omi",
+      "name": "近江",
+      "color": [
+        60,
+        160,
+        140
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "mno",
+      "name": "美濃",
+      "color": [
+        140,
+        60,
+        100
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "hid",
+      "name": "飛騨",
+      "color": [
+        100,
+        140,
+        60
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "ech",
+      "name": "越前",
+      "color": [
+        60,
+        80,
+        160
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "ech2",
+      "name": "越中",
+      "color": [
+        120,
+        60,
+        140
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "ech3",
+      "name": "越後",
+      "color": [
+        60,
+        140,
+        100
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "kag",
+      "name": "加賀",
+      "color": [
+        160,
+        60,
+        80
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "not",
+      "name": "能登",
+      "color": [
+        80,
+        160,
+        60
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "wak",
+      "name": "若狭",
+      "color": [
+        140,
+        120,
+        60
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "tan",
+      "name": "丹波",
+      "color": [
+        60,
+        120,
+        80
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "tan2",
+      "name": "丹後",
+      "color": [
+        120,
+        80,
+        60
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "taj",
+      "name": "但馬",
+      "color": [
+        80,
+        60,
+        140
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "ina",
+      "name": "因幡",
+      "color": [
+        140,
+        160,
+        60
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "hok",
+      "name": "伯耆",
+      "color": [
+        60,
+        100,
+        140
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "izm",
+      "name": "出雲",
+      "color": [
+        160,
+        140,
+        100
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "iws",
+      "name": "石見",
+      "color": [
+        100,
+        60,
+        120
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "nag",
+      "name": "長門",
+      "color": [
+        120,
+        160,
+        100
+      ],
+      "region": "山陰道"
+    },
+    {
+      "id": "har",
+      "name": "播磨",
+      "color": [
+        160,
+        80,
+        100
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "bis",
+      "name": "備前",
+      "color": [
+        100,
+        160,
+        80
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "bic",
+      "name": "備中",
+      "color": [
+        80,
+        100,
+        60
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "big",
+      "name": "備後",
+      "color": [
+        60,
+        80,
+        100
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "aki",
+      "name": "安芸",
+      "color": [
+        140,
+        80,
+        60
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "suo",
+      "name": "周防",
+      "color": [
+        60,
+        140,
+        80
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "awa4",
+      "name": "阿波",
+      "color": [
+        100,
+        140,
+        160
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "sak",
+      "name": "讃岐",
+      "color": [
+        160,
+        100,
+        140
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "iyo",
+      "name": "伊予",
+      "color": [
+        140,
+        160,
+        80
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "koc",
+      "name": "土佐",
+      "color": [
+        80,
+        140,
+        160
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "kii",
+      "name": "紀伊",
+      "color": [
+        120,
+        100,
+        80
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "chi",
+      "name": "筑前",
+      "color": [
+        160,
+        120,
+        100
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "chi2",
+      "name": "筑後",
+      "color": [
+        100,
+        120,
+        140
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "bun",
+      "name": "豊前",
+      "color": [
+        140,
+        100,
+        120
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "bun2",
+      "name": "豊後",
+      "color": [
+        120,
+        140,
+        100
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "hig",
+      "name": "肥前",
+      "color": [
+        100,
+        80,
+        160
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "hig2",
+      "name": "肥後",
+      "color": [
+        160,
+        100,
+        80
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "sat",
+      "name": "薩摩",
+      "color": [
+        80,
+        160,
+        100
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "osm",
+      "name": "大隅",
+      "color": [
+        120,
+        80,
+        100
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "hyu",
+      "name": "日向",
+      "color": [
+        100,
+        120,
+        80
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "mut",
+      "name": "陸奥",
+      "color": [
+        80,
+        100,
+        120
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "dew",
+      "name": "出羽",
+      "color": [
+        120,
+        100,
+        100
+      ],
+      "region": "東山道"
+    },
+    {
+      "id": "sad",
+      "name": "佐渡",
+      "color": [
+        160,
+        160,
+        80
+      ],
+      "region": "北陸道"
+    },
+    {
+      "id": "iki",
+      "name": "壱岐",
+      "color": [
+        80,
+        160,
+        160
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "tsu",
+      "name": "対馬",
+      "color": [
+        160,
+        80,
+        160
+      ],
+      "region": "西海道"
+    },
+    {
+      "id": "iga",
+      "name": "伊賀",
+      "color": [
+        100,
+        160,
+        100
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "ise",
+      "name": "伊勢",
+      "color": [
+        160,
+        140,
+        80
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "sim2",
+      "name": "志摩",
+      "color": [
+        80,
+        120,
+        100
+      ],
+      "region": "東海道"
+    },
+    {
+      "id": "yam",
+      "name": "大和",
+      "color": [
+        120,
+        160,
+        120
+      ],
+      "region": "五畿内"
+    },
+    {
+      "id": "yam2",
+      "name": "山城",
+      "color": [
+        140,
+        120,
+        100
+      ],
+      "region": "五畿内"
+    },
+    {
+      "id": "set",
+      "name": "摂津",
+      "color": [
+        100,
+        140,
+        120
+      ],
+      "region": "五畿内"
+    },
+    {
+      "id": "kaw",
+      "name": "河内",
+      "color": [
+        120,
+        100,
+        160
+      ],
+      "region": "五畿内"
+    },
+    {
+      "id": "izm2",
+      "name": "和泉",
+      "color": [
+        140,
+        160,
+        100
+      ],
+      "region": "五畿内"
+    },
+    {
+      "id": "awa5",
+      "name": "淡路",
+      "color": [
+        100,
+        100,
+        140
+      ],
+      "region": "南海道"
+    },
+    {
+      "id": "mas",
+      "name": "美作",
+      "color": [
+        140,
+        80,
+        140
+      ],
+      "region": "山陽道"
+    },
+    {
+      "id": "oki",
+      "name": "隠岐",
+      "color": [
+        80,
+        140,
+        140
+      ],
+      "region": "山陰道"
+    }
+  ],
+  "i18n": {
+    "ui.select_region": "国を選んでください",
+    "ui.tap_cell": "セルをタップ",
+    "ui.loading": "取得中…",
+    "ui.error": "エラー",
+    "ui.cells": "セル",
+    "ui.gps_searching": "📡 GPS取得中…",
+    "ui.gps_failed": "GPS失敗",
+    "ui.gps_outside": "令制国外",
+    "ui.gps_stop": "📡 停止",
+    "ui.gps_start": "📍 GPS",
+    "ui.spawn_tap": "🏠 スポーン地点を選択",
+    "ui.spawn_cancel": "✕ キャンセル",
+    "ui.spawn_set": "🏠 スポーン地点",
+    "ui.normal_mode": "通常モード",
+    "ui.shared_edges": "共有辺",
+    "ui.cost": "移動コスト",
+    "ui.built": "築城",
+    "ui.lord": "領主",
+    "cell.border": "⚔ 国境地帯",
+    "cell.port": "⚓ 港 →航路あり",
+    "cell.castle": "🏯 城郭",
+    "cell.sea": "🌊 海域",
+    "cell.river": "〜 河川",
+    "cell.flood": "⚠ 水害リスク",
+    "cell.lake": "🏞️ 湖",
+    "cell.sea_route": "⛵ 海路",
+    "cell.special": "⚠ 特殊領土",
+    "cell.island": "🏝️ 島嶼",
+    "cell.unknown_sea": "海域",
+    "cell.unknown_lake": "湖",
+    "cell.unknown_river": "河川",
+    "cell.unknown_border": "国境地帯",
+    "cell.unknown_auto": "海域"
+  }
 }
