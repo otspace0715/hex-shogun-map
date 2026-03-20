@@ -552,15 +552,10 @@ function draw(t){
     // 海路はgapセルも通過できる（国境地帯の海峡・湾を海路が通るため）
     const landSet=new Set([...allActive().map(({c})=>c.col+','+c.row),...specialCells.map(({c})=>c.col+','+c.row)]);
     const drawn=new Set();
-    // 港セル（nodeMap のcol/row）は landSet に含まれていても描画する
-    const portCells=new Set((overlayData?.routes?.nodes||[]).map(n=>n.col+','+n.row));
     seaRouteCells.forEach(({col,row,routeName,from,to,isIslandRoute})=>{
       const key=col+','+row;
-      // 港セル自身は陸地チェックをスキップ（港は陸地に接している）
-      // ウェイポイントセルも陸地チェックから除外
-      const isWaypoint=(overlayData?.routes?.connections||[]).some(c=>
-        (c.waypoints||[]).some(w=>w.col===col&&w.row===row));
-      if(landSet.has(key)&&!portCells.has(key)&&!isWaypoint)return;
+      // 実際の領地セルは通過しない（gap・水域は通過可能）
+      if(landSet.has(key))return;
       if(drawn.has(key))return;drawn.add(key);
       const{cx,cy}=colRowToXY(col,row);if(!inView(cx,cy))return;
       const pts=hexPts(cx,cy);
