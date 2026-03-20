@@ -6,12 +6,9 @@
 
 // ── 設定（フォールバック値・world.jsonで上書き可能）──
 let O_LAT = 30.0, O_LNG = 129.0, LAT_S = 0.030311, LAT2 = 0.060622, LNG_S = 0.0525;
-let API          = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
-let SPECIAL_URL  = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/special_territories.json';
-let SEA_ROUTES_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/sea_routes.json';
-let WATER_URL    = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/water_cells.json';
-let CASTLE_URL   = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/specials/castles.json';
-const WORLD_URL  = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/world.json';
+let API          = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/data/';
+let OVERLAY_URL  = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay.json';
+const WORLD_URL  = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
 
 const R = 22;
 const DPR = window.devicePixelRatio || 1;
@@ -26,7 +23,8 @@ let PIDS = {}, PCOL = {};
 // ── i18n（多言語対応）──
 // 全表示テキストは world.json の "i18n" セクションで定義
 // app.js 内に特定言語の文字列を持たない
-let I18N = {
+// i18nデフォルト値（リセット時に復元するためconstで保持）
+const I18N_DEFAULT = {
   // フォールバック（world.jsonが未ロードの場合）
   // キーは言語中立な識別子
   'ui.select_region':  'Select region',
@@ -64,6 +62,8 @@ let I18N = {
   'cell.unknown_auto': 'Sea',
 };
 
+let I18N = { ...I18N_DEFAULT };
+
 function t(key, ...args) {
   let s = I18N[key] || key;
   args.forEach((a, i) => { s = s.replace('{' + i + '}', a); });
@@ -73,6 +73,31 @@ function t(key, ...args) {
 function applyI18N(i18nObj) {
   if (i18nObj) Object.assign(I18N, i18nObj);
 }
+// ── ワールドリセット（ワールド選択画面から呼ばれる）──
+function resetWorld() {
+  // 全データをクリア
+  Object.keys(data).forEach(k => delete data[k]);
+  Object.keys(active).forEach(k => delete active[k]);
+  overlayData = null;
+  specialCells=[]; seaRoutes=[]; seaIslands=[]; seaRouteCells=[];
+  waterCells=[]; autoCells=[]; castleCells=[]; gapCells=[];
+  cache=[]; sel=null;
+  vp.ox=0; vp.oy=0; vp.sc=1;
+  // GPS停止
+  if (gpsActive) stopGPS();
+  // i18nをリセット
+  I18N = { ...I18N_DEFAULT };
+  // HTMLボタンから再初期化
+  initFromHTML();
+  resizeCV();
+  // 最初の省を自動ロード
+  const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
+  const _first = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
+  if (_first) tog(_first);
+  // world.jsonを非同期ロード
+  loadWorld();
+}
+
 
 // ── DOM ──
 const cv   = document.getElementById('cv');
@@ -84,10 +109,10 @@ const tip  = document.getElementById('tooltip');
 const data   = {}, active = {};
 let mode = 'pointy', sel = null, cache = [], bT = 0;
 const vp = { ox:0, oy:0, sc:1 };
-let specialData=null, specialCells=[];
-let seaData=null, seaRoutes=[], seaIslands=[], seaRouteCells=[];
-let waterData=null, waterCells=[], autoCells=[];
-let castleData=null, castleCells=[];
+let overlayData=null;
+// overlay から派生する描画用配列
+let specialCells=[], seaRoutes=[], seaIslands=[], seaRouteCells=[];
+let waterCells=[], autoCells=[], castleCells=[];
 let gapCells=[];
 let gpsMarker=null, gpsWatchId=null, gpsActive=false, spawnMode=false;
 
@@ -102,11 +127,8 @@ async function loadWorld() {
     O_LAT = w.coordinate.origin_lat; O_LNG = w.coordinate.origin_lng;
     LAT_S = w.coordinate.lat_step;   LAT2  = LAT_S*2; LNG_S = w.coordinate.lng_step;
     // API URL
-    if (w.api?.province_base)  API           = w.api.province_base;
-    if (w.api?.specials)       SPECIAL_URL   = w.api.specials;
-    if (w.api?.sea_routes)     SEA_ROUTES_URL= w.api.sea_routes;
-    if (w.api?.water_cells)    WATER_URL     = w.api.water_cells;
-    if (w.api?.castles)        CASTLE_URL    = w.api.castles;
+    if (w.api?.province_base) API         = w.api.province_base;
+    if (w.api?.overlay)       OVERLAY_URL = w.api.overlay;
     // 地形
     if (w.terrain_types) {
       TC={}; TN={};
@@ -169,82 +191,117 @@ function hexPts(cx,cy){
 function neighbors(col,row){const o=col&1;return[[col,row-1],[col,row+1],[col-1,row-1+o],[col-1,row+o],[col+1,row-1+o],[col+1,row+o]];}
 function D(a,b){return Math.hypot(a.x-b.x,a.y-b.y);}
 
-// ── データ読み込み ──
-async function loadSpecial(){
-  if(specialData)return;
-  try{const r=await fetch(SPECIAL_URL);if(r.ok)specialData=await r.json();}catch(e){}
-}
-async function loadSeaRoutes(){
-  if(seaData)return;
-  try{const r=await fetch(SEA_ROUTES_URL);if(r.ok)seaData=await r.json();}catch(e){}
-}
-async function loadWater(){
-  if(waterData)return;
-  try{const r=await fetch(WATER_URL);if(r.ok)waterData=await r.json();}catch(e){}
-}
-async function loadCastles(){
-  if(castleData)return;
-  try{const r=await fetch(CASTLE_URL);if(r.ok)castleData=await r.json();}catch(e){}
+// ── オーバーレイ読み込み（1ファイルで全データ）──
+async function loadOverlay() {
+  if (overlayData) return;
+  try {
+    const r = await fetch(OVERLAY_URL);
+    if (!r.ok) return;
+    overlayData = await r.json();
+  } catch(e) { console.warn('overlay load failed:', e); }
 }
 
 // ── 状態更新 ──
 function updateSpecial(){
   specialCells=[];
-  if(!specialData)return;
+  if(!overlayData)return;
   const an=Object.keys(active).filter(n=>active[n]);
-  (specialData.territories||[]).forEach(t=>{
+  (overlayData.special_cells||[]).forEach(t=>{
     const tc=t.trigger_condition||'any', tp=t.trigger_provinces||[];
     const ok=tc==='all'?tp.every(p=>an.includes(p)):tc==='any2'?tp.filter(p=>an.includes(p)).length>=2:tp.some(p=>an.includes(p));
-    if(ok)t.cells.forEach(c=>specialCells.push({c,n:t.name}));
+    if(ok)t.cells.forEach(cell=>{
+      specialCells.push({c:{
+        hex_id: cell.hex_id||('sp_'+cell.col+'_'+cell.row),
+        col:cell.col, row:cell.row, lat:cell.lat||0, lng:cell.lng||0,
+        attr:{terrain_type:cell.terrain_type, elevation_m:0,
+              passable:true, cost:cell.cost||2, is_river:false,
+              capturable:cell.capturable!==false, special:true,
+              special_type:'special', label:cell.label||t.label}
+      }, n:t.label});
+    });
   });
 }
 
 function updateWater(){
   waterCells=[];
-  if(!waterData)return;
+  if(!overlayData)return;
   const an=Object.keys(active).filter(n=>active[n]);
   const activeSet=new Set(allActive().map(({c})=>c.col+','+c.row));
-  function triggered(c){
-    const tp=c.trigger_provinces||[],tc=c.trigger_condition||'any';
+  function triggered(wc){
+    const tp=wc.trigger_provinces||[],tc=wc.trigger_condition||'any';
     if(!tp.length)return true;
     return tc==='all'?tp.every(p=>an.includes(p)):tc==='any2'?tp.filter(p=>an.includes(p)).length>=2:tp.some(p=>an.includes(p));
   }
-  (waterData.sea_cells||[]).forEach(c=>{
-    if(!triggered(c))return;
-    const o=c.col&1;
-    if([[c.col,c.row-1],[c.col,c.row+1],[c.col-1,c.row-1+o],[c.col-1,c.row+o],[c.col+1,c.row-1+o],[c.col+1,c.row+o]].some(([nc,nr])=>activeSet.has(nc+','+nr)))
-      waterCells.push({c,n:t('cell.unknown_sea'),wtype:'sea'});
+  function toCell(wc){
+    return {hex_id:wc.id, col:wc.col, row:wc.row, lat:wc.lat||0, lng:wc.lng||0,
+      attr:{terrain_type:wc.terrain_type||(wc.water_type==='sea'?7:wc.water_type==='lake'?6:3),
+            elevation_m:0, passable:false, cost:9.9, is_river:wc.water_type==='river',
+            capturable:wc.capturable||false, special:true, special_type:'sea',
+            label:wc.label||'', flood_risk:wc.flood_risk||false}};
+  }
+  (overlayData.water_cells||[]).forEach(wc=>{
+    if(!triggered(wc))return;
+    const c=toCell(wc);
+    if(wc.water_type==='sea'){
+      const o=wc.col&1;
+      if([[wc.col,wc.row-1],[wc.col,wc.row+1],[wc.col-1,wc.row-1+o],[wc.col-1,wc.row+o],[wc.col+1,wc.row-1+o],[wc.col+1,wc.row+o]].some(([nc,nr])=>activeSet.has(nc+','+nr)))
+        waterCells.push({c,n:wc.label||t('cell.unknown_sea'),wtype:'sea'});
+    } else {
+      waterCells.push({c,n:wc.label||t('cell.unknown_'+wc.water_type),wtype:wc.water_type});
+    }
   });
-  (waterData.lake_cells||[]).forEach(c=>{if(triggered(c))waterCells.push({c,n:c.attr.label||t('cell.unknown_lake'),wtype:'lake'});});
-  (waterData.river_cells||[]).forEach(c=>{if(triggered(c))waterCells.push({c,n:c.attr.label||t('cell.unknown_river'),wtype:'river'});});
 }
 
 function updateCastles(){
   castleCells=[];
-  if(!castleData)return;
+  if(!overlayData)return;
   const an=Object.keys(active).filter(n=>active[n]);
-  (castleData.castles||[]).forEach(c=>{if(an.includes(c.attr.castle_data?.province))castleCells.push({c,n:c.attr.castle_data.province});});
+  (overlayData.landmarks||[]).forEach(lm=>{
+    if(!an.includes(lm.province))return;
+    castleCells.push({c:{
+      hex_id:lm.id, col:lm.col, row:lm.row, lat:lm.lat||0, lng:lm.lng||0,
+      attr:{terrain_type:lm.terrain_type||8, elevation_m:0,
+            passable:true, cost:2, is_river:false,
+            capturable:true, special:true, special_type:'castle',
+            label:lm.label||'',
+            castle_data:{name:lm.label,province:lm.province,
+              built_year:lm.built_year||'',lord:lm.lord||'',note:lm.note||''}}
+    }, n:lm.province});
+  });
 }
 
 function updateSeaRoutes(){
   seaRoutes=[]; seaIslands=[]; seaRouteCells=[];
-  if(!seaData)return;
+  if(!overlayData)return;
+  const routes=overlayData.routes||{};
   const an=Object.keys(active).filter(n=>active[n]);
-  const portMap={};
-  (seaData.ports||[]).forEach(p=>portMap[p.port_id]=p);
-  (seaData.routes||[]).forEach(route=>{
-    const fp=portMap[route.from_port],tp=portMap[route.to_port];
-    if(fp&&tp&&an.includes(fp.province)&&an.includes(tp.province))seaRoutes.push({route,fromPort:fp,toPort:tp});
+  // ノードマップ
+  const nodeMap={};
+  (routes.nodes||[]).forEach(n=>nodeMap[n.id]=n);
+  // 接続
+  (routes.connections||[]).forEach(conn=>{
+    const fp=nodeMap[conn.from_node];
+    const tp=nodeMap[conn.to_node]||{col:0,row:0,province:'',name:conn.to_node};
+    if(!fp)return;
+    if(!conn.is_island_route&&(!tp.province||!an.includes(tp.province)))return;
+    if(!an.includes(fp.province))return;
+    seaRoutes.push({route:{
+      name:conn.label, distance_km:conn.distance_km,
+      is_island_route:conn.is_island_route||false,
+      waypoints:conn.waypoints||[]
+    }, fromPort:fp, toPort:tp});
   });
-  // 島嶼
-  const islands=seaData.island_territories;
-  if(islands&&an.includes(islands.province)){
-    islands.islands.forEach(isl=>isl.cells.forEach(c=>seaIslands.push({c,n:isl.name+'（'+islands.province+'）'})));
-    (seaData.island_routes||[]).forEach(route=>{
-      const fp=portMap[route.from_port];
-      if(fp)seaRoutes.push({route,fromPort:fp,toPort:{col:route.to_col,row:route.to_row,province:islands.province,name:route.name}});
-    });
-  }
+  // 島嶼グループ
+  (routes.island_groups||[]).forEach(grp=>{
+    if(!an.includes(grp.province))return;
+    grp.islands.forEach(isl=>
+      (isl.cells||[]).forEach(c=>seaIslands.push({
+        c:{hex_id:'isl_'+c.col+'_'+c.row,col:c.col,row:c.row,lat:0,lng:0,
+           attr:{terrain_type:c.terrain_type||0,elevation_m:0,passable:true,cost:1,is_river:false,capturable:true,special:false}},
+        n:isl.name+'（'+grp.province+'）'
+      }))
+    );
+  });
   // 海路セル補間
   function interp(p1,p2){
     const cells=[],steps=Math.max(Math.abs(p2.col-p1.col),Math.abs(p2.row-p1.row),1);
@@ -371,7 +428,7 @@ async function tog(name){
     const d=await r.json();
     data[name]=d.cells.map(c=>({...c,...toColRow(c.lat,c.lng)}));
     active[name]=true;btn.classList.add('ok','on');btn.textContent=name+' ✓';
-    await loadSpecial();await loadSeaRoutes();await loadWater();await loadCastles();
+    await loadOverlay();
     updateSpecial();updateSeaRoutes();updateWater();updateCastles();detectGaps();
     fit();updateSt();
   }catch(e){stEl.textContent=`❌ ${name}: ${e.message} (${t('ui.error')})`;btn.textContent=name;}
@@ -528,10 +585,10 @@ function draw(t){
   }
 
   // ⑩ 港マーカー
-  if(seaData){
-    const portMap2={};(seaData.ports||[]).forEach(p=>portMap2[p.port_id]=p);
+  if(overlayData){
+    const portMap2={};(overlayData.routes?.nodes||[]).forEach(p=>portMap2[p.port_id]=p);
     const visPortIds=new Set();
-    seaRoutes.forEach(({route,fromPort,toPort})=>{visPortIds.add(route.from_port);if(!route.is_island_route)visPortIds.add(route.to_port);});
+    seaRoutes.forEach(({route,fromPort,toPort})=>{visPortIds.add(conn.from_node||conn.from_port);if(!route.is_island_route)visPortIds.add(route.to_port);});
     visPortIds.forEach(pid=>{
       const port=portMap2[pid];if(!port)return;
       const cellKey=port.col+','+port.row;
