@@ -393,16 +393,12 @@ function updateSeaRoutes() {
     const wps = route.waypoints || [];
     const pts = [fromPort, ...wps, toPort];
     for (let seg = 0; seg < pts.length-1; seg++) {
-      const p = pts[seg];
-      // 各区間の始点（港・WP）も含める
-      seaRouteCells.push({ col:p.col, row:p.row, routeName:route.name,
-        from:fromPort.province, to:toPort.province, isIslandRoute:isIsl });
+      // 始点・終点・WPは除外し、補間セルのみを追加
+      // 港は⑩、島嶼は⑧、WPは海上セルとして別途描画される
       interp(pts[seg], pts[seg+1]).forEach(({col,row}) =>
         seaRouteCells.push({ col, row, routeName:route.name,
           from:fromPort.province, to:toPort.province, isIslandRoute:isIsl }));
     }
-    // 終点は港マーカー(⑩)または島嶼(⑧)として描画されるので
-    // seaRouteCells には追加しない（重複描画防止）
   });
 }
 
