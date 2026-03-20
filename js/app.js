@@ -65,11 +65,16 @@ const I18N_DEFAULT = {
 let I18N = { ...I18N_DEFAULT };
 
 function t(key, ...args) {
-  // i18n lookup - I18N_DEFAULT guarantees this never throws
-  let s = (I18N && I18N[key]) || (I18N_DEFAULT && I18N_DEFAULT[key]) || key;
-  args.forEach((a, i) => { s = s.replace('{' + i + '}', a); });
-  return s;
+  // i18n lookup - always safe, never throws
+  try {
+    let s = (typeof I18N!=='undefined'&&I18N[key]) ||
+            (typeof I18N_DEFAULT!=='undefined'&&I18N_DEFAULT[key]) || key;
+    args.forEach((a, i) => { s = s.replace('{'+i+'}', a); });
+    return s;
+  } catch(_) { return key; }
 }
+// window に登録して確実にグローバルアクセス可能にする
+window._t = t;
 
 function applyI18N(i18nObj) {
   if (i18nObj) Object.assign(I18N, i18nObj);
@@ -418,7 +423,7 @@ async function tog(name){
     updateSpecial();updateSeaRoutes();updateWater();updateCastles();detectGaps();
     fit();updateSt();return;
   }
-  btn.textContent=name+'…';stEl.textContent=`📡 ${name} ${t('ui.loading')}`;
+  btn.textContent=name+'…';stEl.textContent='📡 '+name+' '+(typeof t==='function'?t('ui.loading'):'Loading…');
   try{
     const r=await fetch(API+encodeURIComponent(name)+'.json');
     if(!r.ok)throw new Error('HTTP '+r.status);
@@ -429,7 +434,7 @@ async function tog(name){
     await loadOverlay();
     updateSpecial();updateSeaRoutes();updateWater();updateCastles();detectGaps();
     fit();updateSt();
-  }catch(e){stEl.textContent=`❌ ${name}: ${e.message} (${t('ui.error')})`;btn.textContent=name;}
+  }catch(e){stEl.textContent='❌ '+name+': '+e.message;btn.textContent=name;}
 }
 
 // ── 描画 ──
@@ -596,9 +601,8 @@ function draw(t){
     });
     visPortIds.forEach(pid=>{
       const port=portMap2[pid];if(!port)return;
-      const cellKey=port.col+','+port.row;
-      const near=activeColRows.has(cellKey)||[[0,0],[0,1],[0,-1],[1,0],[-1,0]].some(([dc,dr])=>activeColRows.has((port.col+dc)+','+(port.row+dr)));
-      if(!near&&!pid.startsWith('ISLAND_'))return;
+      // 港が active な province に属するなら表示（位置は陸地外でもOK）
+      if(!an.includes(port.province)&&!pid.startsWith('ISLAND_'))return;
       const{cx,cy}=colRowToXY(port.col,port.row);
       const pts=hexPts(cx,cy);
       ctx.beginPath();pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));ctx.closePath();
@@ -611,7 +615,7 @@ function draw(t){
   }
 
   // ⑪ 選択セル
-  const sh=cache.find(h=>h.n&&h.c&&sel===h.n+':'+h.c.hex_id);
+  const sh=sel?cache.find(h=>h.n&&h.c&&sel===h.n+':'+h.c.hex_id):null;
   if(sh){
     const blink=0.5+0.5*Math.sin(bT*.008);
     ctx.beginPath();sh.pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));ctx.closePath();
@@ -629,7 +633,6 @@ function draw(t){
       const terrain=TN[sh.c.attr.terrain_type]||'?';
       const castleInfo=isCastle&&sh.c.attr.castle_data?`<br>${t('ui.built')}:${sh.c.attr.castle_data.built_year} ${t('ui.lord')}:${sh.c.attr.castle_data.lord}`:'';
       tip.innerHTML=`<b>${head}</b><br>${sh.c.hex_id}<br>${terrain} ${t('ui.cost')}=${sh.c.attr.cost}${castleInfo}<br>${shared} ${t('ui.shared_edges')}`;
-      const rect=cv.getBoundingClientRect();
       const{cx,cy}=sh;const sx=cx*vp.sc+vp.ox,sy=cy*vp.sc+vp.oy;
       tip.style.left=Math.min(sx+10,window.innerWidth-240)+'px';
       tip.style.top=Math.min(sy+10,window.innerHeight-100)+'px';
