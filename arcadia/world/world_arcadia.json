@@ -21,11 +21,8 @@
     }
   },
   "api": {
-    "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia_data/",
-    "specials": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/special_territories.json",
-    "sea_routes": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/sea_routes.json",
-    "water_cells": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/water_cells.json",
-    "castles": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/castles.json"
+    "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/data/",
+    "overlay": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/world/overlay.json"
   },
   "terrain_types": {
     "0": {
