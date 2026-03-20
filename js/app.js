@@ -403,17 +403,39 @@ function updateSeaRoutes() {
     return cells;
   }
 
+  // ① waypointsの補間セルをseaRouteCellsに追加
+  const routeCellSet = new Set();
   seaRoutes.forEach(({ route, fromPort, toPort }) => {
     const isIsl = !!route.is_island_route;
     const wps = route.waypoints || [];
     const pts = [fromPort, ...wps, toPort];
     for (let seg = 0; seg < pts.length-1; seg++) {
-      // 始点・終点・WPは除外し、補間セルのみを追加
-      // 港は⑩、島嶼は⑧、WPは海上セルとして別途描画される
-      interp(pts[seg], pts[seg+1]).forEach(({col,row}) =>
-        seaRouteCells.push({ col, row, routeName:route.name,
-          from:fromPort.province, to:toPort.province, isIslandRoute:isIsl }));
+      interp(pts[seg], pts[seg+1]).forEach(({col,row}) => {
+        const key = col+','+row;
+        if (!routeCellSet.has(key)) {
+          routeCellSet.add(key);
+          seaRouteCells.push({ col, row, routeName:route.name,
+            from:fromPort.province, to:toPort.province, isIslandRoute:isIsl });
+        }
+      });
     }
+  });
+
+  // ② water_cellsの海路セルもseaRouteCellsに追加（waypointsになくても表示）
+  // どちらか一方にあれば表示する方針
+  const activeProvinces = new Set(an);
+  (overlayData.water_cells || []).forEach(wc => {
+    if (wc.water_type !== 'sea') return;
+    const key = wc.col+','+wc.row;
+    if (routeCellSet.has(key)) return; // waypointsで既に追加済み
+    if (portCellSet.has(key)) return;  // 港セルは除外
+    // trigger_provincesのいずれかがアクティブであれば追加
+    const tp = wc.trigger_provinces || [];
+    if (!tp.some(p => activeProvinces.has(p))) return;
+    // 陸地セルでないことを確認（activeColRowsは描画時に除外されるが念のため）
+    routeCellSet.add(key);
+    seaRouteCells.push({ col:wc.col, row:wc.row, routeName:wc.label||'',
+      from:'', to:'', isIslandRoute:false });
   });
 }
 
