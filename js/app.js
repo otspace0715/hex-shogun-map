@@ -1,23 +1,109 @@
 // ═══════════════════════════════════════════════════════════════
-// app.js  - hex-shogun-map メインアプリケーション
+// app.js  - Universal Hex Map Viewer
 // ═══════════════════════════════════════════════════════════════
 //
-// SECTIONS:
-//   CONFIG          定数・URL・カラー定義
-//   GPS & SPAWN     GPS取得・スポーン地点
-//   WATER CELLS     水域データ読み込み・更新
-//   CASTLES         城郭データ読み込み・更新
-//   GAP DETECTION   国境地帯自動検出
-//   SEA ROUTES      海路データ読み込み・更新
-//   SPECIAL TERRITORIES  特殊領土（富士山等）
-//   DRAW ENGINE     描画ループ
-//   HIT TEST        タッチ・マウス操作
+// 全設定は world.json で定義される
+// JSONを差し替えるだけで日本/欧州/異世界に対応
 //
-// API URL を変更するだけで独自サーバーに切り替え可能:
-//   const API = 'https://your-api.example.com/provinces/'
+// world.json が定義するもの:
+//   coordinate   → 座標原点・ピッチ
+//   api          → データURL
+//   terrain_types→ 地形定義（色・通行可否）
+//   provinces    → 令制国/地域（色・名前）
+//
 // ═══════════════════════════════════════════════════════════════
 
 'use strict';
+
+// ── World設定（world.jsonから動的ロード）──
+const WORLD_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/world.json';
+let WORLD = null;
+
+// world.json がロードされるまでのフォールバック値（日本）
+let O_LAT = 30.0, O_LNG = 129.0, LAT_S = 0.030311, LAT2 = 0.060622, LNG_S = 0.0525;
+let API = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
+let TC = {0:[61,107,74],1:[90,74,50],2:[42,42,58],3:[30,74,122],4:[26,48,96],5:[180,80,40],6:[40,80,160],7:[20,60,120],8:[160,120,40],9:[50,50,55]};
+let TN = {0:'平地',1:'丘陵',2:'山岳(不可)',3:'河川',4:'海岸',5:'火山(不可)',6:'湖(不可)',7:'海域(不可)',8:'城郭',9:'国境地帯'};
+let PIDS = {};
+let PCOL = {};
+
+async function loadWorld() {
+  try {
+    const r = await fetch(WORLD_URL);
+    if (!r.ok) return;
+    WORLD = await r.json();
+
+    // 座標系を更新
+    O_LAT  = WORLD.coordinate.origin_lat;
+    O_LNG  = WORLD.coordinate.origin_lng;
+    LAT_S  = WORLD.coordinate.lat_step;
+    LAT2   = LAT_S * 2;
+    LNG_S  = WORLD.coordinate.lng_step;
+
+    // API URLを更新
+    API = WORLD.api.province_base;
+    if (WORLD.api.specials)    SPECIAL_URL    = WORLD.api.specials;
+    if (WORLD.api.sea_routes)  SEA_ROUTES_URL = WORLD.api.sea_routes;
+    if (WORLD.api.water_cells) WATER_URL      = WORLD.api.water_cells;
+    if (WORLD.api.castles)     CASTLE_URL     = WORLD.api.castles;
+
+    // 地形タイプを更新
+    TC = {}; TN = {};
+    Object.entries(WORLD.terrain_types).forEach(([k, v]) => {
+      TC[k] = v.color;
+      TN[k] = v.name;
+    });
+
+    // 令制国を更新
+    PIDS = {}; PCOL = {};
+    WORLD.provinces.forEach(p => {
+      PIDS[p.name] = p.id;
+      PCOL[p.name] = p.color;
+    });
+
+    // ボタンを動的生成
+    buildProvinceButtons();
+    console.log('World loaded:', WORLD.meta.name);
+  } catch(e) {
+    console.warn('world.json 読み込み失敗（フォールバック使用）:', e);
+    // フォールバック: 既存のPIDS/PCOLをそのまま使用
+    buildProvinceButtonsFallback();
+  }
+}
+
+function buildProvinceButtons() {
+  const header = document.getElementById('header');
+  // 既存の省ボタンを削除
+  header.querySelectorAll('.prov-btn').forEach(b => b.remove());
+  // world.jsonの順序でボタン生成
+  const btnFit = document.getElementById('btn-fit');
+  WORLD.provinces.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'btn prov-btn';
+    btn.id = 'p-' + p.id;
+    btn.textContent = p.name;
+    btn.addEventListener('click', () => tog(p.name));
+    header.insertBefore(btn, btnFit);
+  });
+}
+
+function buildProvinceButtonsFallback() {
+  // world.json なしの場合: HTMLのボタンをそのまま使用
+  const fallback = [
+    {id:'izu',name:'伊豆',color:[60,140,70]},
+    {id:'sag',name:'相模',color:[80,100,160]},
+    {id:'sur',name:'駿河',color:[160,100,60]},
+    {id:'mus',name:'武蔵',color:[160,80,60]},
+    {id:'kai',name:'甲斐',color:[140,80,160]},
+    {id:'awa',name:'安房',color:[80,160,120]},
+    {id:'kaz',name:'上総',color:[160,140,60]}
+  ];
+  fallback.forEach(p => { PIDS[p.name] = p.id; PCOL[p.name] = p.color; });
+  document.querySelectorAll('.prov-btn').forEach(btn => {
+    const name = btn.textContent;
+    if (PIDS[name]) btn.addEventListener('click', () => tog(name));
+  });
+}
 
 'use strict';
 
@@ -505,26 +591,7 @@ function updateSpecial() {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //  定数
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const API   = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
-const LAT_S = 0.030311;        // 緯度の最小ステップ
-const LAT2  = LAT_S * 2;      // 同列セル間の緯度ピッチ（実データ）
-const LNG_S = 0.0525;         // 列間の経度ピッチ
-const O_LAT = 30.0;           // 全国共通原点（緯度）
-const O_LNG = 129.0;          // 全国共通原点（経度）
-
-const PIDS = {'伊豆':'izu','相模':'sag','駿河':'sur','武蔵':'mus','甲斐':'kai','安房':'awa','上総':'kaz'};
-const PCOL = {
-  '伊豆':[80,160,100],'相模':[80,120,180],
-  '駿河':[160,130,60],'武蔵':[180,100,80],'甲斐':[140,80,160]
-};
-const TC = {0:[61,107,74],1:[90,74,50],2:[42,42,58],3:[30,74,122],4:[26,48,96],5:[180,80,40],6:[40,80,160],7:[20,60,120],8:[160,120,40],9:[50,50,55]};
-const TN = {0:'平地',1:'丘陵',2:'山岳(不可)',3:'河川',4:'海岸',5:'火山(不可)',6:'湖(不可)',7:'海域(不可)',8:'城郭',9:'国境地帯(不可)'};
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//  lat/lng → col/row
-//  ★重要: 同列ピッチ=2×LAT_S なので LAT2 で割る
-//  ★重要: y軸反転のため row は負値で扱う
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 定数はすべて loadWorld() で動的設定
 function toColRow(lat, lng) {
   const col = Math.round((lng - O_LNG) / LNG_S);
   const row = Math.round((lat - O_LAT) / LAT2);
@@ -1392,7 +1459,14 @@ window.addEventListener('resize',()=>{resizeCV();if(allActive().length)fit();});
 
 resizeCV();
 requestAnimationFrame(anim);
-tog('伊豆');
+// world.jsonをロードしてからUIを構築
+loadWorld().then(() => {
+  // world.jsonに最初にロードする省が定義されていれば自動ロード
+  const firstProvince = WORLD && WORLD.provinces.length > 0
+    ? WORLD.provinces[0].name
+    : '伊豆'; // フォールバック
+  tog(firstProvince);
+});
 
 // ── ボタンイベント ──
 document.getElementById('m-pt').addEventListener('click', () => { mode='pointy'; document.getElementById('m-pt').classList.add('active'); document.getElementById('m-fl').classList.remove('active'); if(allActive().length){fit();updateSt();} });
