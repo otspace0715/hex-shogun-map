@@ -32,7 +32,9 @@ const WORLD_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/
 // ── 世界フラグ（world.jsonで上書き）──
 // auto_sea: true → 陸地隣接の空白セルを自動海域として描画（現実世界用）
 // auto_sea: false → 自動海域なし（異世界等）
-let WORLD_FLAGS = { auto_sea: true };
+let WORLD_FLAGS = { auto_sea: true, show_coords: true };
+// Province ごとの描画オフセット（world.jsonのprovinces[].offsetで設定）
+let PROVINCE_OFFSETS = {};
 
 // ── ランドマーク定義（world.jsonのlandmark_typesで上書き）──
 // terrain_type → { icon, label_key } のマッピング
@@ -83,6 +85,13 @@ const I18N_DEFAULT = {
   'cell.unknown_river': 'River',
   'cell.unknown_border':'Border',
   'cell.unknown_auto':  'Sea',
+  // 単位系（world.jsonのi18nで上書き可能）
+  'unit.km':    'km',    'unit_scale.km':    1,
+  'unit.m':     'm',     'unit_scale.m':     1,
+  'unit.cost':  '',      'unit_scale.cost':  1,
+  // 動的ラベル例（world.jsonで定義）
+  // 'cell.castle_named': '${lord}の居城・${name}',
+  // 'ui.gps_in_province': '📍 ${province}国 精度±${accuracy}m',
 };
 let WORLD_I18N = {};  // world.json の i18n セクション
 
@@ -90,9 +99,19 @@ let WORLD_I18N = {};  // world.json の i18n セクション
 function t(key, ...args) {
   try {
     let s = WORLD_I18N[key] ?? I18N_DEFAULT[key] ?? key;
+    // 位置引数 {0},{1},... の置換
     args.forEach((a, i) => { s = s.replace('{' + i + '}', a); });
+    // 名前付き変数 ${varName} の置換（最後の引数がオブジェクトの場合）
+    const vars = args.find(a => a && typeof a === 'object' && !Array.isArray(a));
+    if (vars) Object.entries(vars).forEach(([k,v]) => { s = s.replace('${'+k+'}', v); });
     return s;
   } catch(_) { return key; }
+}
+// 単位変換（world.json の unit_map で定義可能）
+function tUnit(value, unitKey) {
+  const map = WORLD_I18N['unit.' + unitKey] || unitKey;
+  const scale = WORLD_I18N['unit_scale.' + unitKey] || 1;
+  return String(Math.round(value * scale)) + map;
 }
 function applyI18N(obj) { if (obj) WORLD_I18N = { ...obj }; }
 
@@ -149,12 +168,14 @@ async function loadWorld() {
       });
     }
 
-    // 省ボタン追加
+    // 省ボタン追加 + オフセット設定
     if (w.provinces) {
       const existing = new Set([...document.querySelectorAll('[data-prov]')].map(b => b.dataset.prov));
       const btnFit = document.getElementById('btn-fit');
       w.provinces.forEach(p => {
         PIDS[p.name] = p.id; PCOL[p.name] = p.color;
+        // Province ごとの描画オフセット（微調整用）
+        if (p.offset) PROVINCE_OFFSETS[p.name] = p.offset;
         if (!existing.has(p.name) && btnFit) {
           const btn = document.createElement('button');
           btn.className = 'btn prov-btn';
@@ -193,6 +214,21 @@ function toColRow(lat, lng) {
     col: Math.round((lng - c.O_LNG) / c.LNG_S),
     row: Math.round((lat - c.O_LAT) / c.LAT2),
   };
+}
+// 逆引き: col/row → lat/lng (odd-q offset対応)
+function toLatLng(col, row) {
+  const c = WORLD_COORD;
+  return {
+    lat: c.O_LAT + row * c.LAT2 + ((col & 1) ? c.LAT_S : 0),
+    lng: c.O_LNG + col * c.LNG_S,
+  };
+}
+// キャンバス座標 → ワールド座標（ヒットテスト用）
+function canvasToWorld(ex, ey) {
+  const rect = cv.getBoundingClientRect();
+  const px = ((ex - rect.left) / rect.width  * cv.width  / DPR - vp.ox) / vp.sc;
+  const py = ((ey - rect.top)  / rect.height * cv.height / DPR - vp.oy) / vp.sc;
+  return { px, py };
 }
 function colRowToXY(col, row) {
   const S3 = Math.sqrt(3), o = col & 1;
@@ -442,7 +478,11 @@ async function onGPSUpdate(lat, lng, accuracy) {
   gpsMarker = { ...cr, lat, lng, accuracy };
   let found = null;
   Object.keys(data).forEach(n => data[n].forEach(c => { if (c.col===cr.col && c.row===cr.row) found = n; }));
-  stEl.textContent = found ? `📍 ${found} ±${accuracy}m` : `📍 (${lat.toFixed(4)},${lng.toFixed(4)}) ${t('ui.gps_outside')}`;
+  const _gpsMsg = found
+    ? t('ui.gps_in_province', {province:found, accuracy})
+        .replace('📍 ${found}','').trim() || `📍 ${found} ±${accuracy}m`
+    : `📍 (${lat.toFixed(4)},${lng.toFixed(4)}) ${t('ui.gps_outside')}`;
+  stEl.textContent = _gpsMsg || `📍 ${found} ±${accuracy}m`;
   if (found && !active[found]) await tog(found);
   centerOnColRow(cr.col, cr.row);
   draw();
@@ -551,7 +591,8 @@ function draw(ts) {
 
   // ① 通常セル
   cells.forEach(({c,n}) => {
-    const {cx,cy} = colRowToXY(c.col,c.row); if (!inView(cx,cy)) return;
+    const off = PROVINCE_OFFSETS[n] || {col:0,row:0};
+    const {cx,cy} = colRowToXY(c.col + off.col, c.row + off.row); if (!inView(cx,cy)) return;
     const pts = hexPts(cx,cy), isSel = sel===n+':'+c.hex_id;
     let [r,g,b] = [...(TC[c.attr.terrain_type] || TC[1])];
     if (multi && PCOL[n]) { const pc=PCOL[n]; r=Math.round(r*.6+pc[0]*.4); g=Math.round(g*.6+pc[1]*.4); b=Math.round(b*.6+pc[2]*.4); }
@@ -733,7 +774,12 @@ function draw(ts) {
                : (sh.n+(sh.isSpecial?' '+t('cell.special'):isIsland?' '+t('cell.island'):''));
       const terrain = TN[sh.c.attr.terrain_type]||'?';
       const castleInfo = isCastle&&sh.c.attr.castle_data ? `<br>${t('ui.built')}:${sh.c.attr.castle_data.built_year} ${t('ui.lord')}:${sh.c.attr.castle_data.lord}` : '';
-      tip.innerHTML = `<b>${head}</b><br>${sh.c.hex_id}<br>${terrain} ${t('ui.cost')}=${sh.c.attr.cost}${castleInfo}<br>${shared} ${t('ui.shared_edges')}`;
+      // 逆引きで lat/lng を計算して表示
+      const _ll = toLatLng(sh.c.col, sh.c.row);
+      const _posStr = WORLD_FLAGS.show_coords !== false
+        ? `<br><span style="opacity:0.6;font-size:10px">hex(${sh.c.col},${sh.c.row}) ${_ll.lat.toFixed(4)},${_ll.lng.toFixed(4)}</span>`
+        : '';
+      tip.innerHTML = `<b>${head}</b><br>${sh.c.hex_id}<br>${terrain} ${t('ui.cost')}=${sh.c.attr.cost}${castleInfo}<br>${shared} ${t('ui.shared_edges')}${_posStr}`;
       const {cx,cy}=sh, sx=cx*vp.sc+vp.ox, sy=cy*vp.sc+vp.oy;
       tip.style.left=Math.min(sx+10,window.innerWidth-240)+'px';
       tip.style.top =Math.min(sy+10,window.innerHeight-100)+'px';
@@ -831,6 +877,45 @@ wrap.addEventListener('mousemove',e=>{
 wrap.addEventListener('mouseup',e=>{
   if(!mdd){const h=hexAt(e.clientX,e.clientY);if(h&&setManualSpawn(h))return;sel=h?(h.n+':'+h.c.hex_id):null;}
 });
+// 右クリック / コンテキストメニュー → 座標キャプチャ
+wrap.addEventListener('contextmenu',e=>{
+  e.preventDefault();
+  const h = hexAt(e.clientX, e.clientY);
+  const {px, py} = canvasToWorld(e.clientX, e.clientY);
+  // クリック位置の col/row を推定（ヘックスにヒットしない場合も）
+  const col_est = Math.round(px / (R * Math.sqrt(3)));
+  const row_est = Math.round(-py / (R * 2));
+  const ll = h ? toLatLng(h.c.col, h.c.row) : toLatLng(col_est, row_est);
+  const info = h
+    ? { hex_id:h.c.hex_id, col:h.c.col, row:h.c.row, lat:ll.lat, lng:ll.lng, province:h.n }
+    : { col:col_est, row:row_est, lat:ll.lat, lng:ll.lng };
+  // クリップボードにコピー
+  const json = JSON.stringify(info, null, 2);
+  navigator.clipboard?.writeText(json).catch(()=>{});
+  console.log('📍 座標キャプチャ:', json);
+  stEl.textContent = `📋 copied: col=${info.col},row=${info.row} lat=${ll.lat.toFixed(4)},lng=${ll.lng.toFixed(4)}`;
+});
+// 長押し（touch）→ 座標キャプチャ
+let _longPressTimer = null;
+wrap.addEventListener('touchstart', e=>{
+  if (e.touches.length !== 1) return;
+  _longPressTimer = setTimeout(()=>{
+    const touch = e.touches[0];
+    const h = hexAt(touch.clientX, touch.clientY);
+    if (!h) return;
+    const ll = toLatLng(h.c.col, h.c.row);
+    const info = { hex_id:h.c.hex_id, col:h.c.col, row:h.c.row,
+                   lat:ll.lat, lng:ll.lng, province:h.n,
+                   terrain_type:h.c.attr.terrain_type };
+    const json = JSON.stringify(info, null, 2);
+    navigator.clipboard?.writeText(json).catch(()=>{});
+    console.log('📍 長押し座標キャプチャ:', json);
+    stEl.textContent = `📋 hex(${h.c.col},${h.c.row}) copied!`;
+    dd = true; // タップ選択を抑制
+  }, 600);
+}, {passive:true});
+wrap.addEventListener('touchend',   ()=>{ clearTimeout(_longPressTimer); }, {passive:true});
+wrap.addEventListener('touchmove',  ()=>{ clearTimeout(_longPressTimer); }, {passive:true});
 wrap.addEventListener('wheel',e=>{
   e.preventDefault();
   const f=e.deltaY<0?1.15:.87,rect=cv.getBoundingClientRect();
