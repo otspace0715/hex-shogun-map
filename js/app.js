@@ -223,9 +223,9 @@ function updateWater(){
     if(wc.water_type==='sea'){
       const o=wc.col&1;
       if([[wc.col,wc.row-1],[wc.col,wc.row+1],[wc.col-1,wc.row-1+o],[wc.col-1,wc.row+o],[wc.col+1,wc.row-1+o],[wc.col+1,wc.row+o]].some(([nc,nr])=>activeSet.has(nc+','+nr)))
-        waterCells.push({c,n:wc.label||t('cell.unknown_sea'),wtype:'sea'});
+        waterCells.push({c,n:(typeof wc.label==='string'&&wc.label)||t('cell.unknown_sea'),wtype:'sea'});
     } else {
-      waterCells.push({c,n:wc.label||t('cell.unknown_'+wc.water_type),wtype:wc.water_type});
+      waterCells.push({c,n:(typeof wc.label==='string'&&wc.label)||t('cell.unknown_'+(wc.water_type||'sea')),wtype:wc.water_type||'sea'});
     }
   });
 }
@@ -259,7 +259,8 @@ function updateSeaRoutes(){
   // 接続
   (routes.connections||[]).forEach(conn=>{
     const fp=nodeMap[conn.from_node];
-    const tp=nodeMap[conn.to_node]||{col:0,row:0,province:'',name:conn.to_node};
+    // to_nodeがnodeMapにない場合（通常の島嶼ルートではありえないが安全策）
+    const tp=nodeMap[conn.to_node]||{id:conn.to_node,col:0,row:0,province:'',label:conn.to_node};
     if(!fp)return;
     if(!conn.is_island_route&&(!tp.province||!an.includes(tp.province)))return;
     if(!an.includes(fp.province))return;
@@ -406,11 +407,18 @@ async function tog(name){
   }
   btn.textContent=name+'…';stEl.textContent=`📡 ${name} ${t('ui.loading')}`;
   try{
-    // まず新パスで試みる、404の場合は旧パスにフォールバック
+    // APIから取得。404の場合は旧パスにフォールバック
     let r=await fetch(API+encodeURIComponent(name)+'.json');
     if(!r.ok && r.status===404) {
-      const fallbackAPI='https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/';
-      r=await fetch(fallbackAPI+encodeURIComponent(name)+'.json');
+      // 旧パスでリトライ（sengoku/arcadiaどちらにも対応）
+      const fallbackPaths = [
+        'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku_hex_data_v2/',
+        'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia_data/',
+      ];
+      for (const fb of fallbackPaths) {
+        r = await fetch(fb+encodeURIComponent(name)+'.json');
+        if (r.ok) break;
+      }
     }
     if(!r.ok)throw new Error('HTTP '+r.status);
     const d=await r.json();
