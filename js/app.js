@@ -607,7 +607,7 @@ let vp   = { ox:0, oy:0, sc:1 };
 const cv  = document.getElementById('cv');
 const ctx = cv.getContext('2d');
 const tip = document.getElementById('tip');
-const stEl= document.getElementById('st');
+const stEl= document.getElementById('status');
 const DPR = window.devicePixelRatio || 1;
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1394,11 +1394,11 @@ tog('伊豆');
 // ── ボタンイベント ──
 document.getElementById('m-pt').addEventListener('click', () => { mode='pointy'; document.getElementById('m-pt').classList.add('active'); document.getElementById('m-fl').classList.remove('active'); if(allActive().length){fit();updateSt();} });
 document.getElementById('m-fl').addEventListener('click', () => { mode='flat';   document.getElementById('m-fl').classList.add('active'); document.getElementById('m-pt').classList.remove('active'); if(allActive().length){fit();updateSt();} });
-document.getElementById('p-p1').addEventListener('click', () => tog('伊豆'));
-document.getElementById('p-p2').addEventListener('click', () => tog('相模'));
-document.getElementById('p-p3').addEventListener('click', () => tog('駿河'));
-document.getElementById('p-p4').addEventListener('click', () => tog('武蔵'));
-document.getElementById('p-p5').addEventListener('click', () => tog('甲斐'));
+document.getElementById('p-izu').addEventListener('click', () => tog('伊豆'));
+document.getElementById('p-sag').addEventListener('click', () => tog('相模'));
+document.getElementById('p-sur').addEventListener('click', () => tog('駿河'));
+document.getElementById('p-mus').addEventListener('click', () => tog('武蔵'));
+document.getElementById('p-kai').addEventListener('click', () => tog('甲斐'));
 document.getElementById('btn-fit').addEventListener('click', fit);
 document.getElementById('btn-gps').addEventListener('click', toggleGPS);
 document.getElementById('btn-spawn').addEventListener('click', toggleSpawnMode);
