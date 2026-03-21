@@ -1,4 +1,5 @@
 # hex-shogun-map
+
 Decentralized Sengoku Strategy Map Engine with Multi-L2 Support.
 
 # 戦国オンライン・マップエンジン (Core)
@@ -28,7 +29,7 @@ Decentralized Sengoku Strategy Map Engine with Multi-L2 Support.
 
 - [ ] 各地方L2チェーン（EVM互換チェーン等）との接続インターフェースの実装。
 - [ ] 3D描画（Three.js）に対応した `ThreeDioramaSkin` の追加。
-- [ ] 全国68カ国のメタインデックスサーバーの構築。
+- [ ] 全国69カ国のメタインデックスサーバーの構築。
 
 ## 📄 ライセンス
 

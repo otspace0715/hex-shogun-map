@@ -14,8 +14,9 @@
     "note": "全セルのcol/rowはこの原点とピッチから計算される"
   },
   "api": {
-    "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/data/",
-    "overlay": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay.json"
+    "province_base": "./data/",
+    "overlay": "./world/overlay.json",
+    "overlay_water": "./world/overlay_water.json"
   },
   "terrain_types": {
     "0": {

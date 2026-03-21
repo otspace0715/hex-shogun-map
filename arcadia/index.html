@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -7,32 +8,34 @@
   <link rel="stylesheet" href="../css/map.css">
   <style>
     :root {
-      --bg:               #0a0818;
-      --header-bg:        rgba(10,8,24,0.95);
-      --border:           rgba(100,60,180,0.4);
-      --accent:           #a070ff;
-      --status-color:     #9060df;
-      --btn-bg:           rgba(20,10,50,0.8);
-      --btn-border:       rgba(100,60,200,0.5);
-      --btn-color:        #c0a0ff;
-      --btn-active-bg:    rgba(60,20,140,0.9);
-      --btn-active-border:rgba(150,100,255,0.8);
+      --bg: #0a0818;
+      --header-bg: rgba(10, 8, 24, 0.95);
+      --border: rgba(100, 60, 180, 0.4);
+      --accent: #a070ff;
+      --status-color: #9060df;
+      --btn-bg: rgba(20, 10, 50, 0.8);
+      --btn-border: rgba(100, 60, 200, 0.5);
+      --btn-color: #c0a0ff;
+      --btn-active-bg: rgba(60, 20, 140, 0.9);
+      --btn-active-border: rgba(150, 100, 255, 0.8);
     }
   </style>
 </head>
+
 <body>
   <div id="header">
     <a href="../" id="ver" style="text-decoration:none">🏰 アルカディア大陸</a>
     <button class="btn active" id="m-pt">▲ Pointy</button>
-    <button class="btn"        id="m-fl">○ Flat</button>
+    <button class="btn" id="m-fl">○ Flat</button>
 
     <!-- 王国ボタン -->
-    <button class="btn prov-btn" data-prov="黄金王国アウロス"   data-id="aur" data-color="200,160,40"  data-autoload="true">黄金王国</button>
-    <button class="btn prov-btn" data-prov="銀月王国シルヴァ"   data-id="sil" data-color="150,180,200">銀月王国</button>
-    <button class="btn prov-btn" data-prov="炎帝国イグニス"     data-id="ign" data-color="200,80,40">炎帝国</button>
+    <button class="btn prov-btn" data-prov="黄金王国アウロス" data-id="aur" data-color="200,160,40"
+      data-autoload="true">黄金王国</button>
+    <button class="btn prov-btn" data-prov="銀月王国シルヴァ" data-id="sil" data-color="150,180,200">銀月王国</button>
+    <button class="btn prov-btn" data-prov="炎帝国イグニス" data-id="ign" data-color="200,80,40">炎帝国</button>
     <button class="btn prov-btn" data-prov="翠森共和国ヴェルデ" data-id="ver" data-color="60,160,80">翠森共和国</button>
-    <button class="btn prov-btn" data-prov="深海神聖マレア"     data-id="mar" data-color="40,100,180">深海神聖</button>
-    <button class="btn prov-btn" data-prov="暗黒領主ウンブラ"   data-id="umb" data-color="80,40,120">暗黒領主</button>
+    <button class="btn prov-btn" data-prov="深海神聖マレア" data-id="mar" data-color="40,100,180">深海神聖</button>
+    <button class="btn prov-btn" data-prov="暗黒領主ウンブラ" data-id="umb" data-color="80,40,120">暗黒領主</button>
 
     <button class="btn" id="btn-fit">⊙</button>
     <!-- GPS不要（架空世界）-->
@@ -43,8 +46,9 @@
 
   <script>
     window.WORLD_OVERRIDE_URL =
-      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/world/world_arcadia.json';
+      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/world/world.json';
   </script>
   <script src="../js/app.js?v=5"></script>
 </body>
+
 </html>

@@ -25,10 +25,10 @@ function updateCoord(c) {
 }
 
 // ── 世界設定（world.jsonで上書き）──
-let API = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/data/';
-let OVERLAY_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay.json';
-let OVERLAY_WATER_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/overlay_water.json';
-const WORLD_URL = 'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
+let API = './data/';
+let OVERLAY_URL = './world/overlay.json';
+let OVERLAY_WATER_URL = './world/overlay_water.json';
+const WORLD_URL = './world/world.json';
 
 // ── 世界フラグ（world.jsonで上書き）──
 // auto_sea: true → 陸地隣接の空白セルを自動海域として描画（現実世界用）
@@ -286,7 +286,8 @@ function updateSpecial() {
       : tc === 'any2' ? tp.filter(p => an.includes(p)).length >= 2
         : tp.some(p => an.includes(p));
     if (ok) territory.cells.forEach(cell => {
-      if (cell.col == null || cell.row == null) {
+      // 緯度経度がある場合は常に再計算
+      if (cell.lat != null && cell.lng != null) {
         const cr = toColRow(cell.lat, cell.lng);
         cell.col = cr.col; cell.row = cr.row;
       }
@@ -331,7 +332,8 @@ function updateWater() {
     };
   }
   (overlayData.water_cells || []).forEach(wc => {
-    if (wc.col == null || wc.row == null) {
+    // 緯度経度がある場合は常に再計算
+    if (wc.lat != null && wc.lng != null) {
       const cr = toColRow(wc.lat, wc.lng);
       wc.col = cr.col; wc.row = cr.row;
     }
@@ -355,7 +357,8 @@ function updateCastles() {
   const an = Object.keys(active).filter(n => active[n]);
   (overlayData.landmarks || []).forEach(lm => {
     if (!an.includes(lm.province)) return;
-    if (lm.col == null || lm.row == null) {
+    // 緯度経度がある場合は常に再計算
+    if (lm.lat != null && lm.lng != null) {
       const cr = toColRow(lm.lat, lm.lng);
       lm.col = cr.col; lm.row = cr.row;
     }
@@ -390,7 +393,8 @@ function updateSeaRoutes() {
   const an = Object.keys(active).filter(n => active[n]);
   const nodeMap = {};
   (routes.nodes || []).forEach(n => {
-    if (n.col == null || n.row == null) {
+    // 緯度経度がある場合は常に再計算
+    if (n.lat != null && n.lng != null) {
       const cr = toColRow(n.lat, n.lng);
       n.col = cr.col; n.row = cr.row;
     }
@@ -465,6 +469,10 @@ function updateSeaRoutes() {
   const activeProvinces = new Set(an);
   (overlayData.water_cells || []).forEach(wc => {
     if (wc.water_type !== 'sea' && wc.water_type !== 'sea_route') return;
+    if (wc.col == null || wc.row == null) {
+      const cr = toColRow(wc.lat, wc.lng);
+      wc.col = cr.col; wc.row = cr.row;
+    }
     const key = wc.col + ',' + wc.row;
     if (routeCellSet.has(key)) return; // waypointsで既に追加済み
     if (portCellSet.has(key)) return;  // 港セルは除外
@@ -629,15 +637,12 @@ async function tog(name) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
 
-    // 修正2: col/row が既存ならそのまま、ないなら現在の世界座標系で変換
     data[name] = d.cells.map(c => {
-      if (c.col != null && c.row != null) {
-        // 異世界系: col/row が定義済み → 変換不要
-        return c;
-      } else {
-        // 現実系: lat/lng から現在の WORLD_COORD で変換
+      // 緯度経度がある場合は、常に現在の世界座標系で再計算して同期させる
+      if (c.lat != null && c.lng != null) {
         return { ...c, ...toColRow(c.lat, c.lng) };
       }
+      return c;
     });
 
     active[name] = true; btn.classList.add('ok', 'on'); btn.textContent = name + ' ✓';
