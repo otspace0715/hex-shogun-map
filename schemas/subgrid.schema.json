@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/schemas/subgrid.schema.json",
+  "title": "Sub-Grid Cell Data",
+  "description": "サブグリッド（タクティカルマップ）のセルデータファイル。sengoku/data/{province}/{province}_sub_*.json に適用される。",
+  "type": "object",
+  "required": [
+    "server_id",
+    "province",
+    "subgrid_resolution",
+    "category",
+    "cells"
+  ],
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "サーバー/セクターの一意ID"
+    },
+    "province": {
+      "type": "string",
+      "description": "所属する令制国名"
+    },
+    "subgrid_resolution": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*x[1-9][0-9]*$",
+      "description": "サブグリッドの解像度 (例: '8x8', '10x10')"
+    },
+    "category": {
+      "type": "string",
+      "description": "サーバー規模のカテゴリ (subgrid_proposal.md参照)"
+    },
+    "sector_info": {
+      "type": "string",
+      "description": "セクター情報 (例: 'A (北部)')"
+    },
+    "cells": {
+      "description": "サブグリッドのヘックスセル配列",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/SubCell"
+      }
+    }
+  },
+  "$defs": {
+    "SubCell": {
+      "description": "1つのサブグリッドセル",
+      "type": "object",
+      "required": [
+        "cell_id",
+        "coordinate",
+        "terrain",
+        "initial_owner"
+      ],
+      "properties": {
+        "cell_id": {
+          "type": "string",
+          "description": "セルの一意ID (例: 'hex_0102')"
+        },
+        "coordinate": {
+          "type": "object",
+          "required": ["q", "r"],
+          "properties": {
+            "q": { "type": "integer", "description": "フラットトップ六角グリッドのq座標" },
+            "r": { "type": "integer", "description": "フラットトップ六角グリッドのr座標" }
+          }
+        },
+        "terrain": {
+          "type": "object",
+          "required": ["type", "elevation", "is_passable"],
+          "properties": {
+            "type": { "type": "string", "description": "地形タイプ (例: 'plain', 'coast', 'mountain')" },
+            "elevation": { "type": "integer", "description": "標高(m)" },
+            "is_passable": { "type": "boolean", "description": "通行可能か" }
+          }
+        },
+        "initial_owner": {
+          "type": "string",
+          "description": "初期所有者 (例: 'none', 'player_id')"
+        },
+        "poi": {
+          "type": "object",
+          "description": "Point of Interest (城、ランドマークなど)",
+          "properties": {
+            "name": { "type": "string" },
+            "type": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        },
+        "lat": {
+          "type": "number",
+          "description": "緯度 (推奨)"
+        },
+        "lng": {
+          "type": "number",
+          "description": "経度 (推奨)"
+        }
+      }
+    }
+  }
+}

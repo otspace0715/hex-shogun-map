@@ -3,7 +3,7 @@
   "province": "壱岐",
   "subgrid_resolution": "10x10",
   "category": "C",
-  "sector_info": "D (中央)",
+  "sector_info": "B (中部)",
   "cells": [
     {
       "cell_id": "hex_0000",
@@ -13,10 +13,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 23,
+        "elevation": 19,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0001",
@@ -26,10 +28,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 2,
+        "elevation": 24,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0002",
@@ -39,10 +43,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 10,
+        "elevation": 3,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0003",
@@ -52,10 +58,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 24,
+        "elevation": 28,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0004",
@@ -65,10 +73,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 1,
+        "elevation": 0,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0005",
@@ -78,10 +88,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 5,
+        "elevation": 11,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0006",
@@ -94,7 +106,9 @@
         "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0007",
@@ -104,10 +118,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 22,
+        "elevation": 1,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0008",
@@ -117,10 +133,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 7,
+        "elevation": 18,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0009",
@@ -130,10 +148,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 3,
+        "elevation": 23,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732758
     },
     {
       "cell_id": "hex_0100",
@@ -143,10 +163,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 12,
+        "elevation": 0,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0101",
@@ -156,10 +178,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 13,
+        "elevation": 1,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0102",
@@ -169,10 +193,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 9,
+        "elevation": 13,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0103",
@@ -182,10 +208,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 28,
+        "elevation": 3,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0104",
@@ -195,10 +223,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 24,
+        "elevation": 21,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0105",
@@ -208,10 +238,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 15,
+        "elevation": 5,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0106",
@@ -221,10 +253,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 1,
+        "elevation": 0,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0107",
@@ -234,10 +268,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 1,
+        "elevation": 18,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0108",
@@ -247,10 +283,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 21,
+        "elevation": 27,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0109",
@@ -260,10 +298,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 9,
+        "elevation": 8,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732768
     },
     {
       "cell_id": "hex_0200",
@@ -273,10 +313,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 5,
+        "elevation": 16,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0201",
@@ -286,10 +328,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 5,
+        "elevation": 9,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0202",
@@ -299,10 +343,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 10,
+        "elevation": 1,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0203",
@@ -312,10 +358,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 29,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0204",
@@ -325,10 +373,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 13,
+        "elevation": 21,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0205",
@@ -338,10 +388,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 26,
+        "elevation": 7,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0206",
@@ -351,10 +403,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 2,
+        "elevation": 28,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0207",
@@ -364,10 +418,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 8,
+        "elevation": 1,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0208",
@@ -377,10 +433,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 7,
+        "elevation": 6,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0209",
@@ -390,10 +448,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 24,
+        "elevation": 23,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732778
     },
     {
       "cell_id": "hex_0300",
@@ -403,10 +463,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 15,
+        "elevation": 13,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0301",
@@ -416,10 +478,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 14,
+        "elevation": 5,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0302",
@@ -429,10 +493,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 0,
+        "elevation": 29,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0303",
@@ -442,10 +508,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 13,
+        "elevation": 8,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0304",
@@ -455,10 +523,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 12,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0305",
@@ -468,10 +538,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 1,
+        "elevation": 18,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0306",
@@ -481,10 +553,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 0,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0307",
@@ -494,10 +568,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 14,
+        "elevation": 27,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0308",
@@ -507,10 +583,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 25,
+        "elevation": 14,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0309",
@@ -520,10 +598,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 4,
+        "elevation": 13,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732788
     },
     {
       "cell_id": "hex_0400",
@@ -533,10 +613,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 11,
+        "elevation": 16,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0401",
@@ -546,10 +628,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 6,
+        "elevation": 21,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0402",
@@ -559,10 +643,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 5,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0403",
@@ -572,10 +658,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 13,
+        "elevation": 29,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0404",
@@ -585,16 +673,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 118,
+        "elevation": 27,
         "is_passable": true
       },
       "initial_owner": "none",
-      "poi": {
-        "name": "岳ノ辻",
-        "type": "defense",
-        "description": "情報 / 防衛拠点",
-        "sector": "D (中央)"
-      }
+      "lat": 33.764608,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0405",
@@ -604,10 +688,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 0,
+        "elevation": 14,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0406",
@@ -617,10 +703,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 12,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0407",
@@ -630,10 +718,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 25,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0408",
@@ -643,10 +733,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 1,
+        "elevation": 14,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0409",
@@ -656,10 +748,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 27,
+        "elevation": 10,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732798
     },
     {
       "cell_id": "hex_0500",
@@ -669,10 +763,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 17,
+        "elevation": 23,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0501",
@@ -682,10 +778,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 9,
+        "elevation": 20,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0502",
@@ -695,10 +793,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 2,
+        "elevation": 9,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0503",
@@ -708,10 +808,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 15,
+        "elevation": 21,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0504",
@@ -721,10 +823,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 20,
+        "elevation": 27,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0505",
@@ -734,10 +838,18 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 6,
+        "elevation": 112,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "poi": {
+        "name": "興神社",
+        "type": "religion",
+        "description": "宗教 / 統治拠点",
+        "sector": "B (中部)"
+      },
+      "lat": 33.764618,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0506",
@@ -747,10 +859,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 25,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0507",
@@ -760,10 +874,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 12,
+        "elevation": 20,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0508",
@@ -776,7 +892,9 @@
         "elevation": 13,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0509",
@@ -786,10 +904,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 29,
+        "elevation": 27,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732808
     },
     {
       "cell_id": "hex_0600",
@@ -799,10 +919,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 10,
+        "elevation": 6,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0601",
@@ -812,10 +934,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 6,
+        "elevation": 11,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0602",
@@ -825,10 +949,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 23,
+        "elevation": 13,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0603",
@@ -838,10 +964,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 10,
+        "elevation": 11,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0604",
@@ -851,10 +979,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 20,
+        "elevation": 6,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0605",
@@ -864,10 +994,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 25,
+        "elevation": 22,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0606",
@@ -877,10 +1009,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 1,
+        "elevation": 14,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0607",
@@ -890,10 +1024,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 15,
+        "elevation": 29,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0608",
@@ -903,10 +1039,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 18,
+        "elevation": 5,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0609",
@@ -916,10 +1054,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 9,
+        "elevation": 7,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732818
     },
     {
       "cell_id": "hex_0700",
@@ -929,10 +1069,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 1,
+        "elevation": 11,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0701",
@@ -942,10 +1084,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0702",
@@ -955,10 +1099,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 24,
+        "elevation": 16,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0703",
@@ -968,10 +1114,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 25,
+        "elevation": 29,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0704",
@@ -981,10 +1129,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 20,
+        "elevation": 15,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0705",
@@ -994,10 +1144,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 22,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0706",
@@ -1007,10 +1159,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0707",
@@ -1020,10 +1174,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 26,
+        "elevation": 5,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0708",
@@ -1033,10 +1189,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 6,
+        "elevation": 7,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0709",
@@ -1046,10 +1204,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 2,
+        "elevation": 1,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732828
     },
     {
       "cell_id": "hex_0800",
@@ -1059,10 +1219,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 17,
+        "elevation": 11,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0801",
@@ -1072,10 +1234,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 7,
+        "elevation": 16,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0802",
@@ -1085,10 +1249,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 13,
+        "elevation": 16,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0803",
@@ -1098,10 +1264,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 19,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0804",
@@ -1111,10 +1279,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 12,
+        "elevation": 25,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0805",
@@ -1124,10 +1294,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 11,
+        "elevation": 2,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0806",
@@ -1137,10 +1309,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 24,
+        "elevation": 21,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0807",
@@ -1150,10 +1324,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 23,
+        "elevation": 12,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0808",
@@ -1163,10 +1339,12 @@
       },
       "terrain": {
         "type": "plain",
-        "elevation": 27,
+        "elevation": 10,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0809",
@@ -1176,10 +1354,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 15,
+        "elevation": 24,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732838
     },
     {
       "cell_id": "hex_0900",
@@ -1189,10 +1369,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 15,
+        "elevation": 7,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764568,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0901",
@@ -1202,10 +1384,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 6,
+        "elevation": 7,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764578,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0902",
@@ -1215,10 +1399,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 7,
+        "elevation": 5,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764588,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0903",
@@ -1228,10 +1414,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 7,
+        "elevation": 26,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764598,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0904",
@@ -1241,10 +1429,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 26,
+        "elevation": 20,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764608,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0905",
@@ -1254,10 +1444,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 12,
+        "elevation": 18,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764618,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0906",
@@ -1267,10 +1459,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 28,
+        "elevation": 27,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764628,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0907",
@@ -1280,10 +1474,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 4,
+        "elevation": 14,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764638,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0908",
@@ -1293,10 +1489,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 18,
+        "elevation": 25,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764648,
+      "lng": 129.732848
     },
     {
       "cell_id": "hex_0909",
@@ -1306,10 +1504,12 @@
       },
       "terrain": {
         "type": "coast",
-        "elevation": 27,
+        "elevation": 24,
         "is_passable": true
       },
-      "initial_owner": "none"
+      "initial_owner": "none",
+      "lat": 33.764658,
+      "lng": 129.732848
     }
   ]
 }
