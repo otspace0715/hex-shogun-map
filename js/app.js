@@ -286,6 +286,10 @@ function updateSpecial() {
       : tc === 'any2' ? tp.filter(p => an.includes(p)).length >= 2
         : tp.some(p => an.includes(p));
     if (ok) territory.cells.forEach(cell => {
+      if (cell.col == null || cell.row == null) {
+        const cr = toColRow(cell.lat, cell.lng);
+        cell.col = cr.col; cell.row = cr.row;
+      }
       specialCells.push({
         c: {
           hex_id: cell.hex_id || ('sp_' + cell.col + '_' + cell.row),
@@ -327,6 +331,10 @@ function updateWater() {
     };
   }
   (overlayData.water_cells || []).forEach(wc => {
+    if (wc.col == null || wc.row == null) {
+      const cr = toColRow(wc.lat, wc.lng);
+      wc.col = cr.col; wc.row = cr.row;
+    }
     if (!triggered(wc)) return;
     const c = toCell(wc);
     if (wc.water_type === 'sea') {
@@ -347,6 +355,10 @@ function updateCastles() {
   const an = Object.keys(active).filter(n => active[n]);
   (overlayData.landmarks || []).forEach(lm => {
     if (!an.includes(lm.province)) return;
+    if (lm.col == null || lm.row == null) {
+      const cr = toColRow(lm.lat, lm.lng);
+      lm.col = cr.col; lm.row = cr.row;
+    }
     castleCells.push({
       c: {
         hex_id: lm.id, col: lm.col, row: lm.row, lat: lm.lat || 0, lng: lm.lng || 0,
@@ -377,7 +389,13 @@ function updateSeaRoutes() {
   const routes = overlayData.routes || {};
   const an = Object.keys(active).filter(n => active[n]);
   const nodeMap = {};
-  (routes.nodes || []).forEach(n => nodeMap[n.id] = n);
+  (routes.nodes || []).forEach(n => {
+    if (n.col == null || n.row == null) {
+      const cr = toColRow(n.lat, n.lng);
+      n.col = cr.col; n.row = cr.row;
+    }
+    nodeMap[n.id] = n;
+  });
 
   // 港セルセットをキャッシュ
   portCellSet = new Set((routes.nodes || []).map(n => n.col + ',' + n.row));
