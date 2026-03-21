@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>戦術マップ - サブグリッド</title>
+    <link rel="stylesheet" href="../css/map.css">
+    <style>
+        #header-sub {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            color: gold;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+            font-family: serif;
+            border-bottom: 2px solid gold;
+        }
+
+        #spawn-msg {
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(139, 0, 0, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid gold;
+            font-weight: bold;
+            z-index: 100;
+            display: none;
+        }
+
+        #cv-sub {
+            background: #0a1a0a;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-sub">
+        <a href="index.html" style="color: gold; text-decoration: none; margin-right: 20px;">◀ 世界地図</a>
+        <div id="subgrid-title">読み込み中...</div>
+    </div>
+    <div id="spawn-msg"></div>
+    <canvas id="cv-sub"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cv-sub');
+        const ctx = canvas.getContext('2d');
+        const HEX_R = 40; // Tactical scale is larger
+        let subgridData = null;
+        let spawnCell = null;
+
+        async function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const params = new URLSearchParams(window.location.search);
+            const provinceName = params.get('p') || '壱岐';
+            const seq = params.get('s') || '1';
+
+            // Mapping Japanese Name to ID for file paths
+            const idMap = { '壱岐': 'iki', '陸奥': 'mut', '山城': 'yam2', '飛騨': 'hid', '蝦夷': 'ezo' };
+            const id = idMap[provinceName] || 'sub';
+
+            try {
+                // Try standard format: data/[ProvinceName]/[id]_sub_00[s].json
+                const response = await fetch(`data/${provinceName}/${id}_sub_00${seq}.json`);
+
+                subgridData = await response.json();
+                document.getElementById('subgrid-title').innerText = `${subgridData.province} - ${subgridData.sector_info || '戦術エリア'}`;
+
+                spawnRandomly();
+                render();
+            } catch (e) {
+                console.error(e);
+                document.getElementById('subgrid-title').innerText = "エラー: データの読み込みに失敗しました";
+            }
+        }
+
+        function spawnRandomly() {
+            const cells = subgridData.cells;
+            const idx = Math.floor(Math.random() * cells.length);
+            spawnCell = cells[idx];
+
+            const msg = document.getElementById('spawn-msg');
+            msg.innerText = `[${spawnCell.cell_id}] にスポーンしました！`;
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.opacity = '0', 3000);
+        }
+
+        // Simple Flat-top hex math
+        function getCoords(q, r) {
+            const x = HEX_R * 1.5 * q + (canvas.width / 2 - 200);
+            const y = HEX_R * Math.sqrt(3) * (r + q / 2) + (canvas.height / 2 - 200);
+            return { x, y };
+        }
+
+        function drawHex(cx, cy, cell) {
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI / 3) * i;
+                const x = cx + HEX_R * Math.cos(angle);
+                const y = cy + HEX_R * Math.sin(angle);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+
+            ctx.fillStyle = cell.poi ? 'gold' : (cell.terrain.type === 'coast' ? '#1a3a5c' : '#3d5a3e');
+            ctx.fill();
+            ctx.strokeStyle = (spawnCell && cell.cell_id === spawnCell.cell_id) ? 'red' : 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = (spawnCell && cell.cell_id === spawnCell.cell_id) ? 3 : 1;
+            ctx.stroke();
+
+            if (cell.poi) {
+                ctx.fillStyle = 'black';
+                ctx.font = '10px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(cell.poi.name, cx, cy + 5);
+            }
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            subgridData.cells.forEach(cell => {
+                const { x, y } = getCoords(cell.coordinate.q, cell.coordinate.r);
+                drawHex(x, y, cell);
+            });
+        }
+
+        init();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            render();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1315 @@
+{
+  "server_id": "SERVER_069",
+  "province": "壱岐",
+  "subgrid_resolution": "10x10",
+  "category": "C",
+  "sector_info": "A (北部)",
+  "cells": [
+    {
+      "cell_id": "hex_0000",
+      "coordinate": {
+        "q": 0,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 24,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0001",
+      "coordinate": {
+        "q": 0,
+        "r": 1
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0002",
+      "coordinate": {
+        "q": 0,
+        "r": 2
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 4,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0003",
+      "coordinate": {
+        "q": 0,
+        "r": 3
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 0,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0004",
+      "coordinate": {
+        "q": 0,
+        "r": 4
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 4,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0005",
+      "coordinate": {
+        "q": 0,
+        "r": 5
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 25,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0006",
+      "coordinate": {
+        "q": 0,
+        "r": 6
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 4,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0007",
+      "coordinate": {
+        "q": 0,
+        "r": 7
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 3,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0008",
+      "coordinate": {
+        "q": 0,
+        "r": 8
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 11,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0009",
+      "coordinate": {
+        "q": 0,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0100",
+      "coordinate": {
+        "q": 1,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 1,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0101",
+      "coordinate": {
+        "q": 1,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 5,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0102",
+      "coordinate": {
+        "q": 1,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 28,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0103",
+      "coordinate": {
+        "q": 1,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0104",
+      "coordinate": {
+        "q": 1,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0105",
+      "coordinate": {
+        "q": 1,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 22,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0106",
+      "coordinate": {
+        "q": 1,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 11,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0107",
+      "coordinate": {
+        "q": 1,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 1,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0108",
+      "coordinate": {
+        "q": 1,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 13,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0109",
+      "coordinate": {
+        "q": 1,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 17,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0200",
+      "coordinate": {
+        "q": 2,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 6,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0201",
+      "coordinate": {
+        "q": 2,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 8,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0202",
+      "coordinate": {
+        "q": 2,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 8,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0203",
+      "coordinate": {
+        "q": 2,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0204",
+      "coordinate": {
+        "q": 2,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 8,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0205",
+      "coordinate": {
+        "q": 2,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 6,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0206",
+      "coordinate": {
+        "q": 2,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 16,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0207",
+      "coordinate": {
+        "q": 2,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0208",
+      "coordinate": {
+        "q": 2,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 116,
+        "is_passable": true
+      },
+      "initial_owner": "none",
+      "poi": {
+        "name": "勝本城",
+        "type": "military",
+        "description": "軍事拠点 / 倭寇の港",
+        "sector": "A (北部)"
+      }
+    },
+    {
+      "cell_id": "hex_0209",
+      "coordinate": {
+        "q": 2,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 8,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0300",
+      "coordinate": {
+        "q": 3,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 0,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0301",
+      "coordinate": {
+        "q": 3,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 22,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0302",
+      "coordinate": {
+        "q": 3,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 9,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0303",
+      "coordinate": {
+        "q": 3,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 13,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0304",
+      "coordinate": {
+        "q": 3,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0305",
+      "coordinate": {
+        "q": 3,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 12,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0306",
+      "coordinate": {
+        "q": 3,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0307",
+      "coordinate": {
+        "q": 3,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 6,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0308",
+      "coordinate": {
+        "q": 3,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0309",
+      "coordinate": {
+        "q": 3,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 13,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0400",
+      "coordinate": {
+        "q": 4,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 18,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0401",
+      "coordinate": {
+        "q": 4,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 26,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0402",
+      "coordinate": {
+        "q": 4,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 19,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0403",
+      "coordinate": {
+        "q": 4,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0404",
+      "coordinate": {
+        "q": 4,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 25,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0405",
+      "coordinate": {
+        "q": 4,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 16,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0406",
+      "coordinate": {
+        "q": 4,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0407",
+      "coordinate": {
+        "q": 4,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 24,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0408",
+      "coordinate": {
+        "q": 4,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 29,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0409",
+      "coordinate": {
+        "q": 4,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0500",
+      "coordinate": {
+        "q": 5,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0501",
+      "coordinate": {
+        "q": 5,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 18,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0502",
+      "coordinate": {
+        "q": 5,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0503",
+      "coordinate": {
+        "q": 5,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 17,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0504",
+      "coordinate": {
+        "q": 5,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0505",
+      "coordinate": {
+        "q": 5,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 19,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0506",
+      "coordinate": {
+        "q": 5,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 3,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0507",
+      "coordinate": {
+        "q": 5,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 27,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0508",
+      "coordinate": {
+        "q": 5,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0509",
+      "coordinate": {
+        "q": 5,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 21,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0600",
+      "coordinate": {
+        "q": 6,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0601",
+      "coordinate": {
+        "q": 6,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 28,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0602",
+      "coordinate": {
+        "q": 6,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 12,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0603",
+      "coordinate": {
+        "q": 6,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 14,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0604",
+      "coordinate": {
+        "q": 6,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 5,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0605",
+      "coordinate": {
+        "q": 6,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 11,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0606",
+      "coordinate": {
+        "q": 6,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 7,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0607",
+      "coordinate": {
+        "q": 6,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 25,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0608",
+      "coordinate": {
+        "q": 6,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 2,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0609",
+      "coordinate": {
+        "q": 6,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 26,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0700",
+      "coordinate": {
+        "q": 7,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 0,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0701",
+      "coordinate": {
+        "q": 7,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 6,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0702",
+      "coordinate": {
+        "q": 7,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0703",
+      "coordinate": {
+        "q": 7,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 16,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0704",
+      "coordinate": {
+        "q": 7,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0705",
+      "coordinate": {
+        "q": 7,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 12,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0706",
+      "coordinate": {
+        "q": 7,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 19,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0707",
+      "coordinate": {
+        "q": 7,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 7,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0708",
+      "coordinate": {
+        "q": 7,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 12,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0709",
+      "coordinate": {
+        "q": 7,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0800",
+      "coordinate": {
+        "q": 8,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 1,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0801",
+      "coordinate": {
+        "q": 8,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 13,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0802",
+      "coordinate": {
+        "q": 8,
+        "r": 2
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 24,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0803",
+      "coordinate": {
+        "q": 8,
+        "r": 3
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 19,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0804",
+      "coordinate": {
+        "q": 8,
+        "r": 4
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 23,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0805",
+      "coordinate": {
+        "q": 8,
+        "r": 5
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 8,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0806",
+      "coordinate": {
+        "q": 8,
+        "r": 6
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 24,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0807",
+      "coordinate": {
+        "q": 8,
+        "r": 7
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 1,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0808",
+      "coordinate": {
+        "q": 8,
+        "r": 8
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0809",
+      "coordinate": {
+        "q": 8,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 28,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0900",
+      "coordinate": {
+        "q": 9,
+        "r": 0
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 11,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0901",
+      "coordinate": {
+        "q": 9,
+        "r": 1
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 19,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0902",
+      "coordinate": {
+        "q": 9,
+        "r": 2
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 3,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0903",
+      "coordinate": {
+        "q": 9,
+        "r": 3
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 10,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0904",
+      "coordinate": {
+        "q": 9,
+        "r": 4
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0905",
+      "coordinate": {
+        "q": 9,
+        "r": 5
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 24,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0906",
+      "coordinate": {
+        "q": 9,
+        "r": 6
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 5,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0907",
+      "coordinate": {
+        "q": 9,
+        "r": 7
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 27,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0908",
+      "coordinate": {
+        "q": 9,
+        "r": 8
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 6,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0909",
+      "coordinate": {
+        "q": 9,
+        "r": 9
+      },
+      "terrain": {
+        "type": "coast",
+        "elevation": 27,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    }
+  ]
+}

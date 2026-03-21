@@ -1,0 +1,333 @@
+{
+  "server_id": "ARCADIA_ver",
+  "province": "翠森共和国ヴェルデ",
+  "subgrid_resolution": "5x5",
+  "category": "S",
+  "cells": [
+    {
+      "cell_id": "hex_00",
+      "coordinate": {
+        "q": 0,
+        "r": 0
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_01",
+      "coordinate": {
+        "q": 0,
+        "r": 1
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_02",
+      "coordinate": {
+        "q": 0,
+        "r": 2
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_03",
+      "coordinate": {
+        "q": 0,
+        "r": 3
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_04",
+      "coordinate": {
+        "q": 0,
+        "r": 4
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_10",
+      "coordinate": {
+        "q": 1,
+        "r": 0
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_11",
+      "coordinate": {
+        "q": 1,
+        "r": 1
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_12",
+      "coordinate": {
+        "q": 1,
+        "r": 2
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_13",
+      "coordinate": {
+        "q": 1,
+        "r": 3
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_14",
+      "coordinate": {
+        "q": 1,
+        "r": 4
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_20",
+      "coordinate": {
+        "q": 2,
+        "r": 0
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_21",
+      "coordinate": {
+        "q": 2,
+        "r": 1
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_22",
+      "coordinate": {
+        "q": 2,
+        "r": 2
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_23",
+      "coordinate": {
+        "q": 2,
+        "r": 3
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_24",
+      "coordinate": {
+        "q": 2,
+        "r": 4
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_30",
+      "coordinate": {
+        "q": 3,
+        "r": 0
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_31",
+      "coordinate": {
+        "q": 3,
+        "r": 1
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_32",
+      "coordinate": {
+        "q": 3,
+        "r": 2
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_33",
+      "coordinate": {
+        "q": 3,
+        "r": 3
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_34",
+      "coordinate": {
+        "q": 3,
+        "r": 4
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_40",
+      "coordinate": {
+        "q": 4,
+        "r": 0
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_41",
+      "coordinate": {
+        "q": 4,
+        "r": 1
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_42",
+      "coordinate": {
+        "q": 4,
+        "r": 2
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_43",
+      "coordinate": {
+        "q": 4,
+        "r": 3
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_44",
+      "coordinate": {
+        "q": 4,
+        "r": 4
+      },
+      "terrain": {
+        "type": "mystic",
+        "elevation": 20,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    }
+  ]
+}

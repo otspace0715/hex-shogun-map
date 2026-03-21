@@ -27,6 +27,7 @@ Decentralized Sengoku Strategy Map Engine with Multi-L2 Support.
 
 ## 🛠 今後の開発ロードマップ
 
+- [x] サブグリッド（解像度階層）システムの設計。詳細は [subgrid_proposal.md](./subgrid_proposal.md) を参照。
 - [ ] 各地方L2チェーン（EVM互換チェーン等）との接続インターフェースの実装。
 - [ ] 3D描画（Three.js）に対応した `ThreeDioramaSkin` の追加。
 - [ ] 全国69カ国のメタインデックスサーバーの構築。

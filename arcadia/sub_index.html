@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏰 アルカディア戦術マップ</title>
+    <link rel="stylesheet" href="../css/map.css">
+    <style>
+        :root {
+            --bg: #0a0818;
+            --accent: #a070ff;
+            --gold: #f1c40f;
+        }
+
+        body {
+            background: var(--bg);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #header-sub {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: rgba(10, 8, 30, 0.9);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+            font-family: serif;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        #spawn-msg {
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(60, 20, 140, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid var(--accent);
+            font-weight: bold;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        #cv-sub {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-sub">
+        <a href="index.html" style="color: var(--accent); text-decoration: none; margin-right: 20px;">🏰 大陸地図へ</a>
+        <div id="subgrid-title">読み込み中...</div>
+    </div>
+    <div id="spawn-msg"></div>
+    <canvas id="cv-sub"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cv-sub');
+        const ctx = canvas.getContext('2d');
+        const HEX_R = 60; // Larger for 5x5
+        let subgridData = null;
+        let spawnCell = null;
+
+        async function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const params = new URLSearchParams(window.location.search);
+            const provinceName = params.get('p') || '黄金王国アウロス';
+            const seq = params.get('s') || '1';
+
+            // Arcadia ID Mapping
+            const idMap = {
+                '黄金王国アウロス': 'aur',
+                '銀月王国シルヴァ': 'sil',
+                '炎帝国イグニス': 'ign',
+                '翠森共和国ヴェルデ': 'ver',
+                '深海神聖マレア': 'mar',
+                '暗黒領主ウンブラ': 'umb'
+            };
+            const id = idMap[provinceName] || 'sub';
+
+            try {
+                const response = await fetch(`data/${provinceName}/${id}_sub_00${seq}.json`);
+                subgridData = await response.json();
+                document.getElementById('subgrid-title').innerText = `${subgridData.province} - 戦術レイヤー`;
+
+                spawnRandomly();
+                render();
+            } catch (e) {
+                console.error(e);
+                document.getElementById('subgrid-title').innerText = "エラー: データの読み込みに失敗しました";
+            }
+        }
+
+        function spawnRandomly() {
+            const cells = subgridData.cells;
+            const idx = Math.floor(Math.random() * cells.length);
+            spawnCell = cells[idx];
+
+            const msg = document.getElementById('spawn-msg');
+            msg.innerText = `魔力座標 [${spawnCell.cell_id}] に転送されました！`;
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.transition = 'opacity 1s';
+                msg.style.opacity = '0';
+            }, 3000);
+        }
+
+        function getCoords(q, r) {
+            const x = HEX_R * 1.5 * q + (canvas.width / 2 - 150);
+            const y = HEX_R * Math.sqrt(3) * (r + q / 2) + (canvas.height / 2 - 150);
+            return { x, y };
+        }
+
+        function drawHex(cx, cy, cell) {
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI / 3) * i;
+                const x = cx + HEX_R * Math.cos(angle);
+                const y = cy + HEX_R * Math.sin(angle);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+
+            // Mystic colors
+            ctx.fillStyle = (cell.terrain.type === 'mystic') ? '#2a1a5e' : '#1a2a4e';
+            ctx.fill();
+
+            ctx.strokeStyle = (spawnCell && cell.cell_id === spawnCell.cell_id) ? '#f1c40f' : 'rgba(160,112,255,0.3)';
+            ctx.lineWidth = (spawnCell && cell.cell_id === spawnCell.cell_id) ? 4 : 1;
+            ctx.stroke();
+
+            if (spawnCell && cell.cell_id === spawnCell.cell_id) {
+                ctx.fillStyle = '#f1c40f';
+                ctx.beginPath();
+                ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#f1c40f';
+            }
+            ctx.shadowBlur = 0;
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!subgridData) return;
+            subgridData.cells.forEach(cell => {
+                const { x, y } = getCoords(cell.coordinate.q, cell.coordinate.r);
+                drawHex(x, y, cell);
+            });
+        }
+
+        init();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            render();
+        });
+    </script>
+</body>
+
+</html>

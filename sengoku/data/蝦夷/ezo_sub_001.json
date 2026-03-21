@@ -1,0 +1,60 @@
+{
+  "server_id": "ezo_server",
+  "subgrid_resolution": "2x2",
+  "category": "SS",
+  "cells": [
+    {
+      "cell_id": "hex_0000",
+      "coordinate": {
+        "q": 0,
+        "r": 0
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0001",
+      "coordinate": {
+        "q": 0,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0100",
+      "coordinate": {
+        "q": 1,
+        "r": 0
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    },
+    {
+      "cell_id": "hex_0101",
+      "coordinate": {
+        "q": 1,
+        "r": 1
+      },
+      "terrain": {
+        "type": "plain",
+        "elevation": 15,
+        "is_passable": true
+      },
+      "initial_owner": "none"
+    }
+  ],
+  "note": "Targeting Donan (lat < 42.8)"
+}

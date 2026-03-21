@@ -124,7 +124,7 @@ const tip = document.getElementById('tooltip');
 
 // ── 状態 ──
 const data = {}, active = {};
-let mode = 'pointy', sel = null, cache = [], bT = 0;
+let mode = 'flat', sel = null, cache = [], bT = 0;
 const vp = { ox: 0, oy: 0, sc: 1 };
 let specialCells = [], seaRoutes = [], seaIslands = [], seaRouteCells = [], portCellSet = new Set();
 let waterCells = [], autoCells = [], castleCells = [];
@@ -212,6 +212,11 @@ function initFromHTML() {
 // ── 座標変換（修正1: WORLD_COORD を参照）──
 function toColRow(lat, lng) {
   const c = WORLD_COORD;
+  // 緯度から行を計算する際に、奇数/偶数カラムによる緯度オフセットを考慮
+  // toLatLngの逆変換として、col & 1 に応じたLAT_Sオフセットをlatから差し引く
+  // ただし、colはまだ不明なので、ここではオフセットなしで計算し、
+  // toLatLngでオフセットを適用する形を維持する。
+  // 厳密な逆変換には反復計算が必要になるが、ここでは単純化する。
   return {
     col: Math.round((lng - c.O_LNG) / c.LNG_S),
     row: Math.round((lat - c.O_LAT) / c.LAT2),
@@ -969,32 +974,39 @@ wrap.addEventListener('touchend', e => {
     if (!sel) stEl.textContent = t('ui.tap_cell');
   }
 }, { passive: false });
-
 wrap.addEventListener('mousedown', e => { mdd = false; mx0 = e.clientX; my0 = e.clientY; });
 wrap.addEventListener('mousemove', e => {
   if (e.buttons & 1) { mdd = true; vp.ox += e.clientX - mx0; vp.oy += e.clientY - my0; mx0 = e.clientX; my0 = e.clientY; }
 });
 wrap.addEventListener('mouseup', e => {
-  if (!mdd) { const h = hexAt(e.clientX, e.clientY); if (h && setManualSpawn(h)) return; sel = h ? (h.n + ':' + h.c.hex_id) : null; }
+  if (!mdd) {
+    const h = hexAt(e.clientX, e.clientY);
+    if (h && setManualSpawn(h)) return;
+    if (h) {
+      const seq = Math.floor(Math.random() * 4) + 1;
+      const p = h.n;
+      window.location.href = `sub_index.html?p=${encodeURIComponent(p)}&s=${seq}`;
+      return;
+    }
+    sel = h ? (h.n + ':' + h.c.hex_id) : null;
+  }
 });
-// 右クリック / コンテキストメニュー → 座標キャプチャ
 wrap.addEventListener('contextmenu', e => {
   e.preventDefault();
   const h = hexAt(e.clientX, e.clientY);
   const { px, py } = canvasToWorld(e.clientX, e.clientY);
-  // クリック位置の col/row を推定（ヘックスにヒットしない場合も）
   const col_est = Math.round(px / (R * Math.sqrt(3)));
   const row_est = Math.round(-py / (R * 2));
   const ll = h ? toLatLng(h.c.col, h.c.row) : toLatLng(col_est, row_est);
   const info = h
     ? { hex_id: h.c.hex_id, col: h.c.col, row: h.c.row, lat: ll.lat, lng: ll.lng, province: h.n }
     : { col: col_est, row: row_est, lat: ll.lat, lng: ll.lng };
-  // クリップボードにコピー
   const json = JSON.stringify(info, null, 2);
   navigator.clipboard?.writeText(json).catch(() => { });
   console.log('📍 座標キャプチャ:', json);
   stEl.textContent = `📋 copied: col=${info.col},row=${info.row} lat=${ll.lat.toFixed(4)},lng=${ll.lng.toFixed(4)}`;
 });
+
 // 長押し（touch）→ 座標キャプチャ
 let _longPressTimer = null;
 wrap.addEventListener('touchstart', e => {
