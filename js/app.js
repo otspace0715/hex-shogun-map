@@ -1039,9 +1039,11 @@ wrap.addEventListener('wheel', e => {
 }, { passive: false });
 
 // ── 固定ボタン ──
-document.getElementById('m-pt').addEventListener('click', () => { mode = 'pointy'; document.getElementById('m-pt').classList.add('active'); document.getElementById('m-fl').classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
-document.getElementById('m-fl').addEventListener('click', () => { mode = 'flat'; document.getElementById('m-fl').classList.add('active'); document.getElementById('m-pt').classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
+const _mpt = document.getElementById('m-pt'), _mfl = document.getElementById('m-fl');
+if (_mpt) _mpt.addEventListener('click', () => { mode = 'pointy'; _mpt.classList.add('active'); if (_mfl) _mfl.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
+if (_mfl) _mfl.addEventListener('click', () => { mode = 'flat'; _mfl.classList.add('active'); if (_mpt) _mpt.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
 document.getElementById('btn-fit').addEventListener('click', fit);
+
 const _gps = document.getElementById('btn-gps'), _sp = document.getElementById('btn-spawn');
 if (_gps) _gps.addEventListener('click', toggleGPS);
 if (_sp) _sp.addEventListener('click', toggleSpawnMode);
