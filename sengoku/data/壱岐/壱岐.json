@@ -3,8 +3,8 @@
   "cells": [
     {
       "hex_id": "1_1",
-      "lat": 33.7452,
-      "lng": 129.7044,
+      "lat": 33.748,
+      "lng": 129.708,
       "attr": {
         "elevation_m": 843,
         "terrain_type": 2,
@@ -15,8 +15,8 @@
     },
     {
       "hex_id": "2_1",
-      "lat": 33.764568,
-      "lng": 129.732758,
+      "lat": 33.785,
+      "lng": 129.732,
       "attr": {
         "elevation_m": 1097,
         "terrain_type": 2,
@@ -27,8 +27,8 @@
     },
     {
       "hex_id": "2_2",
-      "lat": 33.82519,
-      "lng": 129.732758,
+      "lat": 33.823,
+      "lng": 129.741,
       "attr": {
         "elevation_m": 730,
         "terrain_type": 1,

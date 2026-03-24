@@ -638,7 +638,7 @@ async function tog(name) {
   btn.textContent = name + '…';
   stEl.textContent = '📡 ' + name + ' ' + t('ui.loading');
   try {
-    const r = await fetch(API + encodeURIComponent(name) + '.json');
+    const r = await fetch(API + encodeURIComponent(name) + '/' + encodeURIComponent(name) + '.json');
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
 

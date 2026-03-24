@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/schemas/overlay.schema.json",
+  "meta": {
+    "world_id": "sengoku_japan_sub",
+    "version": "1.0.0",
+    "description": "戦国時代オンライン 壱岐国サブマップ オーバーレイデータ"
+  },
+  "landmarks": [
+    {
+      "id": "castle_katsumoto",
+      "col": 13,
+      "row": 64,
+      "lat": 33.879808,
+      "lng": 129.6825,
+      "terrain_type": 8,
+      "province": "壱岐",
+      "label": "勝本城",
+      "category": "castle",
+      "built_year": "1591",
+      "lord": "松浦氏",
+      "note": "壱岐の要衝",
+      "lat_orig": 33.7452,
+      "lng_orig": 129.7044
+    }
+  ],
+  "special_cells": [],
+  "routes": {
+    "nodes": [],
+    "connections": []
+  }
+}
