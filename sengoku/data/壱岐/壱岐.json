@@ -1,8 +1,14 @@
 {
-  "province": "壱岐",
+  "meta": {
+    "province": "壱岐",
+    "cell_count": 3,
+    "version": "1.0.0"
+  },
   "cells": [
     {
-      "hex_id": "1_1",
+      "hex_id": "iki_13_62",
+      "col": 13,
+      "row": 62,
       "lat": 33.748,
       "lng": 129.708,
       "attr": {
@@ -10,11 +16,14 @@
         "terrain_type": 2,
         "passable": false,
         "cost": 9.9,
-        "is_river": false
+        "is_river": false,
+        "capturable": false
       }
     },
     {
-      "hex_id": "2_1",
+      "hex_id": "iki_13_63",
+      "col": 13,
+      "row": 63,
       "lat": 33.785,
       "lng": 129.732,
       "attr": {
@@ -22,11 +31,14 @@
         "terrain_type": 2,
         "passable": false,
         "cost": 9.9,
-        "is_river": false
+        "is_river": false,
+        "capturable": false
       }
     },
     {
-      "hex_id": "2_2",
+      "hex_id": "iki_13_64",
+      "col": 13,
+      "row": 64,
       "lat": 33.823,
       "lng": 129.741,
       "attr": {
@@ -34,7 +46,8 @@
         "terrain_type": 1,
         "passable": true,
         "cost": 2.0,
-        "is_river": false
+        "is_river": false,
+        "capturable": true
       }
     }
   ]

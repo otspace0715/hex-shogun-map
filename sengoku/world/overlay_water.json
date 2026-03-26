@@ -821,9 +821,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_12_63",
+      "id": "sea_iki_33819",
       "lat": 33.819186,
-      "lng": 129.63,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
@@ -832,20 +832,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_12_64",
+      "id": "sea_iki_33880",
       "lat": 33.879808,
-      "lng": 129.63,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_12_65",
-      "lat": 33.94043,
-      "lng": 129.63,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
@@ -876,9 +865,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_13_61",
+      "id": "sea_iki_33728",
       "lat": 33.728253,
-      "lng": 129.6825,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
@@ -887,20 +876,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_13_62",
+      "id": "sea_iki_33789",
       "lat": 33.788875,
-      "lng": 129.6825,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_13_65",
-      "lat": 33.970741,
-      "lng": 129.6825,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
@@ -986,31 +964,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_14_61",
+      "id": "sea_iki_33698",
       "lat": 33.697942,
-      "lng": 129.735,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_14_64",
-      "lat": 33.879808,
-      "lng": 129.735,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_14_65",
-      "lat": 33.94043,
-      "lng": 129.735,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
@@ -1096,31 +1052,9 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_15_61",
-      "lat": 33.728253,
-      "lng": 129.7875,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_15_62",
-      "lat": 33.788875,
-      "lng": 129.7875,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_15_63",
+      "id": "sea_iki_33849",
       "lat": 33.849497,
-      "lng": 129.7875,
+      "lng": 129.708,
       "water_type": "sea",
       "terrain_type": 7,
       "trigger_provinces": [
