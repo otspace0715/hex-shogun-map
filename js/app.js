@@ -2,56 +2,18 @@
 // ================================================================
 // app.js v5 — Universal Hex Map Viewer
 // 指摘5点を全て修正:
-//   1. 座標変換を世界設定オブジェクト(WORLD_COORD)で管理
+//   1. 座標変換を世界設定オブジェクト(window.WORLD_COORD)で管理
 //   2. col/row 有無によるデータ処理ルートの分離
 //   3. autoSea 生成を world.json の auto_sea フラグで制御
 //   4. ランドマークアイコン/ラベルを world.json から取得
 //   5. i18n をスタック形式で参照
 // ================================================================
 
-// ── 世界座標設定（world.jsonで上書き）──
-// グローバル変数の代わりに1オブジェクトで管理 → 世界切替で確実にリセット
-let WORLD_COORD = {
-  O_LAT: 30.0, O_LNG: 129.0,
-  LAT_S: 0.030311, LAT2: 0.060622, LNG_S: 0.0525,
-};
-// 後方互換のため個別変数もエイリアスとして残す（loadWorld で同時更新）
-let O_LAT = 30.0, O_LNG = 129.0, LAT_S = 0.030311, LAT2 = 0.060622, LNG_S = 0.0525;
-
-function updateCoord(c) {
-  WORLD_COORD = c;
-  O_LAT = c.O_LAT; O_LNG = c.O_LNG;
-  LAT_S = c.LAT_S; LAT2 = c.LAT2; LNG_S = c.LNG_S;
-}
-
-// ── 世界設定（world.jsonで上書き）──
-let API = './data/';
-let OVERLAY_URL = './world/overlay.json';
-let OVERLAY_WATER_URL = './world/overlay_water.json';
-const WORLD_URL = './world/world.json';
-
-// ── 世界フラグ（world.jsonで上書き）──
-// auto_sea: true → 陸地隣接の空白セルを自動海域として描画（現実世界用）
-// auto_sea: false → 自動海域なし（異世界等）
-let WORLD_FLAGS = { auto_sea: true, show_coords: true };
-// Province ごとの描画オフセット（world.jsonのprovinces[].offsetで設定）
-let PROVINCE_OFFSETS = {};
-
-// ── ランドマーク定義（world.jsonのlandmark_typesで上書き）──
-// terrain_type → { icon, label_key } のマッピング
-let LANDMARK_TYPES = {
-  8: { icon: '🏯', label_key: 'cell.castle' }
-};
-
-const R = 22;
+// 全ての設定・数学ロジックは map_utils.js に移動しました。
 const DPR = window.devicePixelRatio || 1;
 
-let TC = { 0: [61, 107, 74], 1: [90, 74, 50], 2: [42, 42, 58], 3: [30, 74, 122], 4: [26, 48, 96], 5: [180, 80, 40], 6: [40, 80, 160], 7: [20, 60, 120], 8: [160, 120, 40], 9: [50, 50, 55] };
-let TN = { 0: 'Plain', 1: 'Hill', 2: 'Mountain', 3: 'River', 4: 'Coast', 5: 'Volcano', 6: 'Lake', 7: 'Sea', 8: 'Castle', 9: 'Border' };
-let PIDS = {}, PCOL = {};
-
 // ── i18n スタック形式（修正5）──
-// 優先順: WORLD_I18N（world.json）→ I18N_DEFAULT（システム）→ キーそのまま
+// 優先順: window.WORLD_I18N（world.json）→ I18N_DEFAULT（システム）→ キーそのまま
 const I18N_DEFAULT = {
   'ui.select_region': 'Select region',
   'ui.tap_cell': 'Tap a cell',
@@ -94,27 +56,24 @@ const I18N_DEFAULT = {
   // 'cell.castle_named': '${lord}の居城・${name}',
   // 'ui.gps_in_province': '📍 ${province}国 精度±${accuracy}m',
 };
-let WORLD_I18N = {};  // world.json の i18n セクション
+let window.WORLD_I18N = {};  // world.json の i18n セクション
 
-// スタック形式の t() — WORLD_I18N → I18N_DEFAULT → key
+// スタック形式の t() — window.WORLD_I18N → I18N_DEFAULT → key
 function t(key, ...args) {
   try {
-    let s = WORLD_I18N[key] ?? I18N_DEFAULT[key] ?? key;
-    // 位置引数 {0},{1},... の置換
+    let s = window.WORLD_I18N[key] ?? I18N_DEFAULT[key] ?? key;
     args.forEach((a, i) => { s = s.replace('{' + i + '}', a); });
-    // 名前付き変数 ${varName} の置換（最後の引数がオブジェクトの場合）
     const vars = args.find(a => a && typeof a === 'object' && !Array.isArray(a));
     if (vars) Object.entries(vars).forEach(([k, v]) => { s = s.replace('${' + k + '}', v); });
     return s;
   } catch (_) { return key; }
 }
-// 単位変換（world.json の unit_map で定義可能）
 function tUnit(value, unitKey) {
-  const map = WORLD_I18N['unit.' + unitKey] || unitKey;
-  const scale = WORLD_I18N['unit_scale.' + unitKey] || 1;
+  const map = window.WORLD_I18N['unit.' + unitKey] || unitKey;
+  const scale = window.WORLD_I18N['unit_scale.' + unitKey] || 1;
   return String(Math.round(value * scale)) + map;
 }
-function applyI18N(obj) { if (obj) WORLD_I18N = { ...obj }; }
+function applyI18N(obj) { if (obj) window.WORLD_I18N = { ...obj }; }
 
 // ── DOM ──
 const cv = document.getElementById('cv');
@@ -124,7 +83,7 @@ const tip = document.getElementById('tooltip');
 
 // ── 状態 ──
 const data = {}, active = {};
-let mode = 'flat', sel = null, cache = [], bT = 0;
+let sel = null, cache = [], bT = 0;
 const vp = { ox: 0, oy: 0, sc: 1 };
 let specialCells = [], seaRoutes = [], seaIslands = [], seaRouteCells = [], portCellSet = new Set();
 let waterCells = [], autoCells = [], castleCells = [];
@@ -135,49 +94,13 @@ let gpsMarker = null, gpsWatchId = null, gpsActive = false, spawnMode = false;
 // ── world.json ロード ──
 async function loadWorld() {
   try {
-    const url = window.WORLD_OVERRIDE_URL || WORLD_URL;
-    const r = await fetch(url);
-    if (!r.ok) return;
-    const w = await r.json();
+    const w = await window.loadWorldBase();
+    if (!w) return;
 
-    // 座標系を世界設定オブジェクトで更新（修正1）
-    if (w.coordinate) {
-      updateCoord({
-        O_LAT: w.coordinate.origin_lat,
-        O_LNG: w.coordinate.origin_lng,
-        LAT_S: w.coordinate.lat_step,
-        LAT2: w.coordinate.lat_step * 2,
-        LNG_S: w.coordinate.lng_step,
-      });
-    }
-
-    // API
-    if (w.api?.province_base) API = w.api.province_base;
-    if (w.api?.overlay) OVERLAY_URL = w.api.overlay;
-    if (w.api?.overlay_water) OVERLAY_WATER_URL = w.api.overlay_water;
-
-    // 世界フラグ（修正3）
-    if (w.flags != null) WORLD_FLAGS = { auto_sea: true, ...w.flags };
-
-    // ランドマーク定義（修正4）
-    if (w.landmark_types) LANDMARK_TYPES = w.landmark_types;
-
-    // 地形
-    if (w.terrain_types) {
-      TC = {}; TN = {};
-      Object.entries(w.terrain_types).forEach(([k, v]) => {
-        TC[k] = v.color; TN[k] = v.name;
-      });
-    }
-
-    // 省ボタン追加 + オフセット設定
     if (w.provinces) {
       const existing = new Set([...document.querySelectorAll('[data-prov]')].map(b => b.dataset.prov));
       const btnFit = document.getElementById('btn-fit');
       w.provinces.forEach(p => {
-        PIDS[p.name] = p.id; PCOL[p.name] = p.color;
-        // Province ごとの描画オフセット（微調整用）
-        if (p.offset) PROVINCE_OFFSETS[p.name] = p.offset;
         if (!existing.has(p.name) && btnFit) {
           const btn = document.createElement('button');
           btn.className = 'btn prov-btn';
@@ -189,9 +112,7 @@ async function loadWorld() {
       });
     }
 
-    // i18n スタックに world の辞書を設定（修正5）
     applyI18N(w.i18n || {});
-
   } catch (e) { console.warn('world.json load failed:', e); }
 }
 
@@ -201,7 +122,7 @@ function initFromHTML() {
     const name = btn.dataset.prov;
     const id = btn.dataset.id || name.slice(0, 3);
     const col = btn.dataset.color ? btn.dataset.color.split(',').map(Number) : [120, 120, 80];
-    PIDS[name] = id; PCOL[name] = col;
+    window.PIDS[name] = id; window.PCOL[name] = col;
     btn.id = 'p-' + id;
     const nb = btn.cloneNode(true);
     btn.parentNode.replaceChild(nb, btn);
@@ -209,27 +130,6 @@ function initFromHTML() {
   });
 }
 
-// ── 座標変換（修正1: WORLD_COORD を参照）──
-function toColRow(lat, lng) {
-  const c = WORLD_COORD;
-  // 緯度から行を計算する際に、奇数/偶数カラムによる緯度オフセットを考慮
-  // toLatLngの逆変換として、col & 1 に応じたLAT_Sオフセットをlatから差し引く
-  // ただし、colはまだ不明なので、ここではオフセットなしで計算し、
-  // toLatLngでオフセットを適用する形を維持する。
-  // 厳密な逆変換には反復計算が必要になるが、ここでは単純化する。
-  return {
-    col: Math.round((lng - c.O_LNG) / c.LNG_S),
-    row: Math.round((lat - c.O_LAT) / c.LAT2),
-  };
-}
-// 逆引き: col/row → lat/lng (odd-q offset対応)
-function toLatLng(col, row) {
-  const c = WORLD_COORD;
-  return {
-    lat: c.O_LAT + row * c.LAT2 + ((col & 1) ? c.LAT_S : 0),
-    lng: c.O_LNG + col * c.LNG_S,
-  };
-}
 // キャンバス座標 → ワールド座標（ヒットテスト用）
 function canvasToWorld(ex, ey) {
   const rect = cv.getBoundingClientRect();
@@ -237,25 +137,6 @@ function canvasToWorld(ex, ey) {
   const py = ((ey - rect.top) / rect.height * cv.height / DPR - vp.oy) / vp.sc;
   return { px, py };
 }
-function colRowToXY(col, row) {
-  const S3 = Math.sqrt(3), o = col & 1;
-  return mode === 'pointy'
-    ? { cx: R * S3 * col, cy: -(R * 2 * row + R * o) }
-    : { cx: R * 1.5 * col, cy: -(R * S3 * row + R * S3 / 2 * o) };
-}
-function hexPts(cx, cy) {
-  const pts = [];
-  for (let i = 0; i < 6; i++) {
-    const a = mode === 'pointy' ? Math.PI / 180 * (60 * i - 30) : Math.PI / 180 * (60 * i);
-    pts.push({ x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) });
-  }
-  return pts;
-}
-function neighbors(col, row) {
-  const o = col & 1;
-  return [[col, row - 1], [col, row + 1], [col - 1, row - 1 + o], [col - 1, row + o], [col + 1, row - 1 + o], [col + 1, row + o]];
-}
-function D(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
 
 // ── オーバーレイ読み込み（overlay.json + overlay_water.json を並行フェッチ）──
 // overlay_water.json が存在しない場合は overlay.json の water_cells をそのまま使用
@@ -263,8 +144,8 @@ async function loadOverlay() {
   if (overlayData) return;
   try {
     const [r1, r2] = await Promise.all([
-      fetch(OVERLAY_URL),
-      fetch(OVERLAY_WATER_URL).catch(() => null),
+      fetch(window.OVERLAY_URL),
+      fetch(window.OVERLAY_WATER_URL).catch(() => null),
     ]);
     if (!r1.ok) { console.warn('overlay.json fetch failed:', r1.status); return; }
     const base = await r1.json();
@@ -293,7 +174,7 @@ function updateSpecial() {
     if (ok) territory.cells.forEach(cell => {
       // 緯度経度がある場合は常に再計算
       if (cell.lat != null && cell.lng != null) {
-        const cr = toColRow(cell.lat, cell.lng);
+        const cr = window.toColRow(cell.lat, cell.lng);
         cell.col = cr.col; cell.row = cr.row;
       }
       specialCells.push({
@@ -339,7 +220,7 @@ function updateWater() {
   (overlayData.water_cells || []).forEach(wc => {
     // 緯度経度がある場合は常に再計算
     if (wc.lat != null && wc.lng != null) {
-      const cr = toColRow(wc.lat, wc.lng);
+      const cr = window.toColRow(wc.lat, wc.lng);
       wc.col = cr.col; wc.row = cr.row;
     }
     if (!triggered(wc)) return;
@@ -355,7 +236,7 @@ function updateWater() {
   });
 }
 
-// ── updateCastles（修正4: LANDMARK_TYPES から icon/label を取得）──
+// ── updateCastles（修正4: window.LANDMARK_TYPES から icon/label を取得）──
 function updateCastles() {
   castleCells = [];
   if (!overlayData) return;
@@ -364,7 +245,7 @@ function updateCastles() {
     if (!an.includes(lm.province)) return;
     // 緯度経度がある場合は常に再計算
     if (lm.lat != null && lm.lng != null) {
-      const cr = toColRow(lm.lat, lm.lng);
+      const cr = window.toColRow(lm.lat, lm.lng);
       lm.col = cr.col; lm.row = cr.row;
     }
     castleCells.push({
@@ -384,8 +265,8 @@ function updateCastles() {
         }
       }, n: lm.province,
       // ランドマーク固有のアイコンとラベルキーをここで解決
-      icon: (LANDMARK_TYPES[lm.terrain_type || 8]?.icon) || '🏯',
-      labelKey: (LANDMARK_TYPES[lm.terrain_type || 8]?.label_key) || 'cell.castle',
+      icon: (window.LANDMARK_TYPES[lm.terrain_type || 8]?.icon) || '🏯',
+      labelKey: (window.LANDMARK_TYPES[lm.terrain_type || 8]?.label_key) || 'cell.castle',
     });
   });
 }
@@ -400,7 +281,7 @@ function updateSeaRoutes() {
   (routes.nodes || []).forEach(n => {
     // 緯度経度がある場合は常に再計算
     if (n.lat != null && n.lng != null) {
-      const cr = toColRow(n.lat, n.lng);
+      const cr = window.toColRow(n.lat, n.lng);
       n.col = cr.col; n.row = cr.row;
     }
     nodeMap[n.id] = n;
@@ -475,7 +356,7 @@ function updateSeaRoutes() {
   (overlayData.water_cells || []).forEach(wc => {
     if (wc.water_type !== 'sea' && wc.water_type !== 'sea_route') return;
     if (wc.col == null || wc.row == null) {
-      const cr = toColRow(wc.lat, wc.lng);
+      const cr = window.toColRow(wc.lat, wc.lng);
       wc.col = cr.col; wc.row = cr.row;
     }
     const key = wc.col + ',' + wc.row;
@@ -493,7 +374,7 @@ function updateSeaRoutes() {
   });
 }
 
-// ── detectGaps（修正3: WORLD_FLAGS.auto_sea で制御）──
+// ── detectGaps（修正3: window.WORLD_FLAGS.auto_sea で制御）──
 function detectGaps() {
   gapCells = []; autoCells = [];
   const an = Object.keys(active).filter(n => active[n]);
@@ -504,7 +385,7 @@ function detectGaps() {
   const _n = (col, row) => { const o = col & 1; return [[col, row - 1], [col, row + 1], [col - 1, row - 1 + o], [col - 1, row + o], [col + 1, row - 1 + o], [col + 1, row + o]]; };
   function mkCell(nc, nr, tt, label) {
     return {
-      col: nc, row: nr, lat: Math.round((O_LAT + nr * LAT2) * 1e6) / 1e6, lng: Math.round((O_LNG + nc * LNG_S) * 1e6) / 1e6,
+      col: nc, row: nr, lat: Math.round((window.O_LAT + nr * window.LAT2) * 1e6) / 1e6, lng: Math.round((window.O_LNG + nc * window.LNG_S) * 1e6) / 1e6,
       hex_id: (tt === 7 ? 'sea_' : 'gap_') + nc + '_' + nr,
       attr: {
         elevation_m: 0, terrain_type: tt, passable: tt !== 7, cost: tt === 7 ? 9.9 : 1.5,
@@ -526,7 +407,7 @@ function detectGaps() {
       _n(nc, nr).forEach(([ac, ar]) => { const p = occ.get(ac + ',' + ar); if (p && p !== '__special__') adj.add(p); });
       if (adj.size >= 2) {
         gapCells.push({ c: mkCell(nc, nr, 9, _border), n: _border, adj: [...adj].sort(), isGap: true });
-      } else if (adj.size === 1 && WORLD_FLAGS.auto_sea) {
+      } else if (adj.size === 1 && window.WORLD_FLAGS.auto_sea) {
         // 修正3: auto_sea フラグが true の世界のみ自動海域を生成
         let coastal = false;
         _n(nc, nr).forEach(([ac, ar]) => {
@@ -564,7 +445,7 @@ function stopGPS() {
   draw();
 }
 async function onGPSUpdate(lat, lng, accuracy) {
-  const cr = toColRow(lat, lng);
+  const cr = window.toColRow(lat, lng);
   gpsMarker = { ...cr, lat, lng, accuracy };
   let found = null;
   Object.keys(data).forEach(n => data[n].forEach(c => { if (c.col === cr.col && c.row === cr.row) found = n; }));
@@ -594,7 +475,7 @@ function setManualSpawn(h) {
   return true;
 }
 function centerOnColRow(col, row) {
-  const { cx, cy } = colRowToXY(col, row), W = cv.width / DPR, H = cv.height / DPR;
+  const { cx, cy } = window.calcHexXY(col, row), W = cv.width / DPR, H = cv.height / DPR;
   vp.ox = W / 2 - cx * vp.sc; vp.oy = H / 2 - cy * vp.sc; draw();
 }
 
@@ -614,13 +495,13 @@ function updateSt() {
   const ns = Object.keys(active).filter(n => active[n]);
   const tot = ns.reduce((s, n) => s + (data[n] ? data[n].length : 0), 0);
   stEl.textContent = ns.length
-    ? `✓ ${ns.join('+')} ${tot} ${t('ui.cells')} ${mode === 'pointy' ? '▲Pointy' : '○Flat'}`
+    ? `✓ ${ns.join('+')} ${tot} ${t('ui.cells')} ${window.hex_mode === 'pointy' ? '▲Pointy' : '○Flat'}`
     : t('ui.select_region');
 }
 function fit() {
   const cells = allActive(); if (!cells.length) return;
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-  cells.forEach(({ c }) => { const { cx, cy } = colRowToXY(c.col, c.row); minX = Math.min(minX, cx - R); maxX = Math.max(maxX, cx + R); minY = Math.min(minY, cy - R); maxY = Math.max(maxY, cy + R); });
+  cells.forEach(({ c }) => { const { cx, cy } = window.calcHexXY(c.col, c.row); minX = Math.min(minX, cx - window.hex_R); maxX = Math.max(maxX, cx + window.hex_R); minY = Math.min(minY, cy - window.hex_R); maxY = Math.max(maxY, cy + window.hex_R); });
   const W = cv.width / DPR, H = cv.height / DPR, pad = 30;
   const sc = Math.min((W - pad * 2) / (maxX - minX), (H - pad * 2) / (maxY - minY), 4);
   vp.sc = sc; vp.ox = (W - (maxX + minX) * sc) / 2; vp.oy = (H - (maxY + minY) * sc) / 2; draw();
@@ -628,7 +509,7 @@ function fit() {
 
 // ── tog（修正2: col/row有無でデータ処理ルートを分離）──
 async function tog(name) {
-  const btn = document.getElementById('p-' + PIDS[name]);
+  const btn = document.getElementById('p-' + window.PIDS[name]);
   if (!btn) { console.warn('Button not found:', name, PIDS); return; }
   if (data[name]) {
     active[name] = !active[name]; btn.classList.toggle('on', active[name]);
@@ -638,14 +519,14 @@ async function tog(name) {
   btn.textContent = name + '…';
   stEl.textContent = '📡 ' + name + ' ' + t('ui.loading');
   try {
-    const r = await fetch(API + encodeURIComponent(name) + '/' + encodeURIComponent(name) + '.json');
+    const r = await fetch(window.API + encodeURIComponent(name) + '/' + encodeURIComponent(name) + '.json');
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
 
     data[name] = d.cells.map(c => {
       // 緯度経度がある場合は、常に現在の世界座標系で再計算して同期させる
       if (c.lat != null && c.lng != null) {
-        return { ...c, ...toColRow(c.lat, c.lng) };
+        return { ...c, ...window.toColRow(c.lat, c.lng) };
       }
       return c;
     });
@@ -670,7 +551,7 @@ function draw(ts) {
   ctx.save(); ctx.scale(DPR, DPR); ctx.translate(vp.ox, vp.oy); ctx.scale(vp.sc, vp.sc);
   cache = [];
   const multi = Object.values(active).filter(Boolean).length > 1;
-  const _W = cv.width / DPR, _H = cv.height / DPR, margin = R * 8;
+  const _W = cv.width / DPR, _H = cv.height / DPR, margin = window.hex_R * 8;
   function inView(cx, cy) { const sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy; return sx > -margin && sx < _W + margin && sy > -margin && sy < _H + margin; }
   const activeColRows = new Set(allActive().map(({ c }) => c.col + ',' + c.row));
   const specialKeys = new Set(specialCells.map(({ c }) => c.col + ',' + c.row));
@@ -679,12 +560,12 @@ function draw(ts) {
   // ① 通常セル
   const cacheMap = new Map();
   cells.forEach(({ c, n }) => {
-    const off = PROVINCE_OFFSETS[n] || { col: 0, row: 0 };
-    const { cx, cy } = colRowToXY(c.col + off.col, c.row + off.row);
+    const off = window.PROVINCE_OFFSETS[n] || { col: 0, row: 0 };
+    const { cx, cy } = window.calcHexXY(c.col + off.col, c.row + off.row);
     if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy), isSel = sel === n + ':' + c.hex_id;
-    let [r, g, b] = [...(TC[c.attr.terrain_type] || TC[1])];
-    if (multi && PCOL[n]) { const pc = PCOL[n]; r = Math.round(r * .6 + pc[0] * .4); g = Math.round(g * .6 + pc[1] * .4); b = Math.round(b * .6 + pc[2] * .4); }
+    const pts = window.hexPts(cx, cy), isSel = sel === n + ':' + c.hex_id;
+    let [r, g, b] = [...(window.TC[c.attr.terrain_type] || window.TC[1])];
+    if (multi && window.PCOL[n]) { const pc = window.PCOL[n]; r = Math.round(r * .6 + pc[0] * .4); g = Math.round(g * .6 + pc[1] * .4); b = Math.round(b * .6 + pc[2] * .4); }
     const ev = Math.min((c.attr.elevation_m || 0) / 1200, 1);
     r = Math.min(255, Math.round(r * (1 + ev * .3))); g = Math.min(255, Math.round(g * (1 + ev * .3))); b = Math.min(255, Math.round(b * (1 + ev * .3)));
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
@@ -699,15 +580,15 @@ function draw(ts) {
     if (h.isGap || h.isWater || h.isCastle || h.isIsland) return;
     if (sel === h.n + ':' + h.c.hex_id) return;
     const { c, n, cx, cy, pts } = h;
-    neighbors(c.col, c.row).forEach(([nc, nr]) => {
+    window.hexNeighbors(c.col, c.row).forEach(([nc, nr]) => {
       const nb = cacheMap.get(nc + ',' + nr);
       if (!nb || nb.n === n) return;
-      const TOL = R * .08;
+      const TOL = window.hex_R * .08;
       for (let si = 0; si < 6; si++) {
         const s0 = pts[si], s1 = pts[(si + 1) % 6];
         for (let ni = 0; ni < 6; ni++) {
           const n0 = nb.pts[ni], n1 = nb.pts[(ni + 1) % 6];
-          if ((D(s0, n0) < TOL && D(s1, n1) < TOL) || (D(s0, n1) < TOL && D(s1, n0) < TOL)) {
+          if ((window.hexDist(s0, n0) < TOL && window.hexDist(s1, n1) < TOL) || (window.hexDist(s0, n1) < TOL && window.hexDist(s1, n0) < TOL)) {
             ctx.beginPath(); ctx.moveTo(s0.x, s0.y); ctx.lineTo(s1.x, s1.y);
             ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.lineWidth = 1.5 / vp.sc; ctx.stroke();
           }
@@ -719,8 +600,8 @@ function draw(ts) {
   // ③ gap
   gapCells.forEach(({ c, n, adj }) => {
     if (specialKeys.has(c.col + ',' + c.row)) return;
-    const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy);
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = 'rgba(50,50,55,0.85)'; ctx.fill();
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
@@ -732,27 +613,27 @@ function draw(ts) {
   waterCells.forEach(({ c, n, wtype }) => {
     if (activeColRows.has(c.col + ',' + c.row)) return;
     if (specialKeys.has(c.col + ',' + c.row)) return;
-    const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy);
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
     const fc = wtype === 'sea' ? 'rgba(15,45,100,0.85)' : wtype === 'lake' ? 'rgba(30,80,160,0.80)' : 'rgba(20,60,140,0.75)';
     const sc2 = c.attr.flood_risk ? 'rgba(255,140,0,0.7)' : wtype === 'sea' ? 'rgba(40,100,180,0.5)' : 'rgba(60,120,220,0.6)';
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = fc; ctx.fill();
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.strokeStyle = sc2; ctx.lineWidth = (c.attr.flood_risk ? 1.5 : .8) / vp.sc; ctx.stroke();
-    if (R * vp.sc > 12) { ctx.font = `${Math.max(7, R * .55)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(wtype === 'sea' ? '🌊' : wtype === 'lake' ? '🏞️' : '〜', cx, cy); }
+    if (window.hex_R * vp.sc > 12) { ctx.font = `${Math.max(7, window.hex_R * .55)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(wtype === 'sea' ? '🌊' : wtype === 'lake' ? '🏞️' : '〜', cx, cy); }
     cache.push({ c, n, cx, cy, pts, isWater: true, wtype });
   });
 
-  // ⑤ 自動海域（WORLD_FLAGS.auto_sea=true の世界のみ）
-  if (WORLD_FLAGS.auto_sea) {
+  // ⑤ 自動海域（window.WORLD_FLAGS.auto_sea=true の世界のみ）
+  if (window.WORLD_FLAGS.auto_sea) {
     autoCells.forEach(({ c, n }) => {
       if (activeColRows.has(c.col + ',' + c.row)) return;
       if (specialKeys.has(c.col + ',' + c.row)) return;
       if (gapKeySet.has(c.col + ',' + c.row)) return;
       if (waterCells.some(w => w.c.col === c.col && w.c.row === c.row)) return;
-      const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-      const pts = hexPts(cx, cy);
+      const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+      const pts = window.hexPts(cx, cy);
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
       ctx.fillStyle = 'rgba(15,45,100,0.80)'; ctx.fill();
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
@@ -763,39 +644,39 @@ function draw(ts) {
 
   // ⑥ special
   specialCells.forEach(({ c, n }) => {
-    const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy);
-    const [r, g, b] = [...(TC[c.attr.terrain_type] || TC[2])];
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
+    const [r, g, b] = [...(window.TC[c.attr.terrain_type] || window.TC[2])];
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = `rgba(${r},${g},${b},0.85)`; ctx.fill();
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.strokeStyle = 'rgba(220,180,60,.6)'; ctx.lineWidth = 1 / vp.sc; ctx.stroke();
-    if (R * vp.sc > 10 && c.attr.label) { ctx.font = `${Math.max(7, R * .4)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.fillStyle = 'rgba(255,220,80,.9)'; ctx.fillText(c.attr.label, cx, cy + R * .3); }
+    if (window.hex_R * vp.sc > 10 && c.attr.label) { ctx.font = `${Math.max(7, window.hex_R * .4)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.fillStyle = 'rgba(255,220,80,.9)'; ctx.fillText(c.attr.label, cx, cy + window.hex_R * .3); }
     cache.push({ c, n, cx, cy, pts, isSpecial: true });
   });
 
   // ⑦ ランドマーク（修正4: icon/labelKey を castleCell から取得）
   castleCells.forEach(({ c, n, icon, labelKey }) => {
-    const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy), isSel = sel === n + ':' + c.hex_id;
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy), isSel = sel === n + ':' + c.hex_id;
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = isSel ? '#ffe040' : 'rgba(160,120,40,0.85)'; ctx.fill();
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.strokeStyle = 'rgba(220,180,60,0.8)'; ctx.lineWidth = 1.2 / vp.sc; ctx.stroke();
-    if (R * vp.sc > 12) { ctx.font = `${Math.max(7, R * .6)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(icon || '🏯', cx, cy); }
+    if (window.hex_R * vp.sc > 12) { ctx.font = `${Math.max(7, window.hex_R * .6)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(icon || '🏯', cx, cy); }
     cache.push({ c, n, cx, cy, pts, isCastle: true, icon, labelKey });
   });
 
   // ⑧ 島嶼
   seaIslands.forEach(({ c, n }) => {
-    const { cx, cy } = colRowToXY(c.col, c.row); if (!inView(cx, cy)) return;
-    const pts = hexPts(cx, cy);
-    const [r, g, b] = [...(TC[c.attr.terrain_type] || TC[1])];
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
+    const [r, g, b] = [...(window.TC[c.attr.terrain_type] || window.TC[1])];
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = `rgb(${r},${g},${b})`; ctx.fill();
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.strokeStyle = 'rgba(80,200,200,0.7)'; ctx.lineWidth = 1 / vp.sc; ctx.stroke();
-    if (R * vp.sc > 12) { ctx.font = `${Math.max(7, R * .55)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('🏝️', cx, cy); }
+    if (window.hex_R * vp.sc > 12) { ctx.font = `${Math.max(7, window.hex_R * .55)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('🏝️', cx, cy); }
     cache.push({ c, n, cx, cy, pts, isIsland: true });
   });
 
@@ -812,20 +693,20 @@ function draw(ts) {
       if (islandCellSet.has(key)) return;
       if (landSet.has(key)) return;
       if (drawn.has(key)) return; drawn.add(key);
-      const { cx, cy } = colRowToXY(col, row); if (!inView(cx, cy)) return;
-      const pts = hexPts(cx, cy);
+      const { cx, cy } = window.calcHexXY(col, row); if (!inView(cx, cy)) return;
+      const pts = window.hexPts(cx, cy);
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
       ctx.fillStyle = 'rgba(10,30,80,0.75)'; ctx.fill();
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
       ctx.setLineDash([2 / vp.sc, 2 / vp.sc]); ctx.strokeStyle = 'rgba(80,180,255,0.6)'; ctx.lineWidth = 1 / vp.sc; ctx.stroke(); ctx.setLineDash([]);
-      if (R * vp.sc > 16) { ctx.font = `${Math.max(6, R * .45)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('⛵', cx, cy); }
+      if (window.hex_R * vp.sc > 16) { ctx.font = `${Math.max(6, window.hex_R * .45)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('⛵', cx, cy); }
       cache.push({ c: { col, row, lat: 0, lng: 0, hex_id: 'route_' + key, attr: { terrain_type: 7, elevation_m: 0, passable: false, cost: 9.9, special: true, label: routeName } }, n: from + '→' + to, cx, cy, pts, isWater: true, wtype: 'sea_route' });
     });
     seaRoutes.forEach(({ route, fromPort, toPort }) => {
-      const { cx: fx, cy: fy } = colRowToXY(fromPort.col, fromPort.row), { cx: tx, cy: ty } = colRowToXY(toPort.col, toPort.row);
+      const { cx: fx, cy: fy } = window.calcHexXY(fromPort.col, fromPort.row), { cx: tx, cy: ty } = window.calcHexXY(toPort.col, toPort.row);
       const mx = (fx + tx) / 2, my = (fy + ty) / 2; if (!inView(mx, my)) return;
-      if (R * vp.sc > 5) {
-        ctx.font = `bold ${Math.max(7, R * .35)}px monospace`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      if (window.hex_R * vp.sc > 5) {
+        ctx.font = `bold ${Math.max(7, window.hex_R * .35)}px monospace`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         ctx.strokeStyle = 'rgba(0,0,0,.8)'; ctx.lineWidth = 2 / vp.sc; ctx.fillStyle = 'rgba(150,210,255,0.95)';
         ctx.strokeText('⛵' + route.distance_km + 'km', mx, my); ctx.fillText('⛵' + route.distance_km + 'km', mx, my);
       }
@@ -844,13 +725,13 @@ function draw(ts) {
     visPortIds.forEach(pid => {
       const port = portMap2[pid]; if (!port) return;
       if (!an.includes(port.province) && !pid.startsWith('ISLAND_')) return;
-      const { cx, cy } = colRowToXY(port.col, port.row);
-      const pts = hexPts(cx, cy);
+      const { cx, cy } = window.calcHexXY(port.col, port.row);
+      const pts = window.hexPts(cx, cy);
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
       ctx.fillStyle = 'rgba(80,160,220,0.25)'; ctx.fill();
       ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
       ctx.strokeStyle = 'rgba(80,160,220,0.8)'; ctx.lineWidth = 1.5 / vp.sc; ctx.stroke();
-      if (R * vp.sc > 10) { ctx.font = `${Math.max(8, R * .6)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('⚓', cx, cy); }
+      if (window.hex_R * vp.sc > 10) { ctx.font = `${Math.max(8, window.hex_R * .6)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('⚓', cx, cy); }
       cache.push({ c: { col: port.col, row: port.row, lat: port.lat, lng: port.lng, hex_id: 'port_' + pid, attr: { terrain_type: 4, elevation_m: 0, passable: true, cost: 1, special: true, label: port.label } }, n: port.province, cx, cy, pts, isPort: true, portData: port });
     });
   }
@@ -863,10 +744,10 @@ function draw(ts) {
     ctx.strokeStyle = `rgba(255,220,0,${.4 + blink * .5})`; ctx.lineWidth = 2.5 / vp.sc; ctx.stroke();
     sh.pts.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, 3 / vp.sc, 0, Math.PI * 2); ctx.fillStyle = '#ffe040'; ctx.fill(); });
     let shared = 0;
-    neighbors(sh.c.col, sh.c.row).forEach(([nc, nr]) => {
+    window.hexNeighbors(sh.c.col, sh.c.row).forEach(([nc, nr]) => {
       const nh = cache.find(h => h.c && h.c.col === nc && h.c.row === nr); if (!nh) return;
       ctx.beginPath(); nh.pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath(); ctx.strokeStyle = 'rgba(100,200,255,.5)'; ctx.lineWidth = 1.5 / vp.sc; ctx.stroke();
-      const TOL = R * .08; for (let si = 0; si < 6; si++) { const s0 = sh.pts[si], s1 = sh.pts[(si + 1) % 6]; for (let ni = 0; ni < 6; ni++) { const n0 = nh.pts[ni], n1 = nh.pts[(ni + 1) % 6]; if ((D(s0, n0) < TOL && D(s1, n1) < TOL) || (D(s0, n1) < TOL && D(s1, n0) < TOL)) { shared++; ctx.beginPath(); ctx.moveTo(s0.x, s0.y); ctx.lineTo(s1.x, s1.y); ctx.strokeStyle = `rgba(80,255,80,${.7 + blink * .3})`; ctx.lineWidth = 3.5 / vp.sc; ctx.stroke(); } } }
+      const TOL = window.hex_R * .08; for (let si = 0; si < 6; si++) { const s0 = sh.pts[si], s1 = sh.pts[(si + 1) % 6]; for (let ni = 0; ni < 6; ni++) { const n0 = nh.pts[ni], n1 = nh.pts[(ni + 1) % 6]; if ((window.hexDist(s0, n0) < TOL && window.hexDist(s1, n1) < TOL) || (window.hexDist(s0, n1) < TOL && window.hexDist(s1, n0) < TOL)) { shared++; ctx.beginPath(); ctx.moveTo(s0.x, s0.y); ctx.lineTo(s1.x, s1.y); ctx.strokeStyle = `rgba(80,255,80,${.7 + blink * .3})`; ctx.lineWidth = 3.5 / vp.sc; ctx.stroke(); } } }
     });
     if (sh.c?.hex_id) {
       const isGap = sh.isGap, isPort = sh.isPort, isCastle = sh.isCastle, isWater = sh.isWater, wtype = sh.wtype, isIsland = sh.isIsland;
@@ -877,11 +758,11 @@ function draw(ts) {
           : isCastle ? `${castleLabel} ${sh.c.attr.label}`
             : isWater ? (wtype === 'sea' ? t('cell.sea') : wtype === 'river' ? (t('cell.river') + (sh.c.attr.flood_risk ? ' ' + t('cell.flood') : '')) : wtype === 'lake' ? t('cell.lake') : t('cell.sea_route'))
               : (sh.n + (sh.isSpecial ? ' ' + t('cell.special') : isIsland ? ' ' + t('cell.island') : ''));
-      const terrain = TN[sh.c.attr.terrain_type] || '?';
+      const terrain = window.TN[sh.c.attr.terrain_type] || '?';
       const castleInfo = isCastle && sh.c.attr.castle_data ? `<br>${t('ui.built')}:${sh.c.attr.castle_data.built_year} ${t('ui.lord')}:${sh.c.attr.castle_data.lord}` : '';
       // 逆引きで lat/lng を計算して表示
-      const _ll = toLatLng(sh.c.col, sh.c.row);
-      const _posStr = WORLD_FLAGS.show_coords !== false
+      const _ll = window.toLatLng(sh.c.col, sh.c.row);
+      const _posStr = window.WORLD_FLAGS.show_coords !== false
         ? `<br><span style="opacity:0.6;font-size:10px">hex(${sh.c.col},${sh.c.row}) ${_ll.lat.toFixed(4)},${_ll.lng.toFixed(4)}</span>`
         : '';
       tip.innerHTML = `<b>${head}</b><br>${sh.c.hex_id}<br>${terrain} ${t('ui.cost')}=${sh.c.attr.cost}${castleInfo}<br>${shared} ${t('ui.shared_edges')}${_posStr}`;
@@ -894,15 +775,15 @@ function draw(ts) {
 
   // ⑫ GPS
   if (gpsMarker) {
-    const { cx, cy } = colRowToXY(gpsMarker.col, gpsMarker.row);
+    const { cx, cy } = window.calcHexXY(gpsMarker.col, gpsMarker.row);
     const blink = 0.5 + 0.5 * Math.sin(bT * .008);
-    const gpts = hexPts(cx, cy);
+    const gpts = window.hexPts(cx, cy);
     ctx.beginPath(); gpts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.fillStyle = `rgba(80,200,255,${.15 + blink * .1})`; ctx.fill();
     ctx.beginPath(); gpts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
     ctx.strokeStyle = `rgba(80,200,255,${.7 + blink * .3})`; ctx.lineWidth = 2 / vp.sc; ctx.stroke();
     ctx.beginPath(); ctx.arc(cx, cy, 5 / vp.sc, 0, Math.PI * 2); ctx.fillStyle = gpsMarker.manual ? '#ffe040' : '#40c8ff'; ctx.fill();
-    if (R * vp.sc > 10) { ctx.font = `bold ${Math.max(8, R * .45)}px monospace`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.fillStyle = gpsMarker.manual ? '#ffe040' : '#40c8ff'; ctx.fillText(gpsMarker.manual ? '🏠' : '📍', cx, cy - R * .6); }
+    if (window.hex_R * vp.sc > 10) { ctx.font = `bold ${Math.max(8, window.hex_R * .45)}px monospace`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.fillStyle = gpsMarker.manual ? '#ffe040' : '#40c8ff'; ctx.fillText(gpsMarker.manual ? '🏠' : '📍', cx, cy - window.hex_R * .6); }
   }
 
   // ⑬ 国名ラベル
@@ -910,8 +791,8 @@ function draw(ts) {
     Object.keys(active).forEach(name => {
       if (!active[name] || !data[name]) return;
       const nc = data[name], mc = nc.reduce((s, c) => s + c.col, 0) / nc.length, mr = nc.reduce((s, c) => s + c.row, 0) / nc.length;
-      const { cx, cy } = colRowToXY(Math.round(mc), Math.round(mr));
-      ctx.font = `bold ${Math.max(9, R * .75)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      const { cx, cy } = window.calcHexXY(Math.round(mc), Math.round(mr));
+      ctx.font = `bold ${Math.max(9, window.hex_R * .75)}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.strokeStyle = 'rgba(0,0,0,.8)'; ctx.lineWidth = 2 / vp.sc; ctx.strokeText(name, cx, cy);
       ctx.fillStyle = '#ffe06e'; ctx.fillText(name, cx, cy);
     });
@@ -995,9 +876,9 @@ wrap.addEventListener('contextmenu', e => {
   e.preventDefault();
   const h = hexAt(e.clientX, e.clientY);
   const { px, py } = canvasToWorld(e.clientX, e.clientY);
-  const col_est = Math.round(px / (R * Math.sqrt(3)));
-  const row_est = Math.round(-py / (R * 2));
-  const ll = h ? toLatLng(h.c.col, h.c.row) : toLatLng(col_est, row_est);
+  const col_est = Math.round(px / (window.hex_R * Math.sqrt(3)));
+  const row_est = Math.round(-py / (window.hex_R * 2));
+  const ll = h ? window.toLatLng(h.c.col, h.c.row) : window.toLatLng(col_est, row_est);
   const info = h
     ? { hex_id: h.c.hex_id, col: h.c.col, row: h.c.row, lat: ll.lat, lng: ll.lng, province: h.n }
     : { col: col_est, row: row_est, lat: ll.lat, lng: ll.lng };
@@ -1015,7 +896,7 @@ wrap.addEventListener('touchstart', e => {
     const touch = e.touches[0];
     const h = hexAt(touch.clientX, touch.clientY);
     if (!h) return;
-    const ll = toLatLng(h.c.col, h.c.row);
+    const ll = window.toLatLng(h.c.col, h.c.row);
     const info = {
       hex_id: h.c.hex_id, col: h.c.col, row: h.c.row,
       lat: ll.lat, lng: ll.lng, province: h.n,
@@ -1040,8 +921,8 @@ wrap.addEventListener('wheel', e => {
 
 // ── 固定ボタン ──
 const _mpt = document.getElementById('m-pt'), _mfl = document.getElementById('m-fl');
-if (_mpt) _mpt.addEventListener('click', () => { mode = 'pointy'; _mpt.classList.add('active'); if (_mfl) _mfl.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
-if (_mfl) _mfl.addEventListener('click', () => { mode = 'flat'; _mfl.classList.add('active'); if (_mpt) _mpt.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
+if (_mpt) _mpt.addEventListener('click', () => { window.hex_mode = 'pointy'; _mpt.classList.add('active'); if (_mfl) _mfl.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
+if (_mfl) _mfl.addEventListener('click', () => { window.hex_mode = 'flat'; _mfl.classList.add('active'); if (_mpt) _mpt.classList.remove('active'); if (allActive().length) { fit(); updateSt(); } });
 document.getElementById('btn-fit').addEventListener('click', fit);
 
 const _gps = document.getElementById('btn-gps'), _sp = document.getElementById('btn-spawn');
@@ -1055,6 +936,6 @@ resizeCV();
 requestAnimationFrame(anim);
 loadWorld().then(() => {
   const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
-  const _first = _autoload ? _autoload.dataset.prov : Object.keys(PIDS)[0];
+  const _first = _autoload ? _autoload.dataset.prov : Object.keys(window.PIDS)[0];
   if (_first) tog(_first);
 });

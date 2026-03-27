@@ -4,18 +4,7 @@
 // Based on app.js
 // ================================================================
 
-// ── 世界座標設定 ──
-let WORLD_COORD = {
-  O_LAT: 30.0, O_LNG: 129.0,
-  LAT_S: 0.030311, LAT2: 0.060622, LNG_S: 0.0525,
-};
-let O_LAT = 30.0, O_LNG = 129.0, LAT_S = 0.030311, LAT2 = 0.060622, LNG_S = 0.0525;
 
-function updateCoord(c) {
-  WORLD_COORD = c;
-  O_LAT = c.O_LAT; O_LNG = c.O_LNG;
-  LAT_S = c.LAT_S; LAT2 = c.LAT2; LNG_S = c.LNG_S;
-}
 
 // ── 地形定義 ──
 const TC = {
@@ -38,7 +27,8 @@ const TN = {
 };
 
 
-const R = 40; // Subgrid has larger hexes on screen
+window.hex_R = 40; // Subgrid has larger hexes on screen
+// 座標変換などの関数は map_utils.js から取得します
 const DPR = window.devicePixelRatio || 1;
 
 // ── DOM ──
@@ -57,76 +47,42 @@ let bT = 0;
 const vp = { ox: 0, oy: 0, sc: 1 };
 let gpsMarker = null, gpsWatchId = null, gpsActive = false;
 
-// ── 座標変換 ──
-function toColRow(lat, lng) {
-  const c = WORLD_COORD;
-  return {
-    col: Math.round((lng - c.O_LNG) / c.LNG_S),
-    row: Math.round((lat - c.O_LAT) / c.LAT2),
-  };
-}
 
-function toLatLng(col, row) {
-  const c = WORLD_COORD;
-  return {
-    lat: c.O_LAT + row * c.LAT2 + ((col & 1) ? c.LAT_S : 0),
-    lng: c.O_LNG + col * c.LNG_S,
-  };
-}
-
-function colRowToXY(col, row) {
-    const S3 = Math.sqrt(3);
-    // Use the same pointy-top odd-q logic as app.js for consistency
-    return { cx: R * S3 * (col + 0.5 * (row & 1)), cy: R * 1.5 * row };
-}
-
-function hexPts(cx, cy) {
-  const pts = [];
-  for (let i = 0; i < 6; i++) {
-    const a = Math.PI / 180 * (60 * i - 30);
-    pts.push({ x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) });
-  }
-  return pts;
-}
-
-function D(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
 
 // ── UI ──
 function resizeCV() {
-  const w = document.getElementById('cvwrap');
-  const cw = w.clientWidth || window.innerWidth;
-  const ch = w.clientHeight || (window.innerHeight - 80);
-  cv.width = cw * DPR; cv.height = ch * DPR;
-  cv.style.width = cw + 'px';
-  cv.style.height = ch + 'px';
+    const w = document.getElementById('cvwrap');
+    const cw = w.clientWidth || window.innerWidth;
+    const ch = w.clientHeight || (window.innerHeight - 80);
+    cv.width = cw * DPR; cv.height = ch * DPR;
+    cv.style.width = cw + 'px';
+    cv.style.height = ch + 'px';
 }
 
 function fit() {
-  if (!subgridData || !subgridData.cells.length) return;
-  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-  
-  subgridData.cells.forEach(c => {
-    const { col, row } = toColRow(c.lat, c.lng);
-    const { cx, cy } = colRowToXY(col, row);
-    minX = Math.min(minX, cx - R); maxX = Math.max(maxX, cx + R);
-    minY = Math.min(minY, cy - R); maxY = Math.max(maxY, cy + R);
-  });
+    if (!subgridData || !subgridData.cells.length) return;
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
 
-  if (overlayData && overlayData.landmarks) {
-    overlayData.landmarks.forEach(lm => {
-      const { col, row } = toColRow(lm.lat, lm.lng);
-      const { cx, cy } = colRowToXY(col, row);
-      minX = Math.min(minX, cx - R); maxX = Math.max(maxX, cx + R);
-      minY = Math.min(minY, cy - R); maxY = Math.max(maxY, cy + R);
+    subgridData.cells.forEach(c => {
+        const { cx, cy } = window.calcHexXY(c);
+        minX = Math.min(minX, cx - window.hex_R); maxX = Math.max(maxX, cx + window.hex_R);
+        minY = Math.min(minY, cy - window.hex_R); maxY = Math.max(maxY, cy + window.hex_R);
     });
-  }
 
-  const W = cv.width / DPR, H = cv.height / DPR, pad = 30;
-  const sc = Math.min((W - pad * 2) / (maxX - minX), (H - pad * 2) / (maxY - minY), 4);
-  vp.sc = sc;
-  vp.ox = (W - (maxX + minX) * sc) / 2;
-  vp.oy = (H - (maxY + minY) * sc) / 2;
-  draw();
+    if (overlayData && overlayData.landmarks) {
+        overlayData.landmarks.forEach(lm => {
+            const { cx, cy } = window.calcHexXY(lm);
+            minX = Math.min(minX, cx - window.hex_R); maxX = Math.max(maxX, cx + window.hex_R);
+            minY = Math.min(minY, cy - window.hex_R); maxY = Math.max(maxY, cy + window.hex_R);
+        });
+    }
+
+    const W = cv.width / DPR, H = cv.height / DPR, pad = 30;
+    const sc = Math.min((W - pad * 2) / (maxX - minX), (H - pad * 2) / (maxY - minY), 4);
+    vp.sc = sc;
+    vp.ox = (W - (maxX + minX) * sc) / 2;
+    vp.oy = (H - (maxY + minY) * sc) / 2;
+    draw();
 }
 
 
@@ -134,27 +90,35 @@ async function init() {
     resizeCV();
     stEl.textContent = '読み込み中…';
 
+    await window.loadWorldBase();
+    window.hex_R = 40; // subgrid needs larger scale than main map
+
     const params = new URLSearchParams(window.location.search);
     const provinceName = params.get('p') || '壱岐';
     const seq = params.get('s') || '001';
-    
+
     try {
         const paddedSeq = `000${seq}`.slice(-3);
-        const provinceUrl = `data/${provinceName}/${provinceName}_sub_${paddedSeq}.json`;
+        const urlName = `data/${provinceName}/${provinceName}_sub_${paddedSeq}.json`;
+        const urlId = window.PIDS && window.PIDS[provinceName]
+            ? `data/${provinceName}/${window.PIDS[provinceName]}_sub_${paddedSeq}.json`
+            : null;
         const overlayUrl = `data/${provinceName}/sub_overlay.json`;
 
-        const [provResponse, overlayResponse] = await Promise.all([
-            fetch(provinceUrl),
-            fetch(overlayUrl)
-        ]);
+        let provResponse = await fetch(urlName);
+        if (!provResponse.ok && urlId) {
+            provResponse = await fetch(urlId);
+        }
+
+        const overlayResponse = await fetch(overlayUrl).catch(() => ({ ok: false }));
 
         if (!provResponse.ok) throw new Error(`サブグリッドデータの読み込みに失敗: ${provResponse.statusText}`);
         subgridData = await provResponse.json();
-        
-        if (overlayResponse.ok) {
+
+        if (overlayResponse && overlayResponse.ok) {
             overlayData = await overlayResponse.json();
         } else {
-            console.warn("オーバーレイデータの読み込みに失敗。");
+            console.warn("オーバーレイデータの読み込みに失敗 または 存在しません。");
         }
 
         titleEl.innerText = `${subgridData.province} - ${subgridData.sector_info || '戦術エリア'}`;
@@ -185,36 +149,37 @@ function draw(ts) {
     ctx.scale(vp.sc, vp.sc);
 
     cache = [];
-    const _W = cv.width / DPR, _H = cv.height / DPR, margin = R * 8;
+    const _W = cv.width / DPR, _H = cv.height / DPR, margin = window.hex_R * 8;
 
     function inView(cx, cy) {
         const sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy;
         return sx > -margin && sx < _W + margin && sy > -margin && sy < _H + margin;
     }
-    
+
     // 1. セル描画
     subgridData.cells.forEach(cell => {
-        const { col, row } = toColRow(cell.lat, cell.lng);
-        const { cx, cy } = colRowToXY(col, row);
-        
+        const { cx, cy } = window.calcHexXY(cell);
+        const col = cell.coordinate ? cell.coordinate.q : 0;
+        const row = cell.coordinate ? cell.coordinate.r : 0;
+
         if (!inView(cx, cy)) return;
 
-        const pts = hexPts(cx, cy);
+        const pts = window.hexPts(cx, cy);
         const isSel = sel === cell.cell_id;
-        
+
         const terrainType = cell.terrain.type;
         let [r, g, b] = TC[terrainType] || [128, 128, 128];
-        
+
         ctx.beginPath();
         pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
         ctx.closePath();
         ctx.fillStyle = isSel ? '#1a4a2a' : `rgb(${r},${g},${b})`;
         ctx.fill();
-        
+
         ctx.strokeStyle = 'rgba(255,255,255,0.1)';
         ctx.lineWidth = 1 / vp.sc;
         ctx.stroke();
-        
+
         const h = { c: cell, n: subgridData.province, cx, cy, pts, col, row, id: cell.cell_id };
         cache.push(h);
     });
@@ -222,11 +187,12 @@ function draw(ts) {
     // 2. ランドマーク描画
     if (overlayData && overlayData.landmarks) {
         overlayData.landmarks.forEach(lm => {
-            const { col, row } = toColRow(lm.lat, lm.lng);
-            const { cx, cy } = colRowToXY(col, row);
+            const { cx, cy } = window.calcHexXY(lm);
+            const col = lm.coordinate ? lm.coordinate.q : 0;
+            const row = lm.coordinate ? lm.coordinate.r : 0;
 
             if (!inView(cx, cy)) return;
-            const pts = hexPts(cx, cy);
+            const pts = window.hexPts(cx, cy);
             const isSel = sel === lm.id;
 
             ctx.beginPath();
@@ -238,17 +204,17 @@ function draw(ts) {
             ctx.lineWidth = 1.2 / vp.sc;
             ctx.stroke();
 
-            if (R * vp.sc > 12) {
-                ctx.font = `${Math.max(7, R * .6)}px serif`;
+            if (window.hex_R * vp.sc > 12) {
+                ctx.font = `${Math.max(7, window.hex_R * .6)}px serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText('🏯', cx, cy);
             }
-             const h = { c: lm, n: lm.province, cx, cy, pts, col, row, id: lm.id, isLandmark: true };
+            const h = { c: lm, n: lm.province, cx, cy, pts, col, row, id: lm.id, isLandmark: true };
             cache.push(h);
         });
     }
-    
+
     // 3. 選択ハイライトとツールチップ
     const sh = sel ? cache.find(h => h.id === sel) : null;
     if (sh) {
@@ -259,12 +225,15 @@ function draw(ts) {
         ctx.strokeStyle = `rgba(255,220,0,${.4 + blink * .5})`;
         ctx.lineWidth = 2.5 / vp.sc;
         ctx.stroke();
-        
+
         let tipHtml = '';
+        const posText = sh.c.lat != null ? `${sh.c.lat.toFixed(4)},${sh.c.lng.toFixed(4)}` : `q:${sh.c.coordinate?.q},r:${sh.c.coordinate?.r}`;
+        const _posStr = `<br><span style="opacity:0.6;font-size:10px">hex ${posText}</span>`;
+
         if (sh.isLandmark) {
-            tipHtml = `<b>${sh.c.label}</b><br>${sh.c.note || ''}<br><span style="opacity:0.6;font-size:10px">(${sh.c.lat.toFixed(4)}, ${sh.c.lng.toFixed(4)})</span>`;
+            tipHtml = `<b>${sh.c.label}</b><br>${sh.c.note || ''}${_posStr}`;
         } else {
-            tipHtml = `<b>${sh.c.cell_id}</b><br>Terrain: ${sh.c.terrain.type}<br><span style="opacity:0.6;font-size:10px">(${sh.c.lat.toFixed(4)}, ${sh.c.lng.toFixed(4)})</span>`;
+            tipHtml = `<b>${sh.c.cell_id}</b><br>Terrain: ${sh.c.terrain.type}${_posStr}`;
         }
         tip.innerHTML = tipHtml;
         const sx = sh.cx * vp.sc + vp.ox;
@@ -279,11 +248,10 @@ function draw(ts) {
 
     // 4. GPSマーカー
     if (gpsMarker) {
-        const { col, row } = toColRow(gpsMarker.lat, gpsMarker.lng);
-        const { cx, cy } = colRowToXY(col, row);
+        const { cx, cy } = window.calcHexXY(gpsMarker);
         const blink = 0.5 + 0.5 * Math.sin(bT * .008);
         ctx.beginPath();
-        const gpts = hexPts(cx, cy);
+        const gpts = window.hexPts(cx, cy);
         gpts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
         ctx.closePath();
         ctx.fillStyle = `rgba(80,200,255,${.15 + blink * .1})`;
@@ -307,21 +275,21 @@ function anim(ts) {
 
 // ── ヒットテスト ──
 function hexAt(ex, ey) {
-  const rect = cv.getBoundingClientRect();
-  const px = ((ex - rect.left) / rect.width * cv.width / DPR - vp.ox) / vp.sc;
-  const py = ((ey - rect.top) / rect.height * cv.height / DPR - vp.oy) / vp.sc;
-  for (const h of cache) {
-    let inside = false;
-    const ps = h.pts;
-    for (let i = 0, j = 5; i < 6; j = i++) {
-      const xi = ps[i].x, yi = ps[i].y, xj = ps[j].x, yj = ps[j].y;
-      if (((yi > py) !== (yj > py)) && (px < (xj - xi) * (py - yi) / (yj - yi) + xi)) {
-        inside = !inside;
-      }
+    const rect = cv.getBoundingClientRect();
+    const px = ((ex - rect.left) / rect.width * cv.width / DPR - vp.ox) / vp.sc;
+    const py = ((ey - rect.top) / rect.height * cv.height / DPR - vp.oy) / vp.sc;
+    for (const h of cache) {
+        let inside = false;
+        const ps = h.pts;
+        for (let i = 0, j = 5; i < 6; j = i++) {
+            const xi = ps[i].x, yi = ps[i].y, xj = ps[j].x, yj = ps[j].y;
+            if (((yi > py) !== (yj > py)) && (px < (xj - xi) * (py - yi) / (yj - yi) + xi)) {
+                inside = !inside;
+            }
+        }
+        if (inside) return h;
     }
-    if (inside) return h;
-  }
-  return null;
+    return null;
 }
 
 
@@ -356,11 +324,11 @@ wrap.addEventListener('mouseup', e => {
     }
 });
 wrap.addEventListener('wheel', e => {
-  e.preventDefault();
-  const f = e.deltaY < 0 ? 1.15 : .87, rect = cv.getBoundingClientRect();
-  const cx = (e.clientX - rect.left) / rect.width * cv.width / DPR, cy = (e.clientY - rect.top) / rect.height * cv.height / DPR;
-  const ns = Math.max(.15, Math.min(12, vp.sc * f));
-  vp.ox = cx - (cx - vp.ox) * (ns / vp.sc); vp.oy = cy - (cy - vp.oy) * (ns / vp.sc); vp.sc = ns;
+    e.preventDefault();
+    const f = e.deltaY < 0 ? 1.15 : .87, rect = cv.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) / rect.width * cv.width / DPR, cy = (e.clientY - rect.top) / rect.height * cv.height / DPR;
+    const ns = Math.max(.15, Math.min(12, vp.sc * f));
+    vp.ox = cx - (cx - vp.ox) * (ns / vp.sc); vp.oy = cy - (cy - vp.oy) * (ns / vp.sc); vp.sc = ns;
 }, { passive: false });
 
 document.getElementById('btn-fit').addEventListener('click', fit);
