@@ -56,7 +56,7 @@ const I18N_DEFAULT = {
   // 'cell.castle_named': '${lord}の居城・${name}',
   // 'ui.gps_in_province': '📍 ${province}国 精度±${accuracy}m',
 };
-let window.WORLD_I18N = {};  // world.json の i18n セクション
+window.WORLD_I18N = {};  // world.json の i18n セクション
 
 // スタック形式の t() — window.WORLD_I18N → I18N_DEFAULT → key
 function t(key, ...args) {

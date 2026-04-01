@@ -111,7 +111,16 @@ window.colRowToXY = function(col, row) {
 
 // セルデータからXYを取得する統合関数
 // lat/lng または col/row（Sengoku系）または q/r（Arcadiaサブグリッド系）に対応
-window.calcHexXY = function(cell) {
+window.calcHexXY = function(colOrCell, rowOpt) {
+  // 第1引数と第2引数がともに数値の場合（app.js等からの直接呼び出し）
+  if (typeof colOrCell === 'number' && typeof rowOpt === 'number') {
+    return window.colRowToXY(colOrCell, rowOpt);
+  }
+  
+  // 第1引数がオブジェクトの場合（サブグリッド系等）
+  const cell = colOrCell;
+  if (!cell) return { cx: 0, cy: 0 };
+
   if (cell.lat != null && cell.lng != null) {
     const cr = window.toColRow(cell.lat, cell.lng);
     return window.colRowToXY(cr.col, cr.row);

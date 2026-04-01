@@ -23,9 +23,11 @@
     <script>
         window.WORLD_OVERRIDE_URL =
             'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
+        // MUD構造への移行に伴い、データ参照先を明示
+        window.API = '../../contracts/data/sengoku/';
     </script>
-    <script src="../js/map_utils.js"></script>
-    <script src="../js/sub_app.js"></script>
+    <script src="../src/map_utils.js"></script>
+    <script src="../src/sub_app.js"></script>
 </body>
 
 </html>

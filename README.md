@@ -1,36 +1,66 @@
-# hex-shogun-map
+# hex-shogun-map (Universal Hex Map Engine)
+Decentralized Autonomous World (AW) Strategy Map Engine with MUD/ECS Architecture.
 
-Decentralized Sengoku Strategy Map Engine with Multi-L2 Support.
+## 🏯 プロジェクト概要
 
-# 戦国オンライン・マップエンジン (Core)
+本プロジェクトは、現実世界の地理データ（緯度・経度・標高）に基づいてヘックスマップを描画する、分散型自律世界（Autonomous World）のための **「データ層（World Storage）」** エンジンです。
 
-本プロジェクトは、日本全国68カ国の地方サーバー（L2チェーン）を統合し、地理データ（緯度・経度・標高）に基づいて動的に戦国時代の地図を描画するマルチサーバー対応のマップエンジンです。
+MUDフレームワークを採用し、オンチェーンでのデータ管理（Store）と、外部ロジック層（System）、外部インターフェース層（Client）を疎結合に結ぶアーキテクチャを実現しています。
 
-## 💡 設計思想：疎結合な「シール（Skin）」構造
+### マルチワールドへの対応
+単一の世界（例：日本地図）だけでなく、名前空間（Namespace）を切り替えることで、複数の独立した並行世界（例：戦国、ファンタジー、現代GPS連動）を同一のマップエンジン上で構築・実行可能です。
 
-本エンジンの最大の特徴は、**「不変の土地データ」**と**「動的な描画表現」**を完全に分離している点です。
+---
 
-- **Core (データ層):** 地理的な座標計算、所有権、標高（影響値）を管理。
-- **Skin (描画層):** Coreから渡されたデータをどう見せるかを決定。8bit風、3Dジオラマ、現実/虚構モードなど、描画ロジックを「シール」のように貼り替えることが可能です。
-- **Environment (環境):** 時刻（朝/昼/晩）や天災などの演出は、描画側が独自に生成・解釈します。
+## 🏗 ディレクトリ構成 (Monorepo)
 
-## 🏗 システム構成
+本リポジトリは MUD 標準のモノレポ構成を採用しています。
 
-- **Multi-Server Support:** 1地方1L2チェーン構成を想定。複数のJSON/RPCソースからデータを統合し、一枚の日本地図として描画します。
-- **Hexagonal Grid:** 土地を六角形（ヘックス）で管理し、戦術的な移動コストや領土拡大をシミュレーションします。
+- **`packages/contracts/`**: スマートコントラクト（Solidity）によるデータ層。
+  - `src/`: テーブル定義およびデータ操作System。
+  - `data/`: 天地創造のための初期シードデータ（JSON）。
+  - `test/`: Solidity テストおよび仮想テスト環境。
+  - `docs/`: MUD化の仕様書、ガス代削減設計、ライセンス等。
+- **`packages/client/`**: インターフェース層（JavaScript / HTML）。
+  - `src/`: マップ描画エンジン（Canvas/RECS）。
+  - `sengoku/`, `arcadia/`: 各世界の描画用エントリーポイント。
+- **`test_mud_logic.js`**: (Root) 開発者向けのロジック確認用シミュレーター。
 
-## 🚀 使い方 (クイックスタート)
+---
 
-1. リポジトリをクローンします。
-2. `index.html` (現在のサンプルファイル) をブラウザで開きます。
-3. 右上のコントロールパネルから、テスト用の地方サーバー（L2:壱岐、L2:伊豆など）を選択してロードしてください。
+## 🚀 クイックスタート & テスト方法
 
-## 🛠 今後の開発ロードマップ
+### 1. マップ描画の確認 (Client)
+ブラウザで直接、各世界の描画プロトタイプを確認できます。
+- **戦国版**: `packages/client/sengoku/index.html`
+- **アルカディア版**: `packages/client/arcadia/index.html`
 
-- [x] サブグリッド（解像度階層）システムの設計。詳細は [subgrid_proposal.md](./subgrid_proposal.md) を参照。
-- [ ] 各地方L2チェーン（EVM互換チェーン等）との接続インターフェースの実装。
-- [ ] 3D描画（Three.js）に対応した `ThreeDioramaSkin` の追加。
-- [ ] 全国69カ国のメタインデックスサーバーの構築。
+### 2. ロジックの検証 (Simulation)
+ブロックチェーン環境（Foundry等）が未構築でも、Node.js さえあればデータ連携と更新ロジックをテストできます。
+```bash
+# プロジェクトルートから実行
+node packages/contracts/test/simulation/test_mud_logic.js
+```
+※ 成功すると「伊豆」地方のデータを読み込み、メモリ上で税収（Zeny）を加算するシミュレーションが走ります。
+
+### 3. Solidity テスト (On-chain)
+Foundry (`forge`) がインストールされている環境では、実際のコントラクトレベルの連携テストを実行できます。
+```bash
+cd packages/contracts
+forge test -vv
+```
+
+---
+
+## 📚 詳細ドキュメント
+
+開発にあたって参照すべき主要なドキュメントは以下の通りです。
+
+- **移行ロードマップ**: [mud_spec.md](packages/contracts/docs/mud_spec.md)
+- **ガス代削減指針**: [gas_saving_design.md](packages/contracts/docs/gas_saving_design.md)
+- **テストケース詳細**: [mud_test_cases.md](packages/contracts/test/mud_test_cases.md)
+
+---
 
 ## 📄 ライセンス
 
