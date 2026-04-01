@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "name": "勝本城 内部",
+    "level": "interior",
+    "parent_id": "castle_katsumoto",
+    "lat": 33.849,
+    "lng": 129.691
+  },
+  "cells": [
+    {
+      "col": 0,
+      "row": 0,
+      "attr": {
+        "terrain_type": 8,
+        "label": "本丸"
+      }
+    },
+    {
+      "col": 1,
+      "row": 0,
+      "attr": {
+        "terrain_type": 0,
+        "label": "廊下"
+      }
+    },
+    {
+      "col": 0,
+      "row": 1,
+      "attr": {
+        "terrain_type": 0,
+        "label": "控えの間"
+      }
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "attr": {
+        "terrain_type": 0,
+        "label": "武器庫"
+      }
+    }
+  ]
+}

@@ -6,6 +6,13 @@
     "description": "室町・戦国時代の日本。68令制国が舞台。",
     "version": "1.0.0"
   },
+  "simulation": {
+    "start_year": 1580,
+    "current_year": 1580,
+    "default_season": "summer",
+    "time_speed": 1.0,
+    "hour": 12
+  },
   "coordinate": {
     "origin_lat": 30.0,
     "origin_lng": 129.0,
@@ -14,9 +21,9 @@
     "note": "全セルのcol/rowはこの原点とピッチから計算される"
   },
   "api": {
-    "province_base": "./data/",
-    "overlay": "./world/overlay.json",
-    "overlay_water": "./world/overlay_water.json"
+    "province_base": "../../contracts/data/sengoku/",
+    "overlay": "../../contracts/data/sengoku/overlay.json",
+    "overlay_water": "../../contracts/data/sengoku/overlay_water.json"
   },
   "terrain_types": {
     "0": {
@@ -861,5 +868,12 @@
   },
   "flags": {
     "auto_sea": true
+  },
+  "simulation": {
+    "start_year": 1580,
+    "end_year": 1615,
+    "default_season": "summer",
+    "time_scale": 1.0,
+    "note": "時間の進み具合や初期状態を制御"
   }
 }

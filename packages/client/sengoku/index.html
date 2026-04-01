@@ -87,14 +87,58 @@
     <button class="btn" id="btn-fit">⊙</button>
     <button class="btn" id="btn-gps">📍 GPS</button>
     <button class="btn" id="btn-spawn">🏠 スポーン地点</button>
+    <button class="btn" id="btn-ctrl">⚙ 設定</button>
   </div>
   <div id="status">国を選んでください</div>
+
+  <!-- コントロールパネル (Modal) -->
+  <div id="overlay-bg"></div>
+  <div id="ctrl-panel">
+    <h2>⚙ システム・表示設定</h2>
+    <div class="ctrl-row">
+      <label>📅 シミュレーション年度: <span id="val-year">1580</span>年</label>
+      <input type="range" id="range-year" min="1500" max="1615" value="1580">
+    </div>
+    <div class="ctrl-row">
+      <label>🕒 時刻: <span id="val-hour">12</span>時</label>
+      <input type="range" id="range-hour" min="0" max="23" value="12">
+    </div>
+    <div class="ctrl-row">
+      <label>🌸 季節:</label>
+      <div class="btn-group">
+        <button class="btn season-btn" data-season="spring">春</button>
+        <button class="btn season-btn" data-season="summer">夏</button>
+        <button class="btn season-btn" data-season="autumn">秋</button>
+        <button class="btn season-btn" data-season="winter">冬</button>
+      </div>
+    </div>
+    <div class="ctrl-row">
+      <label>🌍 ワールド属性</label>
+      <select id="sel-season">
+        <option value="spring">春 (Sakura)</option>
+        <option value="summer" selected>夏 (Green)</option>
+        <option value="autumn">秋 (Maple)</option>
+        <option value="winter">冬 (Snow)</option>
+      </select>
+    </div>
+    <div class="ctrl-row">
+      <label>🌐 API Base URL (Data Layer)</label>
+      <input type="text" id="in-api" placeholder="../../contracts/data/sengoku/">
+    </div>
+    <div class="ctrl-row">
+      <label>🗺 World Config URL</label>
+      <input type="text" id="in-world" placeholder="./world/world.json">
+    </div>
+    <div class="ctrl-footer">
+      <button class="btn" id="btn-reset">初期化</button>
+      <button class="btn active" id="btn-apply">適用 / 閉じる</button>
+    </div>
+  </div>
   <div id="cvwrap"><canvas id="cv"></canvas></div>
   <div id="tooltip" style="display:none"></div>
 
   <script>
-    window.WORLD_OVERRIDE_URL =
-      'https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/sengoku/world/world.json';
+    window.WORLD_OVERRIDE_URL = './world/world.json';
     // MUD構造への移行に伴い、データ参照先を明示
     window.API = '../../contracts/data/sengoku/';
   </script>

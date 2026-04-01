@@ -21,8 +21,8 @@
     }
   },
   "api": {
-    "province_base": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/data/",
-    "overlay": "https://raw.githubusercontent.com/otspace0715/hex-shogun-map/main/arcadia/world/overlay.json"
+    "province_base": "../../contracts/data/arcadia/",
+    "overlay": "../../contracts/data/arcadia/overlay.json"
   },
   "terrain_types": {
     "0": {
@@ -241,5 +241,12 @@
   "flags": {
     "auto_sea": false,
     "show_coords": true
+  },
+  "simulation": {
+    "start_year": 1000,
+    "end_year": 2000,
+    "default_season": "spring",
+    "time_scale": 0.5,
+    "note": "アルカディア大陸の歴史軸設定"
   }
 }

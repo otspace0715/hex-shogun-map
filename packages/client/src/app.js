@@ -84,18 +84,72 @@ const tip = document.getElementById('tooltip');
 // ── 状態 ──
 const data = {}, active = {};
 let sel = null, cache = [], bT = 0;
+let status = 'none';
 const vp = { ox: 0, oy: 0, sc: 1 };
+let provinceData = {};
 let specialCells = [], seaRoutes = [], seaIslands = [], seaRouteCells = [], portCellSet = new Set();
 let waterCells = [], autoCells = [], castleCells = [];
 let gapCells = [];
 let overlayData = null;
+let currentMode = 'world'; // 'world' | 'tactical' | 'interior'
+let subgridData = null; // Tactical/Interior 用
 let gpsMarker = null, gpsWatchId = null, gpsActive = false, spawnMode = false;
+
+// ── サーバー/接続状態 (Active vs View-Only) ──
+const SERVER_REGISTRY = {
+  'sengoku_main': { label: '戦国・本土', p: ['伊豆', '相模', '武蔵', '肥前'], active: true },
+  'iki_server': { label: '壱岐・対馬支部', p: ['壱岐', '対馬'], active: false },
+};
+let activeServerId = 'sengoku_main';
+
+// ── 拡張状態（時代・季節・設定管理） ──
+const SIM_STATE = {
+  year: 1580,
+  season: 'summer',
+  hour: 12,
+  api: window.API || '',
+  world: window.WORLD_OVERRIDE_URL || './world/world.json'
+};
+// 暫定反映（localStorageがあれば後で上書き）
+if (localStorage.getItem('sim_year')) SIM_STATE.year = parseInt(localStorage.getItem('sim_year'));
+if (localStorage.getItem('sim_season')) SIM_STATE.season = localStorage.getItem('sim_season');
+if (localStorage.getItem('sim_api')) SIM_STATE.api = localStorage.getItem('sim_api');
+if (localStorage.getItem('sim_world')) SIM_STATE.world = localStorage.getItem('sim_world');
+
+window.API = SIM_STATE.api;
+window.WORLD_OVERRIDE_URL = SIM_STATE.world;
 
 // ── world.json ロード ──
 async function loadWorld() {
   try {
     const w = await window.loadWorldBase();
     if (!w) return;
+
+    // world.json の設定を反映 (localStorage が空の場合のデフォルト)
+    if (w.simulation) {
+      if (!localStorage.getItem('sim_year')) { SIM_STATE.year = w.simulation.start_year; }
+      if (!localStorage.getItem('sim_season')) { SIM_STATE.season = w.simulation.default_season; }
+      if (!localStorage.getItem('sim_hour')) { SIM_STATE.hour = w.simulation.hour || 12; }
+    }
+
+    // 設定画面の初期値同期
+    document.getElementById('in-api').value = window.API;
+    document.getElementById('in-world').value = window.WORLD_OVERRIDE_URL || './world/world.json';
+    document.getElementById('range-year').value = SIM_STATE.year;
+    document.getElementById('val-year').textContent = SIM_STATE.year;
+    document.getElementById('sel-season').value = SIM_STATE.season;
+
+    const rHour = document.getElementById('range-hour');
+    const vHour = document.getElementById('val-hour');
+    if (rHour) {
+      rHour.value = SIM_STATE.hour;
+      if (vHour) vHour.textContent = SIM_STATE.hour;
+    }
+
+    if (w.simulation) {
+      document.getElementById('range-year').min = w.simulation.start_year - 50;
+      document.getElementById('range-year').max = (w.simulation.end_year || w.simulation.start_year + 100);
+    }
 
     if (w.provinces) {
       const existing = new Set([...document.querySelectorAll('[data-prov]')].map(b => b.dataset.prov));
@@ -113,7 +167,66 @@ async function loadWorld() {
     }
 
     applyI18N(w.i18n || {});
+    updateServerBadge();
+
+    // SPA Mode 判定
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get('mode');
+    if (mode === 'subgrid' || mode === 'tactical' || mode === 'interior') {
+      await loadTactical(params);
+    } else {
+      currentMode = 'world';
+      await window.loadWorldOverlay();
+    }
   } catch (e) { console.warn('world.json load failed:', e); }
+}
+
+async function loadTactical(params) {
+  currentMode = params.get('mode');
+  const p = params.get('p') || '壱岐';
+  const label = params.get('label');
+  const worldId = (window.WORLD_OVERRIDE_URL && window.WORLD_OVERRIDE_URL.includes('arcadia')) ? 'arcadia' : 'sengoku';
+
+  // 複数ソース (s=001,002,003) または sources 配列の処理
+  const sParam = params.get('s') || '001';
+  const sources = sParam.split(',').map(s => s.trim());
+
+  let urls = [];
+  if (currentMode === 'interior') {
+    urls = [`../../contracts/data/${worldId}/${p}/${label}_interior.json`];
+  } else {
+    urls = sources.map(seq => {
+      const paddedSeq = `000${seq}`.slice(-3);
+      return `../../contracts/data/${worldId}/${p}/${p}_sub_${paddedSeq}.json`;
+    });
+  }
+
+  try {
+    const results = await Promise.all(urls.map(url => fetch(url).then(r => r.ok ? r.json() : null)));
+    const validData = results.filter(d => d);
+    if (!validData.length) throw new Error('No valid data found');
+
+    // 最初にロードされたデータをベースに、cells をマージ
+    subgridData = JSON.parse(JSON.stringify(validData[0]));
+    if (validData.length > 1) {
+      for (let i = 1; i < validData.length; i++) {
+        subgridData.cells = [...subgridData.cells, ...validData[i].cells];
+      }
+      subgridData.sector_info = `${subgridData.sector_info} (+${validData.length - 1} layers)`;
+    }
+
+    const ovrUrl = `../../contracts/data/${worldId}/${p}/sub_overlay.json`;
+    const ovrR = await fetch(ovrUrl).catch(() => null);
+    overlayData = (ovrR && ovrR.ok) ? await ovrR.json() : null;
+    document.getElementById('status').textContent = `${subgridData.province} - ${subgridData.sector_info || 'Tactical Area'}`;
+
+    // サーバー境界を跨いだ移動の判定
+    checkServerMigration(p);
+    fit();
+  } catch (e) {
+    console.error('Tactical load failed:', e);
+    currentMode = 'world';
+  }
 }
 
 // ── ボタン初期化 ──
@@ -248,6 +361,12 @@ function updateCastles() {
       const cr = window.toColRow(lm.lat, lm.lng);
       lm.col = cr.col; lm.row = cr.row;
     }
+    // 時代フィルタリング（築城年チェック）
+    if (lm.built_year) {
+      const bYear = parseInt(lm.built_year);
+      if (SIM_STATE.year < bYear) return;
+    }
+
     castleCells.push({
       c: {
         hex_id: lm.id, col: lm.col, row: lm.row, lat: lm.lat || 0, lng: lm.lng || 0,
@@ -486,6 +605,90 @@ function resizeCV() {
   const ch = w.clientHeight || (window.innerHeight - 80);
   cv.width = cw * DPR; cv.height = ch * DPR;
 }
+// ── UIイベント (Settings & Simulation Control) ──
+function initControlPanel() {
+  const btn = document.getElementById('btn-ctrl');
+  const panel = document.getElementById('ctrl-panel');
+  const bg = document.getElementById('overlay-bg');
+  const apply = document.getElementById('btn-apply');
+  const reset = document.getElementById('btn-reset');
+  const rangeYear = document.getElementById('range-year');
+  const valYear = document.getElementById('val-year');
+  const selSeason = document.getElementById('sel-season');
+
+  if (!btn) return;
+
+  btn.onclick = () => { panel.style.display = bg.style.display = 'block'; };
+  bg.onclick = () => { panel.style.display = bg.style.display = 'none'; };
+
+  rangeYear.oninput = () => { valYear.textContent = rangeYear.value; SIM_STATE.year = parseInt(rangeYear.value); draw(); };
+
+  const rangeHour = document.getElementById('range-hour');
+  const valHour = document.getElementById('val-hour');
+  if (rangeHour) {
+    rangeHour.oninput = () => {
+      SIM_STATE.hour = parseInt(rangeHour.value);
+      if (valHour) valHour.textContent = SIM_STATE.hour;
+      localStorage.setItem('sim_hour', SIM_STATE.hour);
+      draw();
+    };
+  }
+
+  document.querySelectorAll('.season-btn').forEach(btn => {
+    btn.onclick = () => {
+      SIM_STATE.season = btn.dataset.season;
+      if (selSeason) selSeason.value = SIM_STATE.season;
+      localStorage.setItem('sim_season', SIM_STATE.season);
+      draw();
+    };
+  });
+
+  apply.onclick = () => {
+    SIM_STATE.year = parseInt(rangeYear.value);
+    SIM_STATE.season = selSeason.value;
+    if (rangeHour) SIM_STATE.hour = parseInt(rangeHour.value);
+    SIM_STATE.api = document.getElementById('in-api').value;
+    SIM_STATE.world = document.getElementById('in-world').value;
+
+    localStorage.setItem('sim_year', SIM_STATE.year);
+    localStorage.setItem('sim_season', SIM_STATE.season);
+    if (rangeHour) localStorage.setItem('sim_hour', SIM_STATE.hour);
+    localStorage.setItem('sim_api', SIM_STATE.api);
+    localStorage.setItem('sim_world', SIM_STATE.world);
+
+    // 反映
+    window.API = SIM_STATE.api;
+    window.WORLD_OVERRIDE_URL = SIM_STATE.world;
+
+    // 再計算
+    updateCastles(); updateSpecial(); updateWater(); detectGaps();
+    draw();
+
+    panel.style.display = bg.style.display = 'none';
+    if (SIM_STATE.api !== localStorage.getItem('last_api')) {
+      localStorage.setItem('last_api', SIM_STATE.api);
+      location.reload(); // API変更時はリロード推奨
+    }
+  };
+
+  reset.onclick = () => {
+    localStorage.clear();
+    location.reload();
+  };
+}
+
+// 起動
+window.addEventListener('load', () => {
+  resizeCV();
+  initFromHTML();
+  loadWorld().then(() => {
+    initControlPanel();
+    draw();
+  });
+});
+window.addEventListener('resize', () => { resizeCV(); draw(); });
+
+// ── ヘルパー ──
 function allActive() {
   const r = [];
   Object.keys(active).forEach(n => { if (active[n] && data[n]) data[n].forEach(c => r.push({ c, n })); });
@@ -547,54 +750,123 @@ function draw(ts) {
   const W = cv.width, H = cv.height;
   ctx.clearRect(0, 0, W, H);
   ctx.fillStyle = '#060c1e'; ctx.fillRect(0, 0, W, H);
-  const cells = allActive(); if (!cells.length) return;
-  ctx.save(); ctx.scale(DPR, DPR); ctx.translate(vp.ox, vp.oy); ctx.scale(vp.sc, vp.sc);
   cache = [];
+
+  // ── 共通キーセット情報の構築 (特殊地形・境界・水域の重なり判定用) ──
+  const cells = allActive();
+  const activeColRows = new Set(cells.map(({ c }) => c.col + ',' + c.row));
+  const specialKeys = new Set(specialCells.map(({ c }) => c.col + ',' + c.row));
+  const gapKeySet = new Set(gapCells.map(({ c }) => c.col + ',' + c.row));
+  const waterKeySet = new Set(waterCells.map(({ c }) => c.col + ',' + c.row));
+
+  if (currentMode === 'world') {
+    drawWorld(cells, activeColRows, specialKeys, gapKeySet, waterKeySet);
+  } else {
+    drawTactical(activeColRows, specialKeys, gapKeySet, waterKeySet);
+  }
+
+  drawHighlight();
+
+  // ── 昼夜フィルター (Time of Day Filter) ──
+  drawTimeFilter();
+
+  ctx.restore();
+}
+
+function drawTimeFilter() {
+  const h = SIM_STATE.hour || 12;
+  let alpha = 0;
+  let color = '20,20,50'; // 深夜の色
+
+  if (h < 5 || h > 20) alpha = 0.5;      // 深夜
+  else if (h >= 5 && h < 8) { alpha = 0.3; color = '255,100,50'; } // 明け方
+  else if (h >= 17 && h <= 20) { alpha = 0.3; color = '255,120,0'; } // 夕焼け
+  else alpha = 0; // 昼間
+
+  if (alpha > 0) {
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // 画面全体に適用
+    ctx.fillStyle = `rgba(${color},${alpha})`;
+    ctx.fillRect(0, 0, cv.width, cv.height);
+  }
+}
+
+function drawWorld(cells, activeColRows, specialKeys, gapKeySet, waterKeySet) {
+  if (!cells.length) return;
   const multi = Object.values(active).filter(Boolean).length > 1;
   const _W = cv.width / DPR, _H = cv.height / DPR, margin = window.hex_R * 8;
   function inView(cx, cy) { const sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy; return sx > -margin && sx < _W + margin && sy > -margin && sy < _H + margin; }
-  const activeColRows = new Set(allActive().map(({ c }) => c.col + ',' + c.row));
-  const specialKeys = new Set(specialCells.map(({ c }) => c.col + ',' + c.row));
-  const gapKeySet = new Set(gapCells.map(({ c }) => c.col + ',' + c.row));
 
   // ① 通常セル
   const cacheMap = new Map();
   cells.forEach(({ c, n }) => {
-    const off = window.PROVINCE_OFFSETS[n] || { col: 0, row: 0 };
-    const { cx, cy } = window.calcHexXY(c.col + off.col, c.row + off.row);
+    const { cx, cy } = window.calcHexXY(c.col, c.row);
     if (!inView(cx, cy)) return;
-    const pts = window.hexPts(cx, cy), isSel = sel === n + ':' + c.hex_id;
-    let [r, g, b] = [...(window.TC[c.attr.terrain_type] || window.TC[1])];
+    const pts = window.hexPts(cx, cy);
+    const isSel = sel && (sel.c ? sel.c.hex_id : sel.hex_id) === c.hex_id;
+    let [r, g, b] = window.TC[c.attr.terrain_type] || [100, 100, 100];
+
+    // 季節補正
+    if (SIM_STATE.season === 'winter') { r = Math.min(255, r + 60); g = Math.min(255, g + 60); b = Math.min(255, b + 80); }
+    else if (SIM_STATE.season === 'autumn') { r = Math.min(255, r + 40); g = Math.max(0, g - 20); b = Math.max(0, b - 30); }
+    else if (SIM_STATE.season === 'spring') { r = Math.min(255, r + 30); g = Math.min(255, g + 10); b = Math.min(255, b + 20); }
+
     if (multi && window.PCOL[n]) { const pc = window.PCOL[n]; r = Math.round(r * .6 + pc[0] * .4); g = Math.round(g * .6 + pc[1] * .4); b = Math.round(b * .6 + pc[2] * .4); }
     const ev = Math.min((c.attr.elevation_m || 0) / 1200, 1);
     r = Math.min(255, Math.round(r * (1 + ev * .3))); g = Math.min(255, Math.round(g * (1 + ev * .3))); b = Math.min(255, Math.round(b * (1 + ev * .3)));
+
     ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
-    ctx.fillStyle = isSel ? '#1a4a2a' : `rgb(${r},${g},${b})`; ctx.fill();
-    const h = { c, n, cx, cy, pts };
-    cache.push(h);
-    cacheMap.set(c.col + ',' + c.row, h);
+    ctx.fillStyle = isSel ? '#204080' : (selProv === n) ? `rgba(${r},${g},${b},0.8)` : `rgb(${r},${g},${b})`; ctx.fill();
+    ctx.strokeStyle = (selProv === n) ? 'rgba(255,255,255,0.47)' : 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = (selProv === n ? 1.5 : 0.5) / vp.sc; ctx.stroke();
+    const h = { c, n, cx, cy, pts }; cache.push(h); cacheMap.set(c.col + ',' + c.row, h);
   });
 
-  // ② 境界線 (cacheMap を使って高速化)
-  cache.forEach(h => {
-    if (h.isGap || h.isWater || h.isCastle || h.isIsland) return;
-    if (sel === h.n + ':' + h.c.hex_id) return;
-    const { c, n, cx, cy, pts } = h;
-    window.hexNeighbors(c.col, c.row).forEach(([nc, nr]) => {
-      const nb = cacheMap.get(nc + ',' + nr);
-      if (!nb || nb.n === n) return;
-      const TOL = window.hex_R * .08;
-      for (let si = 0; si < 6; si++) {
-        const s0 = pts[si], s1 = pts[(si + 1) % 6];
-        for (let ni = 0; ni < 6; ni++) {
-          const n0 = nb.pts[ni], n1 = nb.pts[(ni + 1) % 6];
-          if ((window.hexDist(s0, n0) < TOL && window.hexDist(s1, n1) < TOL) || (window.hexDist(s0, n1) < TOL && window.hexDist(s1, n0) < TOL)) {
-            ctx.beginPath(); ctx.moveTo(s0.x, s0.y); ctx.lineTo(s1.x, s1.y);
-            ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.lineWidth = 1.5 / vp.sc; ctx.stroke();
-          }
-        }
-      }
-    });
+  // ② 境界線・水域・特殊・ランドマーク（世界地図用）
+  drawWorldOverlays(inView, activeColRows, specialKeys, gapKeySet);
+}
+
+function drawWorldOverlays(inView, activeColRows, specialKeys, gapKeySet) {
+  [...waterCells, ...specialCells, ...gapCells].forEach(item => {
+    const { c, n } = item;
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
+    ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
+    ctx.fillStyle = item.isWater ? 'rgba(20,60,140,0.7)' : 'rgba(50,55,60,0.8)'; ctx.fill();
+    cache.push({ ...item, cx, cy, pts });
+  });
+
+  castleCells.forEach(({ c, n, icon, labelKey }) => {
+    const { cx, cy } = window.calcHexXY(c.col, c.row); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
+    const isSel = sel && (sel.c ? sel.c.hex_id : sel.hex_id) === c.hex_id;
+    ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
+    ctx.fillStyle = isSel ? '#ffe040' : 'rgba(180,140,60,0.85)'; ctx.fill();
+    ctx.fillText(icon || '🏯', cx, cy);
+    cache.push({ c, n, cx, cy, pts, isCastle: true, labelKey });
+  });
+}
+
+function drawTactical(activeColRows, specialKeys, gapKeySet, waterKeySet) {
+  if (!subgridData) return;
+  const _W = cv.width / DPR, _H = cv.height / DPR, margin = window.hex_R * 8;
+  function inView(cx, cy) { const sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy; return sx > -margin && sx < _W + margin && sy > -margin && sy < _H + margin; }
+
+  subgridData.cells.forEach(cell => {
+    const { cx, cy } = window.calcHexXY(cell); if (!inView(cx, cy)) return;
+    const pts = window.hexPts(cx, cy);
+    const isSel = sel && (sel.id === cell.cell_id);
+
+    // 地形タイプ（数値IDと文字列名の両方に対応）
+    let tType = cell.terrain.type;
+    const tMap = { 'plains': 0, 'hills': 1, 'mountain': 2, 'river': 3, 'sea': 4, 'coast': 4, 'forest': 0 };
+    if (typeof tType === 'string') tType = tMap[tType] ?? 0;
+
+    let [r, g, b] = window.TC[tType] || [128, 128, 128];
+    if (SIM_STATE.season === 'winter') { r = Math.min(255, r + 60); g = Math.min(255, g + 60); b = Math.min(255, b + 80); }
+    ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
+    ctx.fillStyle = isSel ? '#1a4a2a' : `rgb(${r},${g},${b})`; ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1 / vp.sc; ctx.stroke();
+    cache.push({ c: cell, n: subgridData.province, cx, cy, pts, id: cell.cell_id });
   });
 
   // ③ gap
@@ -750,29 +1022,30 @@ function draw(ts) {
       const TOL = window.hex_R * .08; for (let si = 0; si < 6; si++) { const s0 = sh.pts[si], s1 = sh.pts[(si + 1) % 6]; for (let ni = 0; ni < 6; ni++) { const n0 = nh.pts[ni], n1 = nh.pts[(ni + 1) % 6]; if ((window.hexDist(s0, n0) < TOL && window.hexDist(s1, n1) < TOL) || (window.hexDist(s0, n1) < TOL && window.hexDist(s1, n0) < TOL)) { shared++; ctx.beginPath(); ctx.moveTo(s0.x, s0.y); ctx.lineTo(s1.x, s1.y); ctx.strokeStyle = `rgba(80,255,80,${.7 + blink * .3})`; ctx.lineWidth = 3.5 / vp.sc; ctx.stroke(); } } }
     });
     if (sh.c?.hex_id) {
-      const isGap = sh.isGap, isPort = sh.isPort, isCastle = sh.isCastle, isWater = sh.isWater, wtype = sh.wtype, isIsland = sh.isIsland;
-      // 修正4: ランドマークのラベルは labelKey から取得
+      const isCastle = sh.isCastle || sh.c.attr?.terrain_type === 8;
       const castleLabel = isCastle ? t(sh.labelKey || 'cell.castle') : '';
-      let head = isGap ? t('cell.border')
-        : isPort ? t('cell.port')
-          : isCastle ? `${castleLabel} ${sh.c.attr.label}`
-            : isWater ? (wtype === 'sea' ? t('cell.sea') : wtype === 'river' ? (t('cell.river') + (sh.c.attr.flood_risk ? ' ' + t('cell.flood') : '')) : wtype === 'lake' ? t('cell.lake') : t('cell.sea_route'))
-              : (sh.n + (sh.isSpecial ? ' ' + t('cell.special') : isIsland ? ' ' + t('cell.island') : ''));
+      let head = isCastle ? `${castleLabel} ${sh.c.attr.label}` : (sh.n || 'Cell');
+
+      // 世界地図モードでの遷移ボタン
+      let enterBtn = '';
+      if (currentMode === 'world') {
+        const sources = (sh.n === '壱岐') ? '001,002,003' : '001';
+        enterBtn = `<br><button class="btn ok" style="margin-top:8px;pointer-events:auto" onclick="window.warp({mode:'subgrid',province:'${sh.n}',sources:'${sources}'})">⛩️ ${sh.n} 詳細マップへ</button>`;
+      }
+
       const terrain = window.TN[sh.c.attr.terrain_type] || '?';
-      const castleInfo = isCastle && sh.c.attr.castle_data ? `<br>${t('ui.built')}:${sh.c.attr.castle_data.built_year} ${t('ui.lord')}:${sh.c.attr.castle_data.lord}` : '';
-      // 逆引きで lat/lng を計算して表示
-      const _ll = window.toLatLng(sh.c.col, sh.c.row);
-      const _posStr = window.WORLD_FLAGS.show_coords !== false
-        ? `<br><span style="opacity:0.6;font-size:10px">hex(${sh.c.col},${sh.c.row}) ${_ll.lat.toFixed(4)},${_ll.lng.toFixed(4)}</span>`
-        : '';
-      tip.innerHTML = `<b>${head}</b><br>${sh.c.hex_id}<br>${terrain} ${t('ui.cost')}=${sh.c.attr.cost}${castleInfo}<br>${shared} ${t('ui.shared_edges')}${_posStr}`;
+      const _posStr = `<br><span style="opacity:0.6;font-size:10px">ID: ${sh.c.hex_id}</span>`;
+      tip.innerHTML = `<b>${head}</b>${_posStr}<br>${terrain}${enterBtn}`;
+      tip.style.pointerEvents = enterBtn ? 'auto' : 'none';
+
       const { cx, cy } = sh, sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy;
       tip.style.left = Math.min(sx + 10, window.innerWidth - 240) + 'px';
       tip.style.top = Math.min(sy + 10, window.innerHeight - 100) + 'px';
       tip.style.display = 'block';
     }
-  } else { tip.style.display = 'none'; }
+  } else { tip.style.display = 'none'; tip.style.pointerEvents = 'none'; }
 
+  // ── 城内遷移ロジック削除 (sub_app側で管理) ──
   // ⑫ GPS
   if (gpsMarker) {
     const { cx, cy } = window.calcHexXY(gpsMarker.col, gpsMarker.row);
@@ -864,10 +1137,12 @@ wrap.addEventListener('mouseup', e => {
     const h = hexAt(e.clientX, e.clientY);
     if (h && setManualSpawn(h)) return;
     if (h) {
-      const seq = Math.floor(Math.random() * 4) + 1;
-      const p = h.n;
-      window.location.href = `sub_index.html?p=${encodeURIComponent(p)}&s=${seq}`;
-      return;
+      if (currentMode === 'world') {
+        const p = h.n;
+        // 世界地図から戦術マップへ
+        window.warp({ mode: 'subgrid', province: p });
+        return;
+      }
     }
     sel = h ? (h.n + ':' + h.c.hex_id) : null;
   }
@@ -928,6 +1203,49 @@ document.getElementById('btn-fit').addEventListener('click', fit);
 const _gps = document.getElementById('btn-gps'), _sp = document.getElementById('btn-spawn');
 if (_gps) _gps.addEventListener('click', toggleGPS);
 if (_sp) _sp.addEventListener('click', toggleSpawnMode);
+
+// ── サーバー管理ヘルパー ──
+function updateServerBadge() {
+  let badge = document.getElementById('server-badge');
+  if (!badge) {
+    badge = document.createElement('div');
+    badge.id = 'server-badge';
+    badge.style = 'position:fixed;bottom:10px;right:10px;padding:8px 12px;background:rgba(10,20,40,0.9);border-radius:20px;font-size:12px;z-index:2000;border:1px solid #444;color:white;box-shadow:0 4px 15px rgba(0,0,0,0.5);font-family:monospace;';
+    document.body.appendChild(badge);
+  }
+  const s = SERVER_REGISTRY[activeServerId] || { label: 'Unknown' };
+  badge.innerHTML = `<span style="color:#00ff88;font-weight:bold">🔴 Active: ${s.label}</span>`;
+}
+
+function checkServerMigration(targetProvince) {
+  const targetServerId = Object.keys(SERVER_REGISTRY).find(id => SERVER_REGISTRY[id].p.includes(targetProvince)) || activeServerId;
+  const badge = document.getElementById('server-badge');
+  if (!badge) return;
+
+  if (targetServerId !== activeServerId) {
+    console.log(`🚀 View-Only Mode: ${activeServerId} -> ${targetServerId}`);
+    badge.innerHTML = `
+      <span style="color:#ffcc00;font-weight:bold">👁️ View-Only: ${targetProvince} (Remote)</span><br>
+      <div style="margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,0.1);font-size:10px;cursor:pointer;color:#40c8ff" onclick="window.setActiveServer('${targetServerId}')">
+        >>> このサーバーへ同期を切り替える
+      </div>
+    `;
+    badge.style.borderColor = '#ffcc00';
+  } else {
+    updateServerBadge();
+    badge.style.borderColor = '#444';
+  }
+}
+
+window.setActiveServer = function (id) {
+  activeServerId = id;
+  console.log(`🔗 Switched Active Server to: ${id}`);
+  updateServerBadge();
+  const st = document.getElementById('status');
+  if (st) st.textContent = `Syncing with ${SERVER_REGISTRY[id].label}...`;
+  // 本来はここで MUD Sync の再初期化を行う
+  setTimeout(() => { draw(); }, 500);
+};
 
 // ── 起動 ──
 window.addEventListener('resize', () => { resizeCV(); if (allActive().length) fit(); });

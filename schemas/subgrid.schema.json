@@ -59,19 +59,48 @@
         },
         "coordinate": {
           "type": "object",
-          "required": ["q", "r"],
+          "required": [
+            "q",
+            "r"
+          ],
           "properties": {
-            "q": { "type": "integer", "description": "フラットトップ六角グリッドのq座標" },
-            "r": { "type": "integer", "description": "フラットトップ六角グリッドのr座標" }
+            "q": {
+              "type": "integer",
+              "description": "フラットトップ六角グリッドのq座標"
+            },
+            "r": {
+              "type": "integer",
+              "description": "フラットトップ六角グリッドのr座標"
+            }
           }
         },
         "terrain": {
           "type": "object",
-          "required": ["type", "elevation", "is_passable"],
+          "required": [
+            "type",
+            "is_passable"
+          ],
           "properties": {
-            "type": { "type": "string", "description": "地形タイプ (例: 'plain', 'coast', 'mountain')" },
-            "elevation": { "type": "integer", "description": "標高(m)" },
-            "is_passable": { "type": "boolean", "description": "通行可能か" }
+            "type": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "description": "地形名 (例: 'plain', 'sea')"
+                },
+                {
+                  "type": "integer",
+                  "description": "地形タイプID (0-99)"
+                }
+              ]
+            },
+            "elevation": {
+              "type": "integer",
+              "description": "標高(m)"
+            },
+            "is_passable": {
+              "type": "boolean",
+              "description": "通行可能か"
+            }
           }
         },
         "initial_owner": {
@@ -82,9 +111,15 @@
           "type": "object",
           "description": "Point of Interest (城、ランドマークなど)",
           "properties": {
-            "name": { "type": "string" },
-            "type": { "type": "string" },
-            "description": { "type": "string" }
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
           }
         },
         "lat": {

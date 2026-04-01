@@ -31,14 +31,14 @@ window.WORLD_I18N = {};
 window.hex_mode = 'flat'; // 'flat' or 'pointy'
 window.hex_R = 22; // デフォルトの半径
 
-window.updateCoord = function(c) {
+window.updateCoord = function (c) {
   window.WORLD_COORD = c;
   window.O_LAT = c.O_LAT; window.O_LNG = c.O_LNG;
   window.LAT_S = c.LAT_S; window.LAT2 = c.LAT2; window.LNG_S = c.LNG_S;
 };
 
 // world.json 読み込み共通処理
-window.loadWorldBase = async function() {
+window.loadWorldBase = async function () {
   try {
     const url = window.WORLD_OVERRIDE_URL || window.WORLD_URL;
     const r = await fetch(url);
@@ -67,14 +67,14 @@ window.loadWorldBase = async function() {
         window.TC[k] = v.color; window.TN[k] = v.name;
       });
     }
-    
+
     if (w.provinces) {
       w.provinces.forEach(p => {
         window.PIDS[p.name] = p.id; window.PCOL[p.name] = p.color;
         if (p.offset) window.PROVINCE_OFFSETS[p.name] = p.offset;
       });
     }
-    
+
     if (w.i18n) window.WORLD_I18N = { ...w.i18n };
 
     return w;
@@ -86,7 +86,7 @@ window.loadWorldBase = async function() {
 
 // ── Hex 数学ロジック ──
 
-window.toColRow = function(lat, lng) {
+window.toColRow = function (lat, lng) {
   const c = window.WORLD_COORD;
   return {
     col: Math.round((lng - c.O_LNG) / c.LNG_S),
@@ -94,7 +94,7 @@ window.toColRow = function(lat, lng) {
   };
 };
 
-window.toLatLng = function(col, row) {
+window.toLatLng = function (col, row) {
   const c = window.WORLD_COORD;
   return {
     lat: c.O_LAT + row * c.LAT2 + ((col & 1) ? c.LAT_S : 0),
@@ -102,7 +102,7 @@ window.toLatLng = function(col, row) {
   };
 };
 
-window.colRowToXY = function(col, row) {
+window.colRowToXY = function (col, row) {
   const S3 = Math.sqrt(3), o = col & 1;
   return window.hex_mode === 'pointy'
     ? { cx: window.hex_R * S3 * col, cy: -(window.hex_R * 2 * row + window.hex_R * o) }
@@ -111,12 +111,12 @@ window.colRowToXY = function(col, row) {
 
 // セルデータからXYを取得する統合関数
 // lat/lng または col/row（Sengoku系）または q/r（Arcadiaサブグリッド系）に対応
-window.calcHexXY = function(colOrCell, rowOpt) {
+window.calcHexXY = function (colOrCell, rowOpt) {
   // 第1引数と第2引数がともに数値の場合（app.js等からの直接呼び出し）
   if (typeof colOrCell === 'number' && typeof rowOpt === 'number') {
     return window.colRowToXY(colOrCell, rowOpt);
   }
-  
+
   // 第1引数がオブジェクトの場合（サブグリッド系等）
   const cell = colOrCell;
   if (!cell) return { cx: 0, cy: 0 };
@@ -142,7 +142,7 @@ window.calcHexXY = function(colOrCell, rowOpt) {
 };
 
 // ポリゴンの頂点計算
-window.hexPts = function(cx, cy) {
+window.hexPts = function (cx, cy) {
   const pts = [];
   for (let i = 0; i < 6; i++) {
     const a = window.hex_mode === 'pointy' ? Math.PI / 180 * (60 * i - 30) : Math.PI / 180 * (60 * i);
@@ -151,11 +151,49 @@ window.hexPts = function(cx, cy) {
   return pts;
 };
 
-window.hexNeighbors = function(col, row) {
+window.hexNeighbors = function (col, row) {
   const o = col & 1;
   return [[col, row - 1], [col, row + 1], [col - 1, row - 1 + o], [col - 1, row + o], [col + 1, row - 1 + o], [col + 1, row + o]];
 };
 
-window.hexDist = function(a, b) { 
-  return Math.hypot(a.x - b.x, a.y - b.y); 
+window.hexDist = function (a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+};
+
+// ── ワープエンジン (Portal/Warp Logic) ──
+window.warp = function (options) {
+  const { mode, world, province, id, label, seq } = options;
+  console.log('🌌 Warping to:', options);
+
+  // 1. 世界(World)の切り替え判定
+  if (world && world !== (window.WORLD_ID || 'sengoku')) {
+    // 世界線が変わる場合は、対応するディレクトリの index.html へリダイレクト
+    // 将来的にはここで world.json だけをロードし直して同一ページで切り替える(SPA)
+    const baseUrl = window.location.origin + window.location.pathname.split('/').slice(0, -2).join('/');
+    window.location.href = `${baseUrl}/${world}/index.html?mode=${mode || 'world'}&p=${province || ''}`;
+    return;
+  }
+
+  // 2. 階層(Layer)の切り替え判定
+  const targetUrl = new URL(window.location.href);
+  targetUrl.searchParams.set('mode', mode || 'world');
+  if (province) targetUrl.searchParams.set('p', province);
+  if (id) targetUrl.searchParams.set('id', id);
+  if (label) targetUrl.searchParams.set('label', label);
+
+  // 複数ソース (s=001,002,003)
+  if (sources) targetUrl.searchParams.set('s', Array.isArray(sources) ? sources.join(',') : sources);
+  else if (seq) targetUrl.searchParams.set('s', seq);
+
+  // 時間経過の適用
+  if (time_delta) {
+    // 簡易実装: 年度だけ更新 (日計算などは将来拡張)
+    if (time_delta.years) SIM_STATE.year += time_delta.years;
+    if (time_delta.days && time_delta.days >= 365) SIM_STATE.year += Math.floor(time_delta.days / 365);
+    localStorage.setItem('sim_year', SIM_STATE.year);
+    console.log(`⏳ Travel: +${JSON.stringify(time_delta)} applied. New Year: ${SIM_STATE.year}`);
+  }
+
+  // SPA 遷移（現在はリロードを伴うが index.html を維持）
+  window.location.href = targetUrl.toString();
 };

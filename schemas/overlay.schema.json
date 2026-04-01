@@ -142,6 +142,69 @@
         },
         "lng_orig": {
           "type": "number"
+        },
+        "warp_target": {
+          "$ref": "#/$defs/WarpTarget"
+        }
+      },
+      "additionalProperties": false
+    },
+    "WarpTarget": {
+      "description": "遷移先メタデータ（SPAモード、座標、時間経過など）",
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "world",
+            "subgrid",
+            "interior"
+          ],
+          "description": "遷移先の描画モード"
+        },
+        "p": {
+          "type": "string",
+          "description": "遷移先の地方/省名"
+        },
+        "id": {
+          "type": "string",
+          "description": "遷移先のセルIDまたはランドマークID"
+        },
+        "label": {
+          "type": "string",
+          "description": "遷移先のラベル（ツールチップ表示用）"
+        },
+        "sources": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ],
+          "description": "ロードするデータソースのシーケンス番号（001, 002など）"
+        },
+        "time_delta": {
+          "type": "object",
+          "properties": {
+            "years": {
+              "type": "number"
+            },
+            "months": {
+              "type": "number"
+            },
+            "days": {
+              "type": "number"
+            }
+          },
+          "description": "移動に伴う時間経過"
+        },
+        "note": {
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -327,6 +390,9 @@
         },
         "note": {
           "type": "string"
+        },
+        "warp_target": {
+          "$ref": "#/$defs/WarpTarget"
         }
       },
       "additionalProperties": false

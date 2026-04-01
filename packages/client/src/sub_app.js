@@ -47,6 +47,22 @@ let bT = 0;
 const vp = { ox: 0, oy: 0, sc: 1 };
 let gpsMarker = null, gpsWatchId = null, gpsActive = false;
 
+// ── 拡張状態（時代・季節・設定管理） ──
+const SIM_STATE = {
+    year: 1580,
+    season: 'summer',
+    api: window.API || '',
+    world: window.WORLD_OVERRIDE_URL || './world/world.json'
+};
+// 暫定反映
+if (localStorage.getItem('sim_year')) SIM_STATE.year = parseInt(localStorage.getItem('sim_year'));
+if (localStorage.getItem('sim_season')) SIM_STATE.season = localStorage.getItem('sim_season');
+if (localStorage.getItem('sim_api')) SIM_STATE.api = localStorage.getItem('sim_api');
+if (localStorage.getItem('sim_world')) SIM_STATE.world = localStorage.getItem('sim_world');
+
+window.API = SIM_STATE.api;
+window.WORLD_OVERRIDE_URL = SIM_STATE.world;
+
 
 
 // ── UI ──
@@ -90,25 +106,36 @@ async function init() {
     resizeCV();
     stEl.textContent = '読み込み中…';
 
-    await window.loadWorldBase();
+    const wData = await window.loadWorldBase();
+    if (wData && wData.simulation) {
+        if (!localStorage.getItem('sim_year')) SIM_STATE.year = wData.simulation.start_year;
+        if (!localStorage.getItem('sim_season')) SIM_STATE.season = wData.simulation.default_season;
+    }
     window.hex_R = 40; // subgrid needs larger scale than main map
 
     const params = new URLSearchParams(window.location.search);
+    const mode = params.get('mode');
     const provinceName = params.get('p') || '壱岐';
     const seq = params.get('s') || '001';
+    const id = params.get('id');
+    const label = params.get('label');
 
     try {
-        const paddedSeq = `000${seq}`.slice(-3);
-        const urlName = `data/${provinceName}/${provinceName}_sub_${paddedSeq}.json`;
-        const urlId = window.PIDS && window.PIDS[provinceName]
-            ? `data/${provinceName}/${window.PIDS[provinceName]}_sub_${paddedSeq}.json`
-            : null;
-        const overlayUrl = `data/${provinceName}/sub_overlay.json`;
+        let url;
+        const worldId = (wData && wData.meta && wData.meta.world_id && wData.meta.world_id.includes('arcadia')) ? 'arcadia' : 'sengoku';
 
-        let provResponse = await fetch(urlName);
-        if (!provResponse.ok && urlId) {
-            provResponse = await fetch(urlId);
+        if (mode === 'interior') {
+            const fileName = label || id;
+            url = `../../contracts/data/${worldId}/${provinceName}/${fileName}_interior.json`;
+        } else {
+            const paddedSeq = `000${seq}`.slice(-3);
+            url = `../../contracts/data/${worldId}/${provinceName}/${provinceName}_sub_${paddedSeq}.json`;
         }
+
+        const overlayUrl = `../../contracts/data/${worldId}/${provinceName}/sub_overlay.json`;
+
+        let provResponse = await fetch(url);
+        // フォールバック（IDベースなどの試行は必要に応じて追加）
 
         const overlayResponse = await fetch(overlayUrl).catch(() => ({ ok: false }));
 
@@ -169,6 +196,11 @@ function draw(ts) {
 
         const terrainType = cell.terrain.type;
         let [r, g, b] = TC[terrainType] || [128, 128, 128];
+
+        // 季節補正（修正点）
+        if (SIM_STATE.season === 'winter') { r = Math.min(255, r + 60); g = Math.min(255, g + 60); b = Math.min(255, b + 80); }
+        else if (SIM_STATE.season === 'autumn') { r = Math.min(255, r + 40); g = Math.max(0, g - 20); b = Math.max(0, b - 30); }
+        else if (SIM_STATE.season === 'spring') { r = Math.min(255, r + 30); g = Math.min(255, g + 10); b = Math.min(255, b + 20); }
 
         ctx.beginPath();
         pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
@@ -231,9 +263,15 @@ function draw(ts) {
         const _posStr = `<br><span style="opacity:0.6;font-size:10px">hex ${posText}</span>`;
 
         if (sh.isLandmark) {
-            tipHtml = `<b>${sh.c.label}</b><br>${sh.c.note || ''}${_posStr}`;
+            const wt = sh.c.warp_target;
+            const enterBtn = wt
+                ? `<br><button class="btn ok" style="margin-top:8px;pointer-events:auto" onclick='window.warp(${JSON.stringify(wt)})'>🏰 ${wt.note || "内部に入る"}</button>`
+                : '';
+            tipHtml = `<b>${sh.c.label}</b><br>${sh.c.note || ''}${_posStr}${enterBtn}`;
+            tip.style.pointerEvents = enterBtn ? 'auto' : 'none';
         } else {
             tipHtml = `<b>${sh.c.cell_id}</b><br>Terrain: ${sh.c.terrain.type}${_posStr}`;
+            tip.style.pointerEvents = 'none';
         }
         tip.innerHTML = tipHtml;
         const sx = sh.cx * vp.sc + vp.ox;
@@ -367,6 +405,73 @@ function onGPSUpdate(lat, lng, accuracy) {
 document.getElementById('btn-gps').addEventListener('click', toggleGPS);
 
 
+// ── UIイベント (Settings & Simulation Control) ──
+function initControlPanel() {
+    const btn = document.getElementById('btn-ctrl');
+    const panel = document.getElementById('ctrl-panel');
+    const bg = document.getElementById('overlay-bg');
+    const apply = document.getElementById('btn-apply');
+    const reset = document.getElementById('btn-reset');
+    const rangeYear = document.getElementById('range-year');
+    const valYear = document.getElementById('val-year');
+    const selSeason = document.getElementById('sel-season');
+
+    if (!btn) return;
+
+    btn.onclick = () => { panel.style.display = bg.style.display = 'block'; };
+    bg.onclick = () => { panel.style.display = bg.style.display = 'none'; };
+
+    rangeYear.oninput = () => { valYear.textContent = rangeYear.value; };
+
+    apply.onclick = () => {
+        SIM_STATE.year = parseInt(rangeYear.value);
+        SIM_STATE.season = selSeason.value;
+        SIM_STATE.api = document.getElementById('in-api').value;
+        SIM_STATE.world = document.getElementById('in-world').value;
+
+        localStorage.setItem('sim_year', SIM_STATE.year);
+        localStorage.setItem('sim_season', SIM_STATE.season);
+        localStorage.setItem('sim_api', SIM_STATE.api);
+        localStorage.setItem('sim_world', SIM_STATE.world);
+
+        // 反映
+        window.API = SIM_STATE.api;
+        window.WORLD_OVERRIDE_URL = SIM_STATE.world;
+
+        draw();
+
+        panel.style.display = bg.style.display = 'none';
+        if (SIM_STATE.api !== localStorage.getItem('last_api')) {
+            localStorage.setItem('last_api', SIM_STATE.api);
+            location.reload();
+        }
+    };
+
+    reset.onclick = () => {
+        localStorage.clear();
+        location.reload();
+    };
+
+    // 初期化同期
+    document.getElementById('in-api').value = window.API || '';
+    document.getElementById('in-world').value = window.WORLD_OVERRIDE_URL || './world/world.json';
+    rangeYear.value = SIM_STATE.year;
+    valYear.textContent = SIM_STATE.year;
+    selSeason.value = SIM_STATE.season;
+}
+
+// ── 城内遷移ロジック ──
+function enterCastle(id) {
+    const h = cache.find(x => x.id === id);
+    if (!h) return;
+    const p = h.n;
+    const label = h.c.label;
+    // 同じ sub_index.html を再利用して interior モードへ
+    window.location.href = `sub_index.html?mode=interior&p=${encodeURIComponent(p)}&id=${encodeURIComponent(id)}&label=${encodeURIComponent(label)}`;
+}
+
 // ── 起動 ──
 window.addEventListener('resize', () => { resizeCV(); fit(); });
-init();
+init().then(() => {
+    initControlPanel();
+});

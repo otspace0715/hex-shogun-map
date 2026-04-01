@@ -19,8 +19,36 @@
       "built_year": "1591",
       "lord": "松浦氏",
       "note": "壱岐の要衝",
+      "warp_target": {
+        "mode": "interior",
+        "p": "壱岐",
+        "id": "castle_katsumoto",
+        "label": "勝本城",
+        "note": "城内へ進入"
+      },
       "lat_orig": 33.7452,
       "lng_orig": 129.7044
+    },
+    {
+      "id": "port_katsumoto",
+      "col": 14,
+      "row": 63,
+      "lat": 33.855,
+      "lng": 129.695,
+      "terrain_type": 4,
+      "province": "壱岐",
+      "label": "勝本港",
+      "category": "port",
+      "note": "本土（肥前・唐津）への航路",
+      "warp_target": {
+        "mode": "world",
+        "p": "肥前",
+        "label": "唐津",
+        "note": "船で移動（3日経過）",
+        "time_delta": {
+          "days": 3
+        }
+      }
     }
   ],
   "special_cells": [],

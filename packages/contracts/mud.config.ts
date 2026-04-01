@@ -43,6 +43,15 @@ export default defineWorld({
                         population: "uint256",
                         stability: "uint8"
                     }
+                },
+                // シミュレーション管理（ワールド共通）
+                Simulation: {
+                    key: ["worldId"],
+                    schema: {
+                        worldId: "bytes32",
+                        currentYear: "uint32",
+                        currentSeason: "uint8" // 0: spring, 1: summer, 2: autumn, 3: winter
+                    }
                 }
             }
         },

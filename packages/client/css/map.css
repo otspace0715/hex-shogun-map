@@ -65,3 +65,34 @@ canvas { display: block; width: 100%; height: 100%; }
   max-width: 240px; line-height: 1.6;
   backdrop-filter: blur(4px);
 }
+/* ── 設定・コントロールパネル ── */
+#ctrl-panel {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(10, 20, 40, 0.95);
+  border: 1px solid var(--accent);
+  padding: 20px; border-radius: 12px;
+  z-index: 1000; display: none;
+  width: 90%; max-width: 400px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8), 0 0 15px var(--accent);
+  backdrop-filter: blur(8px);
+}
+#ctrl-panel h2 { font-size: 16px; color: var(--accent); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.ctrl-row { margin-bottom: 14px; display: flex; flex-direction: column; gap: 4px; }
+.ctrl-row label { font-size: 12px; color: #a8c8e8; font-weight: bold; }
+.ctrl-row input[type="text"], .ctrl-row select {
+  background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+  color: #fff; padding: 6px; border-radius: 4px; font-family: inherit; font-size: 13px;
+}
+.ctrl-row input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent); }
+.ctrl-footer { margin-top: 20px; display: flex; gap: 8px; justify-content: flex-end; }
+
+#overlay-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6); z-index: 999; display: none;
+}
+
+/* 季節ごとの特別なアクセント */
+.season-spring { color: #ffb7c5; }
+.season-summer { color: #4ade80; }
+.season-autumn { color: #f97316; }
+.season-winter { color: #f8fafc; }
