@@ -194,8 +194,12 @@ function draw(ts) {
         const pts = window.hexPts(cx, cy);
         const isSel = sel === cell.cell_id;
 
-        const terrainType = cell.terrain.type;
-        let [r, g, b] = TC[terrainType] || [128, 128, 128];
+        // 地形タイプ（数値IDと文字列名の両方に対応）
+        let tType = cell.terrain.type;
+        const tMap = { 'plains': 0, 'hills': 1, 'mountain': 2, 'river': 3, 'sea': 4, 'coast': 4, 'forest': 0 };
+        if (typeof tType === 'string') tType = tMap[tType] ?? 0;
+
+        let [r, g, b] = window.TC && window.TC[tType] ? window.TC[tType] : (TC[cell.terrain.type] || [128, 128, 128]);
 
         // 季節補正（修正点）
         if (SIM_STATE.season === 'winter') { r = Math.min(255, r + 60); g = Math.min(255, g + 60); b = Math.min(255, b + 80); }
