@@ -717,7 +717,7 @@ function fit() {
 // ── tog（修正2: col/row有無でデータ処理ルートを分離）──
 async function tog(name) {
   const btn = document.getElementById('p-' + window.PIDS[name]);
-  if (!btn) { console.warn('Button not found:', name, PIDS); return; }
+  if (!btn) { console.warn('Button not found:', name, window.PIDS); return; }
   if (data[name]) {
     active[name] = !active[name]; btn.classList.toggle('on', active[name]);
     updateSpecial(); updateSeaRoutes(); updateWater(); updateCastles(); detectGaps();
@@ -856,7 +856,7 @@ function drawTactical(activeColRows, specialKeys, gapKeySet, waterKeySet) {
   subgridData.cells.forEach(cell => {
     const { cx, cy } = window.calcHexXY(cell); if (!inView(cx, cy)) return;
     const pts = window.hexPts(cx, cy);
-    const isSel = sel && (sel.id === cell.cell_id);
+    const isSel = sel && (sel === subgridData.province + ':' + cell.cell_id);
 
     // 地形タイプ（数値IDと文字列名の両方に対応）
     let tType = cell.terrain.type;
@@ -1011,7 +1011,7 @@ function drawTactical(activeColRows, specialKeys, gapKeySet, waterKeySet) {
   }
 
   // ⑪ 選択セル
-  const sh = sel ? cache.find(h => h.n && h.c && sel === h.n + ':' + h.c.hex_id) : null;
+  const sh = sel ? cache.find(h => h.n && h.c && sel === h.n + ':' + (h.c.hex_id || h.c.cell_id || h.id)) : null;
   if (sh) {
     const blink = 0.5 + 0.5 * Math.sin(bT * .008);
     ctx.beginPath(); sh.pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.closePath();
@@ -1126,7 +1126,8 @@ wrap.addEventListener('touchend', e => {
   if (!dd && e.changedTouches.length === 1 && e.touches.length === 0) {
     const touch = e.changedTouches[0], h = hexAt(touch.clientX, touch.clientY);
     if (h && setManualSpawn(h)) return;
-    sel = h ? (sel === h.n + ':' + h.c.hex_id ? null : h.n + ':' + h.c.hex_id) : null;
+    const clickedSel = h ? h.n + ':' + (h.c.hex_id || h.c.cell_id || h.id) : null;
+    sel = h ? (sel === clickedSel ? null : clickedSel) : null;
     if (!sel) stEl.textContent = t('ui.tap_cell');
   }
 }, { passive: false });
@@ -1146,7 +1147,7 @@ wrap.addEventListener('mouseup', e => {
         return;
       }
     }
-    sel = h ? (h.n + ':' + h.c.hex_id) : null;
+    sel = h ? (h.n + ':' + (h.c.hex_id || h.c.cell_id || h.id)) : null;
   }
 });
 wrap.addEventListener('contextmenu', e => {
