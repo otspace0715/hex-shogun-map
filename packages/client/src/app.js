@@ -756,6 +756,7 @@ function draw(ts) {
   ctx.fillStyle = '#060c1e'; ctx.fillRect(0, 0, W, H);
   cache = [];
   ctx.save();
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0); // Apply explicit DPR scale for Retina
   ctx.translate(vp.ox, vp.oy);
   ctx.scale(vp.sc, vp.sc);
 
