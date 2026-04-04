@@ -801,6 +801,7 @@ function drawWorld(cells, activeColRows, specialKeys, gapKeySet, waterKeySet) {
   function inView(cx, cy) { const sx = cx * vp.sc + vp.ox, sy = cy * vp.sc + vp.oy; return sx > -margin && sx < _W + margin && sy > -margin && sy < _H + margin; }
 
   // ① 通常セル
+  const selProv = sel ? sel.split(':')[0] : null;
   const cacheMap = new Map();
   cells.forEach(({ c, n }) => {
     const { cx, cy } = window.calcHexXY(c.col, c.row);
