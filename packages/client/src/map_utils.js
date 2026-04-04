@@ -162,7 +162,7 @@ window.hexDist = function (a, b) {
 
 // ── ワープエンジン (Portal/Warp Logic) ──
 window.warp = function (options) {
-  const { mode, world, province, id, label, seq } = options;
+  const { mode, world, province, id, label, seq, sources, time_delta } = options;
   console.log('🌌 Warping to:', options);
 
   // 1. 世界(World)の切り替え判定
