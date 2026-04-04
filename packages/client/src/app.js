@@ -1,6 +1,6 @@
 'use strict';
 // ================================================================
-// app.js v5 — Universal Hex Map Viewer
+// app.js v6 — Universal Hex Map Viewer
 // 指摘5点を全て修正:
 //   1. 座標変換を世界設定オブジェクト(window.WORLD_COORD)で管理
 //   2. col/row 有無によるデータ処理ルートの分離
@@ -768,9 +768,6 @@ function draw(ts) {
   } else {
     drawTactical(activeColRows, specialKeys, gapKeySet, waterKeySet);
   }
-
-  drawHighlight();
-
   // ── 昼夜フィルター (Time of Day Filter) ──
   drawTimeFilter();
 
