@@ -176,7 +176,7 @@ async function loadWorld() {
       await loadTactical(params);
     } else {
       currentMode = 'world';
-      await window.loadWorldOverlay();
+      await loadOverlay();
     }
   } catch (e) { console.warn('world.json load failed:', e); }
 }
@@ -681,12 +681,16 @@ function initControlPanel() {
 window.addEventListener('load', () => {
   resizeCV();
   initFromHTML();
+  requestAnimationFrame(anim);
   loadWorld().then(() => {
     initControlPanel();
+    const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
+    const _first = _autoload ? _autoload.dataset.prov : Object.keys(window.PIDS)[0];
+    if (_first) tog(_first);
     draw();
   });
 });
-window.addEventListener('resize', () => { resizeCV(); draw(); });
+window.addEventListener('resize', () => { resizeCV(); if (allActive().length) fit(); draw(); });
 
 // ── ヘルパー ──
 function allActive() {
@@ -1247,13 +1251,5 @@ window.setActiveServer = function (id) {
   setTimeout(() => { draw(); }, 500);
 };
 
-// ── 起動 ──
-window.addEventListener('resize', () => { resizeCV(); if (allActive().length) fit(); });
-initFromHTML();
-resizeCV();
-requestAnimationFrame(anim);
-loadWorld().then(() => {
-  const _autoload = document.querySelector('[data-prov][data-autoload="true"]');
-  const _first = _autoload ? _autoload.dataset.prov : Object.keys(window.PIDS)[0];
-  if (_first) tog(_first);
-});
+// ── 起動イベント類はすべて先頭の window.addEventListener('load', ...) 周辺に統合 ──
+
