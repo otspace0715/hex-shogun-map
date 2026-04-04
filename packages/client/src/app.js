@@ -755,6 +755,10 @@ function draw(ts) {
   ctx.clearRect(0, 0, W, H);
   ctx.fillStyle = '#060c1e'; ctx.fillRect(0, 0, W, H);
   cache = [];
+  ctx.save();
+  ctx.translate(vp.ox, vp.oy);
+  ctx.scale(vp.sc, vp.sc);
+
 
   // ── 共通キーセット情報の構築 (特殊地形・境界・水域の重なり判定用) ──
   const cells = allActive();
