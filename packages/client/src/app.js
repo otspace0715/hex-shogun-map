@@ -473,7 +473,7 @@ function updateSeaRoutes() {
   // どちらか一方にあれば表示する方針
   const activeProvinces = new Set(an);
   (overlayData.water_cells || []).forEach(wc => {
-    if (wc.water_type !== 'sea' && wc.water_type !== 'sea_route') return;
+    if (wc.water_type !== 'sea_route') return;
     if (wc.col == null || wc.row == null) {
       const cr = window.toColRow(wc.lat, wc.lng);
       wc.col = cr.col; wc.row = cr.row;

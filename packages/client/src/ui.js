@@ -71,3 +71,85 @@ export function resizeCV(cv) {
   cv.width  = w.clientWidth  * (window.devicePixelRatio || 1);
   cv.height = w.clientHeight * (window.devicePixelRatio || 1);
 }
+
+// --- ログイン処理とキャラクター管理のサンプルロジック ---
+
+// Universal-Soul-LogicコントラクトのABI（Application Binary Interface）とアドレス
+// ※これは仮のものです。実際にご利用のコントラクトのものに置き換えてください。
+const soulLogicABI = [
+    "function getCharacter(address player) view returns (string name, uint8 avatarType)",
+    "function createCharacter(string name, uint8 avatarType) returns (bool)", // createCharacterは状態を変更するため、viewではない
+    "function isCharacterCreated(address player) view returns (bool)"
+];
+const soulLogicAddress = "0xYourSoulLogicContractAddressHere"; // 実際のコントラクトアドレス
+
+let ethersProvider;
+let signer;
+let soulLogicContract;
+
+async function connectWallet() {
+    if (typeof window.ethereum === 'undefined') {
+        alert('MetaMaskがインストールされていません。');
+        return;
+    }
+
+    try {
+        // ウォレットに接続を要求
+        // ethers V5ではWeb3Providerを使用
+        ethersProvider = new ethers.providers.Web3Provider(window.ethereum);
+        await ethersProvider.send("eth_requestAccounts", []);
+        signer = ethersProvider.getSigner();
+
+        // コントラクトのインスタンスを作成
+        soulLogicContract = new ethers.Contract(soulLogicAddress, soulLogicABI, signer);
+
+        const playerAddress = await signer.getAddress();
+        console.log("ウォレット接続成功:", playerAddress);
+
+        // キャラクターが存在するか確認
+        const exists = await soulLogicContract.isCharacterCreated(playerAddress);
+
+        if (exists) {
+            // 既存キャラクターの情報を取得
+            const character = await soulLogicContract.getCharacter(playerAddress);
+            updatePlayerInfo(playerAddress, character.name);
+        } else {
+            // 新規キャラクターを作成
+            const characterName = prompt("キャラクター名を決めてください:", "名無しの武将");
+            if (characterName) {
+                console.log(`キャラクター "${characterName}" を作成中...`);
+                // ここではアバタータイプを0として固定
+                const tx = await soulLogicContract.createCharacter(characterName, 0);
+                await tx.wait(); // トランザクションが完了するのを待つ
+                console.log("キャラクター作成完了！");
+                updatePlayerInfo(playerAddress, characterName);
+            } else {
+                alert("キャラクター名が入力されませんでした。");
+            }
+        }
+
+    } catch (error) {
+        console.error("ログイン処理でエラーが発生しました:", error);
+        alert("ログインに失敗しました。詳細をコンソールで確認してください。");
+    }
+}
+
+function updatePlayerInfo(address, name) {
+    // UIを更新
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('player-info').style.display = 'block';
+    document.getElementById('player-address').textContent = address;
+    document.getElementById('character-name').textContent = name;
+    
+    // TODO: ここで取得したキャラクター情報を基に、マップ上にアバターを表示する処理を呼び出す
+    // 例: spawnAvatar(address, name, avatarType);
+}
+
+// ログインボタンにイベントリスナーを設定
+// DOMが読み込まれた後に実行されるようにする
+window.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.getElementById('login-button');
+    if (loginButton) {
+        loginButton.onclick = connectWallet;
+    }
+});
