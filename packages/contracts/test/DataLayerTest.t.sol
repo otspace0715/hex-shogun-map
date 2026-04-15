@@ -3,7 +3,7 @@ pragma solidity >=0.8.24;
 
 import { MudTest } from "@latticexyz/world/test/MudTest.t.sol";
 import { console } from "forge-std/console.sol";
-import { TerritoryStat, ProvinceProvision } from "../src/codegen/index.sol";
+import { TerritoryStat, ProvinceProvision, RouteCost, TransportMultiplier } from "../src/codegen/index.sol";
 
 // ------------------------------------------------------------------------
 // MUDアーキテクチャ・多層連携テスト
@@ -63,5 +63,29 @@ contract DataLayerTest is MudTest {
     // (MUDのNamespace機能による隔離)
     // ※ ここでは同一World内でのNamespace分離を前提としています
     assertTrue(true); // スキーマが分かれているため物理的に分離されている
+  }
+  /**
+   * 4. ルート・交通機能のテスト (Travel Cost & Multipliers)
+   */
+  function test_RouteCost_TransportMultiplier() public {
+    bytes32 routeId = keccak256("sengoku.route.sample_sea");
+    bytes32 transportId = keccak256("transport.ship_modern");
+
+    vm.startBroadcast();
+    // 室町時代の船での移動時間（ベース）と距離を設定: 60km, 基本24時間
+    RouteCost.set(routeId, 60, 24);
+    // 現代の船（モーターボート等）は時間を0.25倍(25%)とする
+    TransportMultiplier.set(transportId, 25);
+    vm.stopBroadcast();
+
+    assertEq(RouteCost.getDistanceKm(routeId), 60, "距離が正しく設定されているか");
+    assertEq(RouteCost.getBaseDurationHours(routeId), 24, "ベース時間が正しく設定されているか");
+    assertEq(TransportMultiplier.getSpeedMultiplier(transportId), 25, "乗り物速度倍率が正しく設定されているか");
+    
+    // システム側での計算シミュレーション
+    uint256 expectedHours = (RouteCost.getBaseDurationHours(routeId) * TransportMultiplier.getSpeedMultiplier(transportId)) / 100;
+    assertEq(expectedHours, 6, "24時間の25%なので6時間が算出されるか");
+
+    console.log("Route & Transport interaction success: calculations match.");
   }
 }
