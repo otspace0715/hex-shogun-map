@@ -821,28 +821,6 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_iki_33819",
-      "lat": 33.819186,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_iki_33880",
-      "lat": 33.879808,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
       "id": "sea_13_46",
       "lat": 32.818923,
       "lng": 129.6825,
@@ -861,28 +839,6 @@
       "terrain_type": 7,
       "trigger_provinces": [
         "肥前"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_iki_33728",
-      "lat": 33.728253,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_iki_33789",
-      "lat": 33.788875,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
       ],
       "trigger_condition": "any"
     },
@@ -964,17 +920,6 @@
       "trigger_condition": "any"
     },
     {
-      "id": "sea_iki_33698",
-      "lat": 33.697942,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
-      ],
-      "trigger_condition": "any"
-    },
-    {
       "id": "sea_15_42",
       "lat": 32.576435,
       "lng": 129.7875,
@@ -1048,17 +993,6 @@
       "terrain_type": 7,
       "trigger_provinces": [
         "肥前"
-      ],
-      "trigger_condition": "any"
-    },
-    {
-      "id": "sea_iki_33849",
-      "lat": 33.849497,
-      "lng": 129.708,
-      "water_type": "sea",
-      "terrain_type": 7,
-      "trigger_provinces": [
-        "壱岐"
       ],
       "trigger_condition": "any"
     },
@@ -25432,6 +25366,136 @@
       "terrain_type": 7,
       "trigger_provinces": [
         "蝦夷"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_13_61",
+      "lat": 0,
+      "lng": 0,
+      "col": 13,
+      "row": 61,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_12_62",
+      "lat": 0,
+      "lng": 0,
+      "col": 12,
+      "row": 62,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_12_63",
+      "lat": 0,
+      "lng": 0,
+      "col": 12,
+      "row": 63,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_14_62",
+      "lat": 0,
+      "lng": 0,
+      "col": 14,
+      "row": 62,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_14_63",
+      "lat": 0,
+      "lng": 0,
+      "col": 14,
+      "row": 63,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_12_64",
+      "lat": 0,
+      "lng": 0,
+      "col": 12,
+      "row": 64,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_14_64",
+      "lat": 0,
+      "lng": 0,
+      "col": 14,
+      "row": 64,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_13_65",
+      "lat": 0,
+      "lng": 0,
+      "col": 13,
+      "row": 65,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_12_65",
+      "lat": 0,
+      "lng": 0,
+      "col": 12,
+      "row": 65,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
+      ],
+      "trigger_condition": "any"
+    },
+    {
+      "id": "sea_壱岐_14_65",
+      "lat": 0,
+      "lng": 0,
+      "col": 14,
+      "row": 65,
+      "water_type": "sea",
+      "terrain_type": 7,
+      "trigger_provinces": [
+        "壱岐"
       ],
       "trigger_condition": "any"
     }
